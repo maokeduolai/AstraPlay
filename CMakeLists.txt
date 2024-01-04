@@ -6,50 +6,30 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
+# 设置C++标准
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
+# 添加Qt5依赖
+find_package(QT NAMES Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
-set(PROJECT_SOURCES
-        Sources/main.cpp
-        Sources/application.cpp
-        Sources/Headers/application.h
-        Sources/Forms/application.ui
+set(SOURCE_FILES
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/application.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/application.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/resources/application.ui
 )
 
-if (${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    qt_add_executable(AstraPlay
-            MANUAL_FINALIZATION
-            ${PROJECT_SOURCES}
-    )
-    # Define target properties for Android with Qt 6 as:
-    #    set_property(TARGET AstraPlay APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
-    #                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
-    # For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
-else ()
-    if (ANDROID)
-        add_library(AstraPlay SHARED
-                ${PROJECT_SOURCES}
-        )
-        # Define properties for Android with Qt 5 after find_package() calls as:
-        #    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
-    else ()
-        add_executable(AstraPlay
-                ${PROJECT_SOURCES}
-        )
-    endif ()
-endif ()
+# 指定编译源文件
+add_executable(AstraPlay ${SOURCE_FILES})
 
+# 链接Qt5
 target_link_libraries(AstraPlay PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 
-# Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
-# If you are developing for iOS or macOS you should consider setting an
-# explicit, fixed bundle identifier manually though.
-if (${QT_VERSION} VERSION_LESS 6.1.0)
-    set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.AstraPlay)
-endif ()
+# 包含头文件目录
+target_include_directories(AstraPlay PUBLIC ${PROJECT_SOURCE_DIR}/include)
+
 set_target_properties(AstraPlay PROPERTIES
         ${BUNDLE_ID_OPTION}
         MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
@@ -64,7 +44,3 @@ install(TARGETS AstraPlay
         LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
         RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
-
-if (QT_VERSION_MAJOR EQUAL 6)
-    qt_finalize_executable(AstraPlay)
-endif ()

@@ -1,4 +1,4 @@
-#include "Headers/application.h"
+#include "application.h"
 
 #include <QApplication>
 

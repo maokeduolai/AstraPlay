@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1114</width>
+    <height>607</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,7 +23,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>1114</width>
      <height>21</height>
     </rect>
    </property>
@@ -107,6 +107,21 @@
    <addaction name="menu_3"/>
    <addaction name="menu_4"/>
    <addaction name="menu_5"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>BottomToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="ToolPlay"/>
   </widget>
   <action name="action">
    <property name="text">
@@ -210,8 +225,7 @@
   </action>
   <action name="action_20">
    <property name="text">
-    <string>静音
-</string>
+    <string>静音</string>
    </property>
   </action>
   <action name="action_21">
@@ -237,6 +251,14 @@
   <action name="action_25">
    <property name="text">
     <string>字幕同步设置</string>
+   </property>
+  </action>
+  <action name="ToolPlay">
+   <property name="text">
+    <string>播放</string>
+   </property>
+   <property name="toolTip">
+    <string>播放</string>
    </property>
   </action>
  </widget>
