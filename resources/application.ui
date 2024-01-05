@@ -17,6 +17,23 @@
    <property name="enabled">
     <bool>true</bool>
    </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QWidget" name="widget" native="true"/>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -115,13 +132,21 @@
    <property name="movable">
     <bool>false</bool>
    </property>
+   <property name="iconSize">
+    <size>
+     <width>32</width>
+     <height>32</height>
+    </size>
+   </property>
    <attribute name="toolBarArea">
     <enum>BottomToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="ToolBack"/>
    <addaction name="ToolPlay"/>
+   <addaction name="ToolForward"/>
   </widget>
   <action name="action">
    <property name="text">
@@ -254,6 +279,10 @@
    </property>
   </action>
   <action name="ToolPlay">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/icons/play-button.png</normaloff>:/icons/icons/play-button.png</iconset>
+   </property>
    <property name="text">
     <string>播放</string>
    </property>
@@ -261,7 +290,33 @@
     <string>播放</string>
    </property>
   </action>
+  <action name="ToolBack">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/icons/left-arrow.png</normaloff>:/icons/icons/left-arrow.png</iconset>
+   </property>
+   <property name="text">
+    <string>后退</string>
+   </property>
+   <property name="toolTip">
+    <string>后退</string>
+   </property>
+  </action>
+  <action name="ToolForward">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/icons/right-arrow.png</normaloff>:/icons/icons/right-arrow.png</iconset>
+   </property>
+   <property name="text">
+    <string>快进</string>
+   </property>
+   <property name="toolTip">
+    <string>快进</string>
+   </property>
+  </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="icons.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -14,14 +14,16 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
-set(SOURCE_FILES
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/application.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/application.h
-        ${CMAKE_CURRENT_SOURCE_DIR}/resources/application.ui
-)
-
 # 指定编译源文件
+set(SOURCE_FILES
+        src/main.cpp
+        src/application.cpp
+        src/application.h
+        src/controller.cpp
+        src/controller.h
+        resources/application.ui
+        resources/icons.qrc
+)
 add_executable(AstraPlay ${SOURCE_FILES})
 
 # 链接Qt5
