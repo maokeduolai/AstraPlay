@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>AstraPlay</string>
   </property>
-  <widget class="QWidget" name="centralwidget">
+  <widget class="QWidget" name="centralWidget">
    <property name="enabled">
     <bool>true</bool>
    </property>
@@ -31,11 +31,11 @@
      <number>0</number>
     </property>
     <item>
-     <widget class="QWidget" name="widget" native="true"/>
+     <widget class="QWidget" name="playerWidget" native="true"/>
     </item>
    </layout>
   </widget>
-  <widget class="QMenuBar" name="menubar">
+  <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -48,82 +48,81 @@
     <property name="title">
      <string>文件</string>
     </property>
-    <addaction name="action"/>
-    <addaction name="action_URL"/>
-    <addaction name="action_2"/>
-    <addaction name="action_3"/>
+    <addaction name="openFile"/>
+    <addaction name="openURL"/>
+    <addaction name="recentFiles"/>
+    <addaction name="exitProgram"/>
    </widget>
-   <widget class="QMenu" name="menu">
+   <widget class="QMenu" name="menuWindow">
     <property name="title">
      <string>窗口</string>
     </property>
-    <addaction name="action_4"/>
-    <addaction name="action_5"/>
+    <addaction name="fullScreen"/>
    </widget>
-   <widget class="QMenu" name="menu_2">
+   <widget class="QMenu" name="menuPlay">
     <property name="title">
      <string>播放</string>
     </property>
-    <addaction name="action_0_1x"/>
-    <addaction name="action_0_1x_2"/>
-    <addaction name="action_6"/>
+    <addaction name="speedUp"/>
+    <addaction name="speedDown"/>
+    <addaction name="speedReset"/>
    </widget>
-   <widget class="QMenu" name="menu_3">
+   <widget class="QMenu" name="menuVideo">
     <property name="title">
      <string>视频</string>
     </property>
-    <widget class="QMenu" name="menu_6">
+    <widget class="QMenu" name="menuZoom">
      <property name="title">
       <string>缩放</string>
      </property>
-     <addaction name="action_8"/>
-     <addaction name="action_9"/>
-     <addaction name="action_10"/>
+     <addaction name="zoomIn"/>
+     <addaction name="zoomOut"/>
+     <addaction name="zoomReset"/>
     </widget>
-    <widget class="QMenu" name="menu_7">
+    <widget class="QMenu" name="menuMove">
      <property name="title">
       <string>移动</string>
      </property>
-     <addaction name="action_12"/>
-     <addaction name="action_13"/>
-     <addaction name="action_14"/>
-     <addaction name="action_15"/>
+     <addaction name="moveLeft"/>
+     <addaction name="moveRight"/>
+     <addaction name="moveUp"/>
+     <addaction name="moveDown"/>
     </widget>
-    <addaction name="menu_6"/>
-    <addaction name="action_11"/>
-    <addaction name="menu_7"/>
-    <addaction name="action_16"/>
-    <addaction name="action_17"/>
+    <addaction name="menuZoom"/>
+    <addaction name="captureScreen"/>
+    <addaction name="menuMove"/>
+    <addaction name="videoDownload"/>
+    <addaction name="readRaw"/>
    </widget>
-   <widget class="QMenu" name="menu_4">
+   <widget class="QMenu" name="menuAudio">
     <property name="title">
      <string>音频</string>
     </property>
-    <widget class="QMenu" name="menu_8">
+    <widget class="QMenu" name="menuVolume">
      <property name="title">
       <string>音量</string>
      </property>
-     <addaction name="action_20"/>
-     <addaction name="action_21"/>
-     <addaction name="action_22"/>
+     <addaction name="muteAudio"/>
+     <addaction name="volumeIncrease"/>
+     <addaction name="volumeDecrease"/>
     </widget>
-    <addaction name="action_18"/>
-    <addaction name="menu_8"/>
+    <addaction name="auTrackSelect"/>
+    <addaction name="menuVolume"/>
    </widget>
-   <widget class="QMenu" name="menu_5">
+   <widget class="QMenu" name="menuSubtitle">
     <property name="title">
      <string>字幕</string>
     </property>
-    <addaction name="action_23"/>
-    <addaction name="action_24"/>
-    <addaction name="action_25"/>
+    <addaction name="addSubtitle"/>
+    <addaction name="subtitleList"/>
+    <addaction name="subtitleSync"/>
    </widget>
    <addaction name="menuFile"/>
-   <addaction name="menu"/>
-   <addaction name="menu_2"/>
-   <addaction name="menu_3"/>
-   <addaction name="menu_4"/>
-   <addaction name="menu_5"/>
+   <addaction name="menuWindow"/>
+   <addaction name="menuPlay"/>
+   <addaction name="menuVideo"/>
+   <addaction name="menuAudio"/>
+   <addaction name="menuSubtitle"/>
   </widget>
   <widget class="QToolBar" name="toolBar">
    <property name="windowTitle">
@@ -148,134 +147,132 @@
    <addaction name="ToolPlay"/>
    <addaction name="ToolForward"/>
   </widget>
-  <action name="action">
+  <action name="openFile">
    <property name="text">
     <string>打开文件</string>
    </property>
   </action>
-  <action name="action_URL">
+  <action name="openURL">
    <property name="text">
     <string>打开URL</string>
    </property>
   </action>
-  <action name="action_2">
+  <action name="recentFiles">
    <property name="text">
     <string>最近打开的文件</string>
    </property>
   </action>
-  <action name="action_3">
+  <action name="exitProgram">
    <property name="text">
     <string>退出</string>
    </property>
   </action>
-  <action name="action_4">
+  <action name="fullScreen">
    <property name="text">
     <string>全屏播放</string>
    </property>
   </action>
-  <action name="action_5">
-   <property name="text">
-    <string>隐藏工具栏</string>
-   </property>
-  </action>
-  <action name="action_0_1x">
+  <action name="speedUp">
    <property name="text">
     <string>速度增加（0.1x）</string>
    </property>
   </action>
-  <action name="action_0_1x_2">
+  <action name="speedDown">
    <property name="text">
     <string>速度减少（0.1x）</string>
    </property>
   </action>
-  <action name="action_6">
+  <action name="speedReset">
    <property name="text">
     <string>速度重置</string>
    </property>
   </action>
-  <action name="action_8">
+  <action name="zoomIn">
    <property name="text">
     <string>放大</string>
    </property>
   </action>
-  <action name="action_9">
+  <action name="zoomOut">
    <property name="text">
     <string>缩小</string>
    </property>
   </action>
-  <action name="action_10">
+  <action name="zoomReset">
    <property name="text">
     <string>重置缩放</string>
    </property>
   </action>
-  <action name="action_11">
+  <action name="captureScreen">
    <property name="text">
     <string>截图</string>
    </property>
   </action>
-  <action name="action_12">
+  <action name="moveLeft">
    <property name="text">
     <string>左移</string>
    </property>
   </action>
-  <action name="action_13">
+  <action name="moveRight">
    <property name="text">
     <string>右移</string>
    </property>
   </action>
-  <action name="action_14">
+  <action name="moveUp">
    <property name="text">
     <string>上移</string>
    </property>
   </action>
-  <action name="action_15">
+  <action name="moveDown">
    <property name="text">
     <string>下移</string>
    </property>
   </action>
-  <action name="action_16">
+  <action name="videoDownload">
    <property name="text">
     <string>视频下载</string>
    </property>
   </action>
-  <action name="action_17">
+  <action name="readRaw">
    <property name="text">
     <string>读取元数据</string>
    </property>
   </action>
-  <action name="action_18">
+  <action name="auTrackSelect">
    <property name="text">
     <string>音轨选择</string>
    </property>
   </action>
-  <action name="action_20">
+  <action name="muteAudio">
    <property name="text">
     <string>静音</string>
    </property>
   </action>
-  <action name="action_21">
+  <action name="volumeIncrease">
    <property name="text">
     <string>音量增加</string>
    </property>
   </action>
-  <action name="action_22">
+  <action name="volumeDecrease">
    <property name="text">
     <string>音量减少</string>
    </property>
   </action>
-  <action name="action_23">
+  <action name="addSubtitle">
    <property name="text">
     <string>添加字幕</string>
    </property>
   </action>
-  <action name="action_24">
+  <action name="subtitleList">
    <property name="text">
     <string>字幕列表</string>
    </property>
   </action>
-  <action name="action_25">
+  <action name="subtitleSync">
    <property name="text">
-    <string>字幕同步设置</string>
+    <string>字幕同步</string>
+   </property>
+   <property name="toolTip">
+    <string>字幕同步</string>
    </property>
   </action>
   <action name="ToolPlay">
