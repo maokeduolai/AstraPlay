@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1114</width>
-    <height>607</height>
+    <width>1042</width>
+    <height>591</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -40,7 +40,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1114</width>
+     <width>1042</width>
      <height>21</height>
     </rect>
    </property>
@@ -143,9 +143,9 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="ToolBack"/>
-   <addaction name="ToolPlay"/>
-   <addaction name="ToolForward"/>
+   <addaction name="toolBack"/>
+   <addaction name="toolPlay"/>
+   <addaction name="toolForward"/>
   </widget>
   <action name="openFile">
    <property name="text">
@@ -275,7 +275,7 @@
     <string>字幕同步</string>
    </property>
   </action>
-  <action name="ToolPlay">
+  <action name="toolPlay">
    <property name="icon">
     <iconset resource="icons.qrc">
      <normaloff>:/icons/icons/play-button.png</normaloff>:/icons/icons/play-button.png</iconset>
@@ -287,7 +287,7 @@
     <string>播放</string>
    </property>
   </action>
-  <action name="ToolBack">
+  <action name="toolBack">
    <property name="icon">
     <iconset resource="icons.qrc">
      <normaloff>:/icons/icons/left-arrow.png</normaloff>:/icons/icons/left-arrow.png</iconset>
@@ -299,16 +299,16 @@
     <string>后退</string>
    </property>
   </action>
-  <action name="ToolForward">
+  <action name="toolForward">
    <property name="icon">
     <iconset resource="icons.qrc">
      <normaloff>:/icons/icons/right-arrow.png</normaloff>:/icons/icons/right-arrow.png</iconset>
    </property>
    <property name="text">
-    <string>快进</string>
+    <string>前进</string>
    </property>
    <property name="toolTip">
-    <string>快进</string>
+    <string>前进</string>
    </property>
   </action>
  </widget>

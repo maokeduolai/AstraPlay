@@ -1,62 +1,43 @@
 #ifndef CONTROLLER_H
 #define CONTROLLER_H
 
-#include <QWidgetAction>
-#include <QSlider>
-#include <QToolButton>
-#include <QHBoxLayout>
-#include <QApplication>
-#include <QToolBar>
+#include <QObject>
 
-class VolumeControlWidget : public QWidget {
+#include <mpv/client.h>
+#include <mpv/qthelper.hpp>
+
+class Controller : public QObject {
 Q_OBJECT
+
 public:
-    explicit VolumeControlWidget(QWidget *parent = nullptr) : QWidget(parent) {
-        auto *layout = new QHBoxLayout(this);
+    explicit Controller(QObject *parent = nullptr);
 
-        // 创建按钮
-        button = new QToolButton(this);
-        button->setIcon(QIcon(":/icons/icons/volume.png")); // 设置音量按钮图标
-        layout->addWidget(button, 0, Qt::AlignCenter);
+    ~Controller() override;
 
-        // 创建滑块
-        slider = new QSlider(Qt::Horizontal, this);
-        slider->setRange(0, 100); // 音量范围是0到100
-        slider->setValue(80); // 初始音量是80
-        layout->addWidget(slider, 0, Qt::AlignCenter);
+    // 设置播放窗口
+    void setPlayerWidget(QWidget *widget);
 
-        setLayout(layout);
+    void openFile(const QString &filename);
 
-        // 连接滑块的信号
-        connect(slider, &QSlider::valueChanged, this, &VolumeControlWidget::volumeChanged);
-    }
+    void togglePlayPause();
 
-    QToolButton *button;
-    QSlider *slider;
+    void seek(int seconds);
 
-signals:
+    void setVolume(int volume);
 
-    // 音量滑块的值改变时发射信号到VolumeAction
-    void volumeChanged(int volume);
-};
+    void setMute(bool mute);
 
-// 音量调整滑块
-class VolumeAction : public QWidgetAction {
-Q_OBJECT
-public:
-    explicit VolumeAction(QObject *parent = nullptr) : QWidgetAction(parent) {}
+    void setSpeed(double speed);
 
-protected:
-    QWidget *createWidget(QWidget *parent) override {
-        auto *volumeControlWidget = new VolumeControlWidget(parent);
-        connect(volumeControlWidget, &VolumeControlWidget::volumeChanged, this, &VolumeAction::volumeChanged);
-        return volumeControlWidget;
-    }
+private:
+    mpv_handle *mpv;
+    QWidget *playerWidget;
 
-signals:
+    void command(const QStringList &args);
 
-    // 继续传递值改变的信号到application.cpp设置音量
-    void volumeChanged(int volume);
+    void setProperty(const QString &name, const QVariant &value);
+
+    [[nodiscard]] QVariant getProperty(const QString &name) const;
 };
 
 #endif // CONTROLLER_H
