@@ -6,11 +6,13 @@
 #include <mpv/client.h>
 #include <mpv/qthelper.hpp>
 
+class Application;
+
 class Controller : public QObject {
 Q_OBJECT
 
 public:
-    explicit Controller(QObject *parent = nullptr);
+    explicit Controller(Application *app, QObject *parent = nullptr);
 
     ~Controller() override;
 
@@ -29,9 +31,13 @@ public:
 
     void setSpeed(double speed);
 
+    void updateSliderPosition();
+
+    void initializeSliderDuration();
+
 private:
     mpv_handle *mpv;
-    QWidget *playerWidget;
+    Application *application;
 
     void command(const QStringList &args);
 

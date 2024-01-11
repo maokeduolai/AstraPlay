@@ -26,6 +26,8 @@ public:
 
     ~Application() override;
 
+    [[nodiscard]] QSlider* getSlider() const;
+
 protected:
     void enterEvent(QEvent *event) override;
 
@@ -42,6 +44,8 @@ private slots:
     static void on_actionExitProgram_triggered();
 
     void on_actionTogglePlayPause_triggered();
+
+    void on_slider_Released();
 
 private:
     Ui::Application *ui;

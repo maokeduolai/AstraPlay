@@ -5,10 +5,12 @@
 
 #include "application.h"
 #include "../resources/ui_application.h"
+#include "controller.h"
 
 // 创建主窗口
 Application::Application(QWidget *parent)
-        : QMainWindow(parent), ui(new Ui::Application), slider(new QSlider(Qt::Horizontal, this)), toolBar(nullptr) {
+        : QMainWindow(parent), ui(new Ui::Application), slider(new QSlider(Qt::Horizontal, this)), toolBar(nullptr),
+          controller(nullptr) {
     ui->setupUi(this);
 
     // 创建一个滑块
@@ -34,7 +36,6 @@ Application::Application(QWidget *parent)
 
     // 实例化Controller对象
     controller = new Controller(this);
-
     controller->setPlayerWidget(ui->playerWidget);
 
     // 打开视频文件
@@ -45,6 +46,9 @@ Application::Application(QWidget *parent)
 
     // 播放暂停视频
     connect(ui->toolPlay, &QAction::triggered, this, &Application::on_actionTogglePlayPause_triggered);
+
+    // 跳转到指定播放位置
+    connect(slider, &QSlider::sliderReleased, this, &Application::on_slider_Released);
 }
 
 Application::~Application() {
@@ -92,4 +96,15 @@ void Application::on_actionExitProgram_triggered() {
 // 播放暂停视频
 void Application::on_actionTogglePlayPause_triggered() {
     controller->togglePlayPause();
+}
+
+// 跳转到指定播放位置
+void Application::on_slider_Released() {
+    int seconds = slider->value();
+    controller->seek(seconds);
+}
+
+// 给Controller提供slider
+QSlider *Application::getSlider() const {
+    return this->slider;
 }

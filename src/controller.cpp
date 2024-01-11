@@ -1,12 +1,13 @@
 #include <QWidget>
 #include <QVariant>
-#include <QByteArray>
 #include <QDebug>
+#include <QTimer>
 
 #include "controller.h"
+#include "application.h"
 
-Controller::Controller(QObject *parent)
-        : QObject(parent), mpv(nullptr), playerWidget(nullptr) {
+Controller::Controller(Application *app, QObject *parent)
+        : QObject(parent), mpv(nullptr), application(app) {
     // 初始化mpv实例
     mpv = mpv_create();
     if (mpv) {
@@ -27,12 +28,42 @@ Controller::Controller(QObject *parent)
             // 错误处理
         }
     }
+
+    // 设置定时器
+    auto *timer = new QTimer(this);
+    connect(timer, &QTimer::timeout, this, &Controller::updateSliderPosition);
+    timer->start(1000);  // 每秒更新一次
 }
 
 Controller::~Controller() {
     if (mpv) {
         // 清理mpv资源
         mpv_terminate_destroy(mpv);
+    }
+}
+
+// 初始化滑块的总时长
+void Controller::initializeSliderDuration() {
+    if (mpv) {
+        double duration;
+        if (mpv_get_property(mpv, "duration", MPV_FORMAT_DOUBLE, &duration) == 0 && duration >= 0) {
+            // 设置滑块的最大值为视频总时长（秒）
+            QSlider *slider = application->getSlider();
+            slider->setMaximum(static_cast<int>(duration));
+        }
+    }
+}
+
+// 播放时更新滑块位置
+void Controller::updateSliderPosition() {
+    if (mpv) {
+        // 获取当前播放时间
+        int64_t time;
+        mpv_get_property(mpv, "time-pos", MPV_FORMAT_INT64, &time);
+
+        // 设置滑块的位置
+        QSlider *slider = application->getSlider();
+        if (slider) { slider->setValue(static_cast<int>(time)); }
     }
 }
 
@@ -45,6 +76,9 @@ void Controller::setPlayerWidget(QWidget *widget) {
 void Controller::openFile(const QString &filename) {
     QStringList args = {"loadfile", filename};
     command(args);
+
+    // 初始化滑块
+    initializeSliderDuration();
 }
 
 // 切换播放暂停
@@ -57,8 +91,9 @@ void Controller::togglePlayPause() {
     setProperty("pause", !isPaused);
 }
 
+// 跳转到指定播放位置
 void Controller::seek(int seconds) {
-    QStringList args = {"seek", QString::number(seconds), "relative"};
+    QStringList args = {"seek", QString::number(seconds), "absolute"};
     command(args);
 }
 
@@ -74,13 +109,9 @@ void Controller::setSpeed(double speed) {
     setProperty("speed", speed);
 }
 
+// 发送命令到mpv
 void Controller::command(const QStringList &args) {
-    QVector<const char *> argv;
-    for (const QString &arg: args)
-        argv << arg.toUtf8().constData();
-    argv << nullptr;
-
-    mpv_command(mpv, argv.data());
+    mpv::qt::command(mpv, args);  // 后期需添加异常处理
 }
 
 // mpv属性设置函数
