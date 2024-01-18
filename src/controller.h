@@ -2,6 +2,9 @@
 #define CONTROLLER_H
 
 #include <QObject>
+#include <QWidget>
+#include <QVariant>
+#include <QTimer>
 
 #include <mpv/client.h>
 #include <mpv/qthelper.hpp>
@@ -27,7 +30,7 @@ public:
 
     void setVolume(int volume);
 
-    void setMute(bool mute);
+    void toggleMute();
 
     void setSpeed(double speed);
 
@@ -35,8 +38,13 @@ public:
 
     void initializeSliderDuration();
 
+    void sliderDragStarted();
+
+    void sliderDragStopped();
+
 private:
     mpv_handle *mpv;
+
     Application *application;
 
     void command(const QStringList &args);
@@ -44,6 +52,10 @@ private:
     void setProperty(const QString &name, const QVariant &value);
 
     [[nodiscard]] QVariant getProperty(const QString &name) const;
+
+    bool sliderBeingDragged;
+
+    bool sliderInitialized;
 };
 
 #endif // CONTROLLER_H
