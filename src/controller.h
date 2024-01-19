@@ -28,6 +28,8 @@ public:
 
     void seek(int seconds);
 
+    void seekRelative(int seconds);
+
     void setVolume(int volume);
 
     void toggleMute();

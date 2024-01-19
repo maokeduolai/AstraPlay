@@ -42,6 +42,21 @@ Application::Application(QWidget *parent)
 
     // 跳转到指定播放位置
     connect(slider, &QSlider::sliderReleased, this, &Application::on_slider_Released);
+
+    // 增加播放速度（0.5x）
+    connect(ui->speedUp, &QAction::triggered, this, &Application::on_actionSpeedUp_triggered);
+
+    // 减少播放速度（0.5x）
+    connect(ui->speedDown, &QAction::triggered, this, &Application::on_actionSpeedDown_triggered);
+
+    // 重置播放速度
+    connect(ui->speedReset, &QAction::triggered, this, &Application::on_actionSpeedReset_triggered);
+
+    // 后退3秒
+    connect(ui->toolBack, &QAction::triggered, this, &Application::on_actionToolBack_triggered);
+
+    // 前进3秒
+    connect(ui->toolForward, &QAction::triggered, this, &Application::on_actionToolForward_triggered);
 }
 
 Application::~Application() {
@@ -114,6 +129,31 @@ void Application::updateVolumeIcon(bool isMute) {
 void Application::on_slider_Released() {
     int seconds = slider->value();
     controller->seek(seconds);
+}
+
+// 增加播放速度（0.5x）
+void Application::on_actionSpeedUp_triggered() {
+    controller->setSpeed(0.5);
+}
+
+// 减少播放速度（0.5x）
+void Application::on_actionSpeedDown_triggered() {
+    controller->setSpeed(-0.5);
+}
+
+// 重置播放速度
+void Application::on_actionSpeedReset_triggered() {
+    controller->setSpeed(0);
+}
+
+// 后退3秒
+void Application::on_actionToolBack_triggered() {
+    controller->seekRelative(-3);
+}
+
+// 前进3秒
+void Application::on_actionToolForward_triggered() {
+    controller->seekRelative(3);
 }
 
 // 给Controller类提供slider用于对播放进度滑块进行初始化与更新操作

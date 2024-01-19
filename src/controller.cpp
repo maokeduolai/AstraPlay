@@ -109,6 +109,12 @@ void Controller::seek(int seconds) {
     command(args);
 }
 
+// 跳转到相对播放位置
+void Controller::seekRelative(int seconds) {
+    QStringList args = {"seek", QString::number(seconds), "relative"};
+    command(args);
+}
+
 // 切换播放暂停
 void Controller::togglePlayPause() {
     // 获取当前的暂停状态
@@ -142,7 +148,14 @@ void Controller::toggleMute() {
 
 // 设置播放速度
 void Controller::setSpeed(double speed) {
-    setProperty("speed", speed);
+    QVariant qCurrentSpeed = getProperty("speed");
+    double const currentSpeed = qCurrentSpeed.toDouble();
+
+    if (currentSpeed + speed <= 10 && currentSpeed + speed >= 0 && speed!=0) {
+        setProperty("speed", currentSpeed + speed);
+    } else if (speed == 0) {
+        setProperty("speed", 1.0);
+    }
 }
 
 // 发送命令到MPV

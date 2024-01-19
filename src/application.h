@@ -137,6 +137,16 @@ private slots:
 
     void on_slider_Released();
 
+    void on_actionSpeedUp_triggered();
+
+    void on_actionSpeedDown_triggered();
+
+    void on_actionSpeedReset_triggered();
+
+    void on_actionToolBack_triggered();
+
+    void on_actionToolForward_triggered();
+
 private:
     Ui::Application *ui;
 

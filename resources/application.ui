@@ -174,12 +174,18 @@
   </action>
   <action name="speedUp">
    <property name="text">
-    <string>速度增加（0.1x）</string>
+    <string>速度增加（0.5x）</string>
+   </property>
+   <property name="toolTip">
+    <string>速度增加（0.5x）</string>
    </property>
   </action>
   <action name="speedDown">
    <property name="text">
-    <string>速度减少（0.1x）</string>
+    <string>速度减少（0.5x）</string>
+   </property>
+   <property name="toolTip">
+    <string>速度减少（0.5x）</string>
    </property>
   </action>
   <action name="speedReset">
@@ -296,7 +302,7 @@
     <string>后退</string>
    </property>
    <property name="toolTip">
-    <string>后退</string>
+    <string>后退3秒</string>
    </property>
   </action>
   <action name="toolForward">
@@ -308,7 +314,7 @@
     <string>前进</string>
    </property>
    <property name="toolTip">
-    <string>前进</string>
+    <string>前进3秒</string>
    </property>
   </action>
  </widget>
