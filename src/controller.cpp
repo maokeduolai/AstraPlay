@@ -25,11 +25,12 @@ Controller::Controller(Application *app, QObject *parent)
         // 设置视频同步模式
         mpv_set_option_string(mpv, "video-sync", "display-resample");
 
+        // 设置视频循环播放
+        mpv_set_option_string(mpv, "loop-file", "inf");
+
         // 设置初始音量为80
         int initialVolume = 80;
         mpv_set_option(mpv, "volume", MPV_FORMAT_INT64, &initialVolume);
-
-        // 监听
 
         // 初始化MPV完成后启动它
         if (mpv_initialize(mpv) < 0) {

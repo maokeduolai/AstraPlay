@@ -4,7 +4,7 @@
 Application::Application(QWidget *parent)
         : QMainWindow(parent), ui(new Ui::Application), slider(new QSlider(Qt::Horizontal, this)), toolBar(nullptr),
           controller(new Controller(this)), volumeAction(new VolumeAction(this)),
-          settings("history.ini", QSettings::IniFormat) {
+          settings("history.ini", QSettings::IniFormat), isFullScreen(false) {
     ui->setupUi(this);
 
     // 创建一个播放进度滑块
@@ -25,6 +25,9 @@ Application::Application(QWidget *parent)
 
     // 调用controller.cpp中的函数，将MPV的视频输出绑定到playerWidget上
     controller->setPlayerWidget(ui->playerWidget);
+
+    // 在playerWidget上安装事件过滤器
+    ui->playerWidget->installEventFilter(this);
 
     // 加载播放历史记录
     loadHistory();
@@ -67,10 +70,23 @@ Application::Application(QWidget *parent)
 
     // 清除历史记录
     connect(ui->clearHistory, &QAction::triggered, this, &Application::on_actionClearHistory_triggered);
+
+    // 全屏播放
+    connect(ui->fullScreen, &QAction::triggered, this, &Application::on_actionFullScreen_triggered);
 }
 
 Application::~Application() {
     delete ui;
+}
+
+// 重写eventFilter()方法
+bool Application::eventFilter(QObject *watched, QEvent *event) {
+    // 双击播放窗口全屏播放
+    if (watched == ui->playerWidget && event->type() == QEvent::MouseButtonDblClick) {
+        Application::on_actionFullScreen_triggered();
+        return true;
+    }
+    return QMainWindow::eventFilter(watched, event);
 }
 
 // 工具栏显示与隐藏行为
@@ -216,6 +232,28 @@ void Application::updateVolumeIcon(bool isMute) {
         volumeAction->setVolumeIcon(QIcon(":/icons/icons/mute.png"));
     } else {
         volumeAction->setVolumeIcon(QIcon(":/icons/icons/volume.png"));
+    }
+}
+
+// 全屏播放
+void Application::on_actionFullScreen_triggered() {
+    if (isFullScreen) {
+        // 退出全屏
+        // 恢复原来的窗口标志
+        ui->playerWidget->setWindowFlags(originalFlags);
+
+        // 恢复原来的窗口状态
+        ui->playerWidget->showNormal();
+        isFullScreen = false;
+    } else {
+        // 进入全屏
+        // 保存当前的窗口标志
+        originalFlags = ui->playerWidget->windowFlags();
+
+        // 将playerWidget提升为顶级窗口
+        ui->playerWidget->setWindowFlags(Qt::Window);
+        ui->playerWidget->showFullScreen();
+        isFullScreen = true;
     }
 }
 

@@ -158,6 +158,10 @@ private slots:
 
     void on_actionClearHistory_triggered();
 
+    void on_actionFullScreen_triggered();
+
+    bool eventFilter(QObject *watched, QEvent *event) override;
+
 private:
     Ui::Application *ui;
 
@@ -173,7 +177,11 @@ private:
 
     QSettings settings;
 
-    const int maxHistorySize = 5;
+    const int maxHistorySize = 5;  // 最大可记录历史数为5条
+
+    bool isFullScreen;
+
+    Qt::WindowFlags originalFlags;
 };
 
 #endif // APPLICATION_H
