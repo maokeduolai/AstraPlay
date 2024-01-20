@@ -2,7 +2,8 @@
 #include "application.h"
 
 Controller::Controller(Application *app, QObject *parent)
-        : QObject(parent), mpv(mpv_create()), application(app), sliderBeingDragged(false), sliderInitialized(false) {
+        : QObject(parent), mpv(mpv_create()), application(app), sliderBeingDragged(false), sliderInitialized(false),
+          duration(0.0) {
     // 根据滑块是否被按下，来判断是否处于拖动滑块状态
     QSlider *slider = application->getSlider();
     if (slider) {
@@ -28,6 +29,8 @@ Controller::Controller(Application *app, QObject *parent)
         int initialVolume = 80;
         mpv_set_option(mpv, "volume", MPV_FORMAT_INT64, &initialVolume);
 
+        // 监听
+
         // 初始化MPV完成后启动它
         if (mpv_initialize(mpv) < 0) {
             // 错误处理
@@ -36,8 +39,13 @@ Controller::Controller(Application *app, QObject *parent)
 
     // 设置定时器
     auto *timer = new QTimer(this);
+
+    // 每秒更新一次播放进度
     connect(timer, &QTimer::timeout, this, &Controller::updateSliderPosition);
-    timer->start(1000);  // 每秒更新一次播放进度
+
+    // 检测视频时长变化，应对在线视频在开始播放时，可能并未完全加载，其总时长未知的情形
+    connect(timer, &QTimer::timeout, this, &Controller::updateSliderDuration);
+    timer->start(1000);
 }
 
 Controller::~Controller() {
@@ -67,15 +75,40 @@ void Controller::openFile(const QString &filename) {
     application->updatePlayIcon(true);
 }
 
+// 打开URL
+void Controller::handleUrl(const QString &url) {
+    QStringList args = {"loadfile", url};
+    command(args);
+
+    // 初始化滑块
+    initializeSliderDuration();
+
+    // 更新进度条初始化状态
+    sliderInitialized = true;
+
+    // 切换播放图标到正在播放状态
+    application->updatePlayIcon(true);
+}
+
 // 初始化滑块的总时长
 void Controller::initializeSliderDuration() {
+    duration = Controller::getProperty("duration").toDouble();
     if (mpv) {
-        double duration;
-        if (mpv_get_property(mpv, "duration", MPV_FORMAT_DOUBLE, &duration) == 0 && duration >= 0) {
+        if (duration > 0) {
             // 设置滑块的最大值为视频总时长（秒）
             QSlider *slider = application->getSlider();
             slider->setMaximum(static_cast<int>(duration));
         }
+    }
+}
+
+// 应对在线视频在开始播放时，可能并未完全加载，其总时长未知需要缓冲后更新的情况
+void Controller::updateSliderDuration() {
+    double newDuration = Controller::getProperty("duration").toDouble();
+    if (newDuration != duration) {
+        // 设置滑块的最大值为视频总时长（秒）
+        QSlider *slider = application->getSlider();
+        slider->setMaximum(static_cast<int>(newDuration));
     }
 }
 
@@ -111,8 +144,14 @@ void Controller::seek(int seconds) {
 
 // 跳转到相对播放位置
 void Controller::seekRelative(int seconds) {
-    QStringList args = {"seek", QString::number(seconds), "relative"};
-    command(args);
+    // 添加判断防止跳转越界
+    QVariant QTime = getProperty("time-pos");
+    const double time = QTime.toDouble();
+
+    if ((time + seconds <= duration) && (time + seconds >= 0.0)) {
+        QStringList args = {"seek", QString::number(seconds), "relative"};
+        command(args);
+    }
 }
 
 // 切换播放暂停
@@ -151,7 +190,7 @@ void Controller::setSpeed(double speed) {
     QVariant qCurrentSpeed = getProperty("speed");
     double const currentSpeed = qCurrentSpeed.toDouble();
 
-    if (currentSpeed + speed <= 10 && currentSpeed + speed >= 0 && speed!=0) {
+    if (currentSpeed + speed <= 10 && currentSpeed + speed >= 0 && speed != 0) {
         setProperty("speed", currentSpeed + speed);
     } else if (speed == 0) {
         setProperty("speed", 1.0);

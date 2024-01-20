@@ -10,10 +10,10 @@
 #include <QApplication>
 #include <QPushButton>
 #include <QDebug>
-#include <memory>
 #include <QEvent>
 #include <QFileDialog>
 #include <QCoreApplication>
+#include <QLineEdit>
 
 #include "controller.h"
 #include "../resources/ui_application.h"
@@ -146,6 +146,8 @@ private slots:
     void on_actionToolBack_triggered();
 
     void on_actionToolForward_triggered();
+
+    void on_actionOpenURL_triggered();
 
 private:
     Ui::Application *ui;

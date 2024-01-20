@@ -34,6 +34,9 @@ Application::Application(QWidget *parent)
     // 打开视频文件
     connect(ui->openFile, &QAction::triggered, this, &Application::on_actionOpenFile_triggered);
 
+    // 打开URL
+    connect(ui->openURL, &QAction::triggered, this, &Application::on_actionOpenURL_triggered);
+
     // 退出软件
     connect(ui->exitProgram, &QAction::triggered, this, &Application::on_actionExitProgram_triggered);
 
@@ -94,6 +97,30 @@ void Application::on_actionOpenFile_triggered() {
     // 在路径不为空的情况下打开文件
     if (!filename.isEmpty()) {
         controller->openFile(filename);  // 调用Controller的openFile方法
+    }
+}
+
+// 打开URL
+void Application::on_actionOpenURL_triggered() {
+    QDialog dialog(this);
+    QGridLayout layout(&dialog);
+
+    // 创建布局
+    QLineEdit lineEdit;
+    layout.addWidget(&lineEdit, 0, 0, 1, 2);
+
+    // 创建按钮
+    QPushButton cancelButton("取消", &dialog);
+    QPushButton confirmButton("确认", &dialog);
+    layout.addWidget(&cancelButton, 1, 0);
+    layout.addWidget(&confirmButton, 1, 1);
+
+    connect(&cancelButton, &QPushButton::clicked, &dialog, &QDialog::reject);
+    connect(&confirmButton, &QPushButton::clicked, &dialog, &QDialog::accept);
+
+    if(dialog.exec() == QDialog::Accepted) {
+        QString url = lineEdit.text();
+        controller->handleUrl(url);
     }
 }
 

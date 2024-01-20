@@ -38,11 +38,15 @@ public:
 
     void updateSliderPosition();
 
+    void updateSliderDuration();
+
     void initializeSliderDuration();
 
     void sliderDragStarted();
 
     void sliderDragStopped();
+
+    void handleUrl(const QString &url);
 
 private:
     mpv_handle *mpv;
@@ -58,6 +62,8 @@ private:
     bool sliderBeingDragged;
 
     bool sliderInitialized;
+
+    double duration;
 };
 
 #endif // CONTROLLER_H
