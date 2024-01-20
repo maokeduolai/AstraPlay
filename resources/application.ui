@@ -48,9 +48,15 @@
     <property name="title">
      <string>文件</string>
     </property>
+    <widget class="QMenu" name="menuHistory">
+     <property name="title">
+      <string>最近打开的文件</string>
+     </property>
+     <addaction name="clearHistory"/>
+    </widget>
     <addaction name="openFile"/>
     <addaction name="openURL"/>
-    <addaction name="recentFiles"/>
+    <addaction name="menuHistory"/>
     <addaction name="exitProgram"/>
    </widget>
    <widget class="QMenu" name="menuWindow">
@@ -155,11 +161,6 @@
   <action name="openURL">
    <property name="text">
     <string>打开URL</string>
-   </property>
-  </action>
-  <action name="recentFiles">
-   <property name="text">
-    <string>最近打开的文件</string>
    </property>
   </action>
   <action name="exitProgram">
@@ -315,6 +316,14 @@
    </property>
    <property name="toolTip">
     <string>前进3秒</string>
+   </property>
+  </action>
+  <action name="clearHistory">
+   <property name="text">
+    <string>清除播放记录</string>
+   </property>
+   <property name="toolTip">
+    <string>清除播放记录</string>
    </property>
   </action>
  </widget>

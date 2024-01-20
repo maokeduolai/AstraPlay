@@ -14,6 +14,7 @@
 #include <QFileDialog>
 #include <QCoreApplication>
 #include <QLineEdit>
+#include <QSettings>
 
 #include "controller.h"
 #include "../resources/ui_application.h"
@@ -129,9 +130,15 @@ private slots:
 
     void setVolume(int newVolume);
 
+    void loadHistory();
+
+    void saveHistory();
+
+    void addHistory(const QString &filename);
+
     void on_actionOpenFile_triggered();
 
-    static void on_actionExitProgram_triggered();
+    void on_actionExitProgram_triggered();
 
     void on_actionTogglePlayPause_triggered();
 
@@ -149,6 +156,8 @@ private slots:
 
     void on_actionOpenURL_triggered();
 
+    void on_actionClearHistory_triggered();
+
 private:
     Ui::Application *ui;
 
@@ -159,6 +168,12 @@ private:
     Controller *controller;
 
     VolumeAction *volumeAction;
+
+    QList<QAction *> historyActions;
+
+    QSettings settings;
+
+    const int maxHistorySize = 5;
 };
 
 #endif // APPLICATION_H

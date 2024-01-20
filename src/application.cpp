@@ -3,7 +3,8 @@
 // 创建主窗口
 Application::Application(QWidget *parent)
         : QMainWindow(parent), ui(new Ui::Application), slider(new QSlider(Qt::Horizontal, this)), toolBar(nullptr),
-          controller(new Controller(this)), volumeAction(new VolumeAction(this)) {
+          controller(new Controller(this)), volumeAction(new VolumeAction(this)),
+          settings("history.ini", QSettings::IniFormat) {
     ui->setupUi(this);
 
     // 创建一个播放进度滑块
@@ -19,17 +20,20 @@ Application::Application(QWidget *parent)
     // 插入滑块
     toolBar->addWidget(slider);
 
-    // 连接切换静音的函数
-    connect(volumeAction, &VolumeAction::toggleMute, this, &Application::toggleMute);
-
-    // 连接音量变更信号与音量设置函数，同时传递改变后的值
-    connect(volumeAction, &VolumeAction::volumeChanged, this, &Application::setVolume);
-
     // 添加音量组件
     toolBar->addAction(volumeAction);
 
     // 调用controller.cpp中的函数，将MPV的视频输出绑定到playerWidget上
     controller->setPlayerWidget(ui->playerWidget);
+
+    // 加载播放历史记录
+    loadHistory();
+
+    // 连接切换静音的函数
+    connect(volumeAction, &VolumeAction::toggleMute, this, &Application::toggleMute);
+
+    // 连接音量变更信号与音量设置函数，同时传递改变后的值
+    connect(volumeAction, &VolumeAction::volumeChanged, this, &Application::setVolume);
 
     // 打开视频文件
     connect(ui->openFile, &QAction::triggered, this, &Application::on_actionOpenFile_triggered);
@@ -60,6 +64,9 @@ Application::Application(QWidget *parent)
 
     // 前进3秒
     connect(ui->toolForward, &QAction::triggered, this, &Application::on_actionToolForward_triggered);
+
+    // 清除历史记录
+    connect(ui->clearHistory, &QAction::triggered, this, &Application::on_actionClearHistory_triggered);
 }
 
 Application::~Application() {
@@ -89,6 +96,61 @@ void Application::toggleMute() {
     controller->toggleMute();
 }
 
+// 加载历史记录
+void Application::loadHistory() {
+    QStringList files = settings.value("history").toStringList();
+
+    // 向列表中添加历史记录
+    for (const QString &file: files) {
+        addHistory(file);
+    }
+}
+
+// 保存历史记录
+void Application::saveHistory() {
+    QStringList files;
+    for (const QAction *action: historyActions) {
+        files.append(action->data().toString());
+    }
+
+    settings.setValue("history", files);
+}
+
+// 添加历史记录
+void Application::addHistory(const QString &filename) {
+    // 在列表中仅显示文件名
+    auto *action = new QAction(QFileInfo(filename).fileName(), this);
+    action->setData(filename);
+    connect(action, &QAction::triggered, [this, filename]() {
+        controller->openFile(filename);  // 点击记录时打开对应文件
+    });
+
+    // 向界面中添加记录
+    historyActions.prepend(action);
+    ui->menuHistory->insertAction(ui->menuHistory->actions().isEmpty() ? nullptr : ui->menuHistory->actions().first(),
+                                  action);
+
+    // 当记录条数超过5条时，清理最早的一条记录
+    while (historyActions.size() > maxHistorySize) {
+        QAction *lastAction = historyActions.takeLast();
+        ui->menuHistory->removeAction(lastAction);
+        delete lastAction;
+    }
+
+    saveHistory();
+}
+
+// 清除历史记录
+void Application::on_actionClearHistory_triggered() {
+    for (QAction *action: historyActions) {
+        ui->menuHistory->removeAction(action);
+        delete action;
+    }
+
+    historyActions.clear();
+    saveHistory();
+}
+
 // 打开视频文件
 void Application::on_actionOpenFile_triggered() {
     // 弹出文件选择对话框让用户选择文件
@@ -97,6 +159,7 @@ void Application::on_actionOpenFile_triggered() {
     // 在路径不为空的情况下打开文件
     if (!filename.isEmpty()) {
         controller->openFile(filename);  // 调用Controller的openFile方法
+        Application::addHistory(filename);
     }
 }
 
@@ -118,14 +181,18 @@ void Application::on_actionOpenURL_triggered() {
     connect(&cancelButton, &QPushButton::clicked, &dialog, &QDialog::reject);
     connect(&confirmButton, &QPushButton::clicked, &dialog, &QDialog::accept);
 
-    if(dialog.exec() == QDialog::Accepted) {
+    if (dialog.exec() == QDialog::Accepted) {
         QString url = lineEdit.text();
         controller->handleUrl(url);
+        Application::addHistory(url);
     }
 }
 
 // 退出应用程序
 void Application::on_actionExitProgram_triggered() {
+    // 保存播放历史记录
+    Application::saveHistory();
+
     QCoreApplication::quit();
 }
 
