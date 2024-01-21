@@ -48,6 +48,22 @@ public:
 
     void handleUrl(const QString &url);
 
+    void zoomIn();
+
+    void zoomOut();
+
+    void zoomReset();
+
+    void moveLeft();
+
+    void moveRight();
+
+    void moveUp();
+
+    void moveDown();
+
+    void moveReset();
+
 private:
     mpv_handle *mpv;
 
@@ -64,6 +80,12 @@ private:
     bool sliderInitialized;
 
     double duration;
+
+    double zoomFactor;
+
+    double panX;
+
+    double panY;
 };
 
 #endif // CONTROLLER_H

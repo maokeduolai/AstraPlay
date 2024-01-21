@@ -93,6 +93,7 @@
      <addaction name="moveRight"/>
      <addaction name="moveUp"/>
      <addaction name="moveDown"/>
+     <addaction name="moveReset"/>
     </widget>
     <addaction name="menuZoom"/>
     <addaction name="captureScreen"/>
@@ -324,6 +325,14 @@
    </property>
    <property name="toolTip">
     <string>清除播放记录</string>
+   </property>
+  </action>
+  <action name="moveReset">
+   <property name="text">
+    <string>移动重置</string>
+   </property>
+   <property name="toolTip">
+    <string>移动重置</string>
    </property>
   </action>
  </widget>

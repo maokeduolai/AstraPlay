@@ -160,6 +160,22 @@ private slots:
 
     void on_actionFullScreen_triggered();
 
+    void on_actionZoomIn_triggered();
+
+    void on_actionZoomOut_triggered();
+
+    void on_actionZoomReset_triggered();
+
+    void on_actionMoveLeft_triggered();
+
+    void on_actionMoveRight_triggered();
+
+    void on_actionMoveUp_triggered();
+
+    void on_actionMoveDown_triggered();
+
+    void on_actionMoveReset_triggered();
+
     bool eventFilter(QObject *watched, QEvent *event) override;
 
 private:

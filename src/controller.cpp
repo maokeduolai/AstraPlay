@@ -3,7 +3,7 @@
 
 Controller::Controller(Application *app, QObject *parent)
         : QObject(parent), mpv(mpv_create()), application(app), sliderBeingDragged(false), sliderInitialized(false),
-          duration(0.0) {
+          duration(0.0), zoomFactor(0.0), panX(0.0), panY(0.0) {
     // 根据滑块是否被按下，来判断是否处于拖动滑块状态
     QSlider *slider = application->getSlider();
     if (slider) {
@@ -135,6 +135,56 @@ void Controller::sliderDragStarted() {
 // 结束拖动播放进度滑块，更新状态
 void Controller::sliderDragStopped() {
     sliderBeingDragged = false;
+}
+
+// 放大视频10%
+void Controller::zoomIn() {
+    zoomFactor += 0.1;
+    if (zoomFactor < 3.0) {
+        setProperty("video-zoom", zoomFactor);
+    }
+}
+
+// 缩小视频10%
+void Controller::zoomOut() {
+    zoomFactor -= 0.1;
+    if (zoomFactor > -3.0) {
+        setProperty("video-zoom", zoomFactor);
+    }
+}
+
+// 重置视频缩放
+void Controller::zoomReset() {
+    zoomFactor = 0.0;
+    setProperty("video-zoom", 0.0);
+}
+
+// 视频位置控制
+void Controller::moveLeft() {
+    panX -= 0.1;
+    setProperty("video-pan-x", panX);
+}
+
+void Controller::moveRight() {
+    panX += 0.1;
+    setProperty("video-pan-x", panX);
+}
+
+void Controller::moveUp() {
+    panY -= 0.1;
+    setProperty("video-pan-y", panY);
+}
+
+void Controller::moveDown() {
+    panY += 0.1;
+    setProperty("video-pan-y", panY);
+}
+
+void Controller::moveReset() {
+    panX = 0.0;
+    panY = 0.0;
+    setProperty("video-pan-x", panX);
+    setProperty("video-pan-y", panY);
 }
 
 // 跳转到指定播放位置

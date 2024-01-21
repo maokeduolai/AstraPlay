@@ -73,6 +73,30 @@ Application::Application(QWidget *parent)
 
     // 全屏播放
     connect(ui->fullScreen, &QAction::triggered, this, &Application::on_actionFullScreen_triggered);
+
+    // 放大视频10%
+    connect(ui->zoomIn, &QAction::triggered, this, &Application::on_actionZoomIn_triggered);
+
+    // 缩小视频10%
+    connect(ui->zoomOut, &QAction::triggered, this, &Application::on_actionZoomOut_triggered);
+
+    // 重置视频缩放
+    connect(ui->zoomReset, &QAction::triggered, this, &Application::on_actionZoomReset_triggered);
+
+    // 向左移动视频画面
+    connect(ui->moveLeft, &QAction::triggered, this, &Application::on_actionMoveLeft_triggered);
+
+    // 向右移动视频画面
+    connect(ui->moveRight, &QAction::triggered, this, &Application::on_actionMoveRight_triggered);
+
+    // 向上移动视频画面
+    connect(ui->moveUp, &QAction::triggered, this, &Application::on_actionMoveUp_triggered);
+
+    // 向下移动视频画面
+    connect(ui->moveDown, &QAction::triggered, this, &Application::on_actionMoveDown_triggered);
+
+    // 重置视频画面移动
+    connect(ui->moveReset, &QAction::triggered, this, &Application::on_actionMoveReset_triggered);
 }
 
 Application::~Application() {
@@ -81,9 +105,15 @@ Application::~Application() {
 
 // 重写eventFilter()方法
 bool Application::eventFilter(QObject *watched, QEvent *event) {
-    // 双击播放窗口全屏播放
+    // 双击播放窗口切换全屏播放
     if (watched == ui->playerWidget && event->type() == QEvent::MouseButtonDblClick) {
         Application::on_actionFullScreen_triggered();
+        return true;
+    }
+
+    // 单击播放窗口切换播放、暂停
+    if (watched == ui->playerWidget && event->type() == QEvent::MouseButtonPress) {
+        Application::on_actionTogglePlayPause_triggered();
         return true;
     }
     return QMainWindow::eventFilter(watched, event);
@@ -255,6 +285,41 @@ void Application::on_actionFullScreen_triggered() {
         ui->playerWidget->showFullScreen();
         isFullScreen = true;
     }
+}
+
+// 放大视频10%
+void Application::on_actionZoomIn_triggered() {
+    controller->zoomIn();
+}
+
+// 缩小视频10%
+void Application::on_actionZoomOut_triggered() {
+    controller->zoomOut();
+}
+
+// 视频缩放控制
+void Application::on_actionZoomReset_triggered() {
+    controller->zoomReset();
+}
+
+void Application::on_actionMoveLeft_triggered() {
+    controller->moveLeft();
+}
+
+void Application::on_actionMoveRight_triggered() {
+    controller->moveRight();
+}
+
+void Application::on_actionMoveUp_triggered() {
+    controller->moveUp();
+}
+
+void Application::on_actionMoveDown_triggered() {
+    controller->moveDown();
+}
+
+void Application::on_actionMoveReset_triggered() {
+    controller->moveReset();
 }
 
 // 跳转到指定播放位置
