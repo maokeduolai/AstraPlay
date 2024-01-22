@@ -18,6 +18,7 @@
 
 #include "controller.h"
 #include "../resources/ui_application.h"
+#include "screen_capture.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -175,6 +176,8 @@ private slots:
     void on_actionMoveDown_triggered();
 
     void on_actionMoveReset_triggered();
+
+    void on_actionCaptureScreen_triggered();
 
     bool eventFilter(QObject *watched, QEvent *event) override;
 

@@ -24,6 +24,8 @@ set(SOURCE_FILES
         src/application.h
         src/controller.cpp
         src/controller.h
+        src/screen_capture.cpp
+        src/screen_capture.h
         resources/application.ui
         resources/icons.qrc
         include/mpv/client.h

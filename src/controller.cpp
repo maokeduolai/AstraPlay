@@ -66,6 +66,13 @@ void Controller::openFile(const QString &filename) {
     QStringList args = {"loadfile", filename};
     command(args);
 
+    // 确保播放状态正确
+    QVariant pauseValue = getProperty("pause");
+    const bool isPaused = pauseValue.toBool();
+    if (isPaused) {
+        Controller::togglePlayPause();
+    }
+
     // 初始化滑块
     initializeSliderDuration();
 
@@ -261,4 +268,9 @@ void Controller::setProperty(const QString &name, const QVariant &value) {
 // 获取MPV属性值函数
 QVariant Controller::getProperty(const QString &name) const {
     return mpv::qt::get_property_variant(mpv, name);
+}
+
+// 返回mpv实例
+mpv_handle *Controller::getMpvInstance() const {
+    return this->mpv;
 }

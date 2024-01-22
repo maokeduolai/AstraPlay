@@ -19,7 +19,8 @@ public:
 
     ~Controller() override;
 
-    // 设置播放窗口
+    [[nodiscard]] mpv_handle *getMpvInstance() const;
+
     void setPlayerWidget(QWidget *widget);
 
     void openFile(const QString &filename);
@@ -64,16 +65,16 @@ public:
 
     void moveReset();
 
-private:
-    mpv_handle *mpv;
-
-    Application *application;
-
     void command(const QStringList &args);
 
     void setProperty(const QString &name, const QVariant &value);
 
     [[nodiscard]] QVariant getProperty(const QString &name) const;
+
+private:
+    mpv_handle *mpv;
+
+    Application *application;
 
     bool sliderBeingDragged;
 

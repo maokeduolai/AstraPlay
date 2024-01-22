@@ -97,6 +97,9 @@ Application::Application(QWidget *parent)
 
     // 重置视频画面移动
     connect(ui->moveReset, &QAction::triggered, this, &Application::on_actionMoveReset_triggered);
+
+    // 视频截图
+    connect(ui->captureScreen, &QAction::triggered, this, &Application::on_actionCaptureScreen_triggered);
 }
 
 Application::~Application() {
@@ -351,6 +354,18 @@ void Application::on_actionToolBack_triggered() {
 // 前进3秒
 void Application::on_actionToolForward_triggered() {
     controller->seekRelative(3);
+}
+
+// 视频截图窗口
+void Application::on_actionCaptureScreen_triggered() {
+    // 获取mpv实例
+    mpv_handle *mpv = controller->getMpvInstance();
+
+    // 创建截图窗口实例
+    auto *dialog = new ScreenCapture(mpv, this);
+
+    // 显示截图窗口
+    dialog->show();
 }
 
 // 给Controller类提供slider用于对播放进度滑块进行初始化与更新操作
