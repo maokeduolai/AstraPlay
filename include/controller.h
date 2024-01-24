@@ -6,8 +6,8 @@
 #include <QVariant>
 #include <QTimer>
 
-#include <mpv/client.h>
-#include <mpv/qthelper.hpp>
+#include "mpv/client.h"
+#include "mpv/qthelper.hpp"
 
 class Application;
 

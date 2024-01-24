@@ -16,9 +16,10 @@
 #include <QLineEdit>
 #include <QSettings>
 
-#include "controller.h"
 #include "../resources/ui_application.h"
+#include "controller.h"
 #include "screen_capture.h"
+#include "video_downloader.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -179,6 +180,16 @@ private slots:
 
     void on_actionCaptureScreen_triggered();
 
+    void on_actionVideoDownload_triggered();
+
+    void on_DownloadStarted();
+
+    void on_DownloadProgress(const QString &status);
+
+    void on_DownloadFinished(const QString &filePath);
+
+    void on_DownloadError(const QString &error);
+
     bool eventFilter(QObject *watched, QEvent *event) override;
 
 private:
@@ -191,6 +202,8 @@ private:
     Controller *controller;
 
     VolumeAction *volumeAction;
+
+    VideoDownloader *videoDownloader;
 
     QList<QAction *> historyActions;
 

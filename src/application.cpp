@@ -4,7 +4,8 @@
 Application::Application(QWidget *parent)
         : QMainWindow(parent), ui(new Ui::Application), slider(new QSlider(Qt::Horizontal, this)), toolBar(nullptr),
           controller(new Controller(this)), volumeAction(new VolumeAction(this)),
-          settings("history.ini", QSettings::IniFormat), isFullScreen(false) {
+          settings("history.ini", QSettings::IniFormat), isFullScreen(false),
+          videoDownloader(new VideoDownloader(this)) {
     ui->setupUi(this);
 
     // 创建一个播放进度滑块
@@ -38,6 +39,7 @@ Application::Application(QWidget *parent)
     // 连接音量变更信号与音量设置函数，同时传递改变后的值
     connect(volumeAction, &VolumeAction::volumeChanged, this, &Application::setVolume);
 
+
     // 打开视频文件
     connect(ui->openFile, &QAction::triggered, this, &Application::on_actionOpenFile_triggered);
 
@@ -47,11 +49,19 @@ Application::Application(QWidget *parent)
     // 退出软件
     connect(ui->exitProgram, &QAction::triggered, this, &Application::on_actionExitProgram_triggered);
 
+
     // 播放暂停视频
     connect(ui->toolPlay, &QAction::triggered, this, &Application::on_actionTogglePlayPause_triggered);
 
     // 跳转到指定播放位置
     connect(slider, &QSlider::sliderReleased, this, &Application::on_slider_Released);
+
+    // 清除历史记录
+    connect(ui->clearHistory, &QAction::triggered, this, &Application::on_actionClearHistory_triggered);
+
+    // 全屏播放
+    connect(ui->fullScreen, &QAction::triggered, this, &Application::on_actionFullScreen_triggered);
+
 
     // 增加播放速度（0.5x）
     connect(ui->speedUp, &QAction::triggered, this, &Application::on_actionSpeedUp_triggered);
@@ -62,17 +72,13 @@ Application::Application(QWidget *parent)
     // 重置播放速度
     connect(ui->speedReset, &QAction::triggered, this, &Application::on_actionSpeedReset_triggered);
 
+
     // 后退3秒
     connect(ui->toolBack, &QAction::triggered, this, &Application::on_actionToolBack_triggered);
 
     // 前进3秒
     connect(ui->toolForward, &QAction::triggered, this, &Application::on_actionToolForward_triggered);
 
-    // 清除历史记录
-    connect(ui->clearHistory, &QAction::triggered, this, &Application::on_actionClearHistory_triggered);
-
-    // 全屏播放
-    connect(ui->fullScreen, &QAction::triggered, this, &Application::on_actionFullScreen_triggered);
 
     // 放大视频10%
     connect(ui->zoomIn, &QAction::triggered, this, &Application::on_actionZoomIn_triggered);
@@ -82,6 +88,7 @@ Application::Application(QWidget *parent)
 
     // 重置视频缩放
     connect(ui->zoomReset, &QAction::triggered, this, &Application::on_actionZoomReset_triggered);
+
 
     // 向左移动视频画面
     connect(ui->moveLeft, &QAction::triggered, this, &Application::on_actionMoveLeft_triggered);
@@ -98,8 +105,16 @@ Application::Application(QWidget *parent)
     // 重置视频画面移动
     connect(ui->moveReset, &QAction::triggered, this, &Application::on_actionMoveReset_triggered);
 
+
     // 视频截图
     connect(ui->captureScreen, &QAction::triggered, this, &Application::on_actionCaptureScreen_triggered);
+
+    // 视频下载
+    connect(ui->videoDownload, &QAction::triggered, this, &Application::on_actionVideoDownload_triggered);
+    connect(videoDownloader, &VideoDownloader::downloadStarted, this, &Application::on_DownloadStarted);
+    connect(videoDownloader, &VideoDownloader::downloadProgress, this, &Application::on_DownloadProgress);
+    connect(videoDownloader, &VideoDownloader::downloadFinished, this, &Application::on_DownloadFinished);
+    connect(videoDownloader, &VideoDownloader::downloadError, this, &Application::on_DownloadError);
 }
 
 Application::~Application() {
@@ -290,21 +305,20 @@ void Application::on_actionFullScreen_triggered() {
     }
 }
 
-// 放大视频10%
+// 视频缩放控制
 void Application::on_actionZoomIn_triggered() {
     controller->zoomIn();
 }
 
-// 缩小视频10%
 void Application::on_actionZoomOut_triggered() {
     controller->zoomOut();
 }
 
-// 视频缩放控制
 void Application::on_actionZoomReset_triggered() {
     controller->zoomReset();
 }
 
+// 视频画面移动控制
 void Application::on_actionMoveLeft_triggered() {
     controller->moveLeft();
 }
@@ -366,6 +380,45 @@ void Application::on_actionCaptureScreen_triggered() {
 
     // 显示截图窗口
     dialog->show();
+}
+
+void Application::on_actionVideoDownload_triggered() {
+    QDialog dialog(this);
+    QGridLayout layout(&dialog);
+
+    // 创建布局
+    QLineEdit lineEdit;
+    layout.addWidget(&lineEdit, 0, 0, 1, 2);
+
+    // 创建按钮
+    QPushButton cancelButton("取消", &dialog);
+    QPushButton confirmButton("下载", &dialog);
+    layout.addWidget(&cancelButton, 1, 0);
+    layout.addWidget(&confirmButton, 1, 1);
+
+    connect(&cancelButton, &QPushButton::clicked, &dialog, &QDialog::reject);
+    connect(&confirmButton, &QPushButton::clicked, &dialog, &QDialog::accept);
+
+    if (dialog.exec() == QDialog::Accepted) {
+        QString videoUrl = lineEdit.text();
+        videoDownloader->downloadVideo(videoUrl);
+    }
+}
+
+void Application::on_DownloadStarted() {
+
+}
+
+void Application::on_DownloadProgress(const QString &status) {
+
+}
+
+void Application::on_DownloadError(const QString &error) {
+
+}
+
+void Application::on_DownloadFinished(const QString &filePath) {
+
 }
 
 // 给Controller类提供slider用于对播放进度滑块进行初始化与更新操作

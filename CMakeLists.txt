@@ -21,11 +21,10 @@ find_library(MPV_LIBRARY NAMES libmpv.dll.a libmpv-2.dll PATHS ${CMAKE_CURRENT_S
 set(SOURCE_FILES
         src/main.cpp
         src/application.cpp
-        src/application.h
         src/controller.cpp
-        src/controller.h
-        src/screen_capture.cpp
-        src/screen_capture.h
+        src/func/screen_capture.cpp
+        src/func/video_downloader.cpp
+        src/func/output_window.cpp
         resources/application.ui
         resources/icons.qrc
         include/mpv/client.h
@@ -33,6 +32,11 @@ set(SOURCE_FILES
         include/mpv/render_gl.h
         include/mpv/stream_cb.h
         include/mpv/qthelper.hpp
+        include/screen_capture.h
+        include/video_downloader.h
+        include/application.h
+        include/controller.h
+        include/output_window.h
 )
 add_executable(AstraPlay ${SOURCE_FILES})
 
