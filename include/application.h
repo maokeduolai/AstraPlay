@@ -17,6 +17,7 @@
 #include <QSettings>
 #include <QDesktopServices>
 #include <QLabel>
+#include <QString>
 
 #include "../resources/ui_application.h"
 #include "controller.h"
@@ -128,6 +129,8 @@ public:
 
     QLabel *timeLabel;
 
+    QString filename;
+
 protected:
     void enterEvent(QEvent *event) override;
 
@@ -143,7 +146,7 @@ private slots:
 
     void saveHistory();
 
-    void addHistory(const QString &filename);
+    void addHistory(const QString &filepath);
 
     void on_actionOpenFile_triggered();
 

@@ -200,12 +200,23 @@ void Application::saveHistory() {
 }
 
 // 添加历史记录
-void Application::addHistory(const QString &filename) {
+void Application::addHistory(const QString &filepath) {
+    // 检查历史记录中是否已存在该文件路径
+    bool alreadyExists = std::any_of(historyActions.begin(), historyActions.end(),
+                                     [&filepath](const QAction *action) {
+                                         return filepath == action->data().toString();
+                                     });
+
+    // 如果文件路径已存在，则不添加新记录
+    if (alreadyExists) {
+        return;
+    }
+
     // 在列表中仅显示文件名
-    auto *action = new QAction(QFileInfo(filename).fileName(), this);
-    action->setData(filename);
-    connect(action, &QAction::triggered, [this, filename]() {
-        controller->openFile(filename);  // 点击记录时打开对应文件
+    auto *action = new QAction(QFileInfo(filepath).fileName(), this);
+    action->setData(filepath);
+    connect(action, &QAction::triggered, [this, filepath]() {
+        controller->openFile(filepath);  // 点击记录时打开对应文件
     });
 
     // 向界面中添加记录
@@ -237,7 +248,7 @@ void Application::on_actionClearHistory_triggered() {
 // 打开视频文件
 void Application::on_actionOpenFile_triggered() {
     // 弹出文件选择对话框让用户选择文件
-    QString filename = QFileDialog::getOpenFileName(
+    filename = QFileDialog::getOpenFileName(
             this,
             tr("打开媒体文件"),
             "",
