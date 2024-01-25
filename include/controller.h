@@ -66,6 +66,10 @@ public:
 
     void moveReset();
 
+    void adjustAudio(double sec);
+
+    void resetAudioSync();
+
     void command(const QStringList &args);
 
     void setProperty(const QString &name, const QVariant &value);

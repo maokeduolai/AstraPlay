@@ -280,6 +280,20 @@ void Controller::setSpeed(double speed) {
     }
 }
 
+// 调整音频同步
+void Controller::adjustAudio(double sec) {
+    // 获取当前音频延迟
+    QVariant QCurrentDelay = getProperty("audio-delay");
+    double currentDelay = QCurrentDelay.toDouble();
+
+    // 调整音频延迟
+    setProperty("audio-delay", currentDelay + sec);
+}
+
+void Controller::resetAudioSync() {
+    setProperty("audio-delay", 0);
+}
+
 // 发送命令到MPV
 void Controller::command(const QStringList &args) {
     mpv::qt::command(mpv, args);  // 需添加异常处理

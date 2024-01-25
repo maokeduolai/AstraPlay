@@ -189,6 +189,12 @@ private slots:
 
     void on_actionVideoDownload_triggered();
 
+    void on_actionAuAdvance_triggered();
+
+    void on_actionAuDelay_triggered();
+
+    void on_actionAuSyncReset_triggered();
+
     void on_DownloadFinished(const QString &filePath);
 
     bool eventFilter(QObject *watched, QEvent *event) override;

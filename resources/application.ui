@@ -113,7 +113,16 @@
      <addaction name="volumeIncrease"/>
      <addaction name="volumeDecrease"/>
     </widget>
+    <widget class="QMenu" name="menu">
+     <property name="title">
+      <string>音频同步</string>
+     </property>
+     <addaction name="auAdvance"/>
+     <addaction name="auDelay"/>
+     <addaction name="auSyncReset"/>
+    </widget>
     <addaction name="menuVolume"/>
+    <addaction name="menu"/>
    </widget>
    <widget class="QMenu" name="menuSubtitle">
     <property name="title">
@@ -332,6 +341,21 @@
    </property>
    <property name="toolTip">
     <string>移动重置</string>
+   </property>
+  </action>
+  <action name="auAdvance">
+   <property name="text">
+    <string>音频提前（0.1s）</string>
+   </property>
+  </action>
+  <action name="auDelay">
+   <property name="text">
+    <string>音频延后（0.1s）</string>
+   </property>
+  </action>
+  <action name="auSyncReset">
+   <property name="text">
+    <string>重置同步</string>
    </property>
   </action>
  </widget>

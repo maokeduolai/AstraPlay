@@ -34,6 +34,7 @@ Application::Application(QWidget *parent)
     // 在playerWidget上安装事件过滤器
     ui->playerWidget->installEventFilter(this);
 
+
     // 加载播放历史记录
     loadHistory();
 
@@ -122,6 +123,17 @@ Application::Application(QWidget *parent)
 
     // 下载出现错误，显示错误信息
     connect(videoDownloader, &VideoDownloader::downloadError, this, &Application::on_DownloadError);
+
+
+    // 音频同步调节
+    // 提前0.1s
+    connect(ui->auAdvance, &QAction::triggered, this, &Application::on_actionAuAdvance_triggered);
+
+    // 延后0.1s
+    connect(ui->auDelay, &QAction::triggered, this, &Application::on_actionAuDelay_triggered);
+
+    // 重置同步
+    connect(ui->auSyncReset, &QAction::triggered, this, &Application::on_actionAuSyncReset_triggered);
 }
 
 Application::~Application() {
@@ -396,6 +408,22 @@ void Application::on_actionCaptureScreen_triggered() {
     dialog->show();
 }
 
+// 音频提前0.1s
+void Application::on_actionAuAdvance_triggered() {
+    controller->adjustAudio(-0.1);
+}
+
+// 音频延后0.1s
+void Application::on_actionAuDelay_triggered() {
+    controller->adjustAudio(0.1);
+}
+
+// 音频同步重置
+void Application::on_actionAuSyncReset_triggered() {
+    controller->resetAudioSync();
+}
+
+// 视频下载
 void Application::on_actionVideoDownload_triggered() {
     QDialog dialog(this);
     QGridLayout layout(&dialog);
