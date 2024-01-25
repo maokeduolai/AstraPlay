@@ -16,6 +16,9 @@ OutputWindow::OutputWindow(QWidget *parent) : QWidget(parent), process(new QProc
     // 连接信号和槽
     connect(process, &QProcess::readyReadStandardOutput, this, &OutputWindow::onReadyReadStandardOutput);
     connect(process, &QProcess::readyReadStandardError, this, &OutputWindow::onReadyReadStandardError);
+    connect(process, static_cast<void (QProcess::*)(int, QProcess::ExitStatus)>(&QProcess::finished), this,
+            &OutputWindow::processFinished);
+    connect(process, &QProcess::errorOccurred, this, &OutputWindow::errorOccurred);
 }
 
 // 开始进程
@@ -38,5 +41,7 @@ void OutputWindow::onReadyReadStandardOutput() {
 
 // 输出错误信息
 void OutputWindow::onReadyReadStandardError() {
-    textEdit->appendPlainText(process->readAllStandardError());
+    QString errorMessage = process->readAllStandardError();
+    textEdit->appendPlainText(errorMessage);
+    emit errorMessageEmit(errorMessage);
 }

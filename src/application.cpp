@@ -109,11 +109,14 @@ Application::Application(QWidget *parent)
     // 视频截图
     connect(ui->captureScreen, &QAction::triggered, this, &Application::on_actionCaptureScreen_triggered);
 
+
     // 视频下载
     connect(ui->videoDownload, &QAction::triggered, this, &Application::on_actionVideoDownload_triggered);
-    connect(videoDownloader, &VideoDownloader::downloadStarted, this, &Application::on_DownloadStarted);
-    connect(videoDownloader, &VideoDownloader::downloadProgress, this, &Application::on_DownloadProgress);
+
+    // 下载完成对应函数
     connect(videoDownloader, &VideoDownloader::downloadFinished, this, &Application::on_DownloadFinished);
+
+    // 下载出现错误，显示错误信息
     connect(videoDownloader, &VideoDownloader::downloadError, this, &Application::on_DownloadError);
 }
 
@@ -405,20 +408,56 @@ void Application::on_actionVideoDownload_triggered() {
     }
 }
 
-void Application::on_DownloadStarted() {
-
-}
-
-void Application::on_DownloadProgress(const QString &status) {
-
-}
-
+// 下载过程中的错误处理
 void Application::on_DownloadError(const QString &error) {
+    // 创建一个消息框来显示错误
+    auto *errorMessageBox = new QMessageBox;
+    errorMessageBox->setAttribute(Qt::WA_DeleteOnClose); // 对话框关闭时自动释放
+    errorMessageBox->setWindowTitle(tr("下载错误"));
+    errorMessageBox->setText(tr("在下载过程中发生错误:"));
+    errorMessageBox->setInformativeText(error);
+    errorMessageBox->setStandardButtons(QMessageBox::Ok);
+    errorMessageBox->setDefaultButton(QMessageBox::Ok);
+    errorMessageBox->setIcon(QMessageBox::Warning);
 
+    // 显示消息框
+    errorMessageBox->show();
 }
 
-void Application::on_DownloadFinished(const QString &filePath) {
+// 下载完成处理
+void Application::on_DownloadFinished(const QString &folderPath) {
+    auto *finishedMessageBox = new QMessageBox;
+    finishedMessageBox->setWindowTitle(tr("下载完成"));
+    finishedMessageBox->setText(tr("视频已成功下载！"));
+    finishedMessageBox->setInformativeText(tr("您想要做什么？"));
+    finishedMessageBox->setIcon(QMessageBox::Information);
 
+    // 创建按钮
+    QAbstractButton *openFileButton = finishedMessageBox->addButton(tr("打开视频"), QMessageBox::AcceptRole);
+    QAbstractButton *openFolderButton = finishedMessageBox->addButton(tr("打开文件夹"), QMessageBox::HelpRole);
+    finishedMessageBox->addButton(QMessageBox::Close);
+
+    // 显示消息框
+    finishedMessageBox->exec();
+
+    // 检查用户点击了哪个按钮
+    if (finishedMessageBox->clickedButton() == openFileButton) {
+        // 获取最近修改的文件的文件名
+        QDir directory(folderPath);
+
+        // 获取根据修改日期从晚到早的文件名排序
+        QFileInfoList fileList = directory.entryInfoList(QDir::Files, QDir::Time);
+
+        // 得到最近修改的文件及其完整路径
+        QFileInfo mostRecentFile = fileList.first();
+        QString filePath = mostRecentFile.absoluteFilePath();
+
+        // 打开视频文件
+        controller->openFile(filePath);
+    } else if (finishedMessageBox->clickedButton() == openFolderButton) {
+        // 打开视频文件所在的文件夹
+        QDesktopServices::openUrl(QUrl::fromLocalFile(folderPath));
+    }
 }
 
 // 给Controller类提供slider用于对播放进度滑块进行初始化与更新操作

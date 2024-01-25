@@ -7,6 +7,7 @@
 #include <QDir>
 #include <QMessageBox>
 #include <QDebug>
+#include <QString>
 
 #include "output_window.h"
 
@@ -20,10 +21,6 @@ public:
 
 signals:
 
-    void downloadStarted();
-
-    void downloadProgress(const QString &status);
-
     void downloadFinished(const QString &filePath);
 
     void downloadError(const QString &error);
@@ -35,8 +32,9 @@ private slots:
     void processError(QProcess::ProcessError error);
 
 private:
-    QProcess *downloadProcess;
-    QString downloadedFilePath;
+    QString downloadFolderPath;
+
+    OutputWindow *outputWindow;
 };
 
 #endif //VIDEO_DOWNLOAD_H

@@ -14,6 +14,14 @@ public:
 
     void startProcess(const QString &program, const QStringList &arguments);
 
+signals:
+
+    void errorOccurred(QProcess::ProcessError error);
+
+    void processFinished(int exitCode, QProcess::ExitStatus exitStatus);
+
+    void errorMessageEmit(const QString &error);
+
 private slots:
 
     void onReadyReadStandardOutput();
@@ -22,6 +30,7 @@ private slots:
 
 private:
     QPlainTextEdit *textEdit;
+
     QProcess *process;
 };
 

@@ -15,11 +15,13 @@
 #include <QCoreApplication>
 #include <QLineEdit>
 #include <QSettings>
+#include <QDesktopServices>
 
 #include "../resources/ui_application.h"
 #include "controller.h"
 #include "screen_capture.h"
 #include "video_downloader.h"
+#include "output_window.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -121,6 +123,8 @@ public:
 
     void updateVolumeIcon(bool isMute);
 
+    static void on_DownloadError(const QString &error);
+
 protected:
     void enterEvent(QEvent *event) override;
 
@@ -182,13 +186,7 @@ private slots:
 
     void on_actionVideoDownload_triggered();
 
-    void on_DownloadStarted();
-
-    void on_DownloadProgress(const QString &status);
-
     void on_DownloadFinished(const QString &filePath);
-
-    void on_DownloadError(const QString &error);
 
     bool eventFilter(QObject *watched, QEvent *event) override;
 
