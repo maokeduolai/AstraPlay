@@ -16,6 +16,7 @@
 #include <QLineEdit>
 #include <QSettings>
 #include <QDesktopServices>
+#include <QLabel>
 
 #include "../resources/ui_application.h"
 #include "controller.h"
@@ -124,6 +125,8 @@ public:
     void updateVolumeIcon(bool isMute);
 
     static void on_DownloadError(const QString &error);
+
+    QLabel *timeLabel;
 
 protected:
     void enterEvent(QEvent *event) override;

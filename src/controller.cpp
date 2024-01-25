@@ -108,6 +108,11 @@ void Controller::initializeSliderDuration() {
             slider->setMaximum(static_cast<int>(duration));
         }
     }
+
+    // 设置时间显示
+    totalTime = QTime((int) (duration / 3600) % 60, (int) (duration / 60) % 60, (int) duration % 60);
+    QString timeString = "00:00:00/" + totalTime.toString("hh:mm:ss");
+    application->timeLabel->setText(timeString);
 }
 
 // 应对在线视频在开始播放时，可能并未完全加载，其总时长未知需要缓冲后更新的情况
@@ -117,6 +122,14 @@ void Controller::updateSliderDuration() {
         // 设置滑块的最大值为视频总时长（秒）
         QSlider *slider = application->getSlider();
         slider->setMaximum(static_cast<int>(newDuration));
+
+        // 更新时间显示
+        int64_t time;
+        mpv_get_property(mpv, "time-pos", MPV_FORMAT_INT64, &time);
+        QTime currentTime((int) (time / 3600) % 60, (int) (time / 60) % 60, (int) time % 60);
+        totalTime = QTime((int) (newDuration / 3600) % 60, (int) (newDuration / 60) % 60, (int) newDuration % 60);
+        QString timeString = currentTime.toString("hh:mm:ss") + "/" + totalTime.toString("hh:mm:ss");
+        application->timeLabel->setText(timeString);
     }
 }
 
@@ -131,6 +144,18 @@ void Controller::updateSliderPosition() {
         // 设置滑块的位置
         QSlider *slider = application->getSlider();
         if (slider) { slider->setValue(static_cast<int>(time)); }
+
+        // 更新时间显示
+        QTime currentTime((int) (time / 3600) % 60, (int) (time / 60) % 60, (int) time % 60);
+        QString timeString = currentTime.toString("hh:mm:ss") + "/" + totalTime.toString("hh:mm:ss");
+        application->timeLabel->setText(timeString);
+    } else if (mpv && sliderInitialized) {// 当MPV实例已完成初始化，滑块已初始化的情况下继续更新时间显示
+        // 更新时间显示
+        int64_t time;
+        mpv_get_property(mpv, "time-pos", MPV_FORMAT_INT64, &time);
+        QTime currentTime((int) (time / 3600) % 60, (int) (time / 60) % 60, (int) time % 60);
+        QString timeString = currentTime.toString("hh:mm:ss") + "/" + totalTime.toString("hh:mm:ss");
+        application->timeLabel->setText(timeString);
     }
 }
 

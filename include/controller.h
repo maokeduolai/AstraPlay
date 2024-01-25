@@ -5,6 +5,7 @@
 #include <QWidget>
 #include <QVariant>
 #include <QTimer>
+#include <QTime>
 
 #include "mpv/client.h"
 #include "mpv/qthelper.hpp"
@@ -87,6 +88,8 @@ private:
     double panX;
 
     double panY;
+
+    QTime totalTime;
 };
 
 #endif // CONTROLLER_H

@@ -113,7 +113,6 @@
      <addaction name="volumeIncrease"/>
      <addaction name="volumeDecrease"/>
     </widget>
-    <addaction name="auTrackSelect"/>
     <addaction name="menuVolume"/>
    </widget>
    <widget class="QMenu" name="menuSubtitle">

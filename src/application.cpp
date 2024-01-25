@@ -21,6 +21,10 @@ Application::Application(QWidget *parent)
     // 插入滑块
     toolBar->addWidget(slider);
 
+    // 插入时间显示
+    timeLabel = new QLabel("00:00:00/00:00:00", this);
+    toolBar->addWidget(timeLabel);
+
     // 添加音量组件
     toolBar->addAction(volumeAction);
 
@@ -221,7 +225,14 @@ void Application::on_actionClearHistory_triggered() {
 // 打开视频文件
 void Application::on_actionOpenFile_triggered() {
     // 弹出文件选择对话框让用户选择文件
-    QString filename = QFileDialog::getOpenFileName(this, tr("打开视频"), "", tr("视频文件 (*.mp4 *.avi *.mkv *.mov)"));
+    QString filename = QFileDialog::getOpenFileName(
+            this,
+            tr("打开媒体文件"),
+            "",
+            tr("视频文件 (*.mpg *.mpeg *.avi *.mp4 *.mkv *.webm *.wmv *.mov *.flv *.m4v *.ogv *.3gp *.3g2);;"
+               "音频文件 (*.mp3 *.aac *.ogg *.flac *.alac *.wav *.wv);;"
+               "所有文件 (*)")
+    );
 
     // 在路径不为空的情况下打开文件
     if (!filename.isEmpty()) {
