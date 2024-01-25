@@ -3,7 +3,6 @@
 
 *~
 *.autosave
-*.a
 *.core
 *.moc
 *.o
@@ -72,11 +71,6 @@ CMakeLists.txt.user*
 
 # Python byte code
 *.pyc
-
-# Binaries
-# --------
-*.dll
-*.exe
 
 # Temp Files
 *.TMP

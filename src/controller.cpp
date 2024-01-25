@@ -88,6 +88,13 @@ void Controller::handleUrl(const QString &url) {
     QStringList args = {"loadfile", url};
     command(args);
 
+    // 确保播放状态正确
+    QVariant pauseValue = getProperty("pause");
+    const bool isPaused = pauseValue.toBool();
+    if (isPaused) {
+        Controller::togglePlayPause();
+    }
+
     // 初始化滑块
     initializeSliderDuration();
 

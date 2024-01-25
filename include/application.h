@@ -24,6 +24,7 @@
 #include "screen_capture.h"
 #include "video_downloader.h"
 #include "output_window.h"
+#include "media_info.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -129,8 +130,6 @@ public:
 
     QLabel *timeLabel;
 
-    QString filename;
-
 protected:
     void enterEvent(QEvent *event) override;
 
@@ -198,6 +197,8 @@ private slots:
 
     void on_actionAuSyncReset_triggered();
 
+    void on_actionReadRaw_triggered();
+
     void on_DownloadFinished(const QString &filePath);
 
     bool eventFilter(QObject *watched, QEvent *event) override;
@@ -215,6 +216,8 @@ private:
 
     VideoDownloader *videoDownloader;
 
+    MediaInfo *mediaInfo;
+
     QList<QAction *> historyActions;
 
     QSettings settings;
@@ -224,6 +227,8 @@ private:
     bool isFullScreen;
 
     Qt::WindowFlags originalFlags;
+
+    QString filename;
 };
 
 #endif // APPLICATION_H

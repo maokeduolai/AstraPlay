@@ -37,6 +37,8 @@ set(SOURCE_FILES
         include/application.h
         include/controller.h
         include/output_window.h
+        src/func/media_info.cpp
+        include/media_info.h
 )
 add_executable(AstraPlay ${SOURCE_FILES})
 

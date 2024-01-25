@@ -2,7 +2,7 @@
 
 OutputWindow::OutputWindow(QWidget *parent) : QWidget(parent), process(new QProcess(this)) {
     // 设置窗口属性
-    setWindowTitle("Download Output");
+    setWindowTitle("Process Output");
     resize(600, 400);
 
     // 创建输出框

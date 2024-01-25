@@ -5,7 +5,7 @@ Application::Application(QWidget *parent)
         : QMainWindow(parent), ui(new Ui::Application), slider(new QSlider(Qt::Horizontal, this)), toolBar(nullptr),
           controller(new Controller(this)), volumeAction(new VolumeAction(this)),
           settings("history.ini", QSettings::IniFormat), isFullScreen(false),
-          videoDownloader(new VideoDownloader(this)) {
+          videoDownloader(new VideoDownloader(this)), mediaInfo(new MediaInfo(this)) {
     ui->setupUi(this);
 
     // 创建一个播放进度滑块
@@ -134,6 +134,9 @@ Application::Application(QWidget *parent)
 
     // 重置同步
     connect(ui->auSyncReset, &QAction::triggered, this, &Application::on_actionAuSyncReset_triggered);
+
+    // 读取视频元数据
+    connect(ui->readRaw, &QAction::triggered, this, &Application::on_actionReadRaw_triggered);
 }
 
 Application::~Application() {
@@ -217,6 +220,7 @@ void Application::addHistory(const QString &filepath) {
     action->setData(filepath);
     connect(action, &QAction::triggered, [this, filepath]() {
         controller->openFile(filepath);  // 点击记录时打开对应文件
+        filename = filepath;
     });
 
     // 向界面中添加记录
@@ -285,6 +289,7 @@ void Application::on_actionOpenURL_triggered() {
     if (dialog.exec() == QDialog::Accepted) {
         QString url = lineEdit.text();
         controller->handleUrl(url);
+        filename = url;
         Application::addHistory(url);
     }
 }
@@ -508,6 +513,10 @@ void Application::on_DownloadFinished(const QString &folderPath) {
         // 打开视频文件所在的文件夹
         QDesktopServices::openUrl(QUrl::fromLocalFile(folderPath));
     }
+}
+
+void Application::on_actionReadRaw_triggered() {
+    mediaInfo->readRawAttribute(filename);
 }
 
 // 给Controller类提供slider用于对播放进度滑块进行初始化与更新操作
