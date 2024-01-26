@@ -33,8 +33,7 @@ void ScreenCapture::on_captureCurrentFrameButton_clicked() {
 
     // 格式化文件名
     QString tempFileName = QString("%1/AstraPlay_ScreenShot_%2.png")
-            .arg(QStandardPaths::writableLocation(QStandardPaths::TempLocation))
-            .arg(now.toString("yyyyMMddHHmm"));
+            .arg(QStandardPaths::writableLocation(QStandardPaths::TempLocation), now.toString("yyyyMMddHHmm"));
 
     // 截图并保存到临时文件中
     QStringList args = {"screenshot-to-file", tempFileName.toUtf8().constData(), "video"};
@@ -87,8 +86,7 @@ void ScreenCapture::on_capturePreviewButton_clicked() {
 
         // 创建文件名
         QString fileName = QString("%1/%2_%3.png")
-                .arg(dirName)
-                .arg(baseFileName)
+                .arg(dirName, baseFileName)
                 .arg(i + 1, 3, 10, QChar('0'));  // 使用填充字符'0'和字段宽度3来生成序号
 
         // 截图并保存

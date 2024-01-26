@@ -18,6 +18,9 @@
 #include <QDesktopServices>
 #include <QLabel>
 #include <QString>
+#include <QListWidget>
+#include <QComboBox>
+#include <QFontDatabase>
 
 #include "../resources/ui_application.h"
 #include "controller.h"
@@ -25,6 +28,7 @@
 #include "video_downloader.h"
 #include "output_window.h"
 #include "media_info.h"
+#include "subtitle.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -90,7 +94,7 @@ protected:
         return volumeWidget;
     }
 
-public slots:
+public:
 
     // 设置音量图标
     void setVolumeIcon(const QIcon &icon) {
@@ -135,7 +139,7 @@ protected:
 
     void leaveEvent(QEvent *event) override;
 
-private slots:
+private:
 
     void toggleMute();
 
@@ -199,6 +203,12 @@ private slots:
 
     void on_actionReadRaw_triggered();
 
+    void on_actionAddSubtitle_triggered();
+
+    void on_actionSubtitleList_triggered();
+
+    void on_subtitleControl_clicked();
+
     void on_DownloadFinished(const QString &filePath);
 
     bool eventFilter(QObject *watched, QEvent *event) override;
@@ -217,6 +227,8 @@ private:
     VideoDownloader *videoDownloader;
 
     MediaInfo *mediaInfo;
+
+    Subtitle *subtitle;
 
     QList<QAction *> historyActions;
 

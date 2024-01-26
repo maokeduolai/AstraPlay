@@ -130,7 +130,7 @@
     </property>
     <addaction name="addSubtitle"/>
     <addaction name="subtitleList"/>
-    <addaction name="subtitleSync"/>
+    <addaction name="subtitleControl"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuWindow"/>
@@ -283,12 +283,12 @@
     <string>字幕列表</string>
    </property>
   </action>
-  <action name="subtitleSync">
+  <action name="subtitleControl">
    <property name="text">
-    <string>字幕同步</string>
+    <string>字幕控制</string>
    </property>
    <property name="toolTip">
-    <string>字幕同步</string>
+    <string>字幕控制</string>
    </property>
   </action>
   <action name="toolPlay">

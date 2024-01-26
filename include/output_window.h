@@ -22,7 +22,7 @@ signals:
 
     void errorMessageEmit(const QString &error);
 
-private slots:
+private:
 
     void onReadyReadStandardOutput();
 

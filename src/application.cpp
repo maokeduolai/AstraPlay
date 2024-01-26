@@ -5,7 +5,7 @@ Application::Application(QWidget *parent)
         : QMainWindow(parent), ui(new Ui::Application), slider(new QSlider(Qt::Horizontal, this)), toolBar(nullptr),
           controller(new Controller(this)), volumeAction(new VolumeAction(this)),
           settings("history.ini", QSettings::IniFormat), isFullScreen(false),
-          videoDownloader(new VideoDownloader(this)), mediaInfo(new MediaInfo(this)) {
+          videoDownloader(new VideoDownloader(this)), mediaInfo(new MediaInfo(this)), subtitle(nullptr) {
     ui->setupUi(this);
 
     // 创建一个播放进度滑块
@@ -33,6 +33,11 @@ Application::Application(QWidget *parent)
 
     // 在playerWidget上安装事件过滤器
     ui->playerWidget->installEventFilter(this);
+
+
+    // 传递mpv实例给subtitle
+    mpv_handle *mpv = controller->getMpvInstance();
+    subtitle = new Subtitle(mpv);
 
 
     // 加载播放历史记录
@@ -137,10 +142,21 @@ Application::Application(QWidget *parent)
 
     // 读取视频元数据
     connect(ui->readRaw, &QAction::triggered, this, &Application::on_actionReadRaw_triggered);
+
+    // 字幕处理
+    // 加载外挂字幕
+    connect(ui->addSubtitle, &QAction::triggered, this, &Application::on_actionAddSubtitle_triggered);
+
+    // 字幕列表
+    connect(ui->subtitleList, &QAction::triggered, this, &Application::on_actionSubtitleList_triggered);
+
+    // 字幕控制
+    connect(ui->subtitleControl, &QAction::triggered, this, &Application::on_subtitleControl_clicked);
 }
 
 Application::~Application() {
     delete ui;
+    delete subtitle;
 }
 
 // 重写eventFilter()方法
@@ -515,8 +531,133 @@ void Application::on_DownloadFinished(const QString &folderPath) {
     }
 }
 
+// 读取视频元数据
 void Application::on_actionReadRaw_triggered() {
     mediaInfo->readRawAttribute(filename);
+}
+
+// 加载外挂字幕
+void Application::on_actionAddSubtitle_triggered() {
+    QString subFilename = QFileDialog::getOpenFileName(this, tr("打开字幕文件"), "",
+                                                       tr("字幕文件 (*.srt *.ass *.ssa *.sub)"));
+    if (!subFilename.isEmpty()) {
+        subtitle->loadSubtitle(subFilename);
+    }
+}
+
+// 字幕列表
+void Application::on_actionSubtitleList_triggered() {
+    QDialog dialog(this);
+    dialog.setWindowTitle(tr("字幕列表"));
+
+    QVBoxLayout layout(&dialog);
+
+    QListWidget listWidget;
+    layout.addWidget(&listWidget);
+
+    // 获取当前视频的字幕列表
+    QMap<QString, SubtitleInfo> allSubtitle = subtitle->getSubtitleList();
+    for (auto it = allSubtitle.constBegin(); it != allSubtitle.constEnd(); ++it) {
+        const QString &title = it.key();
+        const SubtitleInfo &info = it.value();
+        QString itemText = QString("%1 [%2]").arg(title, info.lang);
+        listWidget.addItem(itemText);
+    }
+
+    QPushButton closeButton(tr("应用"), &dialog);
+    connect(&closeButton, &QPushButton::clicked, &dialog, &QDialog::accept);
+    layout.addWidget(&closeButton);
+
+    dialog.setLayout(&layout);
+    dialog.exec();
+
+    if (listWidget.currentItem()) {
+        // 当用户选择一个字幕时
+        QString selectedSubtitleText = listWidget.currentItem()->text();
+
+        // 提取出字幕标题
+        int bracketIndex = selectedSubtitleText.indexOf(" ["); // 找到方括号的位置
+        QString selectedSubtitleTitle = selectedSubtitleText.left(bracketIndex);
+
+        // 根据字幕标题获取字幕ID
+        SubtitleInfo selectedSubtitleInfo = allSubtitle.value(selectedSubtitleTitle);
+        int selectedSubtitleId = selectedSubtitleInfo.id; // 获取ID
+        subtitle->setSubtitleTrack(selectedSubtitleId);
+    }
+}
+
+// 字幕控制
+void Application::on_subtitleControl_clicked() {
+    QDialog dialog(this);
+    dialog.setWindowTitle(tr("字幕控制"));
+
+    QVBoxLayout layout(&dialog);
+
+    // 字幕字体和字号选择
+    QHBoxLayout fontLayout;
+    QLabel fontLabel(tr("字体："), &dialog);
+    QComboBox fontComboBox(&dialog);
+
+    // 获取系统字体
+    QFontDatabase fontDatabase;
+    QStringList fontList = fontDatabase.families();
+
+    fontComboBox.addItems(fontList);
+    fontLayout.addWidget(&fontLabel);
+    fontLayout.addWidget(&fontComboBox);
+
+    QLabel fontSizeLabel(tr("字号："), &dialog);
+    QSpinBox fontSizeSpinBox(&dialog);
+    fontSizeSpinBox.setRange(1, 72); // 假定的字号范围
+    fontLayout.addWidget(&fontSizeLabel);
+    fontLayout.addWidget(&fontSizeSpinBox);
+
+    layout.addLayout(&fontLayout);
+
+    // 获取当前使用的字幕字体属性
+    QFont subtitleFont = subtitle->getCurrentSubtitleFont();
+
+    // 获取当前字幕的字体和字号
+    QString subtitleFontFamily = subtitleFont.family();
+    int subtitleFontSize = subtitleFont.pointSize();
+
+    // 设置字体下拉框的当前选中项为当前字幕的字体
+    int fontIndex = fontComboBox.findText(subtitleFontFamily);
+    if (fontIndex != -1) { // 如果找到了字体
+        fontComboBox.setCurrentIndex(fontIndex);
+    }
+
+    // 设置字号选择框的当前值为当前字幕的字号
+    fontSizeSpinBox.setValue(subtitleFontSize);
+
+    // 应用按钮
+    QPushButton applyButton(tr("应用（对ASS字幕无效"), &dialog);
+    connect(&applyButton, &QPushButton::clicked, [&dialog, this, &fontComboBox, &fontSizeSpinBox]() {
+        QString font = fontComboBox.currentText();
+        int fontSize = fontSizeSpinBox.value();
+        subtitle->setSubtitleFont(font, fontSize);
+        dialog.accept();
+    });
+    layout.addWidget(&applyButton);
+
+    // 字幕同步控制
+    QHBoxLayout syncLayout;
+    QPushButton delayMinusButton(tr("-0.1s"), &dialog);
+    QPushButton delayPlusButton(tr("+0.1s"), &dialog);
+    syncLayout.addWidget(&delayMinusButton);
+    syncLayout.addWidget(&delayPlusButton);
+
+    connect(&delayMinusButton, &QPushButton::clicked, [this]() {
+        subtitle->setSubtitleDelay(-0.1);
+    });
+    connect(&delayPlusButton, &QPushButton::clicked, [this]() {
+        subtitle->setSubtitleDelay(0.1);
+    });
+
+    layout.addLayout(&syncLayout);
+
+    dialog.setLayout(&layout);
+    dialog.exec();
 }
 
 // 给Controller类提供slider用于对播放进度滑块进行初始化与更新操作

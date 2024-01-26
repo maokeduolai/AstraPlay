@@ -25,6 +25,8 @@ set(SOURCE_FILES
         src/func/screen_capture.cpp
         src/func/video_downloader.cpp
         src/func/output_window.cpp
+        src/func/media_info.cpp
+        src/func/subtitle.cpp
         resources/application.ui
         resources/icons.qrc
         include/mpv/client.h
@@ -37,8 +39,8 @@ set(SOURCE_FILES
         include/application.h
         include/controller.h
         include/output_window.h
-        src/func/media_info.cpp
         include/media_info.h
+        include/subtitle.h
 )
 add_executable(AstraPlay ${SOURCE_FILES})
 

@@ -25,7 +25,7 @@ signals:
 
     void downloadError(const QString &error);
 
-private slots:
+private:
 
     void processFinished(int exitCode, QProcess::ExitStatus exitStatus);
 

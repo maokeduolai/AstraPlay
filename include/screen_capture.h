@@ -18,7 +18,7 @@ Q_OBJECT
 public:
     explicit ScreenCapture(mpv_handle *mpv, QWidget *parent = nullptr);
 
-private slots:
+private:
 
     void on_captureCurrentFrameButton_clicked();
 

@@ -1,6 +1,6 @@
 #include "media_info.h"
 
-MediaInfo::MediaInfo(QObject *parent) : QObject(parent), textEdit(new QPlainTextEdit) {
+MediaInfo::MediaInfo(QObject *parent) : QObject(parent), textEdit(new MyTextEdit) {
     mediaInfoProcess = new QProcess(this);
     connect(mediaInfoProcess, &QProcess::readyReadStandardOutput, this, &MediaInfo::onReadyReadStandardOutput);
 }
