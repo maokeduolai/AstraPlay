@@ -172,6 +172,14 @@ Application::Application(QWidget *parent)
 
     // 字幕控制
     connect(ui->subtitleControl, &QAction::triggered, this, &Application::on_subtitleControl_clicked);
+
+
+    // 帧控制
+    // 跳转到上一帧
+    connect(ui->frontFrame, &QAction::triggered, this, &Application::on_actionFrontFrame_triggered);
+
+    // 跳转到下一帧
+    connect(ui->nextFrame, &QAction::triggered, this, &Application::on_actionNextFrame_triggered);
 }
 
 Application::~Application() {
@@ -708,6 +716,16 @@ void Application::on_subtitleControl_clicked() {
 
     dialog.setLayout(&layout);
     dialog.exec();
+}
+
+// 跳转到上一帧
+void Application::on_actionFrontFrame_triggered() {
+    controller->goToPreviousFrame();
+}
+
+// 跳转到下一帧
+void Application::on_actionNextFrame_triggered() {
+    controller->goToNextFrame();
 }
 
 // 给Controller类提供slider用于对播放进度滑块进行初始化与更新操作

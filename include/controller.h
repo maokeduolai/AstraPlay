@@ -74,6 +74,12 @@ public:
 
     void resetAudioSync();
 
+    void getFrameRate();
+
+    void goToPreviousFrame();
+
+    void goToNextFrame();
+
     void command(const QStringList &args);
 
     void setProperty(const QString &name, const QVariant &value);
@@ -96,6 +102,8 @@ private:
     double panX;
 
     double panY;
+
+    double frameRate;
 
     QTime totalTime;
 };

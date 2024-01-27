@@ -3,7 +3,7 @@
 
 Controller::Controller(Application *app, QObject *parent)
         : QObject(parent), mpv(mpv_create()), application(app), sliderBeingDragged(false), sliderInitialized(false),
-          duration(0.0), zoomFactor(0.0), panX(0.0), panY(0.0) {
+          duration(0.0), zoomFactor(0.0), panX(0.0), panY(0.0), frameRate(0.0) {
     // 根据滑块是否被按下，来判断是否处于拖动滑块状态
     QSlider *slider = application->getSlider();
     if (slider) {
@@ -345,8 +345,41 @@ void Controller::adjustAudio(double sec) {
     setProperty("audio-delay", currentDelay + sec);
 }
 
+// 重置音频同步设置
 void Controller::resetAudioSync() {
     setProperty("audio-delay", 0);
+}
+
+// 获取视频帧率（对某些文件并非完全可靠）
+void Controller::getFrameRate() {
+    QVariant QFrameRate = getProperty("container-fps");
+    frameRate = QFrameRate.toDouble();
+}
+
+// 跳转到上一帧
+void Controller::goToPreviousFrame() {
+    // 获取当前播放位置
+    QVariant QPosition = getProperty("time-pos");
+    double position = QPosition.toDouble();
+
+    // 获取该视频帧率
+    getFrameRate();
+
+    // 设置新的播放位置
+    setProperty("time-pos", position - 1.0 / frameRate);
+}
+
+// 跳转到下一帧
+void Controller::goToNextFrame() {
+    // 获取当前播放位置
+    QVariant QPosition = getProperty("time-pos");
+    double position = QPosition.toDouble();
+
+    // 获取该视频帧率
+    getFrameRate();
+
+    // 设置新的播放位置
+    setProperty("time-pos", position + 1.0 / frameRate);
 }
 
 // 发送命令到MPV

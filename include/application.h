@@ -218,6 +218,10 @@ private:
 
     void on_actionSubtitleList_triggered();
 
+    void on_actionFrontFrame_triggered();
+
+    void on_actionNextFrame_triggered();
+
     void on_subtitleControl_clicked();
 
     void on_speedHalf_activated();
