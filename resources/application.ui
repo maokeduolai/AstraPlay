@@ -166,20 +166,32 @@
    <property name="text">
     <string>打开文件</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
   </action>
   <action name="openURL">
    <property name="text">
     <string>打开URL</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+U</string>
    </property>
   </action>
   <action name="exitProgram">
    <property name="text">
     <string>退出</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
   </action>
   <action name="fullScreen">
    <property name="text">
     <string>全屏播放</string>
+   </property>
+   <property name="shortcut">
+    <string>Return</string>
    </property>
   </action>
   <action name="speedUp">
@@ -189,6 +201,9 @@
    <property name="toolTip">
     <string>速度增加（0.5x）</string>
    </property>
+   <property name="shortcut">
+    <string>C</string>
+   </property>
   </action>
   <action name="speedDown">
    <property name="text">
@@ -197,80 +212,123 @@
    <property name="toolTip">
     <string>速度减少（0.5x）</string>
    </property>
+   <property name="shortcut">
+    <string>X</string>
+   </property>
   </action>
   <action name="speedReset">
    <property name="text">
     <string>速度重置</string>
+   </property>
+   <property name="shortcut">
+    <string>Z</string>
    </property>
   </action>
   <action name="zoomIn">
    <property name="text">
     <string>放大</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+=</string>
+   </property>
   </action>
   <action name="zoomOut">
    <property name="text">
     <string>缩小</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+-</string>
    </property>
   </action>
   <action name="zoomReset">
    <property name="text">
     <string>重置缩放</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+0</string>
+   </property>
   </action>
   <action name="captureScreen">
    <property name="text">
     <string>截图</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
    </property>
   </action>
   <action name="moveLeft">
    <property name="text">
     <string>左移</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+4</string>
+   </property>
   </action>
   <action name="moveRight">
    <property name="text">
     <string>右移</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+6</string>
    </property>
   </action>
   <action name="moveUp">
    <property name="text">
     <string>上移</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+2</string>
+   </property>
   </action>
   <action name="moveDown">
    <property name="text">
     <string>下移</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+8</string>
    </property>
   </action>
   <action name="videoDownload">
    <property name="text">
     <string>视频下载</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
   </action>
   <action name="readRaw">
    <property name="text">
     <string>读取元数据</string>
    </property>
-  </action>
-  <action name="auTrackSelect">
-   <property name="text">
-    <string>音轨选择</string>
+   <property name="shortcut">
+    <string>Ctrl+F1</string>
    </property>
   </action>
   <action name="muteAudio">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>静音</string>
+   </property>
+   <property name="shortcut">
+    <string>M</string>
    </property>
   </action>
   <action name="volumeIncrease">
    <property name="text">
     <string>音量增加</string>
    </property>
+   <property name="shortcut">
+    <string>Up</string>
+   </property>
   </action>
   <action name="volumeDecrease">
    <property name="text">
     <string>音量减少</string>
+   </property>
+   <property name="shortcut">
+    <string>Down</string>
    </property>
   </action>
   <action name="addSubtitle">
@@ -302,6 +360,9 @@
    <property name="toolTip">
     <string>播放</string>
    </property>
+   <property name="shortcut">
+    <string>Space</string>
+   </property>
   </action>
   <action name="toolBack">
    <property name="icon">
@@ -314,6 +375,9 @@
    <property name="toolTip">
     <string>后退3秒</string>
    </property>
+   <property name="shortcut">
+    <string>Left</string>
+   </property>
   </action>
   <action name="toolForward">
    <property name="icon">
@@ -325,6 +389,9 @@
    </property>
    <property name="toolTip">
     <string>前进3秒</string>
+   </property>
+   <property name="shortcut">
+    <string>Right</string>
    </property>
   </action>
   <action name="clearHistory">
@@ -341,6 +408,9 @@
    </property>
    <property name="toolTip">
     <string>移动重置</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+5</string>
    </property>
   </action>
   <action name="auAdvance">

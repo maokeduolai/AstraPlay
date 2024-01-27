@@ -29,8 +29,7 @@ Controller::Controller(Application *app, QObject *parent)
         mpv_set_option_string(mpv, "loop-file", "inf");
 
         // 设置初始音量为80
-        int initialVolume = 80;
-        mpv_set_option(mpv, "volume", MPV_FORMAT_INT64, &initialVolume);
+        setProperty("volume", 80);
 
         // 初始化MPV完成后启动它
         if (mpv_initialize(mpv) < 0) {
@@ -126,9 +125,12 @@ void Controller::initializeSliderDuration() {
 void Controller::updateSliderDuration() {
     double newDuration = Controller::getProperty("duration").toDouble();
     if (newDuration != duration) {
+        // 更新视频总时长值
+        duration = newDuration;
+
         // 设置滑块的最大值为视频总时长（秒）
         QSlider *slider = application->getSlider();
-        slider->setMaximum(static_cast<int>(newDuration));
+        slider->setMaximum(static_cast<int>(duration));
 
         // 更新时间显示
         int64_t time;
@@ -257,9 +259,29 @@ void Controller::togglePlayPause() {
     application->updatePlayIcon(isPaused);
 }
 
+// 播放视频
+void Controller::playVideo() {
+    setProperty("pause", false);
+
+    // 切换播放图标
+    application->updatePlayIcon(true);
+}
+
 // 设置播放音量
-void Controller::setVolume(int volume) {
-    setProperty("volume", volume);
+void Controller::setVolume(int volume, bool flag) {
+    if (flag) {
+        // 获取当前音量
+        QVariant QCurrentVolumeValue = getProperty("volume");
+        const int currentVolumeValue = QCurrentVolumeValue.toInt();
+
+        // 设置相对音量
+        setProperty("volume", currentVolumeValue + volume);
+
+        application->volumeAction->updateVolumeSlider(currentVolumeValue + volume);
+    } else {
+        // 设置绝对音量
+        setProperty("volume", volume);
+    }
 }
 
 // 切换静音状态
@@ -273,6 +295,9 @@ void Controller::toggleMute() {
 
     // 切换对应状态图标
     application->updateVolumeIcon(!isMute);
+
+    // 切换对应勾选状态
+    application->ui->muteAudio->setChecked(!isMute);
 }
 
 // 设置播放速度
@@ -285,6 +310,29 @@ void Controller::setSpeed(double speed) {
     } else if (speed == 0) {
         setProperty("speed", 1.0);
     }
+}
+
+// 设置播放速度倍数
+void Controller::setSpeedMultiple(double multiple) {
+    QVariant qCurrentSpeed = getProperty("speed");
+    double const currentSpeed = qCurrentSpeed.toDouble();
+
+    // 暂停状态下按L键开始默认速度播放，非暂停状态下倍速播放
+    if (multiple == 2) {
+        // 获取当前的暂停状态
+        QVariant pauseValue = getProperty("pause");
+        const bool isPaused = pauseValue.toBool();
+
+        if (isPaused) {
+            setProperty("speed", 1.0);
+            return;
+        } else {
+            setProperty("speed", currentSpeed * multiple);
+            return;
+        }
+    }
+
+    setProperty("speed", currentSpeed * multiple);
 }
 
 // 调整音频同步

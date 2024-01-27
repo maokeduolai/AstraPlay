@@ -21,6 +21,7 @@
 #include <QListWidget>
 #include <QComboBox>
 #include <QFontDatabase>
+#include <QShortcut>
 
 #include "../resources/ui_application.h"
 #include "controller.h"
@@ -86,21 +87,24 @@ public:
         delete volumeWidget;  // 销毁由VolumeAction管理的volumeWidget实例，防止内存泄漏
     }
 
+    // 设置音量图标
+    void setVolumeIcon(const QIcon &icon) {
+        if (volumeWidget && volumeWidget->button) {
+            volumeWidget->button->setIcon(icon);
+        }
+    }
+
+    // 使用快捷键设置音量后，对应更新滑块位置
+    void updateVolumeSlider(const int newVolume) {
+        volumeWidget->slider->setValue(newVolume);
+    }
+
 protected:
     QWidget *createWidget(QWidget *parent) override {
         volumeWidget = new VolumeControlWidget(parent);
         connect(volumeWidget, &VolumeControlWidget::toggleMute, this, &VolumeAction::toggleMute);
         connect(volumeWidget, &VolumeControlWidget::volumeChanged, this, &VolumeAction::volumeChanged);
         return volumeWidget;
-    }
-
-public:
-
-    // 设置音量图标
-    void setVolumeIcon(const QIcon &icon) {
-        if (volumeWidget && volumeWidget->button) {
-            volumeWidget->button->setIcon(icon);
-        }
     }
 
 signals:
@@ -126,13 +130,17 @@ public:
 
     [[nodiscard]] QSlider *getSlider() const;
 
-    void updatePlayIcon(bool isPlay);
+    void updatePlayIcon(bool isPlay) const;
 
-    void updateVolumeIcon(bool isMute);
+    void updateVolumeIcon(bool isMute) const;
 
     static void on_DownloadError(const QString &error);
 
     QLabel *timeLabel;
+
+    Ui::Application *ui;
+
+    VolumeAction *volumeAction;
 
 protected:
     void enterEvent(QEvent *event) override;
@@ -140,7 +148,6 @@ protected:
     void leaveEvent(QEvent *event) override;
 
 private:
-
     void toggleMute();
 
     void setVolume(int newVolume);
@@ -201,6 +208,10 @@ private:
 
     void on_actionAuSyncReset_triggered();
 
+    void on_actionVolumeIncrease_triggered();
+
+    void on_actionVolumeDecrease_triggered();
+
     void on_actionReadRaw_triggered();
 
     void on_actionAddSubtitle_triggered();
@@ -209,20 +220,22 @@ private:
 
     void on_subtitleControl_clicked();
 
+    void on_speedHalf_activated();
+
+    void on_speedReset_activated();
+
+    void on_speedPlus_activated();
+
     void on_DownloadFinished(const QString &filePath);
 
     bool eventFilter(QObject *watched, QEvent *event) override;
 
 private:
-    Ui::Application *ui;
-
     QSlider *slider;
 
     QToolBar *toolBar;
 
     Controller *controller;
-
-    VolumeAction *volumeAction;
 
     VideoDownloader *videoDownloader;
 

@@ -49,6 +49,15 @@ Application::Application(QWidget *parent)
     // 连接音量变更信号与音量设置函数，同时传递改变后的值
     connect(volumeAction, &VolumeAction::volumeChanged, this, &Application::setVolume);
 
+    // 音量增加10%
+    connect(ui->volumeIncrease, &QAction::triggered, this, &Application::on_actionVolumeIncrease_triggered);
+
+    // 音量减少10%
+    connect(ui->volumeDecrease, &QAction::triggered, this, &Application::on_actionVolumeDecrease_triggered);
+
+    // 切换静音
+    connect(ui->muteAudio, &QAction::triggered, this, &Application::toggleMute);
+
 
     // 打开视频文件
     connect(ui->openFile, &QAction::triggered, this, &Application::on_actionOpenFile_triggered);
@@ -82,6 +91,17 @@ Application::Application(QWidget *parent)
     // 重置播放速度
     connect(ui->speedReset, &QAction::triggered, this, &Application::on_actionSpeedReset_triggered);
 
+    // J键播放速度减少一倍
+    auto *speedHalf = new QShortcut(QKeySequence("J"), this);
+    connect(speedHalf, &QShortcut::activated, this, &Application::on_speedHalf_activated);
+
+    // Ctrl+K键播放速度重置，切换播放状态
+    auto *speedReset = new QShortcut(QKeySequence("K"), this);
+    connect(speedReset, &QShortcut::activated, this, &Application::on_speedReset_activated);
+
+    // Ctrl+L键播放速度增加一倍
+    auto *speedPlus = new QShortcut(QKeySequence("L"), this);
+    connect(speedPlus, &QShortcut::activated, this, &Application::on_speedPlus_activated);
 
     // 后退3秒
     connect(ui->toolBack, &QAction::triggered, this, &Application::on_actionToolBack_triggered);
@@ -190,7 +210,8 @@ void Application::leaveEvent(QEvent *event) {
 
 // 设置播放音量
 void Application::setVolume(int newVolume) {
-    controller->setVolume(newVolume);
+    // 绝对值设置音量，flag = false
+    controller->setVolume(newVolume, false);
 }
 
 // 切换静音
@@ -324,7 +345,7 @@ void Application::on_actionTogglePlayPause_triggered() {
 }
 
 // 更新播放状态对应的播放图标
-void Application::updatePlayIcon(bool isPlay) {
+void Application::updatePlayIcon(bool isPlay) const {
     if (isPlay) {
         ui->toolPlay->setIcon(QIcon(":/icons/icons/pause-button.png"));
     } else {
@@ -333,7 +354,7 @@ void Application::updatePlayIcon(bool isPlay) {
 }
 
 // 更新静音状态对应的声音图标
-void Application::updateVolumeIcon(bool isMute) {
+void Application::updateVolumeIcon(bool isMute) const {
     if (isMute) {
         volumeAction->setVolumeIcon(QIcon(":/icons/icons/mute.png"));
     } else {
@@ -418,6 +439,25 @@ void Application::on_actionSpeedReset_triggered() {
     controller->setSpeed(0);
 }
 
+// 播放速度减少一倍，播放视频
+void Application::on_speedHalf_activated() {
+    controller->setSpeedMultiple(0.5);
+    controller->playVideo();
+}
+
+// 播放速度重置，切换播放状态
+void Application::on_speedReset_activated() {
+    controller->setSpeed(0);
+    controller->togglePlayPause();
+}
+
+// 播放速度增加一倍，播放视频
+void Application::on_speedPlus_activated() {
+    controller->setSpeedMultiple(2);
+    controller->playVideo();
+}
+
+
 // 后退3秒
 void Application::on_actionToolBack_triggered() {
     controller->seekRelative(-3);
@@ -453,6 +493,16 @@ void Application::on_actionAuDelay_triggered() {
 // 音频同步重置
 void Application::on_actionAuSyncReset_triggered() {
     controller->resetAudioSync();
+}
+
+// 音量增加10%
+void Application::on_actionVolumeIncrease_triggered() {
+    controller->setVolume(10, true);
+}
+
+// 音量减少10%
+void Application::on_actionVolumeDecrease_triggered() {
+    controller->setVolume(-10, true);
 }
 
 // 视频下载

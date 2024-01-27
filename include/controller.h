@@ -28,15 +28,19 @@ public:
 
     void togglePlayPause();
 
+    void playVideo();
+
     void seek(int seconds);
 
     void seekRelative(int seconds);
 
-    void setVolume(int volume);
+    void setVolume(int volume, bool flag);
 
     void toggleMute();
 
     void setSpeed(double speed);
+
+    void setSpeedMultiple(double multiple);
 
     void updateSliderPosition();
 
