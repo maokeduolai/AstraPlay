@@ -689,7 +689,7 @@ void Application::on_subtitleControl_clicked() {
     fontSizeSpinBox.setValue(subtitleFontSize);
 
     // 应用按钮
-    QPushButton applyButton(tr("应用（对ASS字幕无效"), &dialog);
+    QPushButton applyButton(tr("应用（对ASS字幕无效）"), &dialog);
     connect(&applyButton, &QPushButton::clicked, [&dialog, this, &fontComboBox, &fontSizeSpinBox]() {
         QString font = fontComboBox.currentText();
         int fontSize = fontSizeSpinBox.value();

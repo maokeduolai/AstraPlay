@@ -28,7 +28,7 @@ set(SOURCE_FILES
         src/func/media_info.cpp
         src/func/subtitle.cpp
         resources/application.ui
-        resources/icons.qrc
+        resources/resources.qrc
         include/mpv/client.h
         include/mpv/render.h
         include/mpv/render_gl.h

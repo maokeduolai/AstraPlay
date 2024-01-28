@@ -41,7 +41,7 @@
      <x>0</x>
      <y>0</y>
      <width>1042</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -359,7 +359,7 @@
   </action>
   <action name="toolPlay">
    <property name="icon">
-    <iconset resource="icons.qrc">
+    <iconset resource="resources.qrc">
      <normaloff>:/icons/icons/play-button.png</normaloff>:/icons/icons/play-button.png</iconset>
    </property>
    <property name="text">
@@ -374,7 +374,7 @@
   </action>
   <action name="toolBack">
    <property name="icon">
-    <iconset resource="icons.qrc">
+    <iconset resource="resources.qrc">
      <normaloff>:/icons/icons/left-arrow.png</normaloff>:/icons/icons/left-arrow.png</iconset>
    </property>
    <property name="text">
@@ -389,7 +389,7 @@
   </action>
   <action name="toolForward">
    <property name="icon">
-    <iconset resource="icons.qrc">
+    <iconset resource="resources.qrc">
      <normaloff>:/icons/icons/right-arrow.png</normaloff>:/icons/icons/right-arrow.png</iconset>
    </property>
    <property name="text">
@@ -454,7 +454,7 @@
   </action>
  </widget>
  <resources>
-  <include location="icons.qrc"/>
+  <include location="resources.qrc"/>
  </resources>
  <connections/>
 </ui>
