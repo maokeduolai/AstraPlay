@@ -6,6 +6,7 @@
 #include <QVariant>
 #include <QTimer>
 #include <QTime>
+#include <QMessageBox>
 
 #include "mpv/client.h"
 #include "mpv/qthelper.hpp"

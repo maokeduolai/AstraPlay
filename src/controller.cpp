@@ -34,6 +34,7 @@ Controller::Controller(Application *app, QObject *parent)
         // 初始化MPV完成后启动它
         if (mpv_initialize(mpv) < 0) {
             // 错误处理
+            QMessageBox::critical(reinterpret_cast<QWidget *>(app), tr("错误"), tr("MPV初始化失败"));
         }
     }
 
@@ -57,6 +58,10 @@ Controller::~Controller() {
 
 // 将MPV的视频输出绑定到QWidget上
 void Controller::setPlayerWidget(QWidget *widget) {
+    if (widget == nullptr) {  // 检查widget是否为空
+        QMessageBox::critical(reinterpret_cast<QWidget *>(application), tr("错误"), tr("Widget为空无法绑定！"));
+        return;
+    }
     mpv_set_option_string(mpv, "wid", QString::number(widget->winId()).toUtf8().constData());
 }
 
@@ -384,17 +389,31 @@ void Controller::goToNextFrame() {
 
 // 发送命令到MPV
 void Controller::command(const QStringList &args) {
-    mpv::qt::command(mpv, args);  // 需添加异常处理
+    auto result = mpv::qt::command(mpv, args);
+    if (mpv::qt::is_error(result)) {
+        QMessageBox::critical(reinterpret_cast<QWidget *>(application), tr("错误"),
+                              "MPV命令错误：" + QString::number(mpv::qt::get_error(result)));
+    }
 }
 
 // MPV属性设置函数
 void Controller::setProperty(const QString &name, const QVariant &value) {
-    mpv::qt::set_property(mpv, name, value);
+    auto result = mpv::qt::set_property(mpv, name, value);
+    if (mpv::qt::is_error(result)) {
+        QMessageBox::critical(reinterpret_cast<QWidget *>(application), tr("错误"),
+                              "MPV设置参数错误：" + QString::number(mpv::qt::get_error(result)));
+    }
 }
 
 // 获取MPV属性值函数
 QVariant Controller::getProperty(const QString &name) const {
-    return mpv::qt::get_property_variant(mpv, name);
+    auto result = mpv::qt::get_property_variant(mpv, name);
+    if (mpv::qt::is_error(result)) {
+        QMessageBox::critical(reinterpret_cast<QWidget *>(application), tr("错误"),
+                              "MPV获取参数错误：" + QString::number(mpv::qt::get_error(result)));
+        return {};
+    }
+    return result;
 }
 
 // 返回mpv实例

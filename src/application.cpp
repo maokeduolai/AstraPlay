@@ -308,8 +308,10 @@ void Application::on_actionOpenFile_triggered() {
 
     // 在路径不为空的情况下打开文件
     if (!filename.isEmpty()) {
-        controller->openFile(filename);  // 调用Controller的openFile方法
+        controller->openFile(filename);
         Application::addHistory(filename);
+    } else {
+        QMessageBox::critical(this, tr("错误"), tr("文件路径为空"));
     }
 }
 
@@ -333,9 +335,13 @@ void Application::on_actionOpenURL_triggered() {
 
     if (dialog.exec() == QDialog::Accepted) {
         QString url = lineEdit.text();
-        controller->handleUrl(url);
-        filename = url;
-        Application::addHistory(url);
+        if (url.isEmpty()) {
+            QMessageBox::critical(this, tr("错误"), tr("URL为空"));
+        } else {
+            controller->handleUrl(url);
+            filename = url;
+            Application::addHistory(url);
+        }
     }
 }
 
@@ -585,7 +591,9 @@ void Application::on_DownloadFinished(const QString &folderPath) {
         controller->openFile(filePath);
     } else if (finishedMessageBox->clickedButton() == openFolderButton) {
         // 打开视频文件所在的文件夹
-        QDesktopServices::openUrl(QUrl::fromLocalFile(folderPath));
+        if (!QDesktopServices::openUrl(QUrl::fromLocalFile(folderPath))) {
+            QMessageBox::critical(this, tr("错误"), tr("无法打开文件夹：%1").arg(folderPath));
+        }
     }
 }
 
