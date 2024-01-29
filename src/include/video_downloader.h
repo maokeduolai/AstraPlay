@@ -17,6 +17,10 @@ Q_OBJECT
 public:
     explicit VideoDownloader(QObject *parent = nullptr);
 
+    ~VideoDownloader() override {
+        delete outputWindow;
+    }
+
     void downloadVideo(const QString &videoUrl);
 
 signals:

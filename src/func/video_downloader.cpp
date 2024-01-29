@@ -1,6 +1,7 @@
 #include "video_downloader.h"
 
-VideoDownloader::VideoDownloader(QObject *parent) : QObject(parent), downloadFolderPath(""), outputWindow(new OutputWindow()) {}
+VideoDownloader::VideoDownloader(QObject *parent) : QObject(parent), downloadFolderPath(""),
+                                                    outputWindow(new OutputWindow()) {}
 
 void VideoDownloader::downloadVideo(const QString &videoUrl) {
     /*!
@@ -10,10 +11,9 @@ void VideoDownloader::downloadVideo(const QString &videoUrl) {
     QDir().mkpath(downloadFolderPath);
 
     QStringList arguments;
-    arguments << "-o" << downloadFolderPath + "/%(title)s.%(ext)s" << "-f" << "bv[ext=mp4]+ba[ext=m4a]" << "--embed-metadata"
-              << "--merge-output-format" << "mp4" << videoUrl;
+    arguments << "-o" << downloadFolderPath + "/%(title)s.%(ext)s" << "-f" << "bv[ext=mp4]+ba[ext=m4a]"
+              << "--embed-metadata" << "--merge-output-format" << "mp4" << videoUrl;
 
-    outputWindow->setAttribute(Qt::WA_DeleteOnClose); // 窗口关闭时释放资源
     outputWindow->show();
 
     /*!

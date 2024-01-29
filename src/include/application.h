@@ -22,6 +22,7 @@
 #include <QComboBox>
 #include <QFontDatabase>
 #include <QShortcut>
+#include <QDir>
 
 #include "../../resources/ui_application.h"
 #include "controller.h"

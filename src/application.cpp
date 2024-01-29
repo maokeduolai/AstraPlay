@@ -829,7 +829,14 @@ void Application::on_DownloadFinished(const QString &folderPath) {
         /*!
          * @brief 获取根据修改日期从晚到早的文件名排序
          */
-        QFileInfoList fileList = directory.entryInfoList(QDir::Files, QDir::Time);
+        QFileInfoList fileList = directory.entryInfoList(QDir::Files);
+
+        /*!
+         * @brief 使用 std::sort 和 lambda 函数按创建时间排序
+         */
+        std::sort(fileList.begin(), fileList.end(), [](const QFileInfo &a, const QFileInfo &b) {
+            return a.birthTime() > b.birthTime();
+        });
 
         /*!
          * @brief 得到最近修改的文件及其完整路径
@@ -841,6 +848,8 @@ void Application::on_DownloadFinished(const QString &folderPath) {
          * @brief 打开视频文件
          */
         controller->openFile(filePath);
+        filename = filePath;
+        addHistory(filePath);
     } else if (finishedMessageBox->clickedButton() == openFolderButton) {
         /*!
          * @brief 打开视频文件所在的文件夹
