@@ -41,6 +41,7 @@ set(SOURCE_FILES
         src/include/output_window.h
         src/include/media_info.h
         src/include/subtitle.h
+        resources/icon.rc
 )
 add_executable(AstraPlay ${SOURCE_FILES})
 
