@@ -1,9 +1,0 @@
-<map id="Application::on_actionToolForward_triggered" name="Application::on_actionToolForward_triggered">
-<area shape="rect" id="Node000001" title="前进3秒" alt="" coords="5,23,179,65"/>
-<area shape="rect" id="Node000002" href="$class_controller.html#aa243f1c686c1ab23e6342a47e44d92b8" title="跳转到相对播放位置" alt="" coords="227,31,384,57"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="179,41,211,41,211,47,179,47"/>
-<area shape="rect" id="Node000003" href="$class_controller.html#a760fa8063d5501d85fc8d710af0acbb4" title="发送命令到MPV" alt="" coords="437,5,578,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="384,31,422,27,422,32,385,37"/>
-<area shape="rect" id="Node000004" href="$class_controller.html#a2a8f008980f87cdb36c4111115d0e71f" title="获取MPV属性值函数" alt="" coords="432,56,583,83"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="385,51,417,55,416,61,384,57"/>
-</map>

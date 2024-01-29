@@ -1,9 +1,0 @@
-<map id="mpv_set_option_string" name="mpv_set_option_string">
-<area shape="rect" id="Node000001" title=" " alt="" coords="439,31,589,57"/>
-<area shape="rect" id="Node000002" href="$class_controller.html#a9de3b2de7339605b0cdf56392da6a1d1" title=" " alt="" coords="231,5,371,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="423,36,371,30,371,24,424,31"/>
-<area shape="rect" id="Node000003" href="$class_controller.html#a89d392cb8988e9627901ae62edbf7675" title="将MPV的视频输出绑定到QWidget上" alt="" coords="211,56,391,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="424,57,392,61,391,56,423,52"/>
-<area shape="rect" id="Node000004" href="$class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,56,163,83"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="195,72,163,72,163,67,195,67"/>
-</map>

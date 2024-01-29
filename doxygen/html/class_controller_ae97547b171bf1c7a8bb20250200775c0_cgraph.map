@@ -1,7 +1,0 @@
-<map id="Controller::updateSliderPosition" name="Controller::updateSliderPosition">
-<area shape="rect" id="Node000001" title="播放时更新滑块位置" alt="" coords="5,23,162,65"/>
-<area shape="rect" id="Node000002" href="$class_application.html#a37b44bf33e642e5e26a200db2fc145ed" title="给Controller类提供slider用于对播放进度滑块进行初始化与更新操作" alt="" coords="210,5,354,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="162,31,194,27,195,32,163,37"/>
-<area shape="rect" id="Node000003" href="$client_8h.html#aeca58b3b9eadb3cd70953d9cba238958" title=" " alt="" coords="220,56,344,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="163,51,205,57,205,62,162,57"/>
-</map>

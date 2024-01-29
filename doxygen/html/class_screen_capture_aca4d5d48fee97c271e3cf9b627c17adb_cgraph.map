@@ -1,9 +1,0 @@
-<map id="ScreenCapture::ScreenCapture" name="ScreenCapture::ScreenCapture">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,47,207,73"/>
-<area shape="rect" id="Node000002" href="$class_screen_capture.html#a0b222e676b0e297914aa14532dd5af5e" title=" " alt="" coords="255,5,441,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="207,43,239,39,240,44,207,49"/>
-<area shape="rect" id="Node000003" href="$class_screen_capture.html#a480ac2d43824b875c68630ecbf9fe7e5" title=" " alt="" coords="258,72,438,115"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="207,71,243,76,242,82,207,77"/>
-<area shape="rect" id="Node000004" href="$class_screen_capture.html#ab78f7397cedeff1e8c4428185885e1d6" title=" " alt="" coords="489,80,671,107"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="438,91,473,91,473,96,438,96"/>
-</map>

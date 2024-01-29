@@ -216,4 +216,4 @@ AstraPlay是一款基于libmpv和Qt5框架，使用C++语言编写的功能强�
 | RTMP测试                          | rtmp://ns8.indexforce.com/home/mystream                                                    |
 
 # 八、程序手册
-[程序手册](./doxygen/html/index.html)
+### [点击下载程序手册](https://raw.githubusercontent.com/maokeduolai/AstraPlay/master/AstraPlayManual.chm)

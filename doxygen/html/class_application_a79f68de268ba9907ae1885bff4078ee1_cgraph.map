@@ -1,5 +1,0 @@
-<map id="Application::on_actionReadRaw_triggered" name="Application::on_actionReadRaw_triggered">
-<area shape="rect" id="Node000001" title="读取视频元数据" alt="" coords="5,5,185,48"/>
-<area shape="rect" id="Node000002" href="$class_media_info.html#a09179dea5468a36eeb42e0746338e7ca" title=" " alt="" coords="233,13,416,40"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,24,217,24,217,29,185,29"/>
-</map>

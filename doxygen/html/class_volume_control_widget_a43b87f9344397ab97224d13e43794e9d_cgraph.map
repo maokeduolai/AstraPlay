@@ -1,7 +1,0 @@
-<map id="VolumeControlWidget::VolumeControlWidget" name="VolumeControlWidget::VolumeControlWidget">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,39,161,81"/>
-<area shape="rect" id="Node000002" href="$class_volume_control_widget.html#a831df5490ac961f283cf3bb38457bd3f" title="传递切换静音的信号到VolumeAction类" alt="" coords="209,5,356,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,44,193,39,194,44,161,50"/>
-<area shape="rect" id="Node000003" href="$class_volume_control_widget.html#af8dd933817f08d5339854fc54524899a" title="传递音量改变的信号与改变后的值到VolumeAction类" alt="" coords="209,72,356,115"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="161,70,194,76,193,81,160,76"/>
-</map>

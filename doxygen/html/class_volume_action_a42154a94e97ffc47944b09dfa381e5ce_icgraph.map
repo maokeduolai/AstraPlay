@@ -1,7 +1,0 @@
-<map id="VolumeAction::toggleMute" name="VolumeAction::toggleMute">
-<area shape="rect" id="Node000001" title="传递切换静音的信号到controller.cpp" alt="" coords="241,31,415,57"/>
-<area shape="rect" id="Node000002" href="$class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="20,5,178,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="225,35,178,30,178,25,226,30"/>
-<area shape="rect" id="Node000003" href="$class_volume_action.html#a2cf9ad62085d01665ff485a511cb7766" title=" " alt="" coords="5,56,193,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="226,58,193,62,193,56,225,53"/>
-</map>

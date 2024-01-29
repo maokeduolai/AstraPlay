@@ -1,5 +1,0 @@
-<map id="Application::on_actionClearHistory_triggered" name="Application::on_actionClearHistory_triggered">
-<area shape="rect" id="Node000001" title="清除历史记录" alt="" coords="5,5,185,48"/>
-<area shape="rect" id="Node000002" href="$class_application.html#a111d84e502dae95518416fc9d51bfccc" title="保存历史记录" alt="" coords="233,13,393,40"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,24,217,24,217,29,185,29"/>
-</map>

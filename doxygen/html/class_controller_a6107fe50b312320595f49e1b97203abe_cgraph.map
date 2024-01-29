@@ -1,5 +1,0 @@
-<map id="Controller::zoomReset" name="Controller::zoomReset">
-<area shape="rect" id="Node000001" title="重置视频缩放" alt="" coords="5,5,156,32"/>
-<area shape="rect" id="Node000002" href="$class_controller.html#a1d55246197db45a58108b5b0c0f05960" title="MPV属性设置函数" alt="" coords="204,5,355,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,16,188,16,188,21,156,21"/>
-</map>

@@ -1,9 +1,0 @@
-<map id="VolumeControlWidget" name="VolumeControlWidget">
-<area shape="rect" id="Node000001" title="音量控制组件" alt="" coords="61,139,219,208"/>
-<area shape="rect" id="Node000002" href="$class_q_widget.html" title=" " alt="" coords="5,5,69,75"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,85,116,137,112,140,71,88"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="93,5,187,75"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="143,75,143,122,137,122,137,75"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="211,5,277,75"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="225,76,195,116,186,128,182,124,191,113,220,73"/>
-</map>

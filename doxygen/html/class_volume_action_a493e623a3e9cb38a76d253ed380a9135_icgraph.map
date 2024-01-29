@@ -1,7 +1,0 @@
-<map id="VolumeAction::volumeChanged" name="VolumeAction::volumeChanged">
-<area shape="rect" id="Node000001" title="继续传递值改变的信号到application.cpp" alt="" coords="241,31,442,57"/>
-<area shape="rect" id="Node000002" href="$class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="20,5,178,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="225,34,178,30,178,24,225,29"/>
-<area shape="rect" id="Node000003" href="$class_volume_action.html#a2cf9ad62085d01665ff485a511cb7766" title=" " alt="" coords="5,56,193,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="225,59,193,62,193,57,225,53"/>
-</map>

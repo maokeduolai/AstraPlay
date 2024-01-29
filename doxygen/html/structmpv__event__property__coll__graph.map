@@ -1,9 +1,0 @@
-<map id="mpv_event_property" name="mpv_event_property">
-<area shape="rect" id="Node000001" title=" " alt="" coords="106,139,233,208"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,88,75"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="80,73,128,124,124,128,76,76"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="112,5,227,75"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="172,75,172,122,167,122,167,75"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="251,5,295,75"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="254,76,225,116,215,128,211,124,221,113,250,73"/>
-</map>

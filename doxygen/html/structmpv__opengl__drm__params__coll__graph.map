@@ -1,7 +1,0 @@
-<map id="mpv_opengl_drm_params" name="mpv_opengl_drm_params">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,187,165,256"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="7,5,33,75"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="22,74,26,117,39,162,44,172,40,174,34,164,21,118,17,75"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="57,5,247,75"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="150,75,140,118,125,164,120,174,116,171,120,162,135,116,145,74"/>
-</map>

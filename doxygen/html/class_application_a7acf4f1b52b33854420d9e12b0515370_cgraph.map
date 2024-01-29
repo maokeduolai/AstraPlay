@@ -1,7 +1,0 @@
-<map id="Application::on_slider_Released" name="Application::on_slider_Released">
-<area shape="rect" id="Node000001" title="跳转到指定播放位置" alt="" coords="5,5,151,48"/>
-<area shape="rect" id="Node000002" href="$class_controller.html#a7476f4c119982f39dc491f13dff28111" title="跳转到指定播放位置" alt="" coords="199,13,311,40"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,24,183,24,183,29,151,29"/>
-<area shape="rect" id="Node000003" href="$class_controller.html#a760fa8063d5501d85fc8d710af0acbb4" title="发送命令到MPV" alt="" coords="359,13,500,40"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="312,24,343,24,343,29,312,29"/>
-</map>
