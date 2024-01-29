@@ -5,6 +5,9 @@
 int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
 
+    // 设置程序图标
+    QApplication::setWindowIcon(QIcon(":/icons/icons/AstraPlay_Logo.png"));
+
     // 加载QSS文件
     QFile qss("../resources/Aqua.qss");
     if (qss.open(QFile::ReadOnly)) {

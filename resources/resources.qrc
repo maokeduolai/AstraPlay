@@ -6,5 +6,6 @@
         <file>icons/volume.png</file>
         <file>icons/pause-button.png</file>
         <file>icons/mute.png</file>
+        <file>icons/AstraPlay_Logo.png</file>
     </qresource>
 </RCC>
