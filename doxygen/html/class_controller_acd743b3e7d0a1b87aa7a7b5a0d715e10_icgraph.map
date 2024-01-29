@@ -1,0 +1,10 @@
+<map id="Controller::adjustAudio" name="Controller::adjustAudio">
+<area shape="rect" id="Node000001" title="调整音频同步" alt="" coords="424,47,576,73"/>
+<area shape="rect" id="Node000002" href="$class_application.html#aae2d5f8bfc05cd42224a2212889b31e6" title="音频提前0.1s" alt="" coords="211,5,376,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="408,48,376,43,377,37,409,43"/>
+<area shape="rect" id="Node000004" href="$class_application.html#a169e2cab0b44f421f5bf5d5848e7a472" title="音频延后0.1s" alt="" coords="211,72,376,115"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="409,77,377,83,376,77,408,72"/>
+<area shape="rect" id="Node000003" href="$class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,47,163,73"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="196,45,163,50,163,45,195,40"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="195,80,163,75,163,70,196,75"/>
+</map>

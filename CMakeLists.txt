@@ -29,18 +29,18 @@ set(SOURCE_FILES
         src/func/subtitle.cpp
         resources/application.ui
         resources/resources.qrc
-        include/mpv/client.h
-        include/mpv/render.h
-        include/mpv/render_gl.h
-        include/mpv/stream_cb.h
-        include/mpv/qthelper.hpp
-        include/screen_capture.h
-        include/video_downloader.h
-        include/application.h
-        include/controller.h
-        include/output_window.h
-        include/media_info.h
-        include/subtitle.h
+        src/include/mpv/client.h
+        src/include/mpv/render.h
+        src/include/mpv/render_gl.h
+        src/include/mpv/stream_cb.h
+        src/include/mpv/qthelper.hpp
+        src/include/screen_capture.h
+        src/include/video_downloader.h
+        src/include/application.h
+        src/include/controller.h
+        src/include/output_window.h
+        src/include/media_info.h
+        src/include/subtitle.h
 )
 add_executable(AstraPlay ${SOURCE_FILES})
 
@@ -51,7 +51,7 @@ target_link_libraries(AstraPlay PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 target_link_libraries(AstraPlay PRIVATE ${MPV_LIBRARY})
 
 # 包含头文件目录
-target_include_directories(AstraPlay PUBLIC ${PROJECT_SOURCE_DIR}/include)
+target_include_directories(AstraPlay PUBLIC src/include)
 
 set_target_properties(AstraPlay PROPERTIES
         ${BUNDLE_ID_OPTION}

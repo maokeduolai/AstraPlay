@@ -1,0 +1,7 @@
+<map id="Application::on_actionMoveLeft_triggered" name="Application::on_actionMoveLeft_triggered">
+<area shape="rect" id="Node000001" title="视频画面移动控制" alt="" coords="5,5,185,48"/>
+<area shape="rect" id="Node000002" href="$class_controller.html#aa846c3f51c3a0d9727ab69e664351137" title="视频位置控制" alt="" coords="233,13,368,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,24,217,24,217,29,185,29"/>
+<area shape="rect" id="Node000003" href="$class_controller.html#a1d55246197db45a58108b5b0c0f05960" title="MPV属性设置函数" alt="" coords="416,13,567,40"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="368,24,400,24,400,29,368,29"/>
+</map>

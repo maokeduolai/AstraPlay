@@ -1,0 +1,5 @@
+<map id="Application::updateVolumeIcon" name="Application::updateVolumeIcon">
+<area shape="rect" id="Node000001" title="更新静音状态对应的声音图标" alt="" coords="5,5,206,32"/>
+<area shape="rect" id="Node000002" href="$class_volume_action.html#a1d8fe0a7edeb6ac0df49ac183c234be1" title="设置音量图标" alt="" coords="254,5,450,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="206,16,238,16,238,21,206,21"/>
+</map>

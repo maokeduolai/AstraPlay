@@ -1,0 +1,22 @@
+<map id="Application::on_DownloadFinished" name="Application::on_DownloadFinished">
+<area shape="rect" id="Node000001" title="下载完成处理" alt="" coords="5,115,176,157"/>
+<area shape="rect" id="Node000002" href="$class_controller.html#a550805a886e37b396e587863e6ccea13" title="打开文件" alt="" coords="224,123,357,149"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,133,208,133,208,139,176,139"/>
+<area shape="rect" id="Node000003" href="$class_controller.html#a760fa8063d5501d85fc8d710af0acbb4" title="发送命令到MPV" alt="" coords="426,5,567,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="303,120,346,81,374,60,404,42,417,35,420,40,406,46,377,64,349,85,307,124"/>
+<area shape="rect" id="Node000004" href="$class_controller.html#a2a8f008980f87cdb36c4111115d0e71f" title="获取MPV属性值函数" alt="" coords="651,123,802,149"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="358,133,635,133,635,139,358,139"/>
+<area shape="rect" id="Node000005" href="$class_controller.html#a2a01620e9ab29667b85e3caac0cd1e57" title="初始化滑块的总时长" alt="" coords="414,56,578,99"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="339,120,404,101,405,106,341,125"/>
+<area shape="rect" id="Node000007" href="$class_controller.html#a6e08645421f79b7e914fd644f3a870ba" title="切换播放暂停" alt="" coords="405,173,587,200"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="348,147,425,166,424,172,347,153"/>
+<area shape="rect" id="Node000009" href="$class_application.html#ad42c22bcb02a4bd0421a1942601e1c33" title="更新播放状态对应的播放图标" alt="" coords="635,224,818,251"/>
+<area shape="poly" id="edge11_Node000002_Node000009" title=" " alt="" coords="308,148,350,180,377,197,406,209,459,224,515,233,620,240,620,245,514,239,458,229,404,215,375,201,347,185,305,152"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="579,96,657,116,655,121,578,101"/>
+<area shape="rect" id="Node000006" href="$class_application.html#a37b44bf33e642e5e26a200db2fc145ed" title="给Controller类提供slider用于对播放进度滑块进行初始化与更新操作" alt="" coords="654,64,799,91"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="578,75,639,75,639,80,578,80"/>
+<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="560,170,647,151,648,156,561,175"/>
+<area shape="rect" id="Node000008" href="$class_controller.html#a1d55246197db45a58108b5b0c0f05960" title="MPV属性设置函数" alt="" coords="651,173,802,200"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="587,184,636,184,636,189,587,189"/>
+<area shape="poly" id="edge10_Node000007_Node000009" title=" " alt="" coords="561,198,648,217,647,223,560,203"/>
+</map>

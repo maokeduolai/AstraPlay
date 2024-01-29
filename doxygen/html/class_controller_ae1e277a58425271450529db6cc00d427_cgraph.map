@@ -1,0 +1,20 @@
+<map id="Controller::handleUrl" name="Controller::handleUrl">
+<area shape="rect" id="Node000001" title="打开URL" alt="" coords="5,123,144,149"/>
+<area shape="rect" id="Node000002" href="$class_controller.html#a760fa8063d5501d85fc8d710af0acbb4" title="发送命令到MPV" alt="" coords="212,5,354,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,120,131,81,160,60,190,42,204,35,207,40,193,46,163,64,135,85,91,124"/>
+<area shape="rect" id="Node000003" href="$class_controller.html#a2a8f008980f87cdb36c4111115d0e71f" title="获取MPV属性值函数" alt="" coords="438,123,589,149"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="144,133,422,133,422,139,144,139"/>
+<area shape="rect" id="Node000004" href="$class_controller.html#a2a01620e9ab29667b85e3caac0cd1e57" title="初始化滑块的总时长" alt="" coords="201,56,365,99"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="124,120,189,101,191,106,125,125"/>
+<area shape="rect" id="Node000006" href="$class_controller.html#a6e08645421f79b7e914fd644f3a870ba" title="切换播放暂停" alt="" coords="192,173,374,200"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="133,147,211,167,210,172,132,153"/>
+<area shape="rect" id="Node000008" href="$class_application.html#ad42c22bcb02a4bd0421a1942601e1c33" title="更新播放状态对应的播放图标" alt="" coords="422,224,604,251"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="93,148,136,180,163,197,193,209,246,224,301,233,407,239,406,245,301,238,245,229,191,215,161,201,133,185,90,152"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="366,96,443,116,442,121,364,101"/>
+<area shape="rect" id="Node000005" href="$class_application.html#a37b44bf33e642e5e26a200db2fc145ed" title="给Controller类提供slider用于对播放进度滑块进行初始化与更新操作" alt="" coords="441,64,585,91"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="365,75,426,75,426,80,365,80"/>
+<area shape="poly" id="edge7_Node000006_Node000003" title=" " alt="" coords="346,170,434,151,435,156,348,175"/>
+<area shape="rect" id="Node000007" href="$class_controller.html#a1d55246197db45a58108b5b0c0f05960" title="MPV属性设置函数" alt="" coords="438,173,589,200"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="374,184,422,184,422,189,374,189"/>
+<area shape="poly" id="edge9_Node000006_Node000008" title=" " alt="" coords="348,198,435,217,434,223,346,203"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="Application::on_actionSubtitleList_triggered" name="Application::on_actionSubtitleList_triggered">
+<area shape="rect" id="Node000001" title="字幕列表" alt="" coords="5,48,199,91"/>
+<area shape="rect" id="Node000002" href="$class_subtitle.html#ad0b734f49236b5c18825882af3c3a7ec" title="获取字幕列表" alt="" coords="252,31,409,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="199,56,236,52,237,57,199,61"/>
+<area shape="rect" id="Node000005" href="$class_subtitle.html#af11c8cd6e5281420c2d9374399ff5d32" title="设置使用的字幕" alt="" coords="247,81,414,108"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="199,77,232,81,231,86,199,83"/>
+<area shape="rect" id="Node000003" href="$client_8h.html#a4dc4983d9482000f58cd14ee66cdf8ba" title=" " alt="" coords="462,5,626,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="409,32,446,28,447,33,409,37"/>
+<area shape="rect" id="Node000004" href="$client_8h.html#aeca58b3b9eadb3cd70953d9cba238958" title=" " alt="" coords="483,56,606,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="409,51,467,58,467,63,409,56"/>
+</map>

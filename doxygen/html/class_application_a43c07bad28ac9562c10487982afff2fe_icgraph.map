@@ -1,0 +1,7 @@
+<map id="Application::on_actionFullScreen_triggered" name="Application::on_actionFullScreen_triggered">
+<area shape="rect" id="Node000001" title="全屏播放" alt="" coords="211,23,381,65"/>
+<area shape="rect" id="Node000002" href="$class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,5,163,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,35,163,31,163,25,195,29"/>
+<area shape="rect" id="Node000003" href="$class_application.html#a007d9f7c6e0805fdca03502a1c3d130c" title="重写eventFilter()方法" alt="" coords="8,56,160,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="195,59,161,63,160,58,195,53"/>
+</map>

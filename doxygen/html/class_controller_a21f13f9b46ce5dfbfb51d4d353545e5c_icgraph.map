@@ -1,0 +1,5 @@
+<map id="Controller::sliderDragStopped" name="Controller::sliderDragStopped">
+<area shape="rect" id="Node000001" title="结束拖动播放进度滑块，更新状态" alt="" coords="193,5,383,32"/>
+<area shape="rect" id="Node000002" href="$class_controller.html#a9de3b2de7339605b0cdf56392da6a1d1" title=" " alt="" coords="5,5,145,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,21,145,21,145,16,177,16"/>
+</map>

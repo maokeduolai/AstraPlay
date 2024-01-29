@@ -1,0 +1,13 @@
+<map id="Application::addHistory" name="Application::addHistory">
+<area shape="rect" id="Node000001" title="添加历史记录" alt="" coords="439,64,594,91"/>
+<area shape="rect" id="Node000002" href="$class_application.html#af63e0ba4a66b778916fd6e147a44224a" title="加载历史记录" alt="" coords="222,5,380,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="450,62,352,35,353,30,451,57"/>
+<area shape="rect" id="Node000004" href="$class_application.html#a57b10b769faceb80e236679ad894b9e0" title="打开视频文件" alt="" coords="211,56,391,99"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="423,80,391,80,391,75,423,75"/>
+<area shape="rect" id="Node000005" href="$class_application.html#adb2fa3b8daee398534b3fe33ba7233f2" title="打开URL" alt="" coords="211,123,391,165"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="457,98,373,125,372,119,456,93"/>
+<area shape="rect" id="Node000003" href="$class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,64,163,91"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="235,39,137,66,135,61,234,34"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="195,80,163,80,163,75,195,75"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="214,120,129,94,131,89,216,115"/>
+</map>

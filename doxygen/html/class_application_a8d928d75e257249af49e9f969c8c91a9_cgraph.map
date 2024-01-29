@@ -1,0 +1,9 @@
+<map id="Application::on_subtitleControl_clicked" name="Application::on_subtitleControl_clicked">
+<area shape="rect" id="Node000001" title="字幕控制" alt="" coords="5,48,162,91"/>
+<area shape="rect" id="Node000002" href="$class_subtitle.html#ad9629a2d6599e1b52ff0740df0c8481c" title="获取当前字幕字体属性" alt="" coords="210,5,413,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="162,49,233,33,234,39,163,54"/>
+<area shape="rect" id="Node000003" href="$class_subtitle.html#a5bc754902bc6fe67b4e8f965c1ce49d1" title="设置字幕同步" alt="" coords="227,56,396,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="162,67,212,67,212,72,162,72"/>
+<area shape="rect" id="Node000004" href="$class_subtitle.html#a004214788c44dfbab4c258209ea41371" title="设置字幕字体字号" alt="" coords="231,107,392,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="163,84,234,100,233,105,162,89"/>
+</map>

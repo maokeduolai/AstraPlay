@@ -1,0 +1,9 @@
+<map id="Controller::setVolume" name="Controller::setVolume">
+<area shape="rect" id="Node000001" title="设置播放音量" alt="" coords="5,56,152,83"/>
+<area shape="rect" id="Node000002" href="$class_controller.html#a2a8f008980f87cdb36c4111115d0e71f" title="获取MPV属性值函数" alt="" coords="221,5,372,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,53,220,34,222,39,140,58"/>
+<area shape="rect" id="Node000003" href="$class_controller.html#a1d55246197db45a58108b5b0c0f05960" title="MPV属性设置函数" alt="" coords="221,56,372,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="152,67,205,67,205,72,152,72"/>
+<area shape="rect" id="Node000004" href="$class_volume_action.html#a6d43c6baac56707ee4696cd26524111e" title="使用快捷键设置音量后，对应更新滑块位置" alt="" coords="200,107,393,149"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="132,81,201,99,199,105,130,86"/>
+</map>

@@ -1,0 +1,20 @@
+<map id="F:/QtProject/AstraPlay/src/func/subtitle.cpp" name="F:/QtProject/AstraPlay/src/func/subtitle.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="139,5,292,48"/>
+<area shape="rect" id="Node000002" href="$subtitle_8h.html" title=" " alt="" coords="178,96,253,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="218,49,218,80,213,80,213,49"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,171,71,197"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="185,126,84,167,82,162,183,121"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="95,171,163,197"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="202,125,157,163,153,159,199,121"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="187,171,244,197"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="218,123,218,155,213,155,213,123"/>
+<area shape="rect" id="Node000006" href="$client_8h.html" title=" " alt="" coords="285,245,375,272"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="227,122,313,231,309,234,223,125"/>
+<area shape="rect" id="Node000009" href="$qthelper_8hpp.html" title=" " alt="" coords="320,171,439,197"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="245,121,338,161,336,166,243,126"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="252,320,320,347"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="325,274,304,308,299,305,320,271"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="343,320,408,347"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="340,271,362,305,357,308,336,274"/>
+<area shape="poly" id="edge9_Node000009_Node000006" title=" " alt="" coords="373,199,349,234,345,231,369,196"/>
+</map>

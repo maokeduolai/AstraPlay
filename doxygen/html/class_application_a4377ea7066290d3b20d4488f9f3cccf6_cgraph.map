@@ -1,0 +1,7 @@
+<map id="Application::on_actionMoveRight_triggered" name="Application::on_actionMoveRight_triggered">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,185,48"/>
+<area shape="rect" id="Node000002" href="$class_controller.html#a6c14dfa97341ac701846495274985787" title=" " alt="" coords="233,13,377,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,24,217,24,217,29,185,29"/>
+<area shape="rect" id="Node000003" href="$class_controller.html#a1d55246197db45a58108b5b0c0f05960" title="MPV属性设置函数" alt="" coords="425,13,576,40"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="378,24,409,24,409,29,378,29"/>
+</map>

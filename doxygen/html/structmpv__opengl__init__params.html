@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AstraPlay: mpv_opengl_init_params结构体 参考</title>
+<link rel="icon" href="AstraPlay_Logo_Small.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="AstraPlay_Logo_Small.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">AstraPlay<span id="projectnumber">&#160;v1.0.2</span>
+   </div>
+   <div id="projectbrief">基于libmpv与Qt5框架的视频播放器</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="pages.html"><span>相关页面</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="structmpv__opengl__init__params-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">mpv_opengl_init_params结构体 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="render__gl_8h_source.html">render_gl.h</a>&gt;</code></p>
+<div class="dynheader">
+mpv_opengl_init_params 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structmpv__opengl__init__params__coll__graph.png" border="0" usemap="#ampv__opengl__init__params_coll__map" alt="Collaboration graph"/></div>
+<map name="ampv__opengl__init__params_coll__map" id="ampv__opengl__init__params_coll__map">
+<area shape="rect" title=" " alt="" coords="61,155,216,224"/>
+<area shape="rect" title=" " alt="" coords="5,5,128,91"/>
+<area shape="poly" title=" " alt="" coords="63,90,64,111,70,130,77,141,72,143,65,132,59,112,58,91"/>
+<area shape="rect" title=" " alt="" coords="190,13,234,83"/>
+<area shape="poly" title=" " alt="" coords="205,83,185,132,179,143,174,140,180,129,200,81"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:a9f862641589647ed468edc9070ffd638" id="r_a9f862641589647ed468edc9070ffd638"><td class="memItemLeft" align="right" valign="top">void *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f862641589647ed468edc9070ffd638">get_proc_address</a> )(void *ctx, const char *name)</td></tr>
+<tr class="separator:a9f862641589647ed468edc9070ffd638"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b7ec72215e8b2a09ea395160810ef9b" id="r_a9b7ec72215e8b2a09ea395160810ef9b"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b7ec72215e8b2a09ea395160810ef9b">get_proc_address_ctx</a></td></tr>
+<tr class="separator:a9b7ec72215e8b2a09ea395160810ef9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><h2><a class="anchor" id="autotoc_md16"></a>
+OpenGL backend</h2>
+<p>This header contains definitions for using OpenGL with the <a class="el" href="render_8h.html">render.h</a> API.</p>
+<h2><a class="anchor" id="autotoc_md17"></a>
+OpenGL interop</h2>
+<p>The OpenGL backend has some special rules, because OpenGL itself uses implicit per-thread contexts, which causes additional API problems.</p>
+<p>This assumes the OpenGL context lives on a certain thread controlled by the API user. All mpv_render_* APIs have to be assumed to implicitly use the OpenGL context if you pass a mpv_render_context using the OpenGL backend, unless specified otherwise.</p>
+<p>The OpenGL context is indirectly accessed through the OpenGL function pointers returned by the get_proc_address callback in <a class="el" href="structmpv__opengl__init__params.html">mpv_opengl_init_params</a>. Generally, mpv will not load the system OpenGL library when using this API.</p>
+<h2><a class="anchor" id="autotoc_md18"></a>
+OpenGL state</h2>
+<p>OpenGL has a large amount of implicit state. All the mpv functions mentioned above expect that the OpenGL state is reasonably set to OpenGL standard defaults. Likewise, mpv will attempt to leave the OpenGL context with standard defaults. The following state is excluded from this: </p><pre class="fragment"> - the glViewport state
+ - the glScissor state (but GL_SCISSOR_TEST is in its default value)
+ - glBlendFuncSeparate() state (but GL_BLEND is in its default value)
+ - glClearColor() state
+ - mpv may overwrite the callback set with glDebugMessageCallback()
+ - mpv always disables GL_DITHER at init
+</pre><p> Messing with the state could be avoided by creating shared OpenGL contexts, but this is avoided for the sake of compatibility and interoperability.</p>
+<p>On OpenGL 2.1, mpv will strictly call functions like glGenTextures() to create OpenGL objects. You will have to do the same. This ensures that objects created by mpv and the API users don't clash. Also, legacy state must be either in its defaults, or not interfere with core state.</p>
+<h2><a class="anchor" id="autotoc_md19"></a>
+API use</h2>
+<p>The mpv_render_* API is used. That API supports multiple backends, and this section documents specifics for the OpenGL backend.</p>
+<p>Use <a class="el" href="render_8h.html#a6326414507775cef9b21b5bbee1553d8">mpv_render_context_create()</a> with MPV_RENDER_PARAM_API_TYPE set to MPV_RENDER_API_TYPE_OPENGL, and MPV_RENDER_PARAM_OPENGL_INIT_PARAMS provided.</p>
+<p>Call <a class="el" href="render_8h.html#ac60a37eba7ff4e48613ecde542ea62c7">mpv_render_context_render()</a> with MPV_RENDER_PARAM_OPENGL_FBO to render the video frame to an FBO.</p>
+<h2><a class="anchor" id="autotoc_md20"></a>
+Hardware decoding</h2>
+<p>Hardware decoding via this API is fully supported, but requires some additional setup. (At least if direct hardware decoding modes are wanted, instead of copying back surface data from GPU to CPU RAM.)</p>
+<p>There may be certain requirements on the OpenGL implementation:</p>
+<ul>
+<li>Windows: ANGLE is required (although in theory GL/DX interop could be used)</li>
+<li>Intel/Linux: EGL is required, and also the native display resource needs to be provided (e.g. MPV_RENDER_PARAM_X11_DISPLAY for X11 and MPV_RENDER_PARAM_WL_DISPLAY for Wayland)</li>
+<li>nVidia/Linux: Both GLX and EGL should work (GLX is required if vdpau is used, e.g. due to old drivers.)</li>
+<li>OSX: CGL is required (CGLGetCurrentContext() returning non-NULL)</li>
+<li>iOS: EAGL is required (EAGLContext.currentContext returning non-nil)</li>
+</ul>
+<p>Once these things are setup, hardware decoding can be enabled/disabled at any time by setting the "hwdec" property. For initializing the mpv OpenGL state via MPV_RENDER_PARAM_OPENGL_INIT_PARAMS. </p>
+
+<p class="definition">在文件 <a class="el" href="render__gl_8h_source.html">render_gl.h</a> 第 <a class="el" href="render__gl_8h_source.html#l00106">106</a> 行定义.</p>
+</div><h2 class="groupheader">类成员变量说明</h2>
+<a id="a9f862641589647ed468edc9070ffd638" name="a9f862641589647ed468edc9070ffd638"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f862641589647ed468edc9070ffd638">&#9670;&#160;</a></span>get_proc_address</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void *(* mpv_opengl_init_params::get_proc_address) (void *ctx, const char *name)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This retrieves OpenGL function pointers, and will use them in subsequent operation. Usually, you can simply call the GL context APIs from this callback (e.g. glXGetProcAddressARB or wglGetProcAddress), but some APIs do not always return pointers for all standard functions (even if present); in this case you have to compensate by looking up these functions yourself when mpv wants to resolve them through this callback. mpv will not normally attempt to resolve GL functions on its own, nor does it link to GL libraries directly. </p>
+
+<p class="definition">在文件 <a class="el" href="render__gl_8h_source.html">render_gl.h</a> 第 <a class="el" href="render__gl_8h_source.html#l00118">118</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a9b7ec72215e8b2a09ea395160810ef9b" name="a9b7ec72215e8b2a09ea395160810ef9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b7ec72215e8b2a09ea395160810ef9b">&#9670;&#160;</a></span>get_proc_address_ctx</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* mpv_opengl_init_params::get_proc_address_ctx</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Value passed as ctx parameter to <a class="el" href="#a9f862641589647ed468edc9070ffd638">get_proc_address()</a>. </p>
+
+<p class="definition">在文件 <a class="el" href="render__gl_8h_source.html">render_gl.h</a> 第 <a class="el" href="render__gl_8h_source.html#l00122">122</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li>F:/QtProject/AstraPlay/src/include/mpv/<a class="el" href="render__gl_8h_source.html">render_gl.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

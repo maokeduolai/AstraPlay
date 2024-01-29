@@ -7,7 +7,9 @@ MediaInfo::MediaInfo(QObject *parent) : QObject(parent), textEdit(new MyTextEdit
 
 void MediaInfo::readRawAttribute(const QString &filename) {
     if (filename.isEmpty()) {
-        // 创建一个消息框来显示错误
+        /*!
+         * @brief 创建一个消息框来显示错误
+         */
         auto *errorMessageBox = new QMessageBox;
         errorMessageBox->setAttribute(Qt::WA_DeleteOnClose); // 对话框关闭时自动释放
         errorMessageBox->setWindowTitle(tr("读取元数据错误"));
@@ -17,19 +19,27 @@ void MediaInfo::readRawAttribute(const QString &filename) {
         errorMessageBox->setDefaultButton(QMessageBox::Ok);
         errorMessageBox->setIcon(QMessageBox::Warning);
 
-        // 显示消息框
+        /*!
+         * @brief 显示消息框
+         */
         errorMessageBox->show();
         return;
     }
 
-    // 构建MediaInfo命令参数
+    /*!
+     * @brief 构建MediaInfo命令参数
+     */
     QStringList arguments;
     arguments << filename;
 
-    // 启动MediaInfo进程
+    /*!
+     * @brief 启动MediaInfo进程
+     */
     mediaInfoProcess->start("third/Mediainfo/mediainfo", arguments);
 
-    // 创建一个只读的TextEdit来显示输出
+    /*!
+     * @brief 创建一个只读的TextEdit来显示输出
+     */
     textEdit->setReadOnly(true);
     textEdit->setWindowTitle("Media Info");
     textEdit->resize(600, 400);

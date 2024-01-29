@@ -1,0 +1,5 @@
+<map id="VolumeControlWidget" name="VolumeControlWidget">
+<area shape="rect" id="Node000001" title="音量控制组件" alt="" coords="5,123,163,213"/>
+<area shape="rect" id="Node000002" href="$class_q_widget.html" title=" " alt="" coords="52,5,116,75"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,89,87,123,81,123,81,89"/>
+</map>

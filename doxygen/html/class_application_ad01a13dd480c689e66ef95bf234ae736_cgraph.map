@@ -1,0 +1,14 @@
+<map id="Application::on_speedHalf_activated" name="Application::on_speedHalf_activated">
+<area shape="rect" id="Node000001" title="播放速度减少一半，播放视频" alt="" coords="5,48,177,91"/>
+<area shape="rect" id="Node000002" href="$class_controller.html#a520f2eb4928262171fc566241918463a" title="播放视频" alt="" coords="246,31,388,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,57,230,51,231,56,177,62"/>
+<area shape="rect" id="Node000005" href="$class_controller.html#abbae3b549fa779a306b84cbb64b36f80" title="设置播放速度倍数" alt="" coords="225,81,409,108"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="177,76,210,80,209,85,176,82"/>
+<area shape="rect" id="Node000003" href="$class_controller.html#a1d55246197db45a58108b5b0c0f05960" title="MPV属性设置函数" alt="" coords="473,56,624,83"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="388,49,457,57,457,62,388,54"/>
+<area shape="rect" id="Node000004" href="$class_application.html#ad42c22bcb02a4bd0421a1942601e1c33" title="更新播放状态对应的播放图标" alt="" coords="457,5,639,32"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="388,34,441,28,442,33,388,39"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="409,82,457,77,457,82,409,87"/>
+<area shape="rect" id="Node000006" href="$class_controller.html#a2a8f008980f87cdb36c4111115d0e71f" title="获取MPV属性值函数" alt="" coords="473,107,624,133"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="409,102,457,107,457,113,409,107"/>
+</map>

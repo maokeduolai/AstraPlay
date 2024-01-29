@@ -1,0 +1,10 @@
+<map id="Controller::playVideo" name="Controller::playVideo">
+<area shape="rect" id="Node000001" title="播放视频" alt="" coords="434,47,575,73"/>
+<area shape="rect" id="Node000002" href="$class_application.html#ad01a13dd480c689e66ef95bf234ae736" title="播放速度减少一半，播放视频" alt="" coords="213,5,384,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="419,49,384,43,385,38,419,44"/>
+<area shape="rect" id="Node000004" href="$class_application.html#a014688cf487feb1bcadfd7ac6991020e" title="播放速度增加一倍，播放视频" alt="" coords="211,72,386,115"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="419,76,387,82,386,76,418,71"/>
+<area shape="rect" id="Node000003" href="$class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,47,163,73"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="198,45,163,50,163,45,197,40"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="195,80,163,75,163,70,196,75"/>
+</map>

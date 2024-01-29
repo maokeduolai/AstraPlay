@@ -1,0 +1,11 @@
+<map id="MediaInfo" name="MediaInfo">
+<area shape="rect" id="Node000001" title=" " alt="" coords="29,279,233,391"/>
+<area shape="rect" id="Node000002" href="$class_q_object.html" title=" " alt="" coords="5,135,67,204"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="65,215,101,278,97,280,61,218"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="91,135,171,204"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="133,204,133,262,128,262,128,204"/>
+<area shape="rect" id="Node000004" href="$class_my_text_edit.html" title="创建新的QPlainTextEdit子类，并重写closeEvent方法，实现关闭窗口清空内容" alt="" coords="223,124,321,215"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="265,216,257,237,245,256,234,269,230,265,240,253,252,234,260,214"/>
+<area shape="rect" id="Node000005" href="$class_q_plain_text_edit.html" title=" " alt="" coords="222,5,322,75"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="275,90,275,124,269,124,269,90"/>
+</map>

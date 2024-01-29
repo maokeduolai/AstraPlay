@@ -1,0 +1,9 @@
+<map id="Application::on_actionAuAdvance_triggered" name="Application::on_actionAuAdvance_triggered">
+<area shape="rect" id="Node000001" title="音频提前0.1s" alt="" coords="5,23,171,65"/>
+<area shape="rect" id="Node000002" href="$class_controller.html#acd743b3e7d0a1b87aa7a7b5a0d715e10" title="调整音频同步" alt="" coords="219,31,371,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,41,203,41,203,47,171,47"/>
+<area shape="rect" id="Node000003" href="$class_controller.html#a2a8f008980f87cdb36c4111115d0e71f" title="获取MPV属性值函数" alt="" coords="419,5,570,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="371,32,403,28,404,33,372,37"/>
+<area shape="rect" id="Node000004" href="$class_controller.html#a1d55246197db45a58108b5b0c0f05960" title="MPV属性设置函数" alt="" coords="419,56,570,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="372,51,404,55,403,60,371,56"/>
+</map>

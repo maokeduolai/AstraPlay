@@ -1,0 +1,5 @@
+<map id="Application::on_actionCaptureScreen_triggered" name="Application::on_actionCaptureScreen_triggered">
+<area shape="rect" id="Node000001" title="视频截图窗口" alt="" coords="5,5,200,48"/>
+<area shape="rect" id="Node000002" href="$class_controller.html#a95fb0b6fc5bdc2df495616745af1885b" title="返回mpv实例" alt="" coords="248,13,422,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,24,232,24,232,29,200,29"/>
+</map>

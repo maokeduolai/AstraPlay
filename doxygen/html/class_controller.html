@@ -1,0 +1,2456 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AstraPlay: Controller类 参考</title>
+<link rel="icon" href="AstraPlay_Logo_Small.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="AstraPlay_Logo_Small.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">AstraPlay<span id="projectnumber">&#160;v1.0.2</span>
+   </div>
+   <div id="projectbrief">基于libmpv与Qt5框架的视频播放器</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="pages.html"><span>相关页面</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="class_controller-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">Controller类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="controller_8h_source.html">controller.h</a>&gt;</code></p>
+<div class="dynheader">
+类 Controller 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller__inherit__graph.png" border="0" usemap="#a_controller_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_controller_inherit__map" id="a_controller_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,123,165,811"/>
+<area shape="rect" href="class_q_object.html" title=" " alt="" coords="55,5,116,75"/>
+<area shape="poly" title=" " alt="" coords="88,90,88,123,83,123,83,90"/>
+</map>
+</div>
+<div class="dynheader">
+Controller 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller__coll__graph.png" border="0" usemap="#a_controller_coll__map" alt="Collaboration graph"/></div>
+<map name="a_controller_coll__map" id="a_controller_coll__map">
+<area shape="rect" title=" " alt="" coords="509,400,669,896"/>
+<area shape="rect" href="class_application.html" title="声明主窗口相关行为函数" alt="" coords="835,960,1035,1755"/>
+<area shape="poly" title=" " alt="" coords="547,895,558,935,581,986,609,1035,641,1081,677,1125,751,1204,824,1269,821,1273,748,1208,673,1129,637,1084,605,1037,576,988,553,937,542,896"/>
+<area shape="rect" href="class_q_object.html" title=" " alt="" coords="1469,171,1530,240"/>
+<area shape="poly" title=" " alt="" coords="1479,254,1458,274,1436,285,1414,289,1375,285,1338,282,1319,287,1298,298,1290,307,1285,316,1281,337,1277,359,1271,369,1261,378,1222,388,1155,392,973,390,791,388,725,393,702,397,689,402,670,418,667,414,686,398,701,392,724,387,791,383,973,385,1155,387,1221,383,1258,374,1267,366,1272,357,1276,336,1280,314,1285,304,1295,294,1317,282,1337,277,1376,280,1414,283,1434,280,1455,270,1475,250"/>
+<area shape="rect" href="class_video_downloader.html" title=" " alt="" coords="1145,581,1277,715"/>
+<area shape="poly" title=" " alt="" coords="1478,254,1458,274,1440,283,1423,287,1392,285,1362,284,1347,288,1332,298,1311,336,1284,411,1232,582,1227,581,1279,409,1306,334,1328,294,1345,283,1361,278,1392,279,1423,281,1438,278,1455,270,1474,251"/>
+<area shape="rect" href="class_media_info.html" title=" " alt="" coords="1736,592,1940,704"/>
+<area shape="poly" title=" " alt="" coords="1531,251,1545,270,1589,328,1611,351,1643,374,1665,382,1685,383,1705,386,1726,398,1765,442,1795,493,1816,545,1830,592,1824,593,1811,547,1790,495,1761,445,1723,402,1703,391,1684,389,1664,387,1641,378,1608,355,1585,332,1541,274,1527,254"/>
+<area shape="rect" title=" " alt="" coords="99,171,188,240"/>
+<area shape="poly" title=" " alt="" coords="173,238,204,271,244,309,291,345,341,374,362,381,381,383,418,382,455,382,475,387,496,398,494,403,473,392,454,387,418,387,381,389,361,386,339,378,288,349,241,313,201,275,169,242"/>
+<area shape="rect" href="class_subtitle.html" title=" " alt="" coords="5,549,167,747"/>
+<area shape="poly" title=" " alt="" coords="142,240,104,533,98,532,136,239"/>
+<area shape="poly" title=" " alt="" coords="833,1253,778,1187,721,1110,669,1025,626,937,617,913,622,911,630,935,673,1023,726,1107,782,1183,837,1249"/>
+<area shape="rect" href="class_q_main_window.html" title=" " alt="" coords="191,613,288,683"/>
+<area shape="poly" title=" " alt="" coords="244,698,249,742,259,793,276,846,302,895,358,968,423,1035,493,1097,567,1152,641,1201,712,1244,837,1309,834,1314,710,1249,638,1206,564,1157,490,1101,419,1039,354,971,297,897,271,848,254,795,244,743,239,698"/>
+<area shape="rect" title=" " alt="" coords="312,613,375,683"/>
+<area shape="poly" title=" " alt="" coords="345,682,346,727,353,782,366,840,390,895,433,960,483,1021,538,1079,597,1131,715,1222,822,1291,819,1295,712,1226,593,1135,535,1082,479,1025,428,963,385,897,361,842,347,783,341,727,340,683"/>
+<area shape="rect" title=" " alt="" coords="399,613,485,683"/>
+<area shape="poly" title=" " alt="" coords="448,682,464,780,479,838,499,895,528,954,563,1011,604,1064,647,1114,738,1204,824,1275,821,1279,734,1208,643,1118,599,1067,559,1014,523,957,494,897,474,839,459,781,443,683"/>
+<area shape="rect" href="class_volume_action.html" title="音量控制控件" alt="" coords="973,571,1121,725"/>
+<area shape="poly" title=" " alt="" coords="1038,726,1003,944,998,943,1033,725"/>
+<area shape="rect" href="class_q_widget_action.html" title=" " alt="" coords="933,171,1034,240"/>
+<area shape="poly" title=" " alt="" coords="993,254,1039,570,1034,571,988,255"/>
+<area shape="rect" href="class_volume_control_widget.html" title="音量控制组件" alt="" coords="1058,171,1215,240"/>
+<area shape="poly" title=" " alt="" coords="1094,242,1070,267,1051,297,1033,361,1025,429,1026,494,1032,554,1027,554,1021,495,1020,428,1028,360,1047,295,1065,264,1090,238"/>
+<area shape="rect" href="class_q_widget.html" title=" " alt="" coords="1203,5,1267,75"/>
+<area shape="poly" title=" " alt="" coords="1210,89,1159,172,1155,169,1205,86"/>
+<area shape="rect" href="class_output_window.html" title=" " alt="" coords="1240,139,1444,272"/>
+<area shape="poly" title=" " alt="" coords="1268,86,1302,138,1297,141,1263,89"/>
+<area shape="rect" title=" " alt="" coords="1086,5,1179,75"/>
+<area shape="poly" title=" " alt="" coords="1136,75,1138,153,1133,154,1131,75"/>
+<area shape="rect" title=" " alt="" coords="928,5,993,75"/>
+<area shape="poly" title=" " alt="" coords="946,76,933,106,923,139,918,176,919,205,923,272,931,943,926,943,918,272,914,205,913,176,918,138,928,104,941,74"/>
+<area shape="poly" title=" " alt="" coords="995,69,1090,158,1087,161,991,73"/>
+<area shape="rect" title=" " alt="" coords="821,613,897,683"/>
+<area shape="poly" title=" " alt="" coords="862,683,863,795,870,936,871,943,866,943,865,936,857,795,856,683"/>
+<area shape="poly" title=" " alt="" coords="1196,715,1169,802,1136,897,1045,1123,1040,1121,1132,895,1164,800,1190,714"/>
+<area shape="rect" title=" " alt="" coords="1555,171,1612,240"/>
+<area shape="poly" title=" " alt="" coords="1582,240,1576,274,1564,311,1545,348,1517,378,1493,391,1469,395,1424,388,1402,383,1381,382,1361,387,1341,402,1329,419,1319,441,1308,497,1303,565,1304,639,1307,786,1303,849,1293,897,1270,948,1243,998,1181,1092,1114,1178,1049,1250,1045,1247,1110,1174,1177,1089,1239,995,1265,945,1287,895,1298,848,1301,786,1298,639,1298,565,1302,496,1314,439,1324,416,1337,398,1359,382,1381,376,1403,378,1425,382,1469,390,1491,386,1514,374,1540,345,1559,309,1571,272,1577,239"/>
+<area shape="poly" title=" " alt="" coords="1572,241,1560,259,1544,274,1522,285,1503,289,1467,288,1431,286,1412,289,1392,298,1370,315,1358,334,1346,355,1328,378,1312,389,1299,402,1276,441,1257,483,1230,566,1225,564,1252,481,1271,438,1295,398,1309,385,1324,374,1342,352,1353,331,1366,312,1389,294,1411,284,1431,280,1467,283,1502,284,1521,280,1540,270,1556,256,1567,238"/>
+<area shape="poly" title=" " alt="" coords="1242,269,1205,298,1191,329,1181,363,1174,433,1179,502,1190,564,1185,565,1173,503,1169,433,1176,362,1186,327,1201,294,1239,265"/>
+<area shape="rect" title=" " alt="" coords="1291,5,1401,75"/>
+<area shape="poly" title=" " alt="" coords="1348,75,1347,122,1341,122,1343,75"/>
+<area shape="rect" title=" " alt="" coords="1507,5,1587,75"/>
+<area shape="poly" title=" " alt="" coords="1509,75,1440,130,1436,126,1506,71"/>
+<area shape="poly" title=" " alt="" coords="1580,73,1605,103,1627,137,1645,173,1654,203,1676,271,1746,436,1808,576,1803,578,1741,438,1671,273,1649,205,1640,175,1622,140,1600,106,1576,76"/>
+<area shape="poly" title=" " alt="" coords="1829,705,1814,758,1791,819,1760,882,1719,938,1643,1011,1559,1077,1469,1136,1378,1187,1287,1231,1200,1269,1052,1324,1050,1319,1198,1264,1285,1227,1375,1182,1467,1131,1556,1073,1640,1007,1715,934,1755,879,1786,817,1809,756,1824,703"/>
+<area shape="rect" href="class_my_text_edit.html" title="创建新的QPlainTextEdit子类，并重写closeEvent方法，实现关闭窗口清空内容" alt="" coords="1796,160,1893,251"/>
+<area shape="poly" title=" " alt="" coords="1847,251,1842,575,1836,575,1841,250"/>
+<area shape="rect" href="class_q_plain_text_edit.html" title=" " alt="" coords="1795,5,1895,75"/>
+<area shape="poly" title=" " alt="" coords="1847,89,1847,160,1842,160,1842,89"/>
+<area shape="poly" title=" " alt="" coords="109,746,136,823,156,860,180,894,251,970,331,1040,416,1102,504,1158,592,1207,676,1249,820,1312,818,1317,673,1254,589,1212,502,1163,413,1107,328,1044,247,974,176,898,152,863,132,825,104,748"/>
+<area shape="rect" title=" " alt="" coords="1407,613,1531,683"/>
+<area shape="poly" title=" " alt="" coords="1465,683,1440,782,1418,841,1390,897,1353,953,1312,1006,1224,1107,1133,1196,1050,1269,1046,1265,1129,1192,1220,1104,1308,1003,1349,950,1385,895,1413,839,1435,781,1460,682"/>
+<area shape="rect" title=" " alt="" coords="1555,613,1625,683"/>
+<area shape="poly" title=" " alt="" coords="1594,682,1592,728,1586,783,1571,842,1546,897,1496,968,1437,1033,1373,1093,1306,1147,1238,1195,1171,1238,1052,1305,1049,1300,1168,1233,1235,1191,1303,1142,1370,1088,1434,1029,1491,964,1541,895,1566,840,1580,782,1587,727,1588,682"/>
+<area shape="rect" title=" " alt="" coords="1649,613,1712,683"/>
+<area shape="poly" title=" " alt="" coords="1685,683,1685,728,1679,784,1666,842,1640,897,1581,976,1512,1047,1435,1111,1354,1167,1272,1215,1192,1257,1052,1318,1050,1313,1190,1252,1269,1211,1351,1162,1432,1107,1508,1043,1577,973,1636,895,1661,841,1674,783,1680,728,1680,682"/>
+<area shape="rect" title=" " alt="" coords="629,171,666,240"/>
+<area shape="poly" title=" " alt="" coords="631,225,603,256,590,276,581,297,569,339,563,384,558,383,564,338,575,295,586,273,599,253,627,221"/>
+<area shape="poly" title=" " alt="" coords="668,230,686,260,701,295,721,384,728,461,727,530,721,595,715,660,712,729,716,806,733,895,752,963,775,1030,830,1157,826,1159,770,1032,747,964,727,897,711,807,706,729,709,659,716,595,722,530,723,461,716,385,695,297,681,263,664,233"/>
+<area shape="rect" title=" " alt="" coords="1965,613,2055,683"/>
+<area shape="poly" title=" " alt="" coords="2014,683,2012,729,2004,786,1986,845,1972,872,1955,898,1908,950,1857,998,1802,1042,1744,1083,1622,1154,1495,1212,1369,1259,1250,1295,1143,1322,1052,1340,1051,1335,1142,1316,1249,1290,1368,1254,1493,1207,1619,1149,1741,1078,1799,1038,1853,994,1904,946,1951,894,1968,870,1981,843,1998,785,2007,729,2008,682"/>
+<area shape="rect" title=" " alt="" coords="355,171,406,240"/>
+<area shape="poly" title=" " alt="" coords="379,240,378,272,381,308,391,343,410,374,428,386,447,388,471,389,496,399,494,404,469,395,447,393,426,391,406,378,386,345,376,309,372,272,374,240"/>
+<area shape="rect" title=" " alt="" coords="459,171,510,240"/>
+<area shape="poly" title=" " alt="" coords="487,239,488,303,497,376,507,418,502,419,492,376,483,303,481,240"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a9de3b2de7339605b0cdf56392da6a1d1" id="r_a9de3b2de7339605b0cdf56392da6a1d1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9de3b2de7339605b0cdf56392da6a1d1">Controller</a> (<a class="el" href="class_application.html">Application</a> *app, <a class="el" href="class_q_object.html">QObject</a> *parent=nullptr)</td></tr>
+<tr class="separator:a9de3b2de7339605b0cdf56392da6a1d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8351d2a68600034af0dbd1834bb21374" id="r_a8351d2a68600034af0dbd1834bb21374"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8351d2a68600034af0dbd1834bb21374">~Controller</a> () override</td></tr>
+<tr class="separator:a8351d2a68600034af0dbd1834bb21374"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95fb0b6fc5bdc2df495616745af1885b" id="r_a95fb0b6fc5bdc2df495616745af1885b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="client_8h.html#a93d313a21048fe10f1edd9b03e05d416">mpv_handle</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95fb0b6fc5bdc2df495616745af1885b">getMpvInstance</a> () const</td></tr>
+<tr class="memdesc:a95fb0b6fc5bdc2df495616745af1885b"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回mpv实例  <br /></td></tr>
+<tr class="separator:a95fb0b6fc5bdc2df495616745af1885b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89d392cb8988e9627901ae62edbf7675" id="r_a89d392cb8988e9627901ae62edbf7675"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89d392cb8988e9627901ae62edbf7675">setPlayerWidget</a> (<a class="el" href="class_q_widget.html">QWidget</a> *widget)</td></tr>
+<tr class="memdesc:a89d392cb8988e9627901ae62edbf7675"><td class="mdescLeft">&#160;</td><td class="mdescRight">将MPV的视频输出绑定到QWidget上  <br /></td></tr>
+<tr class="separator:a89d392cb8988e9627901ae62edbf7675"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a550805a886e37b396e587863e6ccea13" id="r_a550805a886e37b396e587863e6ccea13"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a550805a886e37b396e587863e6ccea13">openFile</a> (const QString &amp;filename)</td></tr>
+<tr class="memdesc:a550805a886e37b396e587863e6ccea13"><td class="mdescLeft">&#160;</td><td class="mdescRight">打开文件  <br /></td></tr>
+<tr class="separator:a550805a886e37b396e587863e6ccea13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e08645421f79b7e914fd644f3a870ba" id="r_a6e08645421f79b7e914fd644f3a870ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e08645421f79b7e914fd644f3a870ba">togglePlayPause</a> ()</td></tr>
+<tr class="memdesc:a6e08645421f79b7e914fd644f3a870ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">切换播放暂停  <br /></td></tr>
+<tr class="separator:a6e08645421f79b7e914fd644f3a870ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a520f2eb4928262171fc566241918463a" id="r_a520f2eb4928262171fc566241918463a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a520f2eb4928262171fc566241918463a">playVideo</a> ()</td></tr>
+<tr class="memdesc:a520f2eb4928262171fc566241918463a"><td class="mdescLeft">&#160;</td><td class="mdescRight">播放视频  <br /></td></tr>
+<tr class="separator:a520f2eb4928262171fc566241918463a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7476f4c119982f39dc491f13dff28111" id="r_a7476f4c119982f39dc491f13dff28111"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7476f4c119982f39dc491f13dff28111">seek</a> (int seconds)</td></tr>
+<tr class="memdesc:a7476f4c119982f39dc491f13dff28111"><td class="mdescLeft">&#160;</td><td class="mdescRight">跳转到指定播放位置  <br /></td></tr>
+<tr class="separator:a7476f4c119982f39dc491f13dff28111"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa243f1c686c1ab23e6342a47e44d92b8" id="r_aa243f1c686c1ab23e6342a47e44d92b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa243f1c686c1ab23e6342a47e44d92b8">seekRelative</a> (int seconds)</td></tr>
+<tr class="memdesc:aa243f1c686c1ab23e6342a47e44d92b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">跳转到相对播放位置  <br /></td></tr>
+<tr class="separator:aa243f1c686c1ab23e6342a47e44d92b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cb90db5603e144085debc7076e75c59" id="r_a1cb90db5603e144085debc7076e75c59"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1cb90db5603e144085debc7076e75c59">setVolume</a> (int volume, bool flag)</td></tr>
+<tr class="memdesc:a1cb90db5603e144085debc7076e75c59"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置播放音量  <br /></td></tr>
+<tr class="separator:a1cb90db5603e144085debc7076e75c59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a463f160492424ac02ae016f79b0a3c54" id="r_a463f160492424ac02ae016f79b0a3c54"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a463f160492424ac02ae016f79b0a3c54">toggleMute</a> ()</td></tr>
+<tr class="memdesc:a463f160492424ac02ae016f79b0a3c54"><td class="mdescLeft">&#160;</td><td class="mdescRight">切换静音状态  <br /></td></tr>
+<tr class="separator:a463f160492424ac02ae016f79b0a3c54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21b6ed6ac00df2773993db6690d488a1" id="r_a21b6ed6ac00df2773993db6690d488a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21b6ed6ac00df2773993db6690d488a1">setSpeed</a> (double speed)</td></tr>
+<tr class="memdesc:a21b6ed6ac00df2773993db6690d488a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置播放速度  <br /></td></tr>
+<tr class="separator:a21b6ed6ac00df2773993db6690d488a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbae3b549fa779a306b84cbb64b36f80" id="r_abbae3b549fa779a306b84cbb64b36f80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abbae3b549fa779a306b84cbb64b36f80">setSpeedMultiple</a> (double multiple)</td></tr>
+<tr class="memdesc:abbae3b549fa779a306b84cbb64b36f80"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置播放速度倍数  <br /></td></tr>
+<tr class="separator:abbae3b549fa779a306b84cbb64b36f80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae97547b171bf1c7a8bb20250200775c0" id="r_ae97547b171bf1c7a8bb20250200775c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae97547b171bf1c7a8bb20250200775c0">updateSliderPosition</a> ()</td></tr>
+<tr class="memdesc:ae97547b171bf1c7a8bb20250200775c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">播放时更新滑块位置  <br /></td></tr>
+<tr class="separator:ae97547b171bf1c7a8bb20250200775c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52be8e1378e797cca9dfd8be9c225b90" id="r_a52be8e1378e797cca9dfd8be9c225b90"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a52be8e1378e797cca9dfd8be9c225b90">updateSliderDuration</a> ()</td></tr>
+<tr class="memdesc:a52be8e1378e797cca9dfd8be9c225b90"><td class="mdescLeft">&#160;</td><td class="mdescRight">应对在线视频在开始播放时，可能并未完全加载，其总时长未知需要缓冲后更新的情况  <br /></td></tr>
+<tr class="separator:a52be8e1378e797cca9dfd8be9c225b90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a01620e9ab29667b85e3caac0cd1e57" id="r_a2a01620e9ab29667b85e3caac0cd1e57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a01620e9ab29667b85e3caac0cd1e57">initializeSliderDuration</a> ()</td></tr>
+<tr class="memdesc:a2a01620e9ab29667b85e3caac0cd1e57"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化滑块的总时长  <br /></td></tr>
+<tr class="separator:a2a01620e9ab29667b85e3caac0cd1e57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06907d7c2469cdf3191c12237ab9c566" id="r_a06907d7c2469cdf3191c12237ab9c566"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06907d7c2469cdf3191c12237ab9c566">sliderDragStarted</a> ()</td></tr>
+<tr class="memdesc:a06907d7c2469cdf3191c12237ab9c566"><td class="mdescLeft">&#160;</td><td class="mdescRight">开始拖动播放进度滑块，更新状态  <br /></td></tr>
+<tr class="separator:a06907d7c2469cdf3191c12237ab9c566"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21f13f9b46ce5dfbfb51d4d353545e5c" id="r_a21f13f9b46ce5dfbfb51d4d353545e5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21f13f9b46ce5dfbfb51d4d353545e5c">sliderDragStopped</a> ()</td></tr>
+<tr class="memdesc:a21f13f9b46ce5dfbfb51d4d353545e5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">结束拖动播放进度滑块，更新状态  <br /></td></tr>
+<tr class="separator:a21f13f9b46ce5dfbfb51d4d353545e5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1e277a58425271450529db6cc00d427" id="r_ae1e277a58425271450529db6cc00d427"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1e277a58425271450529db6cc00d427">handleUrl</a> (const QString &amp;url)</td></tr>
+<tr class="memdesc:ae1e277a58425271450529db6cc00d427"><td class="mdescLeft">&#160;</td><td class="mdescRight">打开URL  <br /></td></tr>
+<tr class="separator:ae1e277a58425271450529db6cc00d427"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f4e7cd7c28e4571fb33d699e303d1e9" id="r_a1f4e7cd7c28e4571fb33d699e303d1e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f4e7cd7c28e4571fb33d699e303d1e9">zoomIn</a> ()</td></tr>
+<tr class="memdesc:a1f4e7cd7c28e4571fb33d699e303d1e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">放大视频10%  <br /></td></tr>
+<tr class="separator:a1f4e7cd7c28e4571fb33d699e303d1e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fd5dbc4592a5bf113714eb45858851b" id="r_a7fd5dbc4592a5bf113714eb45858851b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7fd5dbc4592a5bf113714eb45858851b">zoomOut</a> ()</td></tr>
+<tr class="memdesc:a7fd5dbc4592a5bf113714eb45858851b"><td class="mdescLeft">&#160;</td><td class="mdescRight">缩小视频10%  <br /></td></tr>
+<tr class="separator:a7fd5dbc4592a5bf113714eb45858851b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6107fe50b312320595f49e1b97203abe" id="r_a6107fe50b312320595f49e1b97203abe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6107fe50b312320595f49e1b97203abe">zoomReset</a> ()</td></tr>
+<tr class="memdesc:a6107fe50b312320595f49e1b97203abe"><td class="mdescLeft">&#160;</td><td class="mdescRight">重置视频缩放  <br /></td></tr>
+<tr class="separator:a6107fe50b312320595f49e1b97203abe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa846c3f51c3a0d9727ab69e664351137" id="r_aa846c3f51c3a0d9727ab69e664351137"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa846c3f51c3a0d9727ab69e664351137">moveLeft</a> ()</td></tr>
+<tr class="memdesc:aa846c3f51c3a0d9727ab69e664351137"><td class="mdescLeft">&#160;</td><td class="mdescRight">视频位置控制  <br /></td></tr>
+<tr class="separator:aa846c3f51c3a0d9727ab69e664351137"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c14dfa97341ac701846495274985787" id="r_a6c14dfa97341ac701846495274985787"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c14dfa97341ac701846495274985787">moveRight</a> ()</td></tr>
+<tr class="separator:a6c14dfa97341ac701846495274985787"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add64e20187a1a5f9c2ee9526d3fc8b53" id="r_add64e20187a1a5f9c2ee9526d3fc8b53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add64e20187a1a5f9c2ee9526d3fc8b53">moveUp</a> ()</td></tr>
+<tr class="separator:add64e20187a1a5f9c2ee9526d3fc8b53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8163a869e1d7981fe0cdfc93f093ece" id="r_ab8163a869e1d7981fe0cdfc93f093ece"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8163a869e1d7981fe0cdfc93f093ece">moveDown</a> ()</td></tr>
+<tr class="separator:ab8163a869e1d7981fe0cdfc93f093ece"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97648c04ced6187cd8e3c625f5dadc81" id="r_a97648c04ced6187cd8e3c625f5dadc81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a97648c04ced6187cd8e3c625f5dadc81">moveReset</a> ()</td></tr>
+<tr class="separator:a97648c04ced6187cd8e3c625f5dadc81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd743b3e7d0a1b87aa7a7b5a0d715e10" id="r_acd743b3e7d0a1b87aa7a7b5a0d715e10"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd743b3e7d0a1b87aa7a7b5a0d715e10">adjustAudio</a> (double sec)</td></tr>
+<tr class="memdesc:acd743b3e7d0a1b87aa7a7b5a0d715e10"><td class="mdescLeft">&#160;</td><td class="mdescRight">调整音频同步  <br /></td></tr>
+<tr class="separator:acd743b3e7d0a1b87aa7a7b5a0d715e10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d8d96d399bcedbc3a2744bda0889b38" id="r_a4d8d96d399bcedbc3a2744bda0889b38"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d8d96d399bcedbc3a2744bda0889b38">resetAudioSync</a> ()</td></tr>
+<tr class="memdesc:a4d8d96d399bcedbc3a2744bda0889b38"><td class="mdescLeft">&#160;</td><td class="mdescRight">重置音频同步设置  <br /></td></tr>
+<tr class="separator:a4d8d96d399bcedbc3a2744bda0889b38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3ecf333d3024634b5a69f2a74bbc03a" id="r_ae3ecf333d3024634b5a69f2a74bbc03a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3ecf333d3024634b5a69f2a74bbc03a">getFrameRate</a> ()</td></tr>
+<tr class="memdesc:ae3ecf333d3024634b5a69f2a74bbc03a"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取视频帧率（对某些文件并非完全可靠）  <br /></td></tr>
+<tr class="separator:ae3ecf333d3024634b5a69f2a74bbc03a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac32a05c85bba1eb7f76082a0d807efd1" id="r_ac32a05c85bba1eb7f76082a0d807efd1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac32a05c85bba1eb7f76082a0d807efd1">goToPreviousFrame</a> ()</td></tr>
+<tr class="memdesc:ac32a05c85bba1eb7f76082a0d807efd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">跳转到上一帧  <br /></td></tr>
+<tr class="separator:ac32a05c85bba1eb7f76082a0d807efd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23138bde050fb327075f91eabd94734d" id="r_a23138bde050fb327075f91eabd94734d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23138bde050fb327075f91eabd94734d">goToNextFrame</a> ()</td></tr>
+<tr class="memdesc:a23138bde050fb327075f91eabd94734d"><td class="mdescLeft">&#160;</td><td class="mdescRight">跳转到下一帧  <br /></td></tr>
+<tr class="separator:a23138bde050fb327075f91eabd94734d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a760fa8063d5501d85fc8d710af0acbb4" id="r_a760fa8063d5501d85fc8d710af0acbb4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a760fa8063d5501d85fc8d710af0acbb4">command</a> (const QStringList &amp;args)</td></tr>
+<tr class="memdesc:a760fa8063d5501d85fc8d710af0acbb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">发送命令到MPV  <br /></td></tr>
+<tr class="separator:a760fa8063d5501d85fc8d710af0acbb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d55246197db45a58108b5b0c0f05960" id="r_a1d55246197db45a58108b5b0c0f05960"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d55246197db45a58108b5b0c0f05960">setProperty</a> (const QString &amp;name, const QVariant &amp;value)</td></tr>
+<tr class="memdesc:a1d55246197db45a58108b5b0c0f05960"><td class="mdescLeft">&#160;</td><td class="mdescRight">MPV属性设置函数  <br /></td></tr>
+<tr class="separator:a1d55246197db45a58108b5b0c0f05960"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a8f008980f87cdb36c4111115d0e71f" id="r_a2a8f008980f87cdb36c4111115d0e71f"><td class="memItemLeft" align="right" valign="top">QVariant&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a8f008980f87cdb36c4111115d0e71f">getProperty</a> (const QString &amp;name) const</td></tr>
+<tr class="memdesc:a2a8f008980f87cdb36c4111115d0e71f"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取MPV属性值函数  <br /></td></tr>
+<tr class="separator:a2a8f008980f87cdb36c4111115d0e71f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a2ffe296eda86f214c6b22efec103ab1f" id="r_a2ffe296eda86f214c6b22efec103ab1f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="client_8h.html#a93d313a21048fe10f1edd9b03e05d416">mpv_handle</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ffe296eda86f214c6b22efec103ab1f">mpv</a></td></tr>
+<tr class="separator:a2ffe296eda86f214c6b22efec103ab1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5611cc1a23a015a28ad8b82ad864d5f" id="r_ab5611cc1a23a015a28ad8b82ad864d5f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_application.html">Application</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5611cc1a23a015a28ad8b82ad864d5f">application</a></td></tr>
+<tr class="separator:ab5611cc1a23a015a28ad8b82ad864d5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5381e05f5e443eb4b2c717cf103e73c" id="r_ad5381e05f5e443eb4b2c717cf103e73c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5381e05f5e443eb4b2c717cf103e73c">sliderBeingDragged</a></td></tr>
+<tr class="separator:ad5381e05f5e443eb4b2c717cf103e73c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad34f66d6527e2b41353f723389f2df28" id="r_ad34f66d6527e2b41353f723389f2df28"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad34f66d6527e2b41353f723389f2df28">sliderInitialized</a></td></tr>
+<tr class="separator:ad34f66d6527e2b41353f723389f2df28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a6f9dbb527b9b467d5adcb8a69a44f6" id="r_a2a6f9dbb527b9b467d5adcb8a69a44f6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a6f9dbb527b9b467d5adcb8a69a44f6">duration</a></td></tr>
+<tr class="separator:a2a6f9dbb527b9b467d5adcb8a69a44f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5d07231804b650b735d63769c0b008e" id="r_aa5d07231804b650b735d63769c0b008e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa5d07231804b650b735d63769c0b008e">zoomFactor</a></td></tr>
+<tr class="separator:aa5d07231804b650b735d63769c0b008e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd09594eb0296a375aa0c31c6a5b5be6" id="r_abd09594eb0296a375aa0c31c6a5b5be6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd09594eb0296a375aa0c31c6a5b5be6">panX</a></td></tr>
+<tr class="separator:abd09594eb0296a375aa0c31c6a5b5be6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af414a8a966ce001d3b12edc4b11dc9f3" id="r_af414a8a966ce001d3b12edc4b11dc9f3"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af414a8a966ce001d3b12edc4b11dc9f3">panY</a></td></tr>
+<tr class="separator:af414a8a966ce001d3b12edc4b11dc9f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a335fd1dda605830eae753ea21d86fe61" id="r_a335fd1dda605830eae753ea21d86fe61"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a335fd1dda605830eae753ea21d86fe61">frameRate</a></td></tr>
+<tr class="separator:a335fd1dda605830eae753ea21d86fe61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b906b67b28fd09867f191909d235889" id="r_a5b906b67b28fd09867f191909d235889"><td class="memItemLeft" align="right" valign="top">QTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b906b67b28fd09867f191909d235889">totalTime</a></td></tr>
+<tr class="separator:a5b906b67b28fd09867f191909d235889"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock">
+<p class="definition">在文件 <a class="el" href="controller_8h_source.html">controller.h</a> 第 <a class="el" href="controller_8h_source.html#l00016">16</a> 行定义.</p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a9de3b2de7339605b0cdf56392da6a1d1" name="a9de3b2de7339605b0cdf56392da6a1d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9de3b2de7339605b0cdf56392da6a1d1">&#9670;&#160;</a></span>Controller()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Controller::Controller </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_application.html">Application</a> *</td>          <td class="paramname"><span class="paramname"><em>app</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_q_object.html">QObject</a> *</td>          <td class="paramname"><span class="paramname"><em>parent</em><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>根据滑块是否被按下，来判断是否处于拖动滑块状态</p>
+<p>初始化MPV实例</p>
+<p>设置视频输出驱动为OpenGL</p>
+<p>设置音频输出驱动为WASAPI</p>
+<p>启用硬件解码</p>
+<p>设置视频同步模式</p>
+<p>设置视频循环播放</p>
+<p>设置初始音量为80</p>
+<p>初始化MPV完成后启动它</p>
+<p>错误处理</p>
+<p>设置定时器</p>
+<p>每秒更新一次播放进度</p>
+<p>检测视频时长变化，应对在线视频在开始播放时，可能并未完全加载，其总时长未知的情形</p>
+
+<p class="definition">在文件 <a class="el" href="controller_8cpp_source.html">controller.cpp</a> 第 <a class="el" href="controller_8cpp_source.html#l00004">4</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a9de3b2de7339605b0cdf56392da6a1d1_cgraph.png" border="0" usemap="#aclass_controller_a9de3b2de7339605b0cdf56392da6a1d1_cgraph" alt=""/></div>
+<map name="aclass_controller_a9de3b2de7339605b0cdf56392da6a1d1_cgraph" id="aclass_controller_a9de3b2de7339605b0cdf56392da6a1d1_cgraph">
+<area shape="rect" title=" " alt="" coords="5,224,145,251"/>
+<area shape="rect" href="class_application.html#a37b44bf33e642e5e26a200db2fc145ed" title="给Controller类提供slider用于对播放进度滑块进行初始化与更新操作" alt="" coords="435,107,579,133"/>
+<area shape="poly" title=" " alt="" coords="103,221,144,202,192,184,310,153,419,131,420,136,311,158,193,189,146,207,105,226"/>
+<area shape="rect" href="client_8h.html#a760868c77375524a884ca11917e9fe8b" title=" " alt="" coords="239,199,337,225"/>
+<area shape="poly" title=" " alt="" coords="145,226,223,217,223,222,145,232"/>
+<area shape="rect" href="client_8h.html#ada06ff1f821683e60b531d96ccc69264" title=" " alt="" coords="213,249,363,276"/>
+<area shape="poly" title=" " alt="" coords="145,243,197,249,197,255,145,248"/>
+<area shape="rect" href="class_controller.html#a1d55246197db45a58108b5b0c0f05960" title="MPV属性设置函数" alt="" coords="212,300,364,327"/>
+<area shape="poly" title=" " alt="" coords="106,249,194,285,216,293,214,298,192,291,104,254"/>
+<area shape="rect" href="class_controller.html#a06907d7c2469cdf3191c12237ab9c566" title="开始拖动播放进度滑块，更新状态" alt="" coords="196,351,380,377"/>
+<area shape="poly" title=" " alt="" coords="90,249,133,292,162,316,194,336,207,342,205,347,191,341,159,320,130,296,86,253"/>
+<area shape="rect" href="class_controller.html#a21f13f9b46ce5dfbfb51d4d353545e5c" title="结束拖动播放进度滑块，更新状态" alt="" coords="193,401,383,428"/>
+<area shape="poly" title=" " alt="" coords="85,250,125,316,156,355,194,387,203,392,200,397,191,391,153,358,121,319,81,252"/>
+<area shape="rect" href="class_controller.html#a52be8e1378e797cca9dfd8be9c225b90" title="应对在线视频在开始播放时，可能并未完全加载，其总时长未知需要缓冲后更新的情况" alt="" coords="210,15,366,57"/>
+<area shape="poly" title=" " alt="" coords="80,222,119,149,152,105,191,67,197,63,200,68,194,71,156,109,124,152,85,225"/>
+<area shape="rect" href="class_controller.html#ae97547b171bf1c7a8bb20250200775c0" title="播放时更新滑块位置" alt="" coords="210,81,366,124"/>
+<area shape="poly" title=" " alt="" coords="89,222,133,183,191,140,213,129,216,133,194,145,136,187,92,226"/>
+<area shape="poly" title=" " alt="" coords="356,55,384,67,432,92,448,99,446,103,430,97,382,72,354,60"/>
+<area shape="rect" href="class_controller.html#a2a8f008980f87cdb36c4111115d0e71f" title="获取MPV属性值函数" alt="" coords="431,5,582,32"/>
+<area shape="poly" title=" " alt="" coords="366,27,415,23,416,29,367,32"/>
+<area shape="rect" href="client_8h.html#aeca58b3b9eadb3cd70953d9cba238958" title=" " alt="" coords="445,56,568,83"/>
+<area shape="poly" title=" " alt="" coords="367,45,430,55,429,60,366,51"/>
+<area shape="poly" title=" " alt="" coords="367,106,419,110,419,116,366,112"/>
+<area shape="poly" title=" " alt="" coords="366,88,429,78,430,84,367,93"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8351d2a68600034af0dbd1834bb21374" name="a8351d2a68600034af0dbd1834bb21374"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8351d2a68600034af0dbd1834bb21374">&#9670;&#160;</a></span>~Controller()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Controller::~Controller </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>清理MPV资源</p>
+
+<p class="definition">在文件 <a class="el" href="controller_8cpp_source.html">controller.cpp</a> 第 <a class="el" href="controller_8cpp_source.html#l00078">78</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a8351d2a68600034af0dbd1834bb21374_cgraph.png" border="0" usemap="#aclass_controller_a8351d2a68600034af0dbd1834bb21374_cgraph" alt=""/></div>
+<map name="aclass_controller_a8351d2a68600034af0dbd1834bb21374_cgraph" id="aclass_controller_a8351d2a68600034af0dbd1834bb21374_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,153,32"/>
+<area shape="rect" href="client_8h.html#a831ff5d62abb8eab842af9ec23f182a6" title=" " alt="" coords="201,5,356,32"/>
+<area shape="poly" title=" " alt="" coords="153,16,185,16,185,21,153,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="acd743b3e7d0a1b87aa7a7b5a0d715e10" name="acd743b3e7d0a1b87aa7a7b5a0d715e10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd743b3e7d0a1b87aa7a7b5a0d715e10">&#9670;&#160;</a></span>adjustAudio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::adjustAudio </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>sec</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>调整音频同步 </p>
+<p>获取当前音频延迟</p>
+<p>调整音频延迟</p>
+
+<p class="definition">在文件 <a class="el" href="controller_8cpp_source.html">controller.cpp</a> 第 <a class="el" href="controller_8cpp_source.html#l00478">478</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_acd743b3e7d0a1b87aa7a7b5a0d715e10_cgraph.png" border="0" usemap="#aclass_controller_acd743b3e7d0a1b87aa7a7b5a0d715e10_cgraph" alt=""/></div>
+<map name="aclass_controller_acd743b3e7d0a1b87aa7a7b5a0d715e10_cgraph" id="aclass_controller_acd743b3e7d0a1b87aa7a7b5a0d715e10_cgraph">
+<area shape="rect" title="调整音频同步" alt="" coords="5,31,158,57"/>
+<area shape="rect" href="class_controller.html#a2a8f008980f87cdb36c4111115d0e71f" title="获取MPV属性值函数" alt="" coords="206,5,357,32"/>
+<area shape="poly" title=" " alt="" coords="158,32,190,28,190,33,158,37"/>
+<area shape="rect" href="class_controller.html#a1d55246197db45a58108b5b0c0f05960" title="MPV属性设置函数" alt="" coords="206,56,357,83"/>
+<area shape="poly" title=" " alt="" coords="158,51,190,55,190,60,158,56"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_acd743b3e7d0a1b87aa7a7b5a0d715e10_icgraph.png" border="0" usemap="#aclass_controller_acd743b3e7d0a1b87aa7a7b5a0d715e10_icgraph" alt=""/></div>
+<map name="aclass_controller_acd743b3e7d0a1b87aa7a7b5a0d715e10_icgraph" id="aclass_controller_acd743b3e7d0a1b87aa7a7b5a0d715e10_icgraph">
+<area shape="rect" title="调整音频同步" alt="" coords="424,47,576,73"/>
+<area shape="rect" href="class_application.html#aae2d5f8bfc05cd42224a2212889b31e6" title="音频提前0.1s" alt="" coords="211,5,376,48"/>
+<area shape="poly" title=" " alt="" coords="408,48,376,43,377,37,409,43"/>
+<area shape="rect" href="class_application.html#a169e2cab0b44f421f5bf5d5848e7a472" title="音频延后0.1s" alt="" coords="211,72,376,115"/>
+<area shape="poly" title=" " alt="" coords="409,77,377,83,376,77,408,72"/>
+<area shape="rect" href="class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,47,163,73"/>
+<area shape="poly" title=" " alt="" coords="196,45,163,50,163,45,195,40"/>
+<area shape="poly" title=" " alt="" coords="195,80,163,75,163,70,196,75"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a760fa8063d5501d85fc8d710af0acbb4" name="a760fa8063d5501d85fc8d710af0acbb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a760fa8063d5501d85fc8d710af0acbb4">&#9670;&#160;</a></span>command()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::command </td>
+          <td>(</td>
+          <td class="paramtype">const QStringList &amp;</td>          <td class="paramname"><span class="paramname"><em>args</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>发送命令到MPV </p>
+
+<p class="definition">在文件 <a class="el" href="controller_8cpp_source.html">controller.cpp</a> 第 <a class="el" href="controller_8cpp_source.html#l00551">551</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a760fa8063d5501d85fc8d710af0acbb4_icgraph.png" border="0" usemap="#aclass_controller_a760fa8063d5501d85fc8d710af0acbb4_icgraph" alt=""/></div>
+<map name="aclass_controller_a760fa8063d5501d85fc8d710af0acbb4_icgraph" id="aclass_controller_a760fa8063d5501d85fc8d710af0acbb4_icgraph">
+<area shape="rect" title="发送命令到MPV" alt="" coords="844,183,985,209"/>
+<area shape="rect" href="class_controller.html#ae1e277a58425271450529db6cc00d427" title="打开URL" alt="" coords="657,61,796,88"/>
+<area shape="poly" title=" " alt="" coords="878,176,747,91,750,86,881,172"/>
+<area shape="rect" href="class_controller.html#a550805a886e37b396e587863e6ccea13" title="打开文件" alt="" coords="660,152,793,179"/>
+<area shape="poly" title=" " alt="" coords="828,185,793,179,794,174,829,179"/>
+<area shape="rect" href="class_controller.html#a7476f4c119982f39dc491f13dff28111" title="跳转到指定播放位置" alt="" coords="670,208,783,235"/>
+<area shape="poly" title=" " alt="" coords="829,210,784,216,783,211,828,205"/>
+<area shape="rect" href="class_controller.html#aa243f1c686c1ab23e6342a47e44d92b8" title="跳转到相对播放位置" alt="" coords="446,307,603,333"/>
+<area shape="poly" title=" " alt="" coords="871,219,797,249,686,283,587,309,586,304,685,278,795,244,869,214"/>
+<area shape="rect" href="class_application.html#adb2fa3b8daee398534b3fe33ba7233f2" title="打开URL" alt="" coords="211,5,391,48"/>
+<area shape="poly" title=" " alt="" coords="642,67,609,63,391,39,392,33,610,57,643,61"/>
+<area shape="rect" href="class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,189,163,216"/>
+<area shape="poly" title=" " alt="" coords="219,58,212,62,174,94,141,129,96,190,92,187,137,126,171,90,209,58,216,53"/>
+<area shape="rect" href="class_application.html#a7c89c49db562d830a17273853bf1aa79" title="添加历史记录" alt="" coords="447,72,602,99"/>
+<area shape="poly" title=" " alt="" coords="677,148,608,120,562,102,564,97,610,115,679,143"/>
+<area shape="rect" href="class_application.html#a57b10b769faceb80e236679ad894b9e0" title="打开视频文件" alt="" coords="211,123,391,165"/>
+<area shape="poly" title=" " alt="" coords="645,164,391,151,392,146,645,159"/>
+<area shape="rect" href="class_application.html#a4d7ae5158a237f815d76620e327310e6" title="下载完成处理" alt="" coords="439,173,609,216"/>
+<area shape="poly" title=" " alt="" coords="645,180,610,185,609,180,644,175"/>
+<area shape="poly" title=" " alt="" coords="456,70,384,51,385,46,457,65"/>
+<area shape="rect" href="class_application.html#af63e0ba4a66b778916fd6e147a44224a" title="加载历史记录" alt="" coords="222,72,380,99"/>
+<area shape="poly" title=" " alt="" coords="431,88,380,88,380,83,431,83"/>
+<area shape="poly" title=" " alt="" coords="457,106,385,125,384,119,456,100"/>
+<area shape="poly" title=" " alt="" coords="226,107,212,113,149,152,102,191,99,187,146,148,209,108,224,102"/>
+<area shape="poly" title=" " alt="" coords="206,172,137,191,135,186,204,167"/>
+<area shape="poly" title=" " alt="" coords="424,199,163,204,163,199,424,194"/>
+<area shape="rect" href="class_application.html#a7acf4f1b52b33854420d9e12b0515370" title="跳转到指定播放位置" alt="" coords="452,240,597,283"/>
+<area shape="poly" title=" " alt="" coords="656,238,598,250,597,244,655,233"/>
+<area shape="poly" title=" " alt="" coords="436,252,163,216,163,210,437,247"/>
+<area shape="rect" href="class_application.html#a131488e42287fae3bf2c9dbc2e328d3f" title="后退3秒" alt="" coords="214,291,388,333"/>
+<area shape="poly" title=" " alt="" coords="430,319,388,318,388,312,430,314"/>
+<area shape="rect" href="class_application.html#a1d1b2612037c07addfab8df1cf1f2459" title="前进3秒" alt="" coords="214,357,388,400"/>
+<area shape="poly" title=" " alt="" coords="457,340,385,359,384,354,456,335"/>
+<area shape="poly" title=" " alt="" coords="234,286,209,274,108,219,110,214,212,270,236,281"/>
+<area shape="poly" title=" " alt="" coords="216,352,209,347,171,316,137,279,92,218,96,215,141,276,174,312,212,343,219,347"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae3ecf333d3024634b5a69f2a74bbc03a" name="ae3ecf333d3024634b5a69f2a74bbc03a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3ecf333d3024634b5a69f2a74bbc03a">&#9670;&#160;</a></span>getFrameRate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::getFrameRate </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取视频帧率（对某些文件并非完全可靠） </p>
+
+<p class="definition">在文件 <a class="el" href="controller_8cpp_source.html">controller.cpp</a> 第 <a class="el" href="controller_8cpp_source.html#l00501">501</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_ae3ecf333d3024634b5a69f2a74bbc03a_cgraph.png" border="0" usemap="#aclass_controller_ae3ecf333d3024634b5a69f2a74bbc03a_cgraph" alt=""/></div>
+<map name="aclass_controller_ae3ecf333d3024634b5a69f2a74bbc03a_cgraph" id="aclass_controller_ae3ecf333d3024634b5a69f2a74bbc03a_cgraph">
+<area shape="rect" title="获取视频帧率（对某些文件并非完全可靠）" alt="" coords="5,5,172,32"/>
+<area shape="rect" href="class_controller.html#a2a8f008980f87cdb36c4111115d0e71f" title="获取MPV属性值函数" alt="" coords="220,5,371,32"/>
+<area shape="poly" title=" " alt="" coords="172,16,204,16,204,21,172,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_ae3ecf333d3024634b5a69f2a74bbc03a_icgraph.png" border="0" usemap="#aclass_controller_ae3ecf333d3024634b5a69f2a74bbc03a_icgraph" alt=""/></div>
+<map name="aclass_controller_ae3ecf333d3024634b5a69f2a74bbc03a_icgraph" id="aclass_controller_ae3ecf333d3024634b5a69f2a74bbc03a_icgraph">
+<area shape="rect" title="获取视频帧率（对某些文件并非完全可靠）" alt="" coords="662,47,829,73"/>
+<area shape="rect" href="class_controller.html#a23138bde050fb327075f91eabd94734d" title="跳转到下一帧" alt="" coords="438,16,614,43"/>
+<area shape="poly" title=" " alt="" coords="647,49,615,44,615,39,648,44"/>
+<area shape="rect" href="class_controller.html#ac32a05c85bba1eb7f76082a0d807efd1" title="跳转到上一帧" alt="" coords="446,68,607,111"/>
+<area shape="poly" title=" " alt="" coords="648,76,608,81,607,76,647,70"/>
+<area shape="rect" href="class_application.html#a9472fc5d48f30becbedf697a7bdd44dc" title="跳转到下一帧" alt="" coords="212,5,389,48"/>
+<area shape="poly" title=" " alt="" coords="423,31,389,30,389,25,423,25"/>
+<area shape="rect" href="class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,47,163,73"/>
+<area shape="poly" title=" " alt="" coords="198,45,164,50,163,45,197,40"/>
+<area shape="rect" href="class_application.html#a0bc5d45b9362854fd9906876975a39e5" title="跳转到上一帧" alt="" coords="211,72,390,115"/>
+<area shape="poly" title=" " alt="" coords="430,94,391,94,390,89,430,88"/>
+<area shape="poly" title=" " alt="" coords="195,80,163,75,164,70,196,74"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a95fb0b6fc5bdc2df495616745af1885b" name="a95fb0b6fc5bdc2df495616745af1885b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95fb0b6fc5bdc2df495616745af1885b">&#9670;&#160;</a></span>getMpvInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="client_8h.html#a93d313a21048fe10f1edd9b03e05d416">mpv_handle</a> * Controller::getMpvInstance </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>返回mpv实例 </p>
+
+<p class="definition">在文件 <a class="el" href="controller_8cpp_source.html">controller.cpp</a> 第 <a class="el" href="controller_8cpp_source.html#l00586">586</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a95fb0b6fc5bdc2df495616745af1885b_icgraph.png" border="0" usemap="#aclass_controller_a95fb0b6fc5bdc2df495616745af1885b_icgraph" alt=""/></div>
+<map name="aclass_controller_a95fb0b6fc5bdc2df495616745af1885b_icgraph" id="aclass_controller_a95fb0b6fc5bdc2df495616745af1885b_icgraph">
+<area shape="rect" title="返回mpv实例" alt="" coords="453,5,627,32"/>
+<area shape="rect" href="class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,5,163,32"/>
+<area shape="poly" title=" " alt="" coords="437,18,405,17,211,17,163,18,163,13,211,12,405,12,437,13"/>
+<area shape="rect" href="class_application.html#aaa5bb4375192efe0ebee28ebb3f19804" title="视频截图窗口" alt="" coords="211,27,405,69"/>
+<area shape="poly" title=" " alt="" coords="438,34,406,38,405,33,437,29"/>
+<area shape="poly" title=" " alt="" coords="195,36,163,32,163,26,195,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2a8f008980f87cdb36c4111115d0e71f" name="a2a8f008980f87cdb36c4111115d0e71f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a8f008980f87cdb36c4111115d0e71f">&#9670;&#160;</a></span>getProperty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVariant Controller::getProperty </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取MPV属性值函数 </p>
+
+<p class="definition">在文件 <a class="el" href="controller_8cpp_source.html">controller.cpp</a> 第 <a class="el" href="controller_8cpp_source.html#l00573">573</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a2a8f008980f87cdb36c4111115d0e71f_icgraph.png" border="0" usemap="#aclass_controller_a2a8f008980f87cdb36c4111115d0e71f_icgraph" alt=""/></div>
+<map name="aclass_controller_a2a8f008980f87cdb36c4111115d0e71f_icgraph" id="aclass_controller_a2a8f008980f87cdb36c4111115d0e71f_icgraph">
+<area shape="rect" title="获取MPV属性值函数" alt="" coords="1150,508,1301,535"/>
+<area shape="rect" href="class_controller.html#acd743b3e7d0a1b87aa7a7b5a0d715e10" title="调整音频同步" alt="" coords="468,80,620,107"/>
+<area shape="poly" title=" " alt="" coords="1219,493,1210,433,1190,357,1174,317,1155,279,1130,243,1100,213,1045,174,984,144,919,122,853,107,788,97,726,92,621,91,621,85,726,86,788,92,854,101,920,117,986,139,1048,169,1104,209,1134,240,1159,276,1179,315,1195,355,1215,432,1225,492"/>
+<area shape="rect" href="class_controller.html#ae3ecf333d3024634b5a69f2a74bbc03a" title="获取视频帧率（对某些文件并非完全可靠）" alt="" coords="928,264,1094,291"/>
+<area shape="poly" title=" " alt="" coords="1213,494,1197,454,1173,405,1141,355,1100,311,1069,293,1071,289,1104,307,1145,351,1178,402,1202,452,1218,492"/>
+<area shape="rect" href="class_controller.html#a23138bde050fb327075f91eabd94734d" title="跳转到下一帧" alt="" coords="690,208,866,235"/>
+<area shape="poly" title=" " alt="" coords="1218,493,1207,440,1186,374,1171,340,1152,308,1128,279,1100,254,1074,238,1045,226,984,212,923,207,866,210,866,205,923,202,985,206,1047,221,1076,234,1104,250,1132,275,1156,305,1175,338,1191,372,1213,439,1223,492"/>
+<area shape="rect" href="class_controller.html#ac32a05c85bba1eb7f76082a0d807efd1" title="跳转到上一帧" alt="" coords="697,259,859,301"/>
+<area shape="poly" title=" " alt="" coords="1208,496,1165,433,1135,400,1101,372,1058,352,996,332,858,299,860,294,997,327,1060,347,1103,367,1139,396,1169,430,1212,493"/>
+<area shape="rect" href="class_controller.html#ae1e277a58425271450529db6cc00d427" title="打开URL" alt="" coords="709,369,847,396"/>
+<area shape="poly" title=" " alt="" coords="1204,497,1161,449,1133,425,1101,406,1037,386,969,376,904,374,848,377,847,371,904,369,970,371,1038,381,1103,402,1136,421,1165,445,1208,494"/>
+<area shape="rect" href="class_controller.html#a2a01620e9ab29667b85e3caac0cd1e57" title="初始化滑块的总时长" alt="" coords="929,416,1093,459"/>
+<area shape="poly" title=" " alt="" coords="1174,504,1067,462,1069,457,1176,499"/>
+<area shape="rect" href="class_controller.html#a550805a886e37b396e587863e6ccea13" title="打开文件" alt="" coords="711,424,845,451"/>
+<area shape="poly" title=" " alt="" coords="1134,511,919,473,834,454,835,449,920,468,1135,505"/>
+<area shape="rect" href="class_controller.html#aa243f1c686c1ab23e6342a47e44d92b8" title="跳转到相对播放位置" alt="" coords="466,584,623,611"/>
+<area shape="poly" title=" " alt="" coords="1186,544,1146,561,1103,575,972,596,841,606,720,607,623,605,623,600,720,602,840,600,971,590,1101,569,1145,556,1184,539"/>
+<area shape="rect" href="class_controller.html#a21b6ed6ac00df2773993db6690d488a1" title="设置播放速度" alt="" coords="475,733,614,760"/>
+<area shape="poly" title=" " alt="" coords="1197,547,1154,577,1103,605,971,655,837,693,713,721,615,739,614,734,712,716,835,688,970,650,1101,600,1151,572,1194,542"/>
+<area shape="rect" href="class_controller.html#abbae3b549fa779a306b84cbb64b36f80" title="设置播放速度倍数" alt="" coords="452,933,636,960"/>
+<area shape="poly" title=" " alt="" coords="1212,549,1169,612,1138,646,1104,676,1046,709,993,730,944,741,896,747,848,754,798,763,745,781,686,812,645,841,609,876,558,935,554,931,605,872,642,837,683,807,743,776,797,758,847,748,895,742,943,736,992,725,1044,704,1100,671,1135,642,1164,609,1207,546"/>
+<area shape="rect" href="class_controller.html#a1cb90db5603e144085debc7076e75c59" title="设置播放音量" alt="" coords="471,1096,617,1123"/>
+<area shape="poly" title=" " alt="" coords="1220,550,1205,594,1182,648,1148,703,1127,728,1104,750,1074,771,1046,784,994,796,940,800,872,812,817,821,772,823,730,832,709,842,686,859,665,885,657,911,651,939,639,973,596,1044,558,1097,554,1094,591,1041,634,971,646,938,652,909,661,882,682,855,706,838,728,827,771,818,816,815,871,807,939,795,994,791,1044,779,1071,766,1100,746,1123,725,1144,700,1177,646,1200,592,1215,548"/>
+<area shape="rect" href="class_controller.html#a463f160492424ac02ae016f79b0a3c54" title="切换静音状态" alt="" coords="937,865,1085,892"/>
+<area shape="poly" title=" " alt="" coords="1224,551,1214,612,1194,691,1178,734,1158,775,1134,814,1104,849,1075,867,1072,863,1100,845,1129,811,1153,772,1173,731,1188,690,1209,611,1219,550"/>
+<area shape="rect" href="class_controller.html#a6e08645421f79b7e914fd644f3a870ba" title="切换播放暂停" alt="" coords="920,533,1102,560"/>
+<area shape="poly" title=" " alt="" coords="1135,535,1103,539,1102,533,1134,529"/>
+<area shape="rect" href="class_controller.html#a52be8e1378e797cca9dfd8be9c225b90" title="应对在线视频在开始播放时，可能并未完全加载，其总时长未知需要缓冲后更新的情况" alt="" coords="933,916,1089,959"/>
+<area shape="poly" title=" " alt="" coords="1226,551,1219,621,1201,716,1185,766,1164,817,1137,864,1104,906,1090,917,1086,913,1100,902,1133,861,1159,814,1180,765,1195,714,1214,620,1221,550"/>
+<area shape="rect" href="class_application.html#aae2d5f8bfc05cd42224a2212889b31e6" title="音频提前0.1s" alt="" coords="225,72,390,115"/>
+<area shape="poly" title=" " alt="" coords="452,96,390,96,390,91,452,91"/>
+<area shape="rect" href="class_application.html#a169e2cab0b44f421f5bf5d5848e7a472" title="音频延后0.1s" alt="" coords="225,5,390,48"/>
+<area shape="poly" title=" " alt="" coords="478,78,385,51,387,46,480,73"/>
+<area shape="rect" href="class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,600,163,627"/>
+<area shape="poly" title=" " alt="" coords="223,126,213,135,171,194,140,260,117,329,102,398,93,463,89,521,87,600,82,600,83,521,88,463,97,397,112,328,135,258,167,191,209,132,219,122"/>
+<area shape="poly" title=" " alt="" coords="215,60,213,62,186,105,163,170,143,248,126,333,101,495,89,600,84,599,96,494,121,332,138,247,158,168,182,103,209,58,211,56"/>
+<area shape="poly" title=" " alt="" coords="937,262,836,238,837,233,938,257"/>
+<area shape="poly" title=" " alt="" coords="912,281,859,282,859,276,912,276"/>
+<area shape="rect" href="class_application.html#a9472fc5d48f30becbedf697a7bdd44dc" title="跳转到下一帧" alt="" coords="456,131,632,173"/>
+<area shape="poly" title=" " alt="" coords="715,206,618,176,619,171,717,201"/>
+<area shape="poly" title=" " alt="" coords="441,139,383,137,323,144,264,161,237,174,213,191,189,222,167,269,148,327,130,391,104,516,90,600,85,599,99,515,125,390,143,325,162,267,184,219,209,187,234,169,262,156,322,138,383,132,441,133"/>
+<area shape="rect" href="class_application.html#a0bc5d45b9362854fd9906876975a39e5" title="跳转到上一帧" alt="" coords="455,197,634,240"/>
+<area shape="poly" title=" " alt="" coords="682,258,628,243,629,238,683,252"/>
+<area shape="poly" title=" " alt="" coords="446,197,388,190,327,190,266,202,238,214,212,230,171,270,140,319,118,373,103,428,94,482,89,531,87,600,82,600,84,531,88,481,98,427,113,371,136,316,167,267,209,226,236,209,265,197,326,185,389,184,447,191"/>
+<area shape="rect" href="class_application.html#adb2fa3b8daee398534b3fe33ba7233f2" title="打开URL" alt="" coords="217,240,398,283"/>
+<area shape="poly" title=" " alt="" coords="744,362,694,332,635,305,575,289,513,277,398,266,398,261,513,272,576,283,637,300,697,327,747,358"/>
+<area shape="poly" title=" " alt="" coords="216,294,213,297,181,333,155,374,135,419,118,463,98,545,89,600,84,599,93,543,113,462,130,417,151,372,177,330,209,293,212,290"/>
+<area shape="poly" title=" " alt="" coords="913,417,837,399,839,394,914,412"/>
+<area shape="poly" title=" " alt="" coords="913,440,845,440,845,435,913,435"/>
+<area shape="rect" href="class_application.html#a7c89c49db562d830a17273853bf1aa79" title="添加历史记录" alt="" coords="467,315,622,341"/>
+<area shape="poly" title=" " alt="" coords="703,420,683,410,668,398,658,386,649,374,635,362,597,344,599,340,638,358,653,370,662,383,671,394,686,406,705,416"/>
+<area shape="rect" href="class_application.html#a57b10b769faceb80e236679ad894b9e0" title="打开视频文件" alt="" coords="217,357,398,400"/>
+<area shape="poly" title=" " alt="" coords="711,422,636,407,512,392,398,384,398,379,512,387,637,401,712,417"/>
+<area shape="rect" href="class_application.html#a4d7ae5158a237f815d76620e327310e6" title="下载完成处理" alt="" coords="459,416,629,459"/>
+<area shape="poly" title=" " alt="" coords="696,440,630,440,630,435,696,435"/>
+<area shape="poly" title=" " alt="" coords="478,312,385,286,387,281,480,307"/>
+<area shape="rect" href="class_application.html#af63e0ba4a66b778916fd6e147a44224a" title="加载历史记录" alt="" coords="228,307,387,333"/>
+<area shape="poly" title=" " alt="" coords="451,328,387,325,387,320,451,322"/>
+<area shape="poly" title=" " alt="" coords="464,348,399,362,397,357,463,343"/>
+<area shape="poly" title=" " alt="" coords="218,343,212,347,184,376,159,410,139,446,123,483,101,552,90,600,85,599,96,551,118,482,134,444,155,407,179,373,209,343,214,339"/>
+<area shape="poly" title=" " alt="" coords="228,410,212,421,169,466,135,517,109,565,93,601,88,598,104,563,130,514,165,463,209,417,225,405"/>
+<area shape="poly" title=" " alt="" coords="443,431,388,431,328,437,268,450,212,472,172,500,138,536,112,572,95,601,90,598,107,569,134,533,168,496,209,467,267,444,328,432,388,426,443,426"/>
+<area shape="rect" href="class_application.html#a131488e42287fae3bf2c9dbc2e328d3f" title="后退3秒" alt="" coords="221,592,394,635"/>
+<area shape="poly" title=" " alt="" coords="450,606,395,610,394,605,450,601"/>
+<area shape="rect" href="class_application.html#a1d1b2612037c07addfab8df1cf1f2459" title="前进3秒" alt="" coords="221,525,394,568"/>
+<area shape="poly" title=" " alt="" coords="463,583,394,568,395,563,464,578"/>
+<area shape="poly" title=" " alt="" coords="205,616,163,616,163,611,205,611"/>
+<area shape="poly" title=" " alt="" coords="220,575,132,602,131,597,218,570"/>
+<area shape="rect" href="class_application.html#ab27d3d969d8c39be43321c7111180169" title="减少播放速度（0.5x）" alt="" coords="214,792,401,835"/>
+<area shape="poly" title=" " alt="" coords="480,767,387,794,385,789,478,762"/>
+<area shape="rect" href="class_application.html#a1760f918aa13d9e23884b17b6739619e" title="重置播放速度" alt="" coords="214,859,401,901"/>
+<area shape="poly" title=" " alt="" coords="517,772,467,811,405,849,380,860,378,856,403,844,464,806,514,768"/>
+<area shape="rect" href="class_application.html#a735d6f1027466758e872f1eb03cc59d6" title="增加播放速度（0.5x）" alt="" coords="214,725,401,768"/>
+<area shape="poly" title=" " alt="" coords="459,749,401,749,401,744,459,744"/>
+<area shape="rect" href="class_application.html#abdfb7ede361b9683739cb3b2c9f60b04" title="播放速度重置，切换播放状态" alt="" coords="216,659,399,701"/>
+<area shape="poly" title=" " alt="" coords="478,731,385,705,387,699,480,726"/>
+<area shape="poly" title=" " alt="" coords="216,787,209,782,168,744,133,701,90,629,94,626,138,698,172,741,212,778,218,782"/>
+<area shape="poly" title=" " alt="" coords="213,852,209,849,183,823,160,793,124,730,100,670,86,628,91,626,105,669,129,727,164,790,187,819,212,845,216,848"/>
+<area shape="poly" title=" " alt="" coords="220,721,209,716,145,671,97,629,101,625,148,667,212,711,222,716"/>
+<area shape="poly" title=" " alt="" coords="218,656,131,630,132,625,220,651"/>
+<area shape="rect" href="class_application.html#ad01a13dd480c689e66ef95bf234ae736" title="播放速度减少一半，播放视频" alt="" coords="222,925,393,968"/>
+<area shape="poly" title=" " alt="" coords="437,949,393,949,393,944,437,944"/>
+<area shape="rect" href="class_application.html#a014688cf487feb1bcadfd7ac6991020e" title="播放速度增加一倍，播放视频" alt="" coords="220,992,395,1035"/>
+<area shape="poly" title=" " alt="" coords="480,967,387,994,385,989,478,962"/>
+<area shape="poly" title=" " alt="" coords="212,918,209,915,178,881,153,841,132,800,116,758,94,681,84,628,90,627,99,679,121,756,137,797,157,839,182,877,213,911,216,914"/>
+<area shape="poly" title=" " alt="" coords="211,984,209,982,173,938,145,889,124,837,108,785,89,690,83,627,89,627,95,690,113,784,129,835,150,887,178,935,213,978,215,980"/>
+<area shape="rect" href="class_application.html#a55704de8311c5ea0735c8681af312bb6" title="音量减少10%" alt="" coords="211,1176,404,1219"/>
+<area shape="poly" title=" " alt="" coords="496,1131,405,1166,373,1178,371,1173,403,1162,494,1126"/>
+<area shape="rect" href="class_application.html#a783191f2d5c6a1d5c5e552cc5c00b0b6" title="音量增加10%" alt="" coords="211,1059,404,1101"/>
+<area shape="poly" title=" " alt="" coords="455,1101,404,1095,405,1089,456,1096"/>
+<area shape="rect" href="class_application.html#acd420f25460892203f398567e99806a6" title="设置播放音量" alt="" coords="230,1125,385,1152"/>
+<area shape="poly" title=" " alt="" coords="456,1123,386,1132,385,1126,455,1118"/>
+<area shape="poly" title=" " alt="" coords="210,1167,209,1166,182,1121,158,1056,138,978,121,893,96,732,84,627,89,627,101,731,126,892,143,977,163,1055,187,1119,213,1162,214,1164"/>
+<area shape="poly" title=" " alt="" coords="211,1051,209,1048,169,996,138,937,116,875,100,812,90,753,85,700,82,627,88,627,90,700,96,752,105,811,121,873,143,935,173,993,213,1045,215,1047"/>
+<area shape="poly" title=" " alt="" coords="215,1120,209,1115,183,1076,160,1018,140,947,122,870,97,724,84,627,90,627,102,723,128,869,145,946,165,1016,187,1073,213,1112,218,1116"/>
+<area shape="rect" href="class_application.html#af8f1aa05187ccff4db17023d18963663" title="切换静音" alt="" coords="699,869,857,896"/>
+<area shape="poly" title=" " alt="" coords="921,883,857,884,857,879,921,878"/>
+<area shape="poly" title=" " alt="" coords="695,906,686,914,668,941,660,968,659,995,662,1022,665,1050,664,1078,657,1107,638,1136,590,1188,540,1232,488,1265,434,1287,379,1296,322,1291,266,1270,209,1233,191,1213,175,1186,148,1115,126,1027,110,930,90,746,83,627,89,627,96,745,115,930,132,1026,153,1113,180,1184,195,1210,212,1229,268,1266,324,1286,378,1291,432,1282,485,1260,537,1228,587,1185,634,1133,652,1105,659,1077,659,1050,656,1023,654,995,655,967,663,939,682,910,691,902"/>
+<area shape="poly" title=" " alt="" coords="978,526,918,472,895,441,886,428,870,414,839,399,841,394,873,410,890,424,899,438,922,469,981,522"/>
+<area shape="poly" title=" " alt="" coords="951,530,919,517,853,484,800,453,803,449,856,479,921,512,953,525"/>
+<area shape="poly" title=" " alt="" coords="941,567,872,583,616,632,400,668,399,663,615,627,871,577,940,562"/>
+<area shape="rect" href="class_application.html#a3d92c306ee8dcc8264cd0566941f36f6" title="播放暂停视频" alt="" coords="684,525,872,568"/>
+<area shape="poly" title=" " alt="" coords="904,549,872,549,872,544,904,544"/>
+<area shape="poly" title=" " alt="" coords="668,543,452,524,404,516,305,503,263,503,212,516,176,533,144,556,99,601,95,598,141,552,173,529,210,511,263,498,306,497,404,511,452,519,669,538"/>
+<area shape="rect" href="class_application.html#a007d9f7c6e0805fdca03502a1c3d130c" title="重写eventFilter()方法" alt="" coords="468,483,620,509"/>
+<area shape="poly" title=" " alt="" coords="669,526,609,513,610,507,670,520"/>
+<area shape="rect" href="class_controller.html#a9de3b2de7339605b0cdf56392da6a1d1" title=" " alt="" coords="708,924,848,951"/>
+<area shape="poly" title=" " alt="" coords="917,940,848,940,848,935,917,935"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a23138bde050fb327075f91eabd94734d" name="a23138bde050fb327075f91eabd94734d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23138bde050fb327075f91eabd94734d">&#9670;&#160;</a></span>goToNextFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::goToNextFrame </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>跳转到下一帧 </p>
+<p>获取当前播放位置</p>
+<p>获取该视频帧率</p>
+<p>设置新的播放位置</p>
+
+<p class="definition">在文件 <a class="el" href="controller_8cpp_source.html">controller.cpp</a> 第 <a class="el" href="controller_8cpp_source.html#l00530">530</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a23138bde050fb327075f91eabd94734d_cgraph.png" border="0" usemap="#aclass_controller_a23138bde050fb327075f91eabd94734d_cgraph" alt=""/></div>
+<map name="aclass_controller_a23138bde050fb327075f91eabd94734d_cgraph" id="aclass_controller_a23138bde050fb327075f91eabd94734d_cgraph">
+<area shape="rect" title="跳转到下一帧" alt="" coords="5,56,182,83"/>
+<area shape="rect" href="class_controller.html#ae3ecf333d3024634b5a69f2a74bbc03a" title="获取视频帧率（对某些文件并非完全可靠）" alt="" coords="230,5,396,32"/>
+<area shape="poly" title=" " alt="" coords="154,53,237,33,238,39,155,58"/>
+<area shape="rect" href="class_controller.html#a2a8f008980f87cdb36c4111115d0e71f" title="获取MPV属性值函数" alt="" coords="444,31,595,57"/>
+<area shape="poly" title=" " alt="" coords="182,61,428,47,429,52,182,67"/>
+<area shape="rect" href="class_controller.html#a1d55246197db45a58108b5b0c0f05960" title="MPV属性设置函数" alt="" coords="237,107,389,133"/>
+<area shape="poly" title=" " alt="" coords="155,81,238,100,237,105,154,86"/>
+<area shape="poly" title=" " alt="" coords="397,26,429,30,428,36,396,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a23138bde050fb327075f91eabd94734d_icgraph.png" border="0" usemap="#aclass_controller_a23138bde050fb327075f91eabd94734d_icgraph" alt=""/></div>
+<map name="aclass_controller_a23138bde050fb327075f91eabd94734d_icgraph" id="aclass_controller_a23138bde050fb327075f91eabd94734d_icgraph">
+<area shape="rect" title="跳转到下一帧" alt="" coords="435,13,611,40"/>
+<area shape="rect" href="class_application.html#a9472fc5d48f30becbedf697a7bdd44dc" title="跳转到下一帧" alt="" coords="211,5,387,48"/>
+<area shape="poly" title=" " alt="" coords="420,29,388,29,388,24,420,24"/>
+<area shape="rect" href="class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,13,163,40"/>
+<area shape="poly" title=" " alt="" coords="195,29,163,29,163,24,195,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac32a05c85bba1eb7f76082a0d807efd1" name="ac32a05c85bba1eb7f76082a0d807efd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac32a05c85bba1eb7f76082a0d807efd1">&#9670;&#160;</a></span>goToPreviousFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::goToPreviousFrame </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>跳转到上一帧 </p>
+<p>获取当前播放位置</p>
+<p>获取该视频帧率</p>
+<p>设置新的播放位置</p>
+
+<p class="definition">在文件 <a class="el" href="controller_8cpp_source.html">controller.cpp</a> 第 <a class="el" href="controller_8cpp_source.html#l00509">509</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_ac32a05c85bba1eb7f76082a0d807efd1_cgraph.png" border="0" usemap="#aclass_controller_ac32a05c85bba1eb7f76082a0d807efd1_cgraph" alt=""/></div>
+<map name="aclass_controller_ac32a05c85bba1eb7f76082a0d807efd1_cgraph" id="aclass_controller_ac32a05c85bba1eb7f76082a0d807efd1_cgraph">
+<area shape="rect" title="跳转到上一帧" alt="" coords="5,48,167,91"/>
+<area shape="rect" href="class_controller.html#ae3ecf333d3024634b5a69f2a74bbc03a" title="获取视频帧率（对某些文件并非完全可靠）" alt="" coords="215,5,381,32"/>
+<area shape="poly" title=" " alt="" coords="166,47,224,33,225,39,168,53"/>
+<area shape="rect" href="class_controller.html#a2a8f008980f87cdb36c4111115d0e71f" title="获取MPV属性值函数" alt="" coords="429,31,580,57"/>
+<area shape="poly" title=" " alt="" coords="167,62,413,47,413,52,167,67"/>
+<area shape="rect" href="class_controller.html#a1d55246197db45a58108b5b0c0f05960" title="MPV属性设置函数" alt="" coords="222,107,374,133"/>
+<area shape="poly" title=" " alt="" coords="168,86,225,100,224,105,166,91"/>
+<area shape="poly" title=" " alt="" coords="382,26,414,30,413,36,381,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_ac32a05c85bba1eb7f76082a0d807efd1_icgraph.png" border="0" usemap="#aclass_controller_ac32a05c85bba1eb7f76082a0d807efd1_icgraph" alt=""/></div>
+<map name="aclass_controller_ac32a05c85bba1eb7f76082a0d807efd1_icgraph" id="aclass_controller_ac32a05c85bba1eb7f76082a0d807efd1_icgraph">
+<area shape="rect" title="跳转到上一帧" alt="" coords="438,5,599,48"/>
+<area shape="rect" href="class_application.html#a0bc5d45b9362854fd9906876975a39e5" title="跳转到上一帧" alt="" coords="211,5,390,48"/>
+<area shape="poly" title=" " alt="" coords="422,29,390,29,390,24,422,24"/>
+<area shape="rect" href="class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,13,163,40"/>
+<area shape="poly" title=" " alt="" coords="195,29,163,29,163,24,195,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae1e277a58425271450529db6cc00d427" name="ae1e277a58425271450529db6cc00d427"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1e277a58425271450529db6cc00d427">&#9670;&#160;</a></span>handleUrl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::handleUrl </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>url</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>打开URL </p>
+<p>确保播放状态正确</p>
+<p>初始化滑块</p>
+<p>更新进度条初始化状态</p>
+<p>切换播放图标到正在播放状态</p>
+
+<p class="definition">在文件 <a class="el" href="controller_8cpp_source.html">controller.cpp</a> 第 <a class="el" href="controller_8cpp_source.html#l00133">133</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_ae1e277a58425271450529db6cc00d427_cgraph.png" border="0" usemap="#aclass_controller_ae1e277a58425271450529db6cc00d427_cgraph" alt=""/></div>
+<map name="aclass_controller_ae1e277a58425271450529db6cc00d427_cgraph" id="aclass_controller_ae1e277a58425271450529db6cc00d427_cgraph">
+<area shape="rect" title="打开URL" alt="" coords="5,123,144,149"/>
+<area shape="rect" href="class_controller.html#a760fa8063d5501d85fc8d710af0acbb4" title="发送命令到MPV" alt="" coords="212,5,354,32"/>
+<area shape="poly" title=" " alt="" coords="88,120,131,81,160,60,190,42,204,35,207,40,193,46,163,64,135,85,91,124"/>
+<area shape="rect" href="class_controller.html#a2a8f008980f87cdb36c4111115d0e71f" title="获取MPV属性值函数" alt="" coords="438,123,589,149"/>
+<area shape="poly" title=" " alt="" coords="144,133,422,133,422,139,144,139"/>
+<area shape="rect" href="class_controller.html#a2a01620e9ab29667b85e3caac0cd1e57" title="初始化滑块的总时长" alt="" coords="201,56,365,99"/>
+<area shape="poly" title=" " alt="" coords="124,120,189,101,191,106,125,125"/>
+<area shape="rect" href="class_controller.html#a6e08645421f79b7e914fd644f3a870ba" title="切换播放暂停" alt="" coords="192,173,374,200"/>
+<area shape="poly" title=" " alt="" coords="133,147,211,167,210,172,132,153"/>
+<area shape="rect" href="class_application.html#ad42c22bcb02a4bd0421a1942601e1c33" title="更新播放状态对应的播放图标" alt="" coords="422,224,604,251"/>
+<area shape="poly" title=" " alt="" coords="93,148,136,180,163,197,193,209,246,224,301,233,407,239,406,245,301,238,245,229,191,215,161,201,133,185,90,152"/>
+<area shape="poly" title=" " alt="" coords="366,96,443,116,442,121,364,101"/>
+<area shape="rect" href="class_application.html#a37b44bf33e642e5e26a200db2fc145ed" title="给Controller类提供slider用于对播放进度滑块进行初始化与更新操作" alt="" coords="441,64,585,91"/>
+<area shape="poly" title=" " alt="" coords="365,75,426,75,426,80,365,80"/>
+<area shape="poly" title=" " alt="" coords="346,170,434,151,435,156,348,175"/>
+<area shape="rect" href="class_controller.html#a1d55246197db45a58108b5b0c0f05960" title="MPV属性设置函数" alt="" coords="438,173,589,200"/>
+<area shape="poly" title=" " alt="" coords="374,184,422,184,422,189,374,189"/>
+<area shape="poly" title=" " alt="" coords="348,198,435,217,434,223,346,203"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_ae1e277a58425271450529db6cc00d427_icgraph.png" border="0" usemap="#aclass_controller_ae1e277a58425271450529db6cc00d427_icgraph" alt=""/></div>
+<map name="aclass_controller_ae1e277a58425271450529db6cc00d427_icgraph" id="aclass_controller_ae1e277a58425271450529db6cc00d427_icgraph">
+<area shape="rect" title="打开URL" alt="" coords="439,13,577,40"/>
+<area shape="rect" href="class_application.html#adb2fa3b8daee398534b3fe33ba7233f2" title="打开URL" alt="" coords="211,5,391,48"/>
+<area shape="poly" title=" " alt="" coords="423,29,392,29,392,24,423,24"/>
+<area shape="rect" href="class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,13,163,40"/>
+<area shape="poly" title=" " alt="" coords="195,29,163,29,163,24,195,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2a01620e9ab29667b85e3caac0cd1e57" name="a2a01620e9ab29667b85e3caac0cd1e57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a01620e9ab29667b85e3caac0cd1e57">&#9670;&#160;</a></span>initializeSliderDuration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::initializeSliderDuration </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>初始化滑块的总时长 </p>
+<p>设置滑块的最大值为视频总时长（秒）</p>
+<p>设置时间显示</p>
+
+<p class="definition">在文件 <a class="el" href="controller_8cpp_source.html">controller.cpp</a> 第 <a class="el" href="controller_8cpp_source.html#l00165">165</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a2a01620e9ab29667b85e3caac0cd1e57_cgraph.png" border="0" usemap="#aclass_controller_a2a01620e9ab29667b85e3caac0cd1e57_cgraph" alt=""/></div>
+<map name="aclass_controller_a2a01620e9ab29667b85e3caac0cd1e57_cgraph" id="aclass_controller_a2a01620e9ab29667b85e3caac0cd1e57_cgraph">
+<area shape="rect" title="初始化滑块的总时长" alt="" coords="5,23,170,65"/>
+<area shape="rect" href="class_controller.html#a2a8f008980f87cdb36c4111115d0e71f" title="获取MPV属性值函数" alt="" coords="218,5,369,32"/>
+<area shape="poly" title=" " alt="" coords="170,31,202,27,202,33,171,36"/>
+<area shape="rect" href="class_application.html#a37b44bf33e642e5e26a200db2fc145ed" title="给Controller类提供slider用于对播放进度滑块进行初始化与更新操作" alt="" coords="221,56,366,83"/>
+<area shape="poly" title=" " alt="" coords="171,52,206,56,206,61,170,57"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a2a01620e9ab29667b85e3caac0cd1e57_icgraph.png" border="0" usemap="#aclass_controller_a2a01620e9ab29667b85e3caac0cd1e57_icgraph" alt=""/></div>
+<map name="aclass_controller_a2a01620e9ab29667b85e3caac0cd1e57_icgraph" id="aclass_controller_a2a01620e9ab29667b85e3caac0cd1e57_icgraph">
+<area shape="rect" title="初始化滑块的总时长" alt="" coords="844,67,1008,109"/>
+<area shape="rect" href="class_controller.html#ae1e277a58425271450529db6cc00d427" title="打开URL" alt="" coords="657,37,796,64"/>
+<area shape="poly" title=" " alt="" coords="828,72,796,66,797,61,829,67"/>
+<area shape="rect" href="class_controller.html#a550805a886e37b396e587863e6ccea13" title="打开文件" alt="" coords="660,100,793,127"/>
+<area shape="poly" title=" " alt="" coords="828,103,794,107,793,102,828,98"/>
+<area shape="rect" href="class_application.html#adb2fa3b8daee398534b3fe33ba7233f2" title="打开URL" alt="" coords="211,5,391,48"/>
+<area shape="poly" title=" " alt="" coords="642,49,391,34,392,29,642,43"/>
+<area shape="rect" href="class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,101,163,128"/>
+<area shape="poly" title=" " alt="" coords="226,57,212,62,117,103,115,98,210,58,224,52"/>
+<area shape="rect" href="class_application.html#a7c89c49db562d830a17273853bf1aa79" title="添加历史记录" alt="" coords="447,73,602,100"/>
+<area shape="poly" title=" " alt="" coords="644,105,602,100,603,94,645,100"/>
+<area shape="rect" href="class_application.html#a57b10b769faceb80e236679ad894b9e0" title="打开视频文件" alt="" coords="211,123,391,165"/>
+<area shape="poly" title=" " alt="" coords="645,122,392,140,391,135,644,117"/>
+<area shape="rect" href="class_application.html#a4d7ae5158a237f815d76620e327310e6" title="下载完成处理" alt="" coords="439,177,609,220"/>
+<area shape="poly" title=" " alt="" coords="680,136,578,179,576,174,678,131"/>
+<area shape="poly" title=" " alt="" coords="456,71,382,51,384,46,458,66"/>
+<area shape="rect" href="class_application.html#af63e0ba4a66b778916fd6e147a44224a" title="加载历史记录" alt="" coords="222,72,380,99"/>
+<area shape="poly" title=" " alt="" coords="431,89,380,88,380,83,431,83"/>
+<area shape="poly" title=" " alt="" coords="456,107,387,125,386,120,454,102"/>
+<area shape="poly" title=" " alt="" coords="207,101,164,107,163,101,206,95"/>
+<area shape="poly" title=" " alt="" coords="195,132,163,128,163,123,196,127"/>
+<area shape="poly" title=" " alt="" coords="423,204,320,199,264,192,210,180,152,157,105,131,108,126,154,152,211,175,265,186,320,194,424,199"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab8163a869e1d7981fe0cdfc93f093ece" name="ab8163a869e1d7981fe0cdfc93f093ece"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8163a869e1d7981fe0cdfc93f093ece">&#9670;&#160;</a></span>moveDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::moveDown </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="controller_8cpp_source.html">controller.cpp</a> 第 <a class="el" href="controller_8cpp_source.html#l00312">312</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_ab8163a869e1d7981fe0cdfc93f093ece_cgraph.png" border="0" usemap="#aclass_controller_ab8163a869e1d7981fe0cdfc93f093ece_cgraph" alt=""/></div>
+<map name="aclass_controller_ab8163a869e1d7981fe0cdfc93f093ece_cgraph" id="aclass_controller_ab8163a869e1d7981fe0cdfc93f093ece_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,152,32"/>
+<area shape="rect" href="class_controller.html#a1d55246197db45a58108b5b0c0f05960" title="MPV属性设置函数" alt="" coords="200,5,351,32"/>
+<area shape="poly" title=" " alt="" coords="152,16,184,16,184,21,152,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_ab8163a869e1d7981fe0cdfc93f093ece_icgraph.png" border="0" usemap="#aclass_controller_ab8163a869e1d7981fe0cdfc93f093ece_icgraph" alt=""/></div>
+<map name="aclass_controller_ab8163a869e1d7981fe0cdfc93f093ece_icgraph" id="aclass_controller_ab8163a869e1d7981fe0cdfc93f093ece_icgraph">
+<area shape="rect" title=" " alt="" coords="438,13,584,40"/>
+<area shape="rect" href="class_application.html#a96482eb32c75b8773fdef4aebf705965" title=" " alt="" coords="211,5,390,48"/>
+<area shape="poly" title=" " alt="" coords="422,29,391,29,391,24,422,24"/>
+<area shape="rect" href="class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,13,163,40"/>
+<area shape="poly" title=" " alt="" coords="195,29,163,29,163,24,195,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa846c3f51c3a0d9727ab69e664351137" name="aa846c3f51c3a0d9727ab69e664351137"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa846c3f51c3a0d9727ab69e664351137">&#9670;&#160;</a></span>moveLeft()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::moveLeft </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>视频位置控制 </p>
+
+<p class="definition">在文件 <a class="el" href="controller_8cpp_source.html">controller.cpp</a> 第 <a class="el" href="controller_8cpp_source.html#l00297">297</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_aa846c3f51c3a0d9727ab69e664351137_cgraph.png" border="0" usemap="#aclass_controller_aa846c3f51c3a0d9727ab69e664351137_cgraph" alt=""/></div>
+<map name="aclass_controller_aa846c3f51c3a0d9727ab69e664351137_cgraph" id="aclass_controller_aa846c3f51c3a0d9727ab69e664351137_cgraph">
+<area shape="rect" title="视频位置控制" alt="" coords="5,5,141,32"/>
+<area shape="rect" href="class_controller.html#a1d55246197db45a58108b5b0c0f05960" title="MPV属性设置函数" alt="" coords="189,5,340,32"/>
+<area shape="poly" title=" " alt="" coords="141,16,173,16,173,21,141,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_aa846c3f51c3a0d9727ab69e664351137_icgraph.png" border="0" usemap="#aclass_controller_aa846c3f51c3a0d9727ab69e664351137_icgraph" alt=""/></div>
+<map name="aclass_controller_aa846c3f51c3a0d9727ab69e664351137_icgraph" id="aclass_controller_aa846c3f51c3a0d9727ab69e664351137_icgraph">
+<area shape="rect" title="视频位置控制" alt="" coords="438,13,573,40"/>
+<area shape="rect" href="class_application.html#a8c111a75b511f62907769a9544cbcdb3" title="视频画面移动控制" alt="" coords="211,5,390,48"/>
+<area shape="poly" title=" " alt="" coords="422,29,391,29,391,24,422,24"/>
+<area shape="rect" href="class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,13,163,40"/>
+<area shape="poly" title=" " alt="" coords="195,29,163,29,163,24,195,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a97648c04ced6187cd8e3c625f5dadc81" name="a97648c04ced6187cd8e3c625f5dadc81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97648c04ced6187cd8e3c625f5dadc81">&#9670;&#160;</a></span>moveReset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::moveReset </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="controller_8cpp_source.html">controller.cpp</a> 第 <a class="el" href="controller_8cpp_source.html#l00317">317</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a97648c04ced6187cd8e3c625f5dadc81_cgraph.png" border="0" usemap="#aclass_controller_a97648c04ced6187cd8e3c625f5dadc81_cgraph" alt=""/></div>
+<map name="aclass_controller_a97648c04ced6187cd8e3c625f5dadc81_cgraph" id="aclass_controller_a97648c04ced6187cd8e3c625f5dadc81_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,154,32"/>
+<area shape="rect" href="class_controller.html#a1d55246197db45a58108b5b0c0f05960" title="MPV属性设置函数" alt="" coords="202,5,353,32"/>
+<area shape="poly" title=" " alt="" coords="154,16,186,16,186,21,154,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a97648c04ced6187cd8e3c625f5dadc81_icgraph.png" border="0" usemap="#aclass_controller_a97648c04ced6187cd8e3c625f5dadc81_icgraph" alt=""/></div>
+<map name="aclass_controller_a97648c04ced6187cd8e3c625f5dadc81_icgraph" id="aclass_controller_a97648c04ced6187cd8e3c625f5dadc81_icgraph">
+<area shape="rect" title=" " alt="" coords="438,13,586,40"/>
+<area shape="rect" href="class_application.html#a6ea04f175eef6479e62a24fad5fe51c4" title=" " alt="" coords="211,5,390,48"/>
+<area shape="poly" title=" " alt="" coords="422,29,391,29,391,24,422,24"/>
+<area shape="rect" href="class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,13,163,40"/>
+<area shape="poly" title=" " alt="" coords="195,29,163,29,163,24,195,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6c14dfa97341ac701846495274985787" name="a6c14dfa97341ac701846495274985787"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c14dfa97341ac701846495274985787">&#9670;&#160;</a></span>moveRight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::moveRight </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="controller_8cpp_source.html">controller.cpp</a> 第 <a class="el" href="controller_8cpp_source.html#l00302">302</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a6c14dfa97341ac701846495274985787_cgraph.png" border="0" usemap="#aclass_controller_a6c14dfa97341ac701846495274985787_cgraph" alt=""/></div>
+<map name="aclass_controller_a6c14dfa97341ac701846495274985787_cgraph" id="aclass_controller_a6c14dfa97341ac701846495274985787_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,150,32"/>
+<area shape="rect" href="class_controller.html#a1d55246197db45a58108b5b0c0f05960" title="MPV属性设置函数" alt="" coords="198,5,349,32"/>
+<area shape="poly" title=" " alt="" coords="150,16,182,16,182,21,150,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a6c14dfa97341ac701846495274985787_icgraph.png" border="0" usemap="#aclass_controller_a6c14dfa97341ac701846495274985787_icgraph" alt=""/></div>
+<map name="aclass_controller_a6c14dfa97341ac701846495274985787_icgraph" id="aclass_controller_a6c14dfa97341ac701846495274985787_icgraph">
+<area shape="rect" title=" " alt="" coords="438,13,582,40"/>
+<area shape="rect" href="class_application.html#a4377ea7066290d3b20d4488f9f3cccf6" title=" " alt="" coords="211,5,390,48"/>
+<area shape="poly" title=" " alt="" coords="422,29,391,29,391,24,422,24"/>
+<area shape="rect" href="class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,13,163,40"/>
+<area shape="poly" title=" " alt="" coords="195,29,163,29,163,24,195,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="add64e20187a1a5f9c2ee9526d3fc8b53" name="add64e20187a1a5f9c2ee9526d3fc8b53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add64e20187a1a5f9c2ee9526d3fc8b53">&#9670;&#160;</a></span>moveUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::moveUp </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="controller_8cpp_source.html">controller.cpp</a> 第 <a class="el" href="controller_8cpp_source.html#l00307">307</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_add64e20187a1a5f9c2ee9526d3fc8b53_cgraph.png" border="0" usemap="#aclass_controller_add64e20187a1a5f9c2ee9526d3fc8b53_cgraph" alt=""/></div>
+<map name="aclass_controller_add64e20187a1a5f9c2ee9526d3fc8b53_cgraph" id="aclass_controller_add64e20187a1a5f9c2ee9526d3fc8b53_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,136,32"/>
+<area shape="rect" href="class_controller.html#a1d55246197db45a58108b5b0c0f05960" title="MPV属性设置函数" alt="" coords="184,5,335,32"/>
+<area shape="poly" title=" " alt="" coords="136,16,168,16,168,21,136,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_add64e20187a1a5f9c2ee9526d3fc8b53_icgraph.png" border="0" usemap="#aclass_controller_add64e20187a1a5f9c2ee9526d3fc8b53_icgraph" alt=""/></div>
+<map name="aclass_controller_add64e20187a1a5f9c2ee9526d3fc8b53_icgraph" id="aclass_controller_add64e20187a1a5f9c2ee9526d3fc8b53_icgraph">
+<area shape="rect" title=" " alt="" coords="438,13,568,40"/>
+<area shape="rect" href="class_application.html#a6212afe9652ac7eca1171479116e4608" title=" " alt="" coords="211,5,390,48"/>
+<area shape="poly" title=" " alt="" coords="422,29,390,29,390,24,422,24"/>
+<area shape="rect" href="class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,13,163,40"/>
+<area shape="poly" title=" " alt="" coords="195,29,163,29,163,24,195,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a550805a886e37b396e587863e6ccea13" name="a550805a886e37b396e587863e6ccea13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a550805a886e37b396e587863e6ccea13">&#9670;&#160;</a></span>openFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::openFile </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>filename</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>打开文件 </p>
+<p>确保播放状态正确</p>
+<p>初始化滑块</p>
+<p>更新进度条初始化状态</p>
+<p>切换播放图标到正在播放状态</p>
+
+<p class="definition">在文件 <a class="el" href="controller_8cpp_source.html">controller.cpp</a> 第 <a class="el" href="controller_8cpp_source.html#l00101">101</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a550805a886e37b396e587863e6ccea13_cgraph.png" border="0" usemap="#aclass_controller_a550805a886e37b396e587863e6ccea13_cgraph" alt=""/></div>
+<map name="aclass_controller_a550805a886e37b396e587863e6ccea13_cgraph" id="aclass_controller_a550805a886e37b396e587863e6ccea13_cgraph">
+<area shape="rect" title="打开文件" alt="" coords="5,123,139,149"/>
+<area shape="rect" href="class_controller.html#a760fa8063d5501d85fc8d710af0acbb4" title="发送命令到MPV" alt="" coords="207,5,349,32"/>
+<area shape="poly" title=" " alt="" coords="85,120,127,81,155,60,185,42,199,35,201,40,188,46,158,64,131,85,88,124"/>
+<area shape="rect" href="class_controller.html#a2a8f008980f87cdb36c4111115d0e71f" title="获取MPV属性值函数" alt="" coords="433,123,584,149"/>
+<area shape="poly" title=" " alt="" coords="139,133,417,133,417,139,139,139"/>
+<area shape="rect" href="class_controller.html#a2a01620e9ab29667b85e3caac0cd1e57" title="初始化滑块的总时长" alt="" coords="196,56,360,99"/>
+<area shape="poly" title=" " alt="" coords="121,120,185,101,187,106,122,125"/>
+<area shape="rect" href="class_controller.html#a6e08645421f79b7e914fd644f3a870ba" title="切换播放暂停" alt="" coords="187,173,369,200"/>
+<area shape="poly" title=" " alt="" coords="130,147,207,166,205,172,129,153"/>
+<area shape="rect" href="class_application.html#ad42c22bcb02a4bd0421a1942601e1c33" title="更新播放状态对应的播放图标" alt="" coords="417,224,599,251"/>
+<area shape="poly" title=" " alt="" coords="90,148,132,180,159,197,188,209,241,224,296,233,402,240,401,245,296,239,240,229,186,215,156,201,129,185,87,152"/>
+<area shape="poly" title=" " alt="" coords="361,96,438,116,437,121,359,101"/>
+<area shape="rect" href="class_application.html#a37b44bf33e642e5e26a200db2fc145ed" title="给Controller类提供slider用于对播放进度滑块进行初始化与更新操作" alt="" coords="436,64,580,91"/>
+<area shape="poly" title=" " alt="" coords="360,75,421,75,421,80,360,80"/>
+<area shape="poly" title=" " alt="" coords="341,170,429,151,430,156,343,175"/>
+<area shape="rect" href="class_controller.html#a1d55246197db45a58108b5b0c0f05960" title="MPV属性设置函数" alt="" coords="433,173,584,200"/>
+<area shape="poly" title=" " alt="" coords="369,184,417,184,417,189,369,189"/>
+<area shape="poly" title=" " alt="" coords="343,198,430,217,429,223,341,203"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a550805a886e37b396e587863e6ccea13_icgraph.png" border="0" usemap="#aclass_controller_a550805a886e37b396e587863e6ccea13_icgraph" alt=""/></div>
+<map name="aclass_controller_a550805a886e37b396e587863e6ccea13_icgraph" id="aclass_controller_a550805a886e37b396e587863e6ccea13_icgraph">
+<area shape="rect" title="打开文件" alt="" coords="657,131,791,157"/>
+<area shape="rect" href="class_application.html#a7c89c49db562d830a17273853bf1aa79" title="添加历史记录" alt="" coords="447,72,602,99"/>
+<area shape="poly" title=" " alt="" coords="661,128,571,102,573,97,662,123"/>
+<area shape="rect" href="class_application.html#a57b10b769faceb80e236679ad894b9e0" title="打开视频文件" alt="" coords="211,123,391,165"/>
+<area shape="poly" title=" " alt="" coords="642,147,392,147,392,141,642,141"/>
+<area shape="rect" href="class_application.html#a4d7ae5158a237f815d76620e327310e6" title="下载完成处理" alt="" coords="439,181,609,224"/>
+<area shape="poly" title=" " alt="" coords="662,165,600,183,598,178,661,160"/>
+<area shape="rect" href="class_application.html#af63e0ba4a66b778916fd6e147a44224a" title="加载历史记录" alt="" coords="222,5,380,32"/>
+<area shape="poly" title=" " alt="" coords="464,69,390,47,351,35,353,30,392,41,466,64"/>
+<area shape="poly" title=" " alt="" coords="457,106,385,125,384,119,456,100"/>
+<area shape="rect" href="class_application.html#adb2fa3b8daee398534b3fe33ba7233f2" title="打开URL" alt="" coords="211,56,391,99"/>
+<area shape="poly" title=" " alt="" coords="431,85,391,83,392,78,431,79"/>
+<area shape="rect" href="class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,97,163,124"/>
+<area shape="poly" title=" " alt="" coords="231,40,212,46,156,73,109,99,106,95,153,68,210,42,229,35"/>
+<area shape="poly" title=" " alt="" coords="195,130,163,125,164,120,196,125"/>
+<area shape="poly" title=" " alt="" coords="196,96,164,101,163,96,195,91"/>
+<area shape="poly" title=" " alt="" coords="423,207,319,201,264,193,210,180,151,155,104,127,106,122,153,150,211,175,265,187,320,196,424,202"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a520f2eb4928262171fc566241918463a" name="a520f2eb4928262171fc566241918463a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a520f2eb4928262171fc566241918463a">&#9670;&#160;</a></span>playVideo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::playVideo </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>播放视频 </p>
+<p>切换播放图标</p>
+
+<p class="definition">在文件 <a class="el" href="controller_8cpp_source.html">controller.cpp</a> 第 <a class="el" href="controller_8cpp_source.html#l00372">372</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a520f2eb4928262171fc566241918463a_cgraph.png" border="0" usemap="#aclass_controller_a520f2eb4928262171fc566241918463a_cgraph" alt=""/></div>
+<map name="aclass_controller_a520f2eb4928262171fc566241918463a_cgraph" id="aclass_controller_a520f2eb4928262171fc566241918463a_cgraph">
+<area shape="rect" title="播放视频" alt="" coords="5,31,147,57"/>
+<area shape="rect" href="class_controller.html#a1d55246197db45a58108b5b0c0f05960" title="MPV属性设置函数" alt="" coords="210,5,362,32"/>
+<area shape="poly" title=" " alt="" coords="147,33,194,27,195,32,147,38"/>
+<area shape="rect" href="class_application.html#ad42c22bcb02a4bd0421a1942601e1c33" title="更新播放状态对应的播放图标" alt="" coords="195,56,377,83"/>
+<area shape="poly" title=" " alt="" coords="147,50,180,54,179,59,147,55"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a520f2eb4928262171fc566241918463a_icgraph.png" border="0" usemap="#aclass_controller_a520f2eb4928262171fc566241918463a_icgraph" alt=""/></div>
+<map name="aclass_controller_a520f2eb4928262171fc566241918463a_icgraph" id="aclass_controller_a520f2eb4928262171fc566241918463a_icgraph">
+<area shape="rect" title="播放视频" alt="" coords="434,47,575,73"/>
+<area shape="rect" href="class_application.html#ad01a13dd480c689e66ef95bf234ae736" title="播放速度减少一半，播放视频" alt="" coords="213,5,384,48"/>
+<area shape="poly" title=" " alt="" coords="419,49,384,43,385,38,419,44"/>
+<area shape="rect" href="class_application.html#a014688cf487feb1bcadfd7ac6991020e" title="播放速度增加一倍，播放视频" alt="" coords="211,72,386,115"/>
+<area shape="poly" title=" " alt="" coords="419,76,387,82,386,76,418,71"/>
+<area shape="rect" href="class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,47,163,73"/>
+<area shape="poly" title=" " alt="" coords="198,45,163,50,163,45,197,40"/>
+<area shape="poly" title=" " alt="" coords="195,80,163,75,163,70,196,75"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4d8d96d399bcedbc3a2744bda0889b38" name="a4d8d96d399bcedbc3a2744bda0889b38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d8d96d399bcedbc3a2744bda0889b38">&#9670;&#160;</a></span>resetAudioSync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::resetAudioSync </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>重置音频同步设置 </p>
+
+<p class="definition">在文件 <a class="el" href="controller_8cpp_source.html">controller.cpp</a> 第 <a class="el" href="controller_8cpp_source.html#l00494">494</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a4d8d96d399bcedbc3a2744bda0889b38_cgraph.png" border="0" usemap="#aclass_controller_a4d8d96d399bcedbc3a2744bda0889b38_cgraph" alt=""/></div>
+<map name="aclass_controller_a4d8d96d399bcedbc3a2744bda0889b38_cgraph" id="aclass_controller_a4d8d96d399bcedbc3a2744bda0889b38_cgraph">
+<area shape="rect" title="重置音频同步设置" alt="" coords="5,5,182,32"/>
+<area shape="rect" href="class_controller.html#a1d55246197db45a58108b5b0c0f05960" title="MPV属性设置函数" alt="" coords="230,5,381,32"/>
+<area shape="poly" title=" " alt="" coords="182,16,214,16,214,21,182,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a4d8d96d399bcedbc3a2744bda0889b38_icgraph.png" border="0" usemap="#aclass_controller_a4d8d96d399bcedbc3a2744bda0889b38_icgraph" alt=""/></div>
+<map name="aclass_controller_a4d8d96d399bcedbc3a2744bda0889b38_icgraph" id="aclass_controller_a4d8d96d399bcedbc3a2744bda0889b38_icgraph">
+<area shape="rect" title="重置音频同步设置" alt="" coords="424,13,600,40"/>
+<area shape="rect" href="class_application.html#a9753e7f092779521be67f280a9f42815" title="音频同步重置" alt="" coords="211,5,376,48"/>
+<area shape="poly" title=" " alt="" coords="408,29,376,29,376,24,408,24"/>
+<area shape="rect" href="class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,13,163,40"/>
+<area shape="poly" title=" " alt="" coords="195,29,163,29,163,24,195,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7476f4c119982f39dc491f13dff28111" name="a7476f4c119982f39dc491f13dff28111"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7476f4c119982f39dc491f13dff28111">&#9670;&#160;</a></span>seek()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::seek </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>seconds</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>跳转到指定播放位置 </p>
+
+<p class="definition">在文件 <a class="el" href="controller_8cpp_source.html">controller.cpp</a> 第 <a class="el" href="controller_8cpp_source.html#l00327">327</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a7476f4c119982f39dc491f13dff28111_cgraph.png" border="0" usemap="#aclass_controller_a7476f4c119982f39dc491f13dff28111_cgraph" alt=""/></div>
+<map name="aclass_controller_a7476f4c119982f39dc491f13dff28111_cgraph" id="aclass_controller_a7476f4c119982f39dc491f13dff28111_cgraph">
+<area shape="rect" title="跳转到指定播放位置" alt="" coords="5,5,118,32"/>
+<area shape="rect" href="class_controller.html#a760fa8063d5501d85fc8d710af0acbb4" title="发送命令到MPV" alt="" coords="166,5,307,32"/>
+<area shape="poly" title=" " alt="" coords="118,16,150,16,150,21,118,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a7476f4c119982f39dc491f13dff28111_icgraph.png" border="0" usemap="#aclass_controller_a7476f4c119982f39dc491f13dff28111_icgraph" alt=""/></div>
+<map name="aclass_controller_a7476f4c119982f39dc491f13dff28111_icgraph" id="aclass_controller_a7476f4c119982f39dc491f13dff28111_icgraph">
+<area shape="rect" title="跳转到指定播放位置" alt="" coords="404,13,516,40"/>
+<area shape="rect" href="class_application.html#a7acf4f1b52b33854420d9e12b0515370" title="跳转到指定播放位置" alt="" coords="211,5,356,48"/>
+<area shape="poly" title=" " alt="" coords="389,29,357,29,357,24,389,24"/>
+<area shape="rect" href="class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,13,163,40"/>
+<area shape="poly" title=" " alt="" coords="195,29,163,29,163,24,195,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa243f1c686c1ab23e6342a47e44d92b8" name="aa243f1c686c1ab23e6342a47e44d92b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa243f1c686c1ab23e6342a47e44d92b8">&#9670;&#160;</a></span>seekRelative()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::seekRelative </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>seconds</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>跳转到相对播放位置 </p>
+<p>添加判断防止跳转越界</p>
+
+<p class="definition">在文件 <a class="el" href="controller_8cpp_source.html">controller.cpp</a> 第 <a class="el" href="controller_8cpp_source.html#l00335">335</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_aa243f1c686c1ab23e6342a47e44d92b8_cgraph.png" border="0" usemap="#aclass_controller_aa243f1c686c1ab23e6342a47e44d92b8_cgraph" alt=""/></div>
+<map name="aclass_controller_aa243f1c686c1ab23e6342a47e44d92b8_cgraph" id="aclass_controller_aa243f1c686c1ab23e6342a47e44d92b8_cgraph">
+<area shape="rect" title="跳转到相对播放位置" alt="" coords="5,31,163,57"/>
+<area shape="rect" href="class_controller.html#a760fa8063d5501d85fc8d710af0acbb4" title="发送命令到MPV" alt="" coords="216,5,357,32"/>
+<area shape="poly" title=" " alt="" coords="163,31,200,27,201,32,163,37"/>
+<area shape="rect" href="class_controller.html#a2a8f008980f87cdb36c4111115d0e71f" title="获取MPV属性值函数" alt="" coords="211,56,362,83"/>
+<area shape="poly" title=" " alt="" coords="163,51,196,55,195,61,163,57"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_aa243f1c686c1ab23e6342a47e44d92b8_icgraph.png" border="0" usemap="#aclass_controller_aa243f1c686c1ab23e6342a47e44d92b8_icgraph" alt=""/></div>
+<map name="aclass_controller_aa243f1c686c1ab23e6342a47e44d92b8_icgraph" id="aclass_controller_aa243f1c686c1ab23e6342a47e44d92b8_icgraph">
+<area shape="rect" title="跳转到相对播放位置" alt="" coords="432,47,589,73"/>
+<area shape="rect" href="class_application.html#a131488e42287fae3bf2c9dbc2e328d3f" title="后退3秒" alt="" coords="211,5,384,48"/>
+<area shape="poly" title=" " alt="" coords="416,48,384,43,385,38,417,43"/>
+<area shape="rect" href="class_application.html#a1d1b2612037c07addfab8df1cf1f2459" title="前进3秒" alt="" coords="211,72,384,115"/>
+<area shape="poly" title=" " alt="" coords="417,77,385,82,384,77,416,72"/>
+<area shape="rect" href="class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,47,163,73"/>
+<area shape="poly" title=" " alt="" coords="196,45,164,50,163,45,195,40"/>
+<area shape="poly" title=" " alt="" coords="195,80,163,75,164,70,196,75"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a89d392cb8988e9627901ae62edbf7675" name="a89d392cb8988e9627901ae62edbf7675"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89d392cb8988e9627901ae62edbf7675">&#9670;&#160;</a></span>setPlayerWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::setPlayerWidget </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_q_widget.html">QWidget</a> *</td>          <td class="paramname"><span class="paramname"><em>widget</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>将MPV的视频输出绑定到QWidget上 </p>
+
+<p class="definition">在文件 <a class="el" href="controller_8cpp_source.html">controller.cpp</a> 第 <a class="el" href="controller_8cpp_source.html#l00090">90</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a89d392cb8988e9627901ae62edbf7675_cgraph.png" border="0" usemap="#aclass_controller_a89d392cb8988e9627901ae62edbf7675_cgraph" alt=""/></div>
+<map name="aclass_controller_a89d392cb8988e9627901ae62edbf7675_cgraph" id="aclass_controller_a89d392cb8988e9627901ae62edbf7675_cgraph">
+<area shape="rect" title="将MPV的视频输出绑定到QWidget上" alt="" coords="5,5,186,32"/>
+<area shape="rect" href="client_8h.html#ada06ff1f821683e60b531d96ccc69264" title=" " alt="" coords="234,5,384,32"/>
+<area shape="poly" title=" " alt="" coords="186,16,218,16,218,21,186,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a89d392cb8988e9627901ae62edbf7675_icgraph.png" border="0" usemap="#aclass_controller_a89d392cb8988e9627901ae62edbf7675_icgraph" alt=""/></div>
+<map name="aclass_controller_a89d392cb8988e9627901ae62edbf7675_icgraph" id="aclass_controller_a89d392cb8988e9627901ae62edbf7675_icgraph">
+<area shape="rect" title="将MPV的视频输出绑定到QWidget上" alt="" coords="211,5,391,32"/>
+<area shape="rect" href="class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,5,163,32"/>
+<area shape="poly" title=" " alt="" coords="195,21,163,21,163,16,195,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1d55246197db45a58108b5b0c0f05960" name="a1d55246197db45a58108b5b0c0f05960"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d55246197db45a58108b5b0c0f05960">&#9670;&#160;</a></span>setProperty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::setProperty </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QVariant &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>MPV属性设置函数 </p>
+
+<p class="definition">在文件 <a class="el" href="controller_8cpp_source.html">controller.cpp</a> 第 <a class="el" href="controller_8cpp_source.html#l00562">562</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a1d55246197db45a58108b5b0c0f05960_icgraph.png" border="0" usemap="#aclass_controller_a1d55246197db45a58108b5b0c0f05960_icgraph" alt=""/></div>
+<map name="aclass_controller_a1d55246197db45a58108b5b0c0f05960_icgraph" id="aclass_controller_a1d55246197db45a58108b5b0c0f05960_icgraph">
+<area shape="rect" title="MPV属性设置函数" alt="" coords="1147,639,1298,665"/>
+<area shape="rect" href="class_controller.html#acd743b3e7d0a1b87aa7a7b5a0d715e10" title="调整音频同步" alt="" coords="466,80,618,107"/>
+<area shape="poly" title=" " alt="" coords="1216,624,1202,522,1178,386,1161,318,1143,256,1121,207,1097,174,1043,135,983,107,919,89,852,78,787,73,724,74,618,83,618,77,724,68,787,68,853,72,920,83,985,102,1046,131,1101,170,1126,204,1148,254,1167,316,1183,385,1207,521,1221,623"/>
+<area shape="rect" href="class_controller.html#a9de3b2de7339605b0cdf56392da6a1d1" title=" " alt="" coords="937,1284,1077,1311"/>
+<area shape="poly" title=" " alt="" coords="1222,681,1212,808,1190,985,1174,1076,1154,1159,1130,1227,1116,1253,1101,1274,1078,1289,1075,1285,1097,1270,1111,1251,1125,1225,1149,1157,1169,1075,1185,985,1206,807,1217,681"/>
+<area shape="rect" href="class_controller.html#a23138bde050fb327075f91eabd94734d" title="跳转到下一帧" alt="" coords="919,184,1095,211"/>
+<area shape="poly" title=" " alt="" coords="1218,624,1210,550,1192,451,1176,397,1156,343,1130,292,1097,246,1076,227,1051,214,1053,209,1079,223,1101,242,1134,289,1161,341,1181,395,1197,450,1216,550,1223,623"/>
+<area shape="rect" href="class_controller.html#ac32a05c85bba1eb7f76082a0d807efd1" title="跳转到上一帧" alt="" coords="926,256,1088,299"/>
+<area shape="poly" title=" " alt="" coords="1216,623,1207,560,1187,477,1172,433,1152,389,1127,349,1097,313,1083,301,1086,297,1101,309,1132,346,1157,387,1177,431,1192,475,1213,559,1222,623"/>
+<area shape="rect" href="class_controller.html#ab8163a869e1d7981fe0cdfc93f093ece" title=" " alt="" coords="934,323,1080,349"/>
+<area shape="poly" title=" " alt="" coords="1215,624,1204,569,1182,499,1167,462,1148,427,1125,394,1097,365,1078,352,1080,348,1101,361,1129,390,1152,424,1171,460,1187,497,1209,567,1220,623"/>
+<area shape="rect" href="class_controller.html#aa846c3f51c3a0d9727ab69e664351137" title="视频位置控制" alt="" coords="939,375,1075,401"/>
+<area shape="poly" title=" " alt="" coords="1212,624,1198,579,1175,523,1142,465,1121,439,1097,417,1074,403,1076,398,1101,413,1125,436,1146,462,1180,520,1203,577,1217,623"/>
+<area shape="rect" href="class_controller.html#a97648c04ced6187cd8e3c625f5dadc81" title=" " alt="" coords="933,427,1081,453"/>
+<area shape="poly" title=" " alt="" coords="1208,625,1191,590,1166,548,1135,506,1097,470,1072,456,1074,452,1101,466,1139,502,1171,545,1195,587,1212,623"/>
+<area shape="rect" href="class_controller.html#a6c14dfa97341ac701846495274985787" title=" " alt="" coords="935,480,1079,507"/>
+<area shape="poly" title=" " alt="" coords="1201,628,1157,576,1129,550,1098,526,1062,510,1065,505,1100,522,1132,545,1161,573,1205,624"/>
+<area shape="rect" href="class_controller.html#add64e20187a1a5f9c2ee9526d3fc8b53" title=" " alt="" coords="942,536,1072,563"/>
+<area shape="poly" title=" " alt="" coords="1189,632,1147,604,1098,578,1063,566,1065,561,1100,574,1149,600,1192,627"/>
+<area shape="rect" href="class_controller.html#a520f2eb4928262171fc566241918463a" title="播放视频" alt="" coords="936,639,1078,665"/>
+<area shape="poly" title=" " alt="" coords="1132,655,1078,655,1078,649,1132,649"/>
+<area shape="rect" href="class_controller.html#a4d8d96d399bcedbc3a2744bda0889b38" title="重置音频同步设置" alt="" coords="919,693,1095,720"/>
+<area shape="poly" title=" " alt="" coords="1153,672,1063,695,1062,690,1152,667"/>
+<area shape="rect" href="class_controller.html#a21b6ed6ac00df2773993db6690d488a1" title="设置播放速度" alt="" coords="472,748,611,775"/>
+<area shape="poly" title=" " alt="" coords="1196,678,1153,709,1100,734,1035,752,967,765,833,777,709,778,612,772,612,766,710,772,832,772,967,760,1034,747,1098,730,1150,704,1193,673"/>
+<area shape="rect" href="class_controller.html#abbae3b549fa779a306b84cbb64b36f80" title="设置播放速度倍数" alt="" coords="915,588,1099,615"/>
+<area shape="poly" title=" " alt="" coords="1147,637,1066,618,1067,613,1148,632"/>
+<area shape="rect" href="class_controller.html#a1cb90db5603e144085debc7076e75c59" title="设置播放音量" alt="" coords="469,952,615,979"/>
+<area shape="poly" title=" " alt="" coords="1204,679,1160,728,1131,754,1100,777,1039,812,973,843,840,894,716,931,616,954,615,949,715,925,838,889,971,838,1036,807,1098,772,1128,750,1156,725,1200,676"/>
+<area shape="rect" href="class_controller.html#a463f160492424ac02ae016f79b0a3c54" title="切换静音状态" alt="" coords="933,924,1081,951"/>
+<area shape="poly" title=" " alt="" coords="1210,681,1165,761,1135,808,1101,854,1063,894,1027,925,1024,921,1059,890,1097,850,1130,805,1161,758,1205,678"/>
+<area shape="rect" href="class_controller.html#a6e08645421f79b7e914fd644f3a870ba" title="切换播放暂停" alt="" coords="916,1081,1098,1108"/>
+<area shape="poly" title=" " alt="" coords="1215,681,1172,806,1139,885,1101,964,1059,1032,1022,1082,1017,1079,1055,1029,1097,961,1134,883,1167,804,1210,679"/>
+<area shape="rect" href="class_controller.html#a1f4e7cd7c28e4571fb33d699e303d1e9" title="放大视频10%" alt="" coords="944,1132,1070,1159"/>
+<area shape="poly" title=" " alt="" coords="1220,681,1205,779,1180,911,1164,977,1145,1038,1124,1088,1101,1122,1087,1132,1072,1140,1069,1135,1084,1128,1097,1118,1119,1085,1140,1036,1158,976,1175,910,1200,778,1215,680"/>
+<area shape="rect" href="class_controller.html#a7fd5dbc4592a5bf113714eb45858851b" title="缩小视频10%" alt="" coords="938,1183,1076,1209"/>
+<area shape="poly" title=" " alt="" coords="1221,681,1208,789,1183,936,1167,1010,1148,1078,1126,1134,1101,1173,1077,1188,1074,1184,1097,1169,1121,1132,1143,1077,1162,1009,1178,935,1202,788,1216,680"/>
+<area shape="rect" href="class_controller.html#a6107fe50b312320595f49e1b97203abe" title="重置视频缩放" alt="" coords="932,1233,1082,1260"/>
+<area shape="poly" title=" " alt="" coords="1222,681,1210,798,1187,961,1170,1043,1151,1119,1128,1181,1101,1223,1084,1236,1081,1232,1097,1220,1123,1178,1146,1117,1165,1042,1181,960,1204,798,1216,681"/>
+<area shape="rect" href="class_application.html#aae2d5f8bfc05cd42224a2212889b31e6" title="音频提前0.1s" alt="" coords="225,5,390,48"/>
+<area shape="poly" title=" " alt="" coords="477,78,384,51,386,46,478,73"/>
+<area shape="rect" href="class_application.html#a169e2cab0b44f421f5bf5d5848e7a472" title="音频延后0.1s" alt="" coords="225,72,390,115"/>
+<area shape="poly" title=" " alt="" coords="450,96,390,96,390,91,450,91"/>
+<area shape="rect" href="class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,777,163,804"/>
+<area shape="poly" title=" " alt="" coords="215,59,213,62,196,87,180,121,153,208,132,314,116,428,96,643,89,777,83,777,91,642,111,427,127,313,148,207,175,119,191,85,209,58,211,56"/>
+<area shape="poly" title=" " alt="" coords="222,126,213,135,198,158,184,189,159,267,138,361,121,463,99,656,89,777,84,777,93,655,116,463,133,360,154,266,179,187,193,156,209,132,218,122"/>
+<area shape="rect" href="class_application.html#a9472fc5d48f30becbedf697a7bdd44dc" title="跳转到下一帧" alt="" coords="685,155,861,197"/>
+<area shape="poly" title=" " alt="" coords="903,191,861,187,862,181,903,185"/>
+<area shape="poly" title=" " alt="" coords="669,154,562,140,502,137,440,140,378,149,318,165,262,191,212,227,197,245,184,269,159,334,138,414,121,501,99,668,89,777,84,777,94,668,116,500,133,413,154,333,179,267,193,242,209,223,259,186,316,160,377,143,439,135,502,132,563,135,670,149"/>
+<area shape="rect" href="class_application.html#a0bc5d45b9362854fd9906876975a39e5" title="跳转到上一帧" alt="" coords="683,244,863,287"/>
+<area shape="poly" title=" " alt="" coords="911,275,863,273,863,267,911,270"/>
+<area shape="poly" title=" " alt="" coords="693,242,584,216,521,207,454,204,388,208,324,221,264,247,237,265,213,286,187,324,164,382,144,453,127,531,102,679,89,777,84,777,97,679,122,530,139,452,159,380,182,322,209,282,234,260,262,242,322,216,387,202,454,198,521,202,585,211,694,236"/>
+<area shape="rect" href="class_application.html#a96482eb32c75b8773fdef4aebf705965" title=" " alt="" coords="452,240,631,283"/>
+<area shape="poly" title=" " alt="" coords="918,332,804,320,679,301,614,286,616,281,680,296,804,315,918,327"/>
+<area shape="poly" title=" " alt="" coords="437,263,379,269,320,283,262,306,236,322,213,342,189,376,167,427,148,489,130,558,104,689,90,778,85,777,99,689,125,556,142,488,162,425,184,373,209,338,233,318,260,302,318,278,378,264,436,257"/>
+<area shape="rect" href="class_application.html#a8c111a75b511f62907769a9544cbcdb3" title="视频画面移动控制" alt="" coords="452,307,631,349"/>
+<area shape="poly" title=" " alt="" coords="924,380,632,342,632,337,924,375"/>
+<area shape="poly" title=" " alt="" coords="437,325,380,329,320,340,263,361,236,376,212,394,173,438,143,490,121,546,105,604,96,658,90,708,88,777,82,777,85,707,90,658,100,602,116,545,138,488,169,435,209,390,233,371,260,356,319,335,379,323,436,319"/>
+<area shape="rect" href="class_application.html#a6ea04f175eef6479e62a24fad5fe51c4" title=" " alt="" coords="452,373,631,416"/>
+<area shape="poly" title=" " alt="" coords="917,434,632,406,632,401,918,429"/>
+<area shape="poly" title=" " alt="" coords="436,385,380,385,321,393,263,411,237,424,212,441,176,478,147,523,125,572,110,622,93,714,88,777,83,777,87,713,105,621,120,570,142,520,171,475,209,437,234,419,261,406,320,388,380,380,436,380"/>
+<area shape="rect" href="class_application.html#a4377ea7066290d3b20d4488f9f3cccf6" title=" " alt="" coords="452,440,631,483"/>
+<area shape="poly" title=" " alt="" coords="919,490,632,470,632,465,920,485"/>
+<area shape="poly" title=" " alt="" coords="436,442,381,438,322,441,264,454,237,466,212,481,178,512,150,551,129,593,113,638,95,720,89,777,83,777,90,719,108,636,124,591,146,548,174,509,209,477,235,461,262,449,321,436,381,433,437,437"/>
+<area shape="rect" href="class_application.html#a6212afe9652ac7eca1171479116e4608" title=" " alt="" coords="452,507,631,549"/>
+<area shape="poly" title=" " alt="" coords="926,548,632,535,632,529,926,543"/>
+<area shape="poly" title=" " alt="" coords="467,504,408,490,341,483,307,484,274,489,242,499,212,514,180,541,154,575,133,612,117,651,97,725,89,777,84,777,92,724,112,649,128,610,149,572,176,537,209,510,240,494,272,484,307,479,341,478,408,485,468,499"/>
+<area shape="rect" href="class_application.html#ad01a13dd480c689e66ef95bf234ae736" title="播放速度减少一半，播放视频" alt="" coords="687,631,859,673"/>
+<area shape="poly" title=" " alt="" coords="921,655,859,655,859,649,921,649"/>
+<area shape="rect" href="class_application.html#a014688cf487feb1bcadfd7ac6991020e" title="播放速度增加一倍，播放视频" alt="" coords="685,564,861,607"/>
+<area shape="poly" title=" " alt="" coords="940,637,914,629,847,610,849,605,915,624,941,631"/>
+<area shape="poly" title=" " alt="" coords="672,640,552,625,419,615,296,616,248,622,212,633,189,647,169,664,134,705,109,746,93,778,89,776,104,743,130,702,165,660,186,642,210,628,247,617,296,610,419,610,552,620,672,634"/>
+<area shape="poly" title=" " alt="" coords="669,580,549,574,416,574,295,582,247,592,212,605,187,622,165,643,130,692,106,741,92,778,87,776,101,739,126,690,161,640,184,618,209,600,246,587,294,577,416,568,550,569,670,575"/>
+<area shape="rect" href="class_application.html#a9753e7f092779521be67f280a9f42815" title="音频同步重置" alt="" coords="459,679,624,721"/>
+<area shape="poly" title=" " alt="" coords="903,708,625,704,625,699,903,703"/>
+<area shape="poly" title=" " alt="" coords="476,675,418,657,350,644,279,643,245,649,212,660,172,685,138,718,112,751,95,779,91,776,108,748,134,714,169,680,210,655,244,644,279,638,351,639,419,652,477,670"/>
+<area shape="rect" href="class_application.html#ab27d3d969d8c39be43321c7111180169" title="减少播放速度（0.5x）" alt="" coords="214,669,401,712"/>
+<area shape="poly" title=" " alt="" coords="479,746,380,715,381,710,481,740"/>
+<area shape="rect" href="class_application.html#a1760f918aa13d9e23884b17b6739619e" title="重置播放速度" alt="" coords="214,736,401,779"/>
+<area shape="poly" title=" " alt="" coords="457,763,401,762,401,756,457,757"/>
+<area shape="rect" href="class_application.html#a735d6f1027466758e872f1eb03cc59d6" title="增加播放速度（0.5x）" alt="" coords="214,803,401,845"/>
+<area shape="poly" title=" " alt="" coords="475,782,391,805,389,799,474,777"/>
+<area shape="rect" href="class_application.html#abdfb7ede361b9683739cb3b2c9f60b04" title="播放速度重置，切换播放状态" alt="" coords="216,869,399,912"/>
+<area shape="poly" title=" " alt="" coords="514,787,465,823,405,860,379,871,377,866,403,855,462,819,511,782"/>
+<area shape="poly" title=" " alt="" coords="226,720,212,726,110,779,108,774,210,722,224,715"/>
+<area shape="poly" title=" " alt="" coords="199,776,164,782,163,776,198,771"/>
+<area shape="poly" title=" " alt="" coords="198,810,163,805,164,800,199,805"/>
+<area shape="poly" title=" " alt="" coords="224,866,210,860,108,807,110,802,212,855,226,861"/>
+<area shape="poly" title=" " alt="" coords="928,621,860,636,859,631,926,616"/>
+<area shape="poly" title=" " alt="" coords="899,597,861,594,861,589,899,591"/>
+<area shape="rect" href="class_application.html#a55704de8311c5ea0735c8681af312bb6" title="音量减少10%" alt="" coords="211,936,404,979"/>
+<area shape="poly" title=" " alt="" coords="453,965,404,963,405,958,453,960"/>
+<area shape="rect" href="class_application.html#a783191f2d5c6a1d5c5e552cc5c00b0b6" title="音量增加10%" alt="" coords="211,1003,404,1045"/>
+<area shape="poly" title=" " alt="" coords="471,986,396,1005,395,999,470,980"/>
+<area shape="rect" href="class_application.html#acd420f25460892203f398567e99806a6" title="设置播放音量" alt="" coords="230,1069,385,1096"/>
+<area shape="poly" title=" " alt="" coords="514,991,465,1026,405,1060,374,1071,372,1066,403,1055,462,1022,511,986"/>
+<area shape="poly" title=" " alt="" coords="217,931,209,926,172,897,138,863,93,806,97,803,142,860,175,893,212,922,220,926"/>
+<area shape="poly" title=" " alt="" coords="214,997,209,993,185,971,164,946,128,893,103,843,88,806,93,804,108,840,133,890,168,943,189,967,212,989,218,992"/>
+<area shape="poly" title=" " alt="" coords="214,1064,209,1059,180,1030,155,996,134,959,118,922,96,853,85,805,90,804,101,852,123,920,139,957,159,993,184,1026,212,1055,218,1059"/>
+<area shape="rect" href="class_application.html#af8f1aa05187ccff4db17023d18963663" title="切换静音" alt="" coords="694,1011,852,1037"/>
+<area shape="poly" title=" " alt="" coords="955,959,812,1013,810,1008,953,954"/>
+<area shape="poly" title=" " alt="" coords="715,1045,594,1079,446,1113,373,1124,306,1129,250,1125,227,1119,209,1110,173,1078,144,1038,122,994,106,949,89,864,83,805,88,804,94,863,111,947,127,992,149,1036,177,1074,212,1106,229,1114,251,1120,306,1124,372,1119,445,1108,593,1074,713,1040"/>
+<area shape="poly" title=" " alt="" coords="976,1073,926,1036,866,1001,806,977,744,957,617,927,498,908,399,898,400,893,499,903,618,921,745,952,808,972,868,996,929,1032,979,1069"/>
+<area shape="rect" href="class_controller.html#ae1e277a58425271450529db6cc00d427" title="打开URL" alt="" coords="704,1216,842,1243"/>
+<area shape="poly" title=" " alt="" coords="924,1117,916,1122,901,1137,892,1152,884,1168,868,1185,841,1204,812,1218,810,1213,838,1199,865,1181,879,1165,888,1149,897,1133,913,1118,922,1113"/>
+<area shape="rect" href="class_application.html#a3d92c306ee8dcc8264cd0566941f36f6" title="播放暂停视频" alt="" coords="679,1128,867,1171"/>
+<area shape="poly" title=" " alt="" coords="933,1115,868,1130,867,1125,931,1109"/>
+<area shape="rect" href="class_controller.html#a550805a886e37b396e587863e6ccea13" title="打开文件" alt="" coords="706,1293,840,1320"/>
+<area shape="poly" title=" " alt="" coords="920,1119,917,1122,903,1138,896,1153,891,1186,887,1220,881,1238,869,1256,843,1279,814,1295,811,1290,840,1275,865,1253,876,1236,882,1219,886,1185,891,1152,899,1135,913,1118,917,1115"/>
+<area shape="rect" href="class_application.html#adb2fa3b8daee398534b3fe33ba7233f2" title="打开URL" alt="" coords="217,1221,398,1264"/>
+<area shape="poly" title=" " alt="" coords="688,1234,398,1243,398,1237,688,1229"/>
+<area shape="poly" title=" " alt="" coords="219,1214,209,1204,171,1154,142,1098,120,1038,104,979,87,874,83,805,88,804,93,873,110,978,125,1037,147,1095,176,1151,213,1201,223,1210"/>
+<area shape="poly" title=" " alt="" coords="664,1163,543,1170,410,1172,347,1169,290,1162,243,1151,209,1134,171,1099,142,1055,119,1008,104,959,87,867,83,805,88,804,92,867,109,957,124,1006,146,1053,175,1095,212,1130,245,1146,291,1157,347,1163,410,1167,543,1165,664,1157"/>
+<area shape="rect" href="class_application.html#a007d9f7c6e0805fdca03502a1c3d130c" title="重写eventFilter()方法" alt="" coords="466,1187,618,1213"/>
+<area shape="poly" title=" " alt="" coords="665,1176,606,1189,605,1183,664,1170"/>
+<area shape="rect" href="class_application.html#a7c89c49db562d830a17273853bf1aa79" title="添加历史记录" alt="" coords="464,1288,619,1315"/>
+<area shape="poly" title=" " alt="" coords="691,1307,620,1306,620,1300,691,1302"/>
+<area shape="rect" href="class_application.html#a57b10b769faceb80e236679ad894b9e0" title="打开视频文件" alt="" coords="217,1339,398,1381"/>
+<area shape="poly" title=" " alt="" coords="691,1321,632,1329,398,1354,398,1349,631,1324,691,1316"/>
+<area shape="rect" href="class_application.html#a4d7ae5158a237f815d76620e327310e6" title="下载完成处理" alt="" coords="457,1389,627,1432"/>
+<area shape="poly" title=" " alt="" coords="716,1328,681,1344,633,1373,596,1391,593,1386,630,1368,678,1339,714,1323"/>
+<area shape="poly" title=" " alt="" coords="470,1286,395,1267,396,1262,471,1281"/>
+<area shape="rect" href="class_application.html#af63e0ba4a66b778916fd6e147a44224a" title="加载历史记录" alt="" coords="228,1288,387,1315"/>
+<area shape="poly" title=" " alt="" coords="449,1304,387,1304,387,1299,449,1299"/>
+<area shape="poly" title=" " alt="" coords="471,1322,396,1341,395,1335,470,1316"/>
+<area shape="poly" title=" " alt="" coords="213,1282,209,1278,183,1240,161,1184,141,1115,123,1041,98,899,84,805,90,804,103,898,129,1040,146,1114,166,1182,188,1237,213,1274,217,1278"/>
+<area shape="poly" title=" " alt="" coords="211,1331,209,1328,182,1285,159,1222,139,1146,122,1064,97,907,84,805,89,804,102,906,127,1063,144,1145,164,1221,187,1283,213,1325,215,1327"/>
+<area shape="poly" title=" " alt="" coords="441,1437,383,1443,322,1441,262,1426,234,1413,209,1395,192,1376,176,1349,150,1280,129,1194,112,1100,91,920,83,805,89,804,97,920,117,1099,134,1193,155,1278,181,1347,196,1373,212,1391,237,1409,264,1421,322,1436,383,1438,441,1432"/>
+<area shape="rect" href="class_application.html#add3cc3935cb789e798762ef9b876b9ac" title="视频缩放控制" alt="" coords="682,1353,864,1396"/>
+<area shape="poly" title=" " alt="" coords="931,1162,917,1173,902,1192,894,1211,892,1250,890,1291,883,1312,869,1334,842,1355,839,1351,865,1330,878,1310,885,1290,886,1250,889,1209,897,1189,913,1169,928,1158"/>
+<area shape="poly" title=" " alt="" coords="720,1406,671,1431,632,1447,538,1465,414,1479,351,1480,294,1477,245,1467,209,1449,190,1428,173,1399,145,1323,124,1229,108,1127,89,930,83,805,88,804,94,929,113,1126,129,1228,150,1322,178,1397,194,1425,212,1445,247,1462,294,1472,351,1475,414,1473,537,1459,631,1441,669,1426,718,1401"/>
+<area shape="rect" href="class_application.html#a7be77353247fea80c71dc06ad0a59f64" title=" " alt="" coords="682,1439,864,1481"/>
+<area shape="poly" title=" " alt="" coords="926,1215,917,1223,900,1245,892,1267,890,1289,890,1312,890,1359,884,1384,869,1410,851,1427,831,1440,828,1436,848,1423,865,1406,879,1382,885,1358,885,1312,884,1289,887,1266,895,1243,913,1219,923,1211"/>
+<area shape="poly" title=" " alt="" coords="709,1490,603,1525,539,1540,470,1550,400,1552,332,1544,267,1523,237,1506,209,1486,189,1464,172,1433,143,1352,121,1253,105,1144,88,935,83,804,88,804,93,935,110,1143,126,1252,148,1351,176,1431,193,1461,212,1482,240,1502,269,1518,333,1538,401,1546,470,1544,538,1535,601,1520,707,1485"/>
+<area shape="rect" href="class_application.html#a44345c334337b4b2d8a1fac29657efc0" title=" " alt="" coords="682,1511,864,1553"/>
+<area shape="poly" title=" " alt="" coords="921,1270,917,1274,898,1301,890,1327,889,1354,892,1381,895,1408,894,1437,887,1466,869,1495,848,1512,845,1508,865,1492,882,1464,889,1436,889,1409,886,1381,883,1354,884,1326,893,1298,913,1270,917,1266"/>
+<area shape="poly" title=" " alt="" coords="708,1562,602,1596,537,1610,469,1620,399,1621,331,1612,267,1591,237,1575,209,1554,187,1529,169,1496,152,1454,138,1406,116,1296,101,1176,91,1056,85,947,83,804,88,804,91,947,96,1055,106,1175,121,1295,143,1405,157,1453,173,1493,192,1526,212,1550,240,1570,269,1586,332,1607,400,1616,468,1614,536,1605,600,1591,706,1557"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a21b6ed6ac00df2773993db6690d488a1" name="a21b6ed6ac00df2773993db6690d488a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21b6ed6ac00df2773993db6690d488a1">&#9670;&#160;</a></span>setSpeed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::setSpeed </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>speed</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置播放速度 </p>
+
+<p class="definition">在文件 <a class="el" href="controller_8cpp_source.html">controller.cpp</a> 第 <a class="el" href="controller_8cpp_source.html#l00435">435</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a21b6ed6ac00df2773993db6690d488a1_cgraph.png" border="0" usemap="#aclass_controller_a21b6ed6ac00df2773993db6690d488a1_cgraph" alt=""/></div>
+<map name="aclass_controller_a21b6ed6ac00df2773993db6690d488a1_cgraph" id="aclass_controller_a21b6ed6ac00df2773993db6690d488a1_cgraph">
+<area shape="rect" title="设置播放速度" alt="" coords="5,31,145,57"/>
+<area shape="rect" href="class_controller.html#a2a8f008980f87cdb36c4111115d0e71f" title="获取MPV属性值函数" alt="" coords="193,5,344,32"/>
+<area shape="poly" title=" " alt="" coords="145,32,177,28,178,33,146,37"/>
+<area shape="rect" href="class_controller.html#a1d55246197db45a58108b5b0c0f05960" title="MPV属性设置函数" alt="" coords="193,56,344,83"/>
+<area shape="poly" title=" " alt="" coords="146,51,178,55,177,60,145,56"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a21b6ed6ac00df2773993db6690d488a1_icgraph.png" border="0" usemap="#aclass_controller_a21b6ed6ac00df2773993db6690d488a1_icgraph" alt=""/></div>
+<map name="aclass_controller_a21b6ed6ac00df2773993db6690d488a1_icgraph" id="aclass_controller_a21b6ed6ac00df2773993db6690d488a1_icgraph">
+<area shape="rect" title="设置播放速度" alt="" coords="445,113,584,140"/>
+<area shape="rect" href="class_application.html#ab27d3d969d8c39be43321c7111180169" title="减少播放速度（0.5x）" alt="" coords="211,5,397,48"/>
+<area shape="poly" title=" " alt="" coords="477,107,396,62,369,51,371,46,398,58,480,102"/>
+<area shape="rect" href="class_application.html#a1760f918aa13d9e23884b17b6739619e" title="重置播放速度" alt="" coords="211,72,397,115"/>
+<area shape="poly" title=" " alt="" coords="429,116,397,111,398,106,430,111"/>
+<area shape="rect" href="class_application.html#a735d6f1027466758e872f1eb03cc59d6" title="增加播放速度（0.5x）" alt="" coords="211,139,397,181"/>
+<area shape="poly" title=" " alt="" coords="430,143,398,148,397,143,429,137"/>
+<area shape="rect" href="class_application.html#abdfb7ede361b9683739cb3b2c9f60b04" title="播放速度重置，切换播放状态" alt="" coords="212,205,396,248"/>
+<area shape="poly" title=" " alt="" coords="480,151,398,196,371,207,369,202,396,191,477,146"/>
+<area shape="rect" href="class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,113,163,140"/>
+<area shape="poly" title=" " alt="" coords="225,57,212,62,110,115,108,110,210,58,223,52"/>
+<area shape="poly" title=" " alt="" coords="196,112,164,117,163,112,195,107"/>
+<area shape="poly" title=" " alt="" coords="195,146,163,141,164,136,196,141"/>
+<area shape="poly" title=" " alt="" coords="223,202,210,196,108,143,110,138,212,191,225,197"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abbae3b549fa779a306b84cbb64b36f80" name="abbae3b549fa779a306b84cbb64b36f80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbae3b549fa779a306b84cbb64b36f80">&#9670;&#160;</a></span>setSpeedMultiple()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::setSpeedMultiple </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>multiple</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置播放速度倍数 </p>
+<p>暂停状态下按L键开始默认速度播放，非暂停状态下倍速播放</p>
+<p>获取当前的暂停状态</p>
+
+<p class="definition">在文件 <a class="el" href="controller_8cpp_source.html">controller.cpp</a> 第 <a class="el" href="controller_8cpp_source.html#l00449">449</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_abbae3b549fa779a306b84cbb64b36f80_cgraph.png" border="0" usemap="#aclass_controller_abbae3b549fa779a306b84cbb64b36f80_cgraph" alt=""/></div>
+<map name="aclass_controller_abbae3b549fa779a306b84cbb64b36f80_cgraph" id="aclass_controller_abbae3b549fa779a306b84cbb64b36f80_cgraph">
+<area shape="rect" title="设置播放速度倍数" alt="" coords="5,31,190,57"/>
+<area shape="rect" href="class_controller.html#a2a8f008980f87cdb36c4111115d0e71f" title="获取MPV属性值函数" alt="" coords="238,5,389,32"/>
+<area shape="poly" title=" " alt="" coords="190,31,222,27,223,32,190,36"/>
+<area shape="rect" href="class_controller.html#a1d55246197db45a58108b5b0c0f05960" title="MPV属性设置函数" alt="" coords="238,56,389,83"/>
+<area shape="poly" title=" " alt="" coords="190,52,223,56,222,61,190,57"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_abbae3b549fa779a306b84cbb64b36f80_icgraph.png" border="0" usemap="#aclass_controller_abbae3b549fa779a306b84cbb64b36f80_icgraph" alt=""/></div>
+<map name="aclass_controller_abbae3b549fa779a306b84cbb64b36f80_icgraph" id="aclass_controller_abbae3b549fa779a306b84cbb64b36f80_icgraph">
+<area shape="rect" title="设置播放速度倍数" alt="" coords="434,47,618,73"/>
+<area shape="rect" href="class_application.html#ad01a13dd480c689e66ef95bf234ae736" title="播放速度减少一半，播放视频" alt="" coords="213,5,384,48"/>
+<area shape="poly" title=" " alt="" coords="418,47,384,42,385,37,419,42"/>
+<area shape="rect" href="class_application.html#a014688cf487feb1bcadfd7ac6991020e" title="播放速度增加一倍，播放视频" alt="" coords="211,72,386,115"/>
+<area shape="poly" title=" " alt="" coords="419,78,387,83,386,78,418,73"/>
+<area shape="rect" href="class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,47,163,73"/>
+<area shape="poly" title=" " alt="" coords="198,45,163,50,163,45,197,40"/>
+<area shape="poly" title=" " alt="" coords="195,80,163,75,163,70,196,75"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1cb90db5603e144085debc7076e75c59" name="a1cb90db5603e144085debc7076e75c59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cb90db5603e144085debc7076e75c59">&#9670;&#160;</a></span>setVolume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::setVolume </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>volume</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>flag</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置播放音量 </p>
+<p>获取当前音量</p>
+<p>设置相对音量</p>
+<p>设置绝对音量</p>
+
+<p class="definition">在文件 <a class="el" href="controller_8cpp_source.html">controller.cpp</a> 第 <a class="el" href="controller_8cpp_source.html#l00384">384</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a1cb90db5603e144085debc7076e75c59_cgraph.png" border="0" usemap="#aclass_controller_a1cb90db5603e144085debc7076e75c59_cgraph" alt=""/></div>
+<map name="aclass_controller_a1cb90db5603e144085debc7076e75c59_cgraph" id="aclass_controller_a1cb90db5603e144085debc7076e75c59_cgraph">
+<area shape="rect" title="设置播放音量" alt="" coords="5,56,152,83"/>
+<area shape="rect" href="class_controller.html#a2a8f008980f87cdb36c4111115d0e71f" title="获取MPV属性值函数" alt="" coords="221,5,372,32"/>
+<area shape="poly" title=" " alt="" coords="139,53,220,34,222,39,140,58"/>
+<area shape="rect" href="class_controller.html#a1d55246197db45a58108b5b0c0f05960" title="MPV属性设置函数" alt="" coords="221,56,372,83"/>
+<area shape="poly" title=" " alt="" coords="152,67,205,67,205,72,152,72"/>
+<area shape="rect" href="class_volume_action.html#a6d43c6baac56707ee4696cd26524111e" title="使用快捷键设置音量后，对应更新滑块位置" alt="" coords="200,107,393,149"/>
+<area shape="poly" title=" " alt="" coords="132,81,201,99,199,105,130,86"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a1cb90db5603e144085debc7076e75c59_icgraph.png" border="0" usemap="#aclass_controller_a1cb90db5603e144085debc7076e75c59_icgraph" alt=""/></div>
+<map name="aclass_controller_a1cb90db5603e144085debc7076e75c59_icgraph" id="aclass_controller_a1cb90db5603e144085debc7076e75c59_icgraph">
+<area shape="rect" title="设置播放音量" alt="" coords="452,80,598,107"/>
+<area shape="rect" href="class_application.html#a55704de8311c5ea0735c8681af312bb6" title="音量减少10%" alt="" coords="211,5,404,48"/>
+<area shape="poly" title=" " alt="" coords="464,77,379,51,380,46,465,72"/>
+<area shape="rect" href="class_application.html#a783191f2d5c6a1d5c5e552cc5c00b0b6" title="音量增加10%" alt="" coords="211,72,404,115"/>
+<area shape="poly" title=" " alt="" coords="436,96,404,96,404,91,436,91"/>
+<area shape="rect" href="class_application.html#acd420f25460892203f398567e99806a6" title="设置播放音量" alt="" coords="230,139,385,165"/>
+<area shape="poly" title=" " alt="" coords="460,114,405,129,362,141,361,135,403,124,459,109"/>
+<area shape="rect" href="class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,80,163,107"/>
+<area shape="poly" title=" " alt="" coords="220,55,132,82,131,77,218,50"/>
+<area shape="poly" title=" " alt="" coords="195,96,163,96,163,91,195,91"/>
+<area shape="poly" title=" " alt="" coords="238,137,210,129,137,110,138,105,211,124,240,132"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a06907d7c2469cdf3191c12237ab9c566" name="a06907d7c2469cdf3191c12237ab9c566"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06907d7c2469cdf3191c12237ab9c566">&#9670;&#160;</a></span>sliderDragStarted()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::sliderDragStarted </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>开始拖动播放进度滑块，更新状态 </p>
+
+<p class="definition">在文件 <a class="el" href="controller_8cpp_source.html">controller.cpp</a> 第 <a class="el" href="controller_8cpp_source.html#l00255">255</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a06907d7c2469cdf3191c12237ab9c566_icgraph.png" border="0" usemap="#aclass_controller_a06907d7c2469cdf3191c12237ab9c566_icgraph" alt=""/></div>
+<map name="aclass_controller_a06907d7c2469cdf3191c12237ab9c566_icgraph" id="aclass_controller_a06907d7c2469cdf3191c12237ab9c566_icgraph">
+<area shape="rect" title="开始拖动播放进度滑块，更新状态" alt="" coords="193,5,377,32"/>
+<area shape="rect" href="class_controller.html#a9de3b2de7339605b0cdf56392da6a1d1" title=" " alt="" coords="5,5,145,32"/>
+<area shape="poly" title=" " alt="" coords="177,21,145,21,145,16,177,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a21f13f9b46ce5dfbfb51d4d353545e5c" name="a21f13f9b46ce5dfbfb51d4d353545e5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21f13f9b46ce5dfbfb51d4d353545e5c">&#9670;&#160;</a></span>sliderDragStopped()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::sliderDragStopped </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>结束拖动播放进度滑块，更新状态 </p>
+
+<p class="definition">在文件 <a class="el" href="controller_8cpp_source.html">controller.cpp</a> 第 <a class="el" href="controller_8cpp_source.html#l00262">262</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a21f13f9b46ce5dfbfb51d4d353545e5c_icgraph.png" border="0" usemap="#aclass_controller_a21f13f9b46ce5dfbfb51d4d353545e5c_icgraph" alt=""/></div>
+<map name="aclass_controller_a21f13f9b46ce5dfbfb51d4d353545e5c_icgraph" id="aclass_controller_a21f13f9b46ce5dfbfb51d4d353545e5c_icgraph">
+<area shape="rect" title="结束拖动播放进度滑块，更新状态" alt="" coords="193,5,383,32"/>
+<area shape="rect" href="class_controller.html#a9de3b2de7339605b0cdf56392da6a1d1" title=" " alt="" coords="5,5,145,32"/>
+<area shape="poly" title=" " alt="" coords="177,21,145,21,145,16,177,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a463f160492424ac02ae016f79b0a3c54" name="a463f160492424ac02ae016f79b0a3c54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a463f160492424ac02ae016f79b0a3c54">&#9670;&#160;</a></span>toggleMute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::toggleMute </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>切换静音状态 </p>
+<p>获取当前的静音状态</p>
+<p>切换静音状态</p>
+<p>切换对应状态图标</p>
+<p>切换对应勾选状态</p>
+
+<p class="definition">在文件 <a class="el" href="controller_8cpp_source.html">controller.cpp</a> 第 <a class="el" href="controller_8cpp_source.html#l00409">409</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a463f160492424ac02ae016f79b0a3c54_cgraph.png" border="0" usemap="#aclass_controller_a463f160492424ac02ae016f79b0a3c54_cgraph" alt=""/></div>
+<map name="aclass_controller_a463f160492424ac02ae016f79b0a3c54_cgraph" id="aclass_controller_a463f160492424ac02ae016f79b0a3c54_cgraph">
+<area shape="rect" title="切换静音状态" alt="" coords="5,56,154,83"/>
+<area shape="rect" href="class_controller.html#a2a8f008980f87cdb36c4111115d0e71f" title="获取MPV属性值函数" alt="" coords="226,5,378,32"/>
+<area shape="poly" title=" " alt="" coords="141,53,225,33,226,39,142,58"/>
+<area shape="rect" href="class_controller.html#a1d55246197db45a58108b5b0c0f05960" title="MPV属性设置函数" alt="" coords="226,56,378,83"/>
+<area shape="poly" title=" " alt="" coords="154,67,211,67,211,72,154,72"/>
+<area shape="rect" href="class_application.html#adebf73d6ff5a292b2f8cca6e8b3da276" title="更新静音状态对应的声音图标" alt="" coords="202,107,402,133"/>
+<area shape="poly" title=" " alt="" coords="142,81,226,100,225,105,141,86"/>
+<area shape="rect" href="class_volume_action.html#a1d8fe0a7edeb6ac0df49ac183c234be1" title="设置音量图标" alt="" coords="450,107,646,133"/>
+<area shape="poly" title=" " alt="" coords="403,117,435,117,435,123,403,123"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a463f160492424ac02ae016f79b0a3c54_icgraph.png" border="0" usemap="#aclass_controller_a463f160492424ac02ae016f79b0a3c54_icgraph" alt=""/></div>
+<map name="aclass_controller_a463f160492424ac02ae016f79b0a3c54_icgraph" id="aclass_controller_a463f160492424ac02ae016f79b0a3c54_icgraph">
+<area shape="rect" title="切换静音状态" alt="" coords="416,5,564,32"/>
+<area shape="rect" href="class_application.html#af8f1aa05187ccff4db17023d18963663" title="切换静音" alt="" coords="211,5,368,32"/>
+<area shape="poly" title=" " alt="" coords="400,21,369,21,369,16,400,16"/>
+<area shape="rect" href="class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,5,163,32"/>
+<area shape="poly" title=" " alt="" coords="195,21,163,21,163,16,195,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6e08645421f79b7e914fd644f3a870ba" name="a6e08645421f79b7e914fd644f3a870ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e08645421f79b7e914fd644f3a870ba">&#9670;&#160;</a></span>togglePlayPause()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::togglePlayPause </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>切换播放暂停 </p>
+<p>获取当前的暂停状态</p>
+<p>切换播放/暂停状态</p>
+<p>切换对应状态图标</p>
+
+<p class="definition">在文件 <a class="el" href="controller_8cpp_source.html">controller.cpp</a> 第 <a class="el" href="controller_8cpp_source.html#l00351">351</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a6e08645421f79b7e914fd644f3a870ba_cgraph.png" border="0" usemap="#aclass_controller_a6e08645421f79b7e914fd644f3a870ba_cgraph" alt=""/></div>
+<map name="aclass_controller_a6e08645421f79b7e914fd644f3a870ba_cgraph" id="aclass_controller_a6e08645421f79b7e914fd644f3a870ba_cgraph">
+<area shape="rect" title="切换播放暂停" alt="" coords="5,56,188,83"/>
+<area shape="rect" href="class_controller.html#a2a8f008980f87cdb36c4111115d0e71f" title="获取MPV属性值函数" alt="" coords="251,5,403,32"/>
+<area shape="poly" title=" " alt="" coords="160,53,247,33,249,39,161,58"/>
+<area shape="rect" href="class_controller.html#a1d55246197db45a58108b5b0c0f05960" title="MPV属性设置函数" alt="" coords="251,56,403,83"/>
+<area shape="poly" title=" " alt="" coords="188,67,236,67,236,72,188,72"/>
+<area shape="rect" href="class_application.html#ad42c22bcb02a4bd0421a1942601e1c33" title="更新播放状态对应的播放图标" alt="" coords="236,107,418,133"/>
+<area shape="poly" title=" " alt="" coords="161,81,249,100,247,105,160,86"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a6e08645421f79b7e914fd644f3a870ba_icgraph.png" border="0" usemap="#aclass_controller_a6e08645421f79b7e914fd644f3a870ba_icgraph" alt=""/></div>
+<map name="aclass_controller_a6e08645421f79b7e914fd644f3a870ba_icgraph" id="aclass_controller_a6e08645421f79b7e914fd644f3a870ba_icgraph">
+<area shape="rect" title="切换播放暂停" alt="" coords="878,199,1060,225"/>
+<area shape="rect" href="class_controller.html#ae1e277a58425271450529db6cc00d427" title="打开URL" alt="" coords="448,21,586,48"/>
+<area shape="poly" title=" " alt="" coords="931,193,883,165,829,138,690,87,570,51,572,46,692,82,831,134,886,161,934,188"/>
+<area shape="rect" href="class_application.html#a3d92c306ee8dcc8264cd0566941f36f6" title="播放暂停视频" alt="" coords="642,220,830,263"/>
+<area shape="poly" title=" " alt="" coords="862,228,830,232,830,227,862,223"/>
+<area shape="rect" href="class_application.html#abdfb7ede361b9683739cb3b2c9f60b04" title="播放速度重置，切换播放状态" alt="" coords="644,304,828,347"/>
+<area shape="poly" title=" " alt="" coords="927,235,783,306,781,301,925,230"/>
+<area shape="rect" href="class_controller.html#a550805a886e37b396e587863e6ccea13" title="打开文件" alt="" coords="669,148,803,175"/>
+<area shape="poly" title=" " alt="" coords="889,197,800,178,801,173,890,192"/>
+<area shape="rect" href="class_application.html#adb2fa3b8daee398534b3fe33ba7233f2" title="打开URL" alt="" coords="211,5,391,48"/>
+<area shape="poly" title=" " alt="" coords="432,34,391,33,391,27,432,29"/>
+<area shape="rect" href="class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,168,163,195"/>
+<area shape="poly" title=" " alt="" coords="220,58,212,62,177,88,145,118,98,169,94,166,141,114,173,84,209,58,217,53"/>
+<area shape="poly" title=" " alt="" coords="627,265,595,269,486,279,400,281,315,272,210,247,152,223,106,198,108,193,155,219,211,241,316,267,400,276,486,274,594,264,627,260"/>
+<area shape="rect" href="class_application.html#a007d9f7c6e0805fdca03502a1c3d130c" title="重写eventFilter()方法" alt="" coords="441,228,593,255"/>
+<area shape="poly" title=" " alt="" coords="627,244,593,244,593,239,627,239"/>
+<area shape="poly" title=" " alt="" coords="629,337,537,339,430,334,318,317,263,303,210,285,174,266,142,242,95,197,99,193,145,238,177,262,212,280,264,298,319,312,430,329,537,334,629,332"/>
+<area shape="rect" href="class_application.html#a7c89c49db562d830a17273853bf1aa79" title="添加历史记录" alt="" coords="439,127,594,153"/>
+<area shape="poly" title=" " alt="" coords="654,156,595,150,595,145,654,151"/>
+<area shape="rect" href="class_application.html#a57b10b769faceb80e236679ad894b9e0" title="打开视频文件" alt="" coords="211,189,391,232"/>
+<area shape="poly" title=" " alt="" coords="654,173,392,203,391,198,654,168"/>
+<area shape="rect" href="class_application.html#a4d7ae5158a237f815d76620e327310e6" title="下载完成处理" alt="" coords="216,72,386,115"/>
+<area shape="poly" title=" " alt="" coords="686,145,642,130,594,117,486,102,387,97,387,91,487,97,595,112,643,124,688,140"/>
+<area shape="poly" title=" " alt="" coords="483,120,440,91,390,62,364,51,367,46,392,58,442,86,486,115"/>
+<area shape="rect" href="class_application.html#af63e0ba4a66b778916fd6e147a44224a" title="加载历史记录" alt="" coords="222,139,380,165"/>
+<area shape="poly" title=" " alt="" coords="423,148,381,150,380,145,423,143"/>
+<area shape="poly" title=" " alt="" coords="460,161,369,191,367,186,458,156"/>
+<area shape="poly" title=" " alt="" coords="207,167,164,173,163,168,206,162"/>
+<area shape="poly" title=" " alt="" coords="195,199,163,195,163,189,196,194"/>
+<area shape="poly" title=" " alt="" coords="226,123,212,129,117,170,115,165,210,124,224,118"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a52be8e1378e797cca9dfd8be9c225b90" name="a52be8e1378e797cca9dfd8be9c225b90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52be8e1378e797cca9dfd8be9c225b90">&#9670;&#160;</a></span>updateSliderDuration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::updateSliderDuration </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>应对在线视频在开始播放时，可能并未完全加载，其总时长未知需要缓冲后更新的情况 </p>
+<p>更新视频总时长值</p>
+<p>设置滑块的最大值为视频总时长（秒）</p>
+<p>更新时间显示</p>
+
+<p class="definition">在文件 <a class="el" href="controller_8cpp_source.html">controller.cpp</a> 第 <a class="el" href="controller_8cpp_source.html#l00188">188</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a52be8e1378e797cca9dfd8be9c225b90_cgraph.png" border="0" usemap="#aclass_controller_a52be8e1378e797cca9dfd8be9c225b90_cgraph" alt=""/></div>
+<map name="aclass_controller_a52be8e1378e797cca9dfd8be9c225b90_cgraph" id="aclass_controller_a52be8e1378e797cca9dfd8be9c225b90_cgraph">
+<area shape="rect" title="应对在线视频在开始播放时，可能并未完全加载，其总时长未知需要缓冲后更新的情况" alt="" coords="5,48,162,91"/>
+<area shape="rect" href="class_controller.html#a2a8f008980f87cdb36c4111115d0e71f" title="获取MPV属性值函数" alt="" coords="210,5,361,32"/>
+<area shape="poly" title=" " alt="" coords="161,47,214,34,215,39,162,52"/>
+<area shape="rect" href="class_application.html#a37b44bf33e642e5e26a200db2fc145ed" title="给Controller类提供slider用于对播放进度滑块进行初始化与更新操作" alt="" coords="213,56,358,83"/>
+<area shape="poly" title=" " alt="" coords="162,67,198,67,198,72,162,72"/>
+<area shape="rect" href="client_8h.html#aeca58b3b9eadb3cd70953d9cba238958" title=" " alt="" coords="224,107,347,133"/>
+<area shape="poly" title=" " alt="" coords="162,86,215,100,214,105,161,92"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a52be8e1378e797cca9dfd8be9c225b90_icgraph.png" border="0" usemap="#aclass_controller_a52be8e1378e797cca9dfd8be9c225b90_icgraph" alt=""/></div>
+<map name="aclass_controller_a52be8e1378e797cca9dfd8be9c225b90_icgraph" id="aclass_controller_a52be8e1378e797cca9dfd8be9c225b90_icgraph">
+<area shape="rect" title="应对在线视频在开始播放时，可能并未完全加载，其总时长未知需要缓冲后更新的情况" alt="" coords="193,5,349,48"/>
+<area shape="rect" href="class_controller.html#a9de3b2de7339605b0cdf56392da6a1d1" title=" " alt="" coords="5,13,145,40"/>
+<area shape="poly" title=" " alt="" coords="177,29,145,29,145,24,177,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae97547b171bf1c7a8bb20250200775c0" name="ae97547b171bf1c7a8bb20250200775c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae97547b171bf1c7a8bb20250200775c0">&#9670;&#160;</a></span>updateSliderPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::updateSliderPosition </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>播放时更新滑块位置 </p>
+<p>当MPV实例已完成初始化，播放进度滑块不处于拖动状态，滑块已初始化的情况下才更新滑块位置</p>
+<p>获取当前播放时间</p>
+<p>设置滑块的位置</p>
+<p>更新时间显示</p>
+<p>更新时间显示</p>
+
+<p class="definition">在文件 <a class="el" href="controller_8cpp_source.html">controller.cpp</a> 第 <a class="el" href="controller_8cpp_source.html#l00217">217</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_ae97547b171bf1c7a8bb20250200775c0_cgraph.png" border="0" usemap="#aclass_controller_ae97547b171bf1c7a8bb20250200775c0_cgraph" alt=""/></div>
+<map name="aclass_controller_ae97547b171bf1c7a8bb20250200775c0_cgraph" id="aclass_controller_ae97547b171bf1c7a8bb20250200775c0_cgraph">
+<area shape="rect" title="播放时更新滑块位置" alt="" coords="5,23,162,65"/>
+<area shape="rect" href="class_application.html#a37b44bf33e642e5e26a200db2fc145ed" title="给Controller类提供slider用于对播放进度滑块进行初始化与更新操作" alt="" coords="210,5,354,32"/>
+<area shape="poly" title=" " alt="" coords="162,31,194,27,195,32,163,37"/>
+<area shape="rect" href="client_8h.html#aeca58b3b9eadb3cd70953d9cba238958" title=" " alt="" coords="220,56,344,83"/>
+<area shape="poly" title=" " alt="" coords="163,51,205,57,205,62,162,57"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_ae97547b171bf1c7a8bb20250200775c0_icgraph.png" border="0" usemap="#aclass_controller_ae97547b171bf1c7a8bb20250200775c0_icgraph" alt=""/></div>
+<map name="aclass_controller_ae97547b171bf1c7a8bb20250200775c0_icgraph" id="aclass_controller_ae97547b171bf1c7a8bb20250200775c0_icgraph">
+<area shape="rect" title="播放时更新滑块位置" alt="" coords="193,5,349,48"/>
+<area shape="rect" href="class_controller.html#a9de3b2de7339605b0cdf56392da6a1d1" title=" " alt="" coords="5,13,145,40"/>
+<area shape="poly" title=" " alt="" coords="177,29,145,29,145,24,177,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1f4e7cd7c28e4571fb33d699e303d1e9" name="a1f4e7cd7c28e4571fb33d699e303d1e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f4e7cd7c28e4571fb33d699e303d1e9">&#9670;&#160;</a></span>zoomIn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::zoomIn </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>放大视频10% </p>
+
+<p class="definition">在文件 <a class="el" href="controller_8cpp_source.html">controller.cpp</a> 第 <a class="el" href="controller_8cpp_source.html#l00269">269</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a1f4e7cd7c28e4571fb33d699e303d1e9_cgraph.png" border="0" usemap="#aclass_controller_a1f4e7cd7c28e4571fb33d699e303d1e9_cgraph" alt=""/></div>
+<map name="aclass_controller_a1f4e7cd7c28e4571fb33d699e303d1e9_cgraph" id="aclass_controller_a1f4e7cd7c28e4571fb33d699e303d1e9_cgraph">
+<area shape="rect" title="放大视频10%" alt="" coords="5,5,132,32"/>
+<area shape="rect" href="class_controller.html#a1d55246197db45a58108b5b0c0f05960" title="MPV属性设置函数" alt="" coords="180,5,331,32"/>
+<area shape="poly" title=" " alt="" coords="132,16,164,16,164,21,132,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a1f4e7cd7c28e4571fb33d699e303d1e9_icgraph.png" border="0" usemap="#aclass_controller_a1f4e7cd7c28e4571fb33d699e303d1e9_icgraph" alt=""/></div>
+<map name="aclass_controller_a1f4e7cd7c28e4571fb33d699e303d1e9_icgraph" id="aclass_controller_a1f4e7cd7c28e4571fb33d699e303d1e9_icgraph">
+<area shape="rect" title="放大视频10%" alt="" coords="440,13,566,40"/>
+<area shape="rect" href="class_application.html#add3cc3935cb789e798762ef9b876b9ac" title="视频缩放控制" alt="" coords="211,5,392,48"/>
+<area shape="poly" title=" " alt="" coords="424,29,393,29,393,24,424,24"/>
+<area shape="rect" href="class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,13,163,40"/>
+<area shape="poly" title=" " alt="" coords="195,29,163,29,163,24,195,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7fd5dbc4592a5bf113714eb45858851b" name="a7fd5dbc4592a5bf113714eb45858851b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fd5dbc4592a5bf113714eb45858851b">&#9670;&#160;</a></span>zoomOut()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::zoomOut </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>缩小视频10% </p>
+
+<p class="definition">在文件 <a class="el" href="controller_8cpp_source.html">controller.cpp</a> 第 <a class="el" href="controller_8cpp_source.html#l00279">279</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a7fd5dbc4592a5bf113714eb45858851b_cgraph.png" border="0" usemap="#aclass_controller_a7fd5dbc4592a5bf113714eb45858851b_cgraph" alt=""/></div>
+<map name="aclass_controller_a7fd5dbc4592a5bf113714eb45858851b_cgraph" id="aclass_controller_a7fd5dbc4592a5bf113714eb45858851b_cgraph">
+<area shape="rect" title="缩小视频10%" alt="" coords="5,5,143,32"/>
+<area shape="rect" href="class_controller.html#a1d55246197db45a58108b5b0c0f05960" title="MPV属性设置函数" alt="" coords="191,5,342,32"/>
+<area shape="poly" title=" " alt="" coords="143,16,175,16,175,21,143,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a7fd5dbc4592a5bf113714eb45858851b_icgraph.png" border="0" usemap="#aclass_controller_a7fd5dbc4592a5bf113714eb45858851b_icgraph" alt=""/></div>
+<map name="aclass_controller_a7fd5dbc4592a5bf113714eb45858851b_icgraph" id="aclass_controller_a7fd5dbc4592a5bf113714eb45858851b_icgraph">
+<area shape="rect" title="缩小视频10%" alt="" coords="440,13,577,40"/>
+<area shape="rect" href="class_application.html#a7be77353247fea80c71dc06ad0a59f64" title=" " alt="" coords="211,5,392,48"/>
+<area shape="poly" title=" " alt="" coords="425,29,392,29,392,24,425,24"/>
+<area shape="rect" href="class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,13,163,40"/>
+<area shape="poly" title=" " alt="" coords="195,29,163,29,163,24,195,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6107fe50b312320595f49e1b97203abe" name="a6107fe50b312320595f49e1b97203abe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6107fe50b312320595f49e1b97203abe">&#9670;&#160;</a></span>zoomReset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Controller::zoomReset </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>重置视频缩放 </p>
+
+<p class="definition">在文件 <a class="el" href="controller_8cpp_source.html">controller.cpp</a> 第 <a class="el" href="controller_8cpp_source.html#l00289">289</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a6107fe50b312320595f49e1b97203abe_cgraph.png" border="0" usemap="#aclass_controller_a6107fe50b312320595f49e1b97203abe_cgraph" alt=""/></div>
+<map name="aclass_controller_a6107fe50b312320595f49e1b97203abe_cgraph" id="aclass_controller_a6107fe50b312320595f49e1b97203abe_cgraph">
+<area shape="rect" title="重置视频缩放" alt="" coords="5,5,156,32"/>
+<area shape="rect" href="class_controller.html#a1d55246197db45a58108b5b0c0f05960" title="MPV属性设置函数" alt="" coords="204,5,355,32"/>
+<area shape="poly" title=" " alt="" coords="156,16,188,16,188,21,156,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_controller_a6107fe50b312320595f49e1b97203abe_icgraph.png" border="0" usemap="#aclass_controller_a6107fe50b312320595f49e1b97203abe_icgraph" alt=""/></div>
+<map name="aclass_controller_a6107fe50b312320595f49e1b97203abe_icgraph" id="aclass_controller_a6107fe50b312320595f49e1b97203abe_icgraph">
+<area shape="rect" title="重置视频缩放" alt="" coords="440,13,590,40"/>
+<area shape="rect" href="class_application.html#a44345c334337b4b2d8a1fac29657efc0" title=" " alt="" coords="211,5,392,48"/>
+<area shape="poly" title=" " alt="" coords="424,29,392,29,392,24,424,24"/>
+<area shape="rect" href="class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,13,163,40"/>
+<area shape="poly" title=" " alt="" coords="195,29,163,29,163,24,195,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="ab5611cc1a23a015a28ad8b82ad864d5f" name="ab5611cc1a23a015a28ad8b82ad864d5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5611cc1a23a015a28ad8b82ad864d5f">&#9670;&#160;</a></span>application</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_application.html">Application</a>* Controller::application</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="controller_8h_source.html">controller.h</a> 第 <a class="el" href="controller_8h_source.html#l00093">93</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2a6f9dbb527b9b467d5adcb8a69a44f6" name="a2a6f9dbb527b9b467d5adcb8a69a44f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a6f9dbb527b9b467d5adcb8a69a44f6">&#9670;&#160;</a></span>duration</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Controller::duration</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="controller_8h_source.html">controller.h</a> 第 <a class="el" href="controller_8h_source.html#l00099">99</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a335fd1dda605830eae753ea21d86fe61" name="a335fd1dda605830eae753ea21d86fe61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a335fd1dda605830eae753ea21d86fe61">&#9670;&#160;</a></span>frameRate</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Controller::frameRate</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="controller_8h_source.html">controller.h</a> 第 <a class="el" href="controller_8h_source.html#l00107">107</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2ffe296eda86f214c6b22efec103ab1f" name="a2ffe296eda86f214c6b22efec103ab1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ffe296eda86f214c6b22efec103ab1f">&#9670;&#160;</a></span>mpv</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="client_8h.html#a93d313a21048fe10f1edd9b03e05d416">mpv_handle</a>* Controller::mpv</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="controller_8h_source.html">controller.h</a> 第 <a class="el" href="controller_8h_source.html#l00091">91</a> 行定义.</p>
+
+</div>
+</div>
+<a id="abd09594eb0296a375aa0c31c6a5b5be6" name="abd09594eb0296a375aa0c31c6a5b5be6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd09594eb0296a375aa0c31c6a5b5be6">&#9670;&#160;</a></span>panX</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Controller::panX</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="controller_8h_source.html">controller.h</a> 第 <a class="el" href="controller_8h_source.html#l00103">103</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af414a8a966ce001d3b12edc4b11dc9f3" name="af414a8a966ce001d3b12edc4b11dc9f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af414a8a966ce001d3b12edc4b11dc9f3">&#9670;&#160;</a></span>panY</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Controller::panY</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="controller_8h_source.html">controller.h</a> 第 <a class="el" href="controller_8h_source.html#l00105">105</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad5381e05f5e443eb4b2c717cf103e73c" name="ad5381e05f5e443eb4b2c717cf103e73c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5381e05f5e443eb4b2c717cf103e73c">&#9670;&#160;</a></span>sliderBeingDragged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Controller::sliderBeingDragged</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="controller_8h_source.html">controller.h</a> 第 <a class="el" href="controller_8h_source.html#l00095">95</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad34f66d6527e2b41353f723389f2df28" name="ad34f66d6527e2b41353f723389f2df28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad34f66d6527e2b41353f723389f2df28">&#9670;&#160;</a></span>sliderInitialized</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Controller::sliderInitialized</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="controller_8h_source.html">controller.h</a> 第 <a class="el" href="controller_8h_source.html#l00097">97</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a5b906b67b28fd09867f191909d235889" name="a5b906b67b28fd09867f191909d235889"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b906b67b28fd09867f191909d235889">&#9670;&#160;</a></span>totalTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTime Controller::totalTime</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="controller_8h_source.html">controller.h</a> 第 <a class="el" href="controller_8h_source.html#l00109">109</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aa5d07231804b650b735d63769c0b008e" name="aa5d07231804b650b735d63769c0b008e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5d07231804b650b735d63769c0b008e">&#9670;&#160;</a></span>zoomFactor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Controller::zoomFactor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="controller_8h_source.html">controller.h</a> 第 <a class="el" href="controller_8h_source.html#l00101">101</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>F:/QtProject/AstraPlay/src/include/<a class="el" href="controller_8h_source.html">controller.h</a></li>
+<li>F:/QtProject/AstraPlay/src/<a class="el" href="controller_8cpp_source.html">controller.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<map id="VideoDownloader::downloadError" name="VideoDownloader::downloadError">
+<area shape="rect" id="Node000001" title=" " alt="" coords="896,23,1079,65"/>
+<area shape="rect" id="Node000002" href="$class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,5,163,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="880,27,847,23,655,11,464,9,293,12,163,17,163,12,293,6,464,3,655,6,848,17,881,21"/>
+<area shape="rect" id="Node000003" href="$class_video_downloader.html#aaae46a812ff09863d007bb130099d69e" title=" " alt="" coords="441,40,624,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="880,41,779,39,673,43,625,48,625,43,672,37,779,33,880,35"/>
+<area shape="rect" id="Node000005" href="$class_video_downloader.html#a572e32d243dff804b6763dd918f27152" title="处理进程错误信息" alt="" coords="672,52,848,95"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="880,60,848,65,848,59,880,55"/>
+<area shape="rect" id="Node000006" href="$class_video_downloader.html#a736b63692316980c9eb38313240b27f0" title="处理下载完成信息" alt="" coords="672,119,848,161"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="927,75,849,109,821,121,819,116,847,104,925,70"/>
+<area shape="rect" id="Node000004" href="$class_application.html#ab5c0d95752adadc0a631a5b660d2ce03" title="视频下载" alt="" coords="211,27,393,69"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="425,58,393,56,393,51,426,52"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="195,36,163,32,163,27,196,31"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="657,71,625,69,625,64,657,65"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="681,116,596,86,598,81,683,111"/>
+</map>

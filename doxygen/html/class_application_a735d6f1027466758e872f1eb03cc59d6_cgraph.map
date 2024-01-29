@@ -1,0 +1,9 @@
+<map id="Application::on_actionSpeedUp_triggered" name="Application::on_actionSpeedUp_triggered">
+<area shape="rect" id="Node000001" title="增加播放速度（0.5x）" alt="" coords="5,23,192,65"/>
+<area shape="rect" id="Node000002" href="$class_controller.html#a21b6ed6ac00df2773993db6690d488a1" title="设置播放速度" alt="" coords="240,31,379,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,41,224,41,224,47,192,47"/>
+<area shape="rect" id="Node000003" href="$class_controller.html#a2a8f008980f87cdb36c4111115d0e71f" title="获取MPV属性值函数" alt="" coords="427,5,578,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="379,32,411,28,412,33,380,37"/>
+<area shape="rect" id="Node000004" href="$class_controller.html#a1d55246197db45a58108b5b0c0f05960" title="MPV属性设置函数" alt="" coords="427,56,578,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="380,51,412,55,411,60,379,56"/>
+</map>

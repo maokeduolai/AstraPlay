@@ -1,0 +1,16 @@
+<map id="Controller::setSpeed" name="Controller::setSpeed">
+<area shape="rect" id="Node000001" title="设置播放速度" alt="" coords="445,113,584,140"/>
+<area shape="rect" id="Node000002" href="$class_application.html#ab27d3d969d8c39be43321c7111180169" title="减少播放速度（0.5x）" alt="" coords="211,5,397,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="477,107,396,62,369,51,371,46,398,58,480,102"/>
+<area shape="rect" id="Node000004" href="$class_application.html#a1760f918aa13d9e23884b17b6739619e" title="重置播放速度" alt="" coords="211,72,397,115"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="429,116,397,111,398,106,430,111"/>
+<area shape="rect" id="Node000005" href="$class_application.html#a735d6f1027466758e872f1eb03cc59d6" title="增加播放速度（0.5x）" alt="" coords="211,139,397,181"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="430,143,398,148,397,143,429,137"/>
+<area shape="rect" id="Node000006" href="$class_application.html#abdfb7ede361b9683739cb3b2c9f60b04" title="播放速度重置，切换播放状态" alt="" coords="212,205,396,248"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="480,151,398,196,371,207,369,202,396,191,477,146"/>
+<area shape="rect" id="Node000003" href="$class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,113,163,140"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="225,57,212,62,110,115,108,110,210,58,223,52"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="196,112,164,117,163,112,195,107"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="195,146,163,141,164,136,196,141"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="223,202,210,196,108,143,110,138,212,191,225,197"/>
+</map>

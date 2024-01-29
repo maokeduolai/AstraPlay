@@ -1,0 +1,7 @@
+<map id="Application::on_actionAddSubtitle_triggered" name="Application::on_actionAddSubtitle_triggered">
+<area shape="rect" id="Node000001" title="加载外挂字幕" alt="" coords="5,5,178,48"/>
+<area shape="rect" id="Node000002" href="$class_subtitle.html#a337079ce5924d01b6b7aaca29632b9d9" title="加载字幕" alt="" coords="226,13,367,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,24,210,24,210,29,178,29"/>
+<area shape="rect" id="Node000003" href="$client_8h.html#aa44c1102744f5fa60fec80747fc9b856" title=" " alt="" coords="415,13,523,40"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="367,24,399,24,399,29,367,29"/>
+</map>

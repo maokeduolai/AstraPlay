@@ -1,0 +1,7 @@
+<map id="VideoDownloader::processFinished" name="VideoDownloader::processFinished">
+<area shape="rect" id="Node000001" title="处理下载完成信息" alt="" coords="5,39,181,81"/>
+<area shape="rect" id="Node000002" href="$class_video_downloader.html#a0791055ae9a2d20ba69c697a7e332d0e" title=" " alt="" coords="229,5,412,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,44,213,40,214,45,182,50"/>
+<area shape="rect" id="Node000003" href="$class_video_downloader.html#ab675bdc84b5d5ad1a3df7f62d34b62ea" title=" " alt="" coords="229,72,412,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="182,70,214,75,213,80,181,76"/>
+</map>

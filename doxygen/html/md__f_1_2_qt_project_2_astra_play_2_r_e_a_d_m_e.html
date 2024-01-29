@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AstraPlay: AstraPlay</title>
+<link rel="icon" href="AstraPlay_Logo_Small.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="AstraPlay_Logo_Small.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">AstraPlay<span id="projectnumber">&#160;v1.0.2</span>
+   </div>
+   <div id="projectbrief">基于libmpv与Qt5框架的视频播放器</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="pages.html"><span>相关页面</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div><div class="header">
+  <div class="headertitle"><div class="title">AstraPlay</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="autotoc_md25"></a> </p>
+<h1><a class="anchor" id="autotoc_md26"></a>
+一、基本功能概述</h1>
+<p>AstraPlay是一款基于libmpv和Qt5框架，使用C++语言编写的功能强大的视频播放器。</p>
+<p>以下是其主要功能概述：</p>
+<ol type="1">
+<li><p class="startli">**简便打开文件播放**：AstraPlay支持用户轻松打开各种视频文件格式，提供流畅的播放体验。</p>
+<p class="startli"><code>视频文件 (*.mpg *.mpeg *.avi *.mp4 *.mkv *.webm *.wmv *.mov *.flv *.m4v *.ogv *.3gp *.3g2)</code></p>
+<p class="startli"><code>音频文件 (*.mp3 *.aac *.ogg *.flac *.alac *.wav *.wv)</code></p>
+<p class="startli"><code>流媒体 (*.m3u8 rtmp协议)</code></p>
+</li>
+<li>**精密音量控制**：随心调整音量，确保声音在任何环境下都能达到最佳效果。</li>
+<li>**全屏播放体验**：AstraPlay提供全屏播放选项，让用户沉浸于高质量的视听享受中。</li>
+<li>**进度条拖动**：用户可以通过直观的进度条拖动功能，精准掌握视频播放进度，随时定位到感兴趣的场景。</li>
+<li>**音视频同步调整**：提供声音提前和延后的调整功能，以满足用户对音视频同步性的个性化需求。</li>
+<li>**变速功能**：用户可以通过JKL键调整播放速度，为视频观看提供更多可能性。用户也可以使用菜单栏中的选项，以0.5倍的间隔微调播放速率。</li>
+<li>**字幕加载与样式调整**：AstraPlay支持字幕加载和样式调整，确保用户能够在观看时获得最佳的字幕体验。</li>
+<li>**字幕列表选择**：AstraPlay可以读取视频内置、外置加载的字幕列表，便于用户随时选择合适的字幕进行观看。</li>
+<li>**视频截图功能**：利用设定数量平分时间轴，AstraPlay能够智能截取视频预览图，方便用户快速预览整个视频。</li>
+<li>**错误信息显示**：AstraPlay能够及时显示错误信息，让用户了解并解决任何可能的播放问题。</li>
+<li>**在线视频播放与下载**：借助yt-dlp，AstraPlay支持在线视频的直接播放和下载，为用户提供更多选择。</li>
+<li>**元数据读取与显示**：利用MediaInfo，AstraPlay实现了对视频元数据的读取和显示，让用户了解更多关于视频文件的信息。</li>
+<li>**最近打开文件记录**：AstraPlay可以记录最近打开的5个文件或URL，便于用户观看常看视频。</li>
+<li>**逐帧跳转**：用户可以使用菜单栏中的选项或快捷键，逐帧的查看视频，适用于定位特定帧的情形。</li>
+<li>**画面缩放与移动**：用户可以使用菜单栏中的选项或快捷键，对视频画面进行缩放与位移。</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md27"></a>
+二、模块设计</h1>
+<ul>
+<li>播放控制模块<ul>
+<li>初始化MPV实例，与playerWidget绑定</li>
+<li>正常打开文件、URL播放</li>
+<li>暂停、播放视频</li>
+<li>进度条初始化、更新</li>
+<li>跳转到指定时间位置播放</li>
+<li>视频画面缩放、位置控制</li>
+<li>音量调整、静音</li>
+<li>播放速率控制</li>
+<li>音视频同步</li>
+<li>逐帧跳转</li>
+<li>全屏播放</li>
+</ul>
+</li>
+<li>元数据读取模块<ul>
+<li>调用MediaInfo，读取当前播放视频的元数据</li>
+<li>显示读取到的元数据</li>
+</ul>
+</li>
+<li>截图模块<ul>
+<li>截取当前帧并保存</li>
+<li>用户设定截图数量，平分时间轴，截取多张预览图保存</li>
+</ul>
+</li>
+<li>字幕控制模块<ul>
+<li>加载外挂字幕<code>（*.srt *.ass *.ssa *.sub）</code></li>
+<li>调整字幕样式（对SRT类型字幕生效）</li>
+<li>显示字幕列表</li>
+<li>控制字幕同步</li>
+</ul>
+</li>
+<li>视频下载模块<ul>
+<li>调用yt-dlp对视频进行解析下载</li>
+<li>处理下载过程中的错误并弹出对应错误信息</li>
+<li>与进程信息输出模块连接，输出运行状态信息</li>
+</ul>
+</li>
+<li>进程信息输出模块<ul>
+<li>输出进程运行中的各种信息</li>
+<li>分别提取出普通提示信息与错误信息</li>
+</ul>
+</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md28"></a>
+三、图形界面设计</h1>
+<p><img src="resources/MainwindowCapture.png" alt="MainwindowCapture" class="inline"/></p>
+<p>主体部分采用Qt Creator开发，其余的弹出窗口使用代码实现。</p>
+<p>整体的风格样式通过加载第三方QSS样式表实现。</p>
+<h1><a class="anchor" id="autotoc_md29"></a>
+四、开发环境</h1>
+<p>**集成开发环境 (IDE):** CLion 2023.2.2</p>
+<p>**主要编程语言:** C++</p>
+<p>**图形用户界面 (GUI)库:** Qt 5.15.2</p>
+<p>**多媒体库:** libmpv x86_64-v3-20240121</p>
+<p>**开发平台:** Windows 11</p>
+<p>**依赖管理工具:** 使用CMake构建系统进行项目管理</p>
+<p>**构建工具:** CMake 3.26.4</p>
+<p>**版本控制系统:** Git version 2.41.0.windows.1</p>
+<p>**网页视频下载:** yt-dlp 2023.12.30</p>
+<p>**视频元数据读取:** MediaInfo 23.11.1</p>
+<h1><a class="anchor" id="autotoc_md30"></a>
+五、开发流程</h1>
+<h2><a class="anchor" id="autotoc_md31"></a>
+（一）程序目录结构</h2>
+<ol type="1">
+<li><p class="startli"><code>include</code></p>
+<p class="startli">用来存放头文件（&lt;tt&gt;.h 或 &lt;tt&gt;.hpp 文件）。将头文件放在单独的<code>include</code>目录中可以方便其他项目或文件包含这些声明，同时也有助于分离声明和实现，使得项目更加清晰。</p>
+</li>
+<li><p class="startli"><code>libs</code></p>
+<p class="startli"><code>libs</code>目录用于存放项目依赖的静态或动态链接库文件（&lt;tt&gt;.lib、&lt;tt&gt;.a、&lt;tt&gt;.dll、&lt;tt&gt;.so 等）。把库文件放在一个统一的地方可以简化链接过程。</p>
+</li>
+<li><p class="startli"><code>resources</code></p>
+<p class="startli">这个文件夹包含了程序运行时需要的资源文件，如图像、音频、配置文件、UI布局文件等。这些资源通常在程序运行时被加载，而不是编译到可执行文件中。</p>
+</li>
+<li><p class="startli"><code>src</code></p>
+<p class="startli"><code>src</code>目录包含了项目的源代码文件（&lt;tt&gt;.c、&lt;tt&gt;.cpp、&lt;tt&gt;.java 等）。这是项目的核心部分，包含了大部分的逻辑和功能实现。</p>
+</li>
+<li><p class="startli"><code>third</code></p>
+<p class="startli"><code>third</code>目录包含了项目使用到的第三方插件（<code>yt-dlp</code>、<code><a class="el" href="class_media_info.html">MediaInfo</a></code>），供主程序调用。</p>
+</li>
+</ol>
+<h2><a class="anchor" id="autotoc_md32"></a>
+（二）程序文件结构</h2>
+<div class="fragment"><div class="line">│  .gitattributes</div>
+<div class="line">│  .gitignore</div>
+<div class="line">│  CMakeLists.txt</div>
+<div class="line">│  CMakeLists.txt.user</div>
+<div class="line">│  LICENSE</div>
+<div class="line">│  README.md</div>
+<div class="line">│</div>
+<div class="line">├─include</div>
+<div class="line">│  │  application.h</div>
+<div class="line">│  │  controller.h</div>
+<div class="line">│  │  media_info.h</div>
+<div class="line">│  │  output_window.h</div>
+<div class="line">│  │  screen_capture.h</div>
+<div class="line">│  │  subtitle.h</div>
+<div class="line">│  │  video_downloader.h</div>
+<div class="line">│  │</div>
+<div class="line">│  └─mpv</div>
+<div class="line">│          client.h</div>
+<div class="line">│          qthelper.hpp</div>
+<div class="line">│          render.h</div>
+<div class="line">│          render_gl.h</div>
+<div class="line">│          stream_cb.h</div>
+<div class="line">│</div>
+<div class="line">├─libs</div>
+<div class="line">│  └─mpv</div>
+<div class="line">│          libmpv-2.dll</div>
+<div class="line">│          libmpv.dll.a</div>
+<div class="line">│</div>
+<div class="line">├─resources</div>
+<div class="line">│  │  application.ui</div>
+<div class="line">│  │  Aqua.qss</div>
+<div class="line">│  │  resources.qrc</div>
+<div class="line">│  │</div>
+<div class="line">│  └─icons</div>
+<div class="line">│</div>
+<div class="line">├─src</div>
+<div class="line">│  │  application.cpp</div>
+<div class="line">│  │  controller.cpp</div>
+<div class="line">│  │  main.cpp</div>
+<div class="line">│  │</div>
+<div class="line">│  └─func</div>
+<div class="line">│          media_info.cpp</div>
+<div class="line">│          output_window.cpp</div>
+<div class="line">│          screen_capture.cpp</div>
+<div class="line">│          subtitle.cpp</div>
+<div class="line">│          video_downloader.cpp</div>
+<div class="line">│</div>
+<div class="line">└─third</div>
+<div class="line">    │  yt-dlp.exe</div>
+<div class="line">    │</div>
+<div class="line">    └─MediaInfo</div>
+<div class="line">           LIBCURL.DLL</div>
+<div class="line">           MediaInfo.exe</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md33"></a>
+六、所遇难点</h1>
+<ol type="1">
+<li>由于Qt5 Slider类的限制，需要重写类关于鼠标点击定位部分代码，无法直接实现鼠标点击进度条某位置即跳转的功能。</li>
+<li>由于mpv自身并未针对向后播放进行开发，调用libmpv实现向后播放在实践调试后依然无法实现可用性，最后舍弃该功能。 以下是mpv官方对向后播放功能的部分说明：</li>
+</ol>
+<blockquote class="doxtable">
+<p>&zwj;Backward decoding. The decoder library used (libavcodec) does not support this. It is emulated by feeding bits of data in forward, putting the result in a queue, returning the queue data to the VO in reverse, and then starting over at an earlier position. This can require buffering an extreme amount of decoded data, and also completely breaks pipelining.**→libmpv的编解码库并不支持向后解码，以模拟的方式进行馈送数据破坏数据管线**</p>
+<p>It's fragile. If anything doesn't work, random non-useful behavior may occur. In simple cases, the player will just play nonsense and artifacts. In other cases, it may get stuck or heat the CPU. (Exceeding memory usage significantly beyond the user-set limits would be a bug, though.)**→在测试中大部分视频无法向后播放**</p>
+<p>Some container formats, audio, and video codecs are not supported due to their behavior. There is no list, and the player usually does not detect them. Certain live streams (including TV captures) may exhibit problems in particular, as well as some lossy audio codecs. h264 intra-refresh is known not to work due to problems with libavcodec. WAV and some other raw audio formats tend to have problems - there are hacks for dealing with them, which may or may not work.**→H.264编码的视频在测试中全部失败** </p>
+</blockquote>
+<p>3. 拖动进度条显示缩略图的功能涉及第二个MPV实例对视频不同时间点的播放，且小缩略图跟随鼠标移动的实现较为困难，多次测试后遇到的问题较多，最终放弃该功能的开发。</p>
+<h1><a class="anchor" id="autotoc_md34"></a>
+七、测试流程</h1>
+<ol type="1">
+<li>打开本地视频，对每个所写功能逐个测试，找出存在的问题并通过断点调试等方法逐个解决。</li>
+<li>在线视频及流媒体测试部分网址如下表：</li>
+</ol>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">名称   </th><th class="markdownTableHeadNone">地址（以下地址在2024.1.29测试均通过）    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">1080P 60fps   </td><td class="markdownTableBodyNone"><a href="https://sdk-release.qnsdk.com/1080_60_5390.mp4">https://sdk-release.qnsdk.com/1080_60_5390.mp4</a>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">2K 25fps   </td><td class="markdownTableBodyNone"><a href="https://sdk-release.qnsdk.com/2K_25_11700.mp4">https://sdk-release.qnsdk.com/2K_25_11700.mp4</a>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">2K 60fps   </td><td class="markdownTableBodyNone"><a href="https://sdk-release.qnsdk.com/2K_60_6040.mp4">https://sdk-release.qnsdk.com/2K_60_6040.mp4</a>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">4K 25fps   </td><td class="markdownTableBodyNone"><a href="https://sdk-release.qnsdk.com/4K_25_21514.mp4">https://sdk-release.qnsdk.com/4K_25_21514.mp4</a>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">带有端口号的视频   </td><td class="markdownTableBodyNone"><a href="https://img.qunliao.info:443/4oEGX68t_9505974551.mp4">https://img.qunliao.info:443/4oEGX68t_9505974551.mp4</a>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">H.265视频   </td><td class="markdownTableBodyNone"><a href="http://demo-videos.qnsdk.com/bbk-H265-50fps.mp4">http://demo-videos.qnsdk.com/bbk-H265-50fps.mp4</a>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">带有封面的MP3音频流   </td><td class="markdownTableBodyNone"><a href="https://sdk-release.qnsdk.com/1599039859854_9242359.mp3">https://sdk-release.qnsdk.com/1599039859854_9242359.mp3</a>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FLV格式视频   </td><td class="markdownTableBodyNone"><a href="https://sdk-release.qnsdk.com/flv.flv">https://sdk-release.qnsdk.com/flv.flv</a>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">BipPop Basic 640x480 @ 650 kbps   </td><td class="markdownTableBodyNone"><a href="http://devimages.apple.com.edgekey.net/streaming/examples/bipbop_4x3/gear2/prog_index.m3u8">http://devimages.apple.com.edgekey.net/streaming/examples/bipbop_4x3/gear2/prog_index.m3u8</a>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">漳浦综合 HD   </td><td class="markdownTableBodyNone"><a href="http://220.161.87.62:8800/hls/0/index.m3u8">http://220.161.87.62:8800/hls/0/index.m3u8</a>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">RTMP测试   </td><td class="markdownTableBodyNone">rtmp://ns8.indexforce.com/home/mystream   </td></tr>
+</table>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

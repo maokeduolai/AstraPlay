@@ -4,59 +4,89 @@
 Controller::Controller(Application *app, QObject *parent)
         : QObject(parent), mpv(mpv_create()), application(app), sliderBeingDragged(false), sliderInitialized(false),
           duration(0.0), zoomFactor(0.0), panX(0.0), panY(0.0), frameRate(0.0) {
-    // 根据滑块是否被按下，来判断是否处于拖动滑块状态
+    /*!
+     * @brief 根据滑块是否被按下，来判断是否处于拖动滑块状态
+     */
     QSlider *slider = application->getSlider();
     if (slider) {
         connect(slider, &QSlider::sliderPressed, this, &Controller::sliderDragStarted);
         connect(slider, &QSlider::sliderReleased, this, &Controller::sliderDragStopped);
     }
 
-    // 初始化MPV实例
+    /*!
+     * @brief 初始化MPV实例
+     */
     if (mpv) {
-        // 设置视频输出驱动为OpenGL
+        /*!
+         * @brief 设置视频输出驱动为OpenGL
+         */
         mpv_set_option_string(mpv, "vo", "opengl");
 
-        // 设置音频输出驱动为WASAPI
+        /*!
+         * @brief 设置音频输出驱动为WASAPI
+         */
         mpv_set_option_string(mpv, "ao", "wasapi");
 
-        // 启用硬件解码
+        /*!
+         * @brief 启用硬件解码
+         */
         mpv_set_option_string(mpv, "hwdec", "auto");
 
-        // 设置视频同步模式
+        /*!
+         * @brief 设置视频同步模式
+         */
         mpv_set_option_string(mpv, "video-sync", "display-resample");
 
-        // 设置视频循环播放
+        /*!
+         * @brief 设置视频循环播放
+         */
         mpv_set_option_string(mpv, "loop-file", "inf");
 
-        // 设置初始音量为80
+        /*!
+         * @brief 设置初始音量为80
+         */
         setProperty("volume", 80);
 
-        // 初始化MPV完成后启动它
+        /*!
+         * @brief 初始化MPV完成后启动它
+         */
         if (mpv_initialize(mpv) < 0) {
-            // 错误处理
+            /*!
+             * @brief 错误处理
+             */
             QMessageBox::critical(reinterpret_cast<QWidget *>(app), tr("错误"), tr("MPV初始化失败"));
         }
     }
 
-    // 设置定时器
+    /*!
+     * @brief 设置定时器
+     */
     auto *timer = new QTimer(this);
 
-    // 每秒更新一次播放进度
+    /*!
+     * @brief 每秒更新一次播放进度
+     */
     connect(timer, &QTimer::timeout, this, &Controller::updateSliderPosition);
 
-    // 检测视频时长变化，应对在线视频在开始播放时，可能并未完全加载，其总时长未知的情形
+    /*!
+     * @brief 检测视频时长变化，应对在线视频在开始播放时，可能并未完全加载，其总时长未知的情形
+     */
     connect(timer, &QTimer::timeout, this, &Controller::updateSliderDuration);
     timer->start(1000);
 }
 
 Controller::~Controller() {
     if (mpv) {
-        // 清理MPV资源
+        /*!
+         * @brief 清理MPV资源
+         */
         mpv_terminate_destroy(mpv);
     }
 }
 
-// 将MPV的视频输出绑定到QWidget上
+/*!
+ * @brief 将MPV的视频输出绑定到QWidget上
+ */
 void Controller::setPlayerWidget(QWidget *widget) {
     if (widget == nullptr) {  // 检查widget是否为空
         QMessageBox::critical(reinterpret_cast<QWidget *>(application), tr("错误"), tr("Widget为空无法绑定！"));
@@ -65,79 +95,113 @@ void Controller::setPlayerWidget(QWidget *widget) {
     mpv_set_option_string(mpv, "wid", QString::number(widget->winId()).toUtf8().constData());
 }
 
-// 打开文件
+/*!
+ * @brief 打开文件
+ */
 void Controller::openFile(const QString &filename) {
     QStringList args = {"loadfile", filename};
     command(args);
 
-    // 确保播放状态正确
+    /*!
+     * @brief 确保播放状态正确
+     */
     QVariant pauseValue = getProperty("pause");
     const bool isPaused = pauseValue.toBool();
     if (isPaused) {
         Controller::togglePlayPause();
     }
 
-    // 初始化滑块
+    /*!
+     * @brief 初始化滑块
+     */
     initializeSliderDuration();
 
-    // 更新进度条初始化状态
+    /*!
+     * @brief 更新进度条初始化状态
+     */
     sliderInitialized = true;
 
-    // 切换播放图标到正在播放状态
+    /*!
+     * @brief 切换播放图标到正在播放状态
+     */
     application->updatePlayIcon(true);
 }
 
-// 打开URL
+/*!
+ * @brief 打开URL
+ */
 void Controller::handleUrl(const QString &url) {
     QStringList args = {"loadfile", url};
     command(args);
 
-    // 确保播放状态正确
+    /*!
+     * @brief 确保播放状态正确
+     */
     QVariant pauseValue = getProperty("pause");
     const bool isPaused = pauseValue.toBool();
     if (isPaused) {
         Controller::togglePlayPause();
     }
 
-    // 初始化滑块
+    /*!
+     * @brief 初始化滑块
+     */
     initializeSliderDuration();
 
-    // 更新进度条初始化状态
+    /*!
+     * @brief 更新进度条初始化状态
+     */
     sliderInitialized = true;
 
-    // 切换播放图标到正在播放状态
+    /*!
+     * @brief 切换播放图标到正在播放状态
+     */
     application->updatePlayIcon(true);
 }
 
-// 初始化滑块的总时长
+/*!
+ * @brief 初始化滑块的总时长
+ */
 void Controller::initializeSliderDuration() {
     duration = Controller::getProperty("duration").toDouble();
     if (mpv) {
         if (duration > 0) {
-            // 设置滑块的最大值为视频总时长（秒）
+            /*!
+             * @brief 设置滑块的最大值为视频总时长（秒）
+             */
             QSlider *slider = application->getSlider();
             slider->setMaximum(static_cast<int>(duration));
         }
     }
 
-    // 设置时间显示
+    /*!
+     * @brief 设置时间显示
+     */
     totalTime = QTime((int) (duration / 3600) % 60, (int) (duration / 60) % 60, (int) duration % 60);
     QString timeString = "00:00:00/" + totalTime.toString("hh:mm:ss");
     application->timeLabel->setText(timeString);
 }
 
-// 应对在线视频在开始播放时，可能并未完全加载，其总时长未知需要缓冲后更新的情况
+/*!
+ * @brief 应对在线视频在开始播放时，可能并未完全加载，其总时长未知需要缓冲后更新的情况
+ */
 void Controller::updateSliderDuration() {
     double newDuration = Controller::getProperty("duration").toDouble();
     if (newDuration != duration) {
-        // 更新视频总时长值
+        /*!
+         * @brief 更新视频总时长值
+         */
         duration = newDuration;
 
-        // 设置滑块的最大值为视频总时长（秒）
+        /*!
+         * @brief 设置滑块的最大值为视频总时长（秒）
+         */
         QSlider *slider = application->getSlider();
         slider->setMaximum(static_cast<int>(duration));
 
-        // 更新时间显示
+        /*!
+         * @brief 更新时间显示
+         */
         int64_t time;
         mpv_get_property(mpv, "time-pos", MPV_FORMAT_INT64, &time);
         QTime currentTime((int) (time / 3600) % 60, (int) (time / 60) % 60, (int) time % 60);
@@ -147,24 +211,36 @@ void Controller::updateSliderDuration() {
     }
 }
 
-// 播放时更新滑块位置
+/*!
+ * @brief 播放时更新滑块位置
+ */
 void Controller::updateSliderPosition() {
-    // 当MPV实例已完成初始化，播放进度滑块不处于拖动状态，滑块已初始化的情况下才更新滑块位置
+    /*!
+     * @brief 当MPV实例已完成初始化，播放进度滑块不处于拖动状态，滑块已初始化的情况下才更新滑块位置
+     */
     if (mpv && !sliderBeingDragged && sliderInitialized) {
-        // 获取当前播放时间
+        /*!
+         * @brief 获取当前播放时间
+         */
         int64_t time;
         mpv_get_property(mpv, "time-pos", MPV_FORMAT_INT64, &time);
 
-        // 设置滑块的位置
+        /*!
+         * @brief 设置滑块的位置
+         */
         QSlider *slider = application->getSlider();
         if (slider) { slider->setValue(static_cast<int>(time)); }
 
-        // 更新时间显示
+        /*!
+         * @brief 更新时间显示
+         */
         QTime currentTime((int) (time / 3600) % 60, (int) (time / 60) % 60, (int) time % 60);
         QString timeString = currentTime.toString("hh:mm:ss") + "/" + totalTime.toString("hh:mm:ss");
         application->timeLabel->setText(timeString);
     } else if (mpv && sliderInitialized) {// 当MPV实例已完成初始化，滑块已初始化的情况下继续更新时间显示
-        // 更新时间显示
+        /*!
+         * @brief 更新时间显示
+         */
         int64_t time;
         mpv_get_property(mpv, "time-pos", MPV_FORMAT_INT64, &time);
         QTime currentTime((int) (time / 3600) % 60, (int) (time / 60) % 60, (int) time % 60);
@@ -173,17 +249,23 @@ void Controller::updateSliderPosition() {
     }
 }
 
-// 开始拖动播放进度滑块，更新状态
+/*!
+ * @brief 开始拖动播放进度滑块，更新状态
+ */
 void Controller::sliderDragStarted() {
     sliderBeingDragged = true;
 }
 
-// 结束拖动播放进度滑块，更新状态
+/*!
+ * @brief 结束拖动播放进度滑块，更新状态
+ */
 void Controller::sliderDragStopped() {
     sliderBeingDragged = false;
 }
 
-// 放大视频10%
+/*!
+ * @brief 放大视频10%
+ */
 void Controller::zoomIn() {
     zoomFactor += 0.1;
     if (zoomFactor < 3.0) {
@@ -191,7 +273,9 @@ void Controller::zoomIn() {
     }
 }
 
-// 缩小视频10%
+/*!
+ * @brief 缩小视频10%
+ */
 void Controller::zoomOut() {
     zoomFactor -= 0.1;
     if (zoomFactor > -3.0) {
@@ -199,13 +283,17 @@ void Controller::zoomOut() {
     }
 }
 
-// 重置视频缩放
+/*!
+ * @brief 重置视频缩放
+ */
 void Controller::zoomReset() {
     zoomFactor = 0.0;
     setProperty("video-zoom", 0.0);
 }
 
-// 视频位置控制
+/*!
+ * @brief 视频位置控制
+ */
 void Controller::moveLeft() {
     panX -= 0.1;
     setProperty("video-pan-x", panX);
@@ -233,15 +321,21 @@ void Controller::moveReset() {
     setProperty("video-pan-y", panY);
 }
 
-// 跳转到指定播放位置
+/*!
+ * @brief 跳转到指定播放位置
+ */
 void Controller::seek(int seconds) {
     QStringList args = {"seek", QString::number(seconds), "absolute"};
     command(args);
 }
 
-// 跳转到相对播放位置
+/*!
+ * @brief 跳转到相对播放位置
+ */
 void Controller::seekRelative(int seconds) {
-    // 添加判断防止跳转越界
+    /*!
+     * @brief 添加判断防止跳转越界
+     */
     QVariant QTime = getProperty("time-pos");
     const double time = QTime.toDouble();
 
@@ -251,61 +345,93 @@ void Controller::seekRelative(int seconds) {
     }
 }
 
-// 切换播放暂停
+/*!
+ * @brief 切换播放暂停
+ */
 void Controller::togglePlayPause() {
-    // 获取当前的暂停状态
+    /*!
+     * @brief 获取当前的暂停状态
+     */
     QVariant pauseValue = getProperty("pause");
 
-    // 切换播放/暂停状态
+    /*!
+     * @brief 切换播放/暂停状态
+     */
     const bool isPaused = pauseValue.toBool();
     setProperty("pause", !isPaused);
 
-    // 切换对应状态图标
+    /*!
+     * @brief 切换对应状态图标
+     */
     application->updatePlayIcon(isPaused);
 }
 
-// 播放视频
+/*!
+ * @brief 播放视频
+ */
 void Controller::playVideo() {
     setProperty("pause", false);
 
-    // 切换播放图标
+    /*!
+     * @brief 切换播放图标
+     */
     application->updatePlayIcon(true);
 }
 
-// 设置播放音量
+/*!
+ * @brief 设置播放音量
+ */
 void Controller::setVolume(int volume, bool flag) {
     if (flag) {
-        // 获取当前音量
+        /*!
+         * @brief 获取当前音量
+         */
         QVariant QCurrentVolumeValue = getProperty("volume");
         const int currentVolumeValue = QCurrentVolumeValue.toInt();
 
-        // 设置相对音量
+        /*!
+         * @brief 设置相对音量
+         */
         setProperty("volume", currentVolumeValue + volume);
 
         application->volumeAction->updateVolumeSlider(currentVolumeValue + volume);
     } else {
-        // 设置绝对音量
+        /*!
+         * @brief 设置绝对音量
+         */
         setProperty("volume", volume);
     }
 }
 
-// 切换静音状态
+/*!
+ * @brief 切换静音状态
+ */
 void Controller::toggleMute() {
-    // 获取当前的静音状态
+    /*!
+     * @brief 获取当前的静音状态
+     */
     QVariant muteValue = getProperty("mute");
 
-    // 切换静音状态
+    /*!
+     * @brief 切换静音状态
+     */
     const bool isMute = muteValue.toBool();
     setProperty("mute", !isMute);
 
-    // 切换对应状态图标
+    /*!
+     * @brief 切换对应状态图标
+     */
     application->updateVolumeIcon(!isMute);
 
-    // 切换对应勾选状态
+    /*!
+     * @brief 切换对应勾选状态
+     */
     application->ui->muteAudio->setChecked(!isMute);
 }
 
-// 设置播放速度
+/*!
+ * @brief 设置播放速度
+ */
 void Controller::setSpeed(double speed) {
     QVariant qCurrentSpeed = getProperty("speed");
     double const currentSpeed = qCurrentSpeed.toDouble();
@@ -317,14 +443,20 @@ void Controller::setSpeed(double speed) {
     }
 }
 
-// 设置播放速度倍数
+/*!
+ * @brief 设置播放速度倍数
+ */
 void Controller::setSpeedMultiple(double multiple) {
     QVariant qCurrentSpeed = getProperty("speed");
     double const currentSpeed = qCurrentSpeed.toDouble();
 
-    // 暂停状态下按L键开始默认速度播放，非暂停状态下倍速播放
+    /*!
+     * @brief 暂停状态下按L键开始默认速度播放，非暂停状态下倍速播放
+     */
     if (multiple == 2) {
-        // 获取当前的暂停状态
+        /*!
+         * @brief 获取当前的暂停状态
+         */
         QVariant pauseValue = getProperty("pause");
         const bool isPaused = pauseValue.toBool();
 
@@ -340,54 +472,82 @@ void Controller::setSpeedMultiple(double multiple) {
     setProperty("speed", currentSpeed * multiple);
 }
 
-// 调整音频同步
+/*!
+ * @brief 调整音频同步
+ */
 void Controller::adjustAudio(double sec) {
-    // 获取当前音频延迟
+    /*!
+     * @brief 获取当前音频延迟
+     */
     QVariant QCurrentDelay = getProperty("audio-delay");
     double currentDelay = QCurrentDelay.toDouble();
 
-    // 调整音频延迟
+    /*!
+     * @brief 调整音频延迟
+     */
     setProperty("audio-delay", currentDelay + sec);
 }
 
-// 重置音频同步设置
+/*!
+ * @brief 重置音频同步设置
+ */
 void Controller::resetAudioSync() {
     setProperty("audio-delay", 0);
 }
 
-// 获取视频帧率（对某些文件并非完全可靠）
+/*!
+ * @brief 获取视频帧率（对某些文件并非完全可靠）
+ */
 void Controller::getFrameRate() {
     QVariant QFrameRate = getProperty("container-fps");
     frameRate = QFrameRate.toDouble();
 }
 
-// 跳转到上一帧
+/*!
+ * @brief 跳转到上一帧
+ */
 void Controller::goToPreviousFrame() {
-    // 获取当前播放位置
+    /*!
+     * @brief 获取当前播放位置
+     */
     QVariant QPosition = getProperty("time-pos");
     double position = QPosition.toDouble();
 
-    // 获取该视频帧率
+    /*!
+     * @brief 获取该视频帧率
+     */
     getFrameRate();
 
-    // 设置新的播放位置
+    /*!
+     * @brief 设置新的播放位置
+     */
     setProperty("time-pos", position - 1.0 / frameRate);
 }
 
-// 跳转到下一帧
+/*!
+ * @brief 跳转到下一帧
+ */
 void Controller::goToNextFrame() {
-    // 获取当前播放位置
+    /*!
+     * @brief 获取当前播放位置
+     */
     QVariant QPosition = getProperty("time-pos");
     double position = QPosition.toDouble();
 
-    // 获取该视频帧率
+    /*!
+     * @brief 获取该视频帧率
+     */
     getFrameRate();
 
-    // 设置新的播放位置
+    /*!
+     * @brief 设置新的播放位置
+     */
     setProperty("time-pos", position + 1.0 / frameRate);
 }
 
-// 发送命令到MPV
+/*!
+ * @brief 发送命令到MPV
+ */
 void Controller::command(const QStringList &args) {
     auto result = mpv::qt::command(mpv, args);
     if (mpv::qt::is_error(result)) {
@@ -396,7 +556,9 @@ void Controller::command(const QStringList &args) {
     }
 }
 
-// MPV属性设置函数
+/*!
+ * @brief MPV属性设置函数
+ */
 void Controller::setProperty(const QString &name, const QVariant &value) {
     auto result = mpv::qt::set_property(mpv, name, value);
     if (mpv::qt::is_error(result)) {
@@ -405,7 +567,9 @@ void Controller::setProperty(const QString &name, const QVariant &value) {
     }
 }
 
-// 获取MPV属性值函数
+/*!
+ * @brief 获取MPV属性值函数
+ */
 QVariant Controller::getProperty(const QString &name) const {
     auto result = mpv::qt::get_property_variant(mpv, name);
     if (mpv::qt::is_error(result)) {
@@ -416,7 +580,9 @@ QVariant Controller::getProperty(const QString &name) const {
     return result;
 }
 
-// 返回mpv实例
+/*!
+ * @brief 返回mpv实例
+ */
 mpv_handle *Controller::getMpvInstance() const {
     return this->mpv;
 }

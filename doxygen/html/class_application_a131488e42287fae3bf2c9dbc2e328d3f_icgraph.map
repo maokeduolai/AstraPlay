@@ -1,0 +1,5 @@
+<map id="Application::on_actionToolBack_triggered" name="Application::on_actionToolBack_triggered">
+<area shape="rect" id="Node000001" title="后退3秒" alt="" coords="211,5,384,48"/>
+<area shape="rect" id="Node000002" href="$class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,13,163,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,29,163,29,163,24,195,24"/>
+</map>

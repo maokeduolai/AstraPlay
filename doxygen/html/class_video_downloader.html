@@ -1,0 +1,478 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AstraPlay: VideoDownloader类 参考</title>
+<link rel="icon" href="AstraPlay_Logo_Small.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="AstraPlay_Logo_Small.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">AstraPlay<span id="projectnumber">&#160;v1.0.2</span>
+   </div>
+   <div id="projectbrief">基于libmpv与Qt5框架的视频播放器</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="pages.html"><span>相关页面</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#signals">信号</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="class_video_downloader-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">VideoDownloader类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="video__downloader_8h_source.html">video_downloader.h</a>&gt;</code></p>
+<div class="dynheader">
+类 VideoDownloader 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_downloader__inherit__graph.png" border="0" usemap="#a_video_downloader_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_video_downloader_inherit__map" id="a_video_downloader_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,123,145,277"/>
+<area shape="rect" href="class_q_object.html" title=" " alt="" coords="45,5,106,75"/>
+<area shape="poly" title=" " alt="" coords="78,90,78,123,73,123,73,90"/>
+</map>
+</div>
+<div class="dynheader">
+VideoDownloader 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_downloader__coll__graph.png" border="0" usemap="#a_video_downloader_coll__map" alt="Collaboration graph"/></div>
+<map name="a_video_downloader_coll__map" id="a_video_downloader_coll__map">
+<area shape="rect" title=" " alt="" coords="54,336,186,469"/>
+<area shape="rect" href="class_q_object.html" title=" " alt="" coords="5,171,67,240"/>
+<area shape="poly" title=" " alt="" coords="59,252,94,335,89,337,54,255"/>
+<area shape="rect" title=" " alt="" coords="91,171,149,240"/>
+<area shape="poly" title=" " alt="" coords="123,240,123,319,117,319,117,240"/>
+<area shape="rect" href="class_output_window.html" title=" " alt="" coords="174,139,378,272"/>
+<area shape="poly" title=" " alt="" coords="268,273,249,313,227,338,202,360,198,355,223,335,244,311,263,271"/>
+<area shape="rect" href="class_q_widget.html" title=" " alt="" coords="133,5,197,75"/>
+<area shape="poly" title=" " alt="" coords="199,86,234,138,230,141,194,89"/>
+<area shape="rect" title=" " alt="" coords="221,5,331,75"/>
+<area shape="poly" title=" " alt="" coords="279,75,279,122,273,122,273,75"/>
+<area shape="rect" title=" " alt="" coords="355,5,435,75"/>
+<area shape="poly" title=" " alt="" coords="373,76,335,127,331,124,368,73"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
+信号</h2></td></tr>
+<tr class="memitem:ab675bdc84b5d5ad1a3df7f62d34b62ea" id="r_ab675bdc84b5d5ad1a3df7f62d34b62ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab675bdc84b5d5ad1a3df7f62d34b62ea">downloadFinished</a> (const QString &amp;filePath)</td></tr>
+<tr class="separator:ab675bdc84b5d5ad1a3df7f62d34b62ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0791055ae9a2d20ba69c697a7e332d0e" id="r_a0791055ae9a2d20ba69c697a7e332d0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0791055ae9a2d20ba69c697a7e332d0e">downloadError</a> (const QString &amp;error)</td></tr>
+<tr class="separator:a0791055ae9a2d20ba69c697a7e332d0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:aa1172d92a0a7177fea294cbe00b30865" id="r_aa1172d92a0a7177fea294cbe00b30865"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1172d92a0a7177fea294cbe00b30865">VideoDownloader</a> (<a class="el" href="class_q_object.html">QObject</a> *parent=nullptr)</td></tr>
+<tr class="separator:aa1172d92a0a7177fea294cbe00b30865"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaae46a812ff09863d007bb130099d69e" id="r_aaae46a812ff09863d007bb130099d69e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaae46a812ff09863d007bb130099d69e">downloadVideo</a> (const QString &amp;videoUrl)</td></tr>
+<tr class="separator:aaae46a812ff09863d007bb130099d69e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a736b63692316980c9eb38313240b27f0" id="r_a736b63692316980c9eb38313240b27f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a736b63692316980c9eb38313240b27f0">processFinished</a> (int exitCode, QProcess::ExitStatus exitStatus)</td></tr>
+<tr class="memdesc:a736b63692316980c9eb38313240b27f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理下载完成信息  <br /></td></tr>
+<tr class="separator:a736b63692316980c9eb38313240b27f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a572e32d243dff804b6763dd918f27152" id="r_a572e32d243dff804b6763dd918f27152"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a572e32d243dff804b6763dd918f27152">processError</a> (QProcess::ProcessError error)</td></tr>
+<tr class="memdesc:a572e32d243dff804b6763dd918f27152"><td class="mdescLeft">&#160;</td><td class="mdescRight">处理进程错误信息  <br /></td></tr>
+<tr class="separator:a572e32d243dff804b6763dd918f27152"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:ac670215bc529b625f8d2831f770a7fb6" id="r_ac670215bc529b625f8d2831f770a7fb6"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac670215bc529b625f8d2831f770a7fb6">downloadFolderPath</a></td></tr>
+<tr class="separator:ac670215bc529b625f8d2831f770a7fb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e88ad2512267039aac887889b4113c1" id="r_a4e88ad2512267039aac887889b4113c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_output_window.html">OutputWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4e88ad2512267039aac887889b4113c1">outputWindow</a></td></tr>
+<tr class="separator:a4e88ad2512267039aac887889b4113c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock">
+<p class="definition">在文件 <a class="el" href="video__downloader_8h_source.html">video_downloader.h</a> 第 <a class="el" href="video__downloader_8h_source.html#l00014">14</a> 行定义.</p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="aa1172d92a0a7177fea294cbe00b30865" name="aa1172d92a0a7177fea294cbe00b30865"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1172d92a0a7177fea294cbe00b30865">&#9670;&#160;</a></span>VideoDownloader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">VideoDownloader::VideoDownloader </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_q_object.html">QObject</a> *</td>          <td class="paramname"><span class="paramname"><em>parent</em><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="video__downloader_8cpp_source.html">video_downloader.cpp</a> 第 <a class="el" href="video__downloader_8cpp_source.html#l00003">3</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a0791055ae9a2d20ba69c697a7e332d0e" name="a0791055ae9a2d20ba69c697a7e332d0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0791055ae9a2d20ba69c697a7e332d0e">&#9670;&#160;</a></span>downloadError</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VideoDownloader::downloadError </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>error</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_downloader_a0791055ae9a2d20ba69c697a7e332d0e_icgraph.png" border="0" usemap="#aclass_video_downloader_a0791055ae9a2d20ba69c697a7e332d0e_icgraph" alt=""/></div>
+<map name="aclass_video_downloader_a0791055ae9a2d20ba69c697a7e332d0e_icgraph" id="aclass_video_downloader_a0791055ae9a2d20ba69c697a7e332d0e_icgraph">
+<area shape="rect" title=" " alt="" coords="896,23,1079,65"/>
+<area shape="rect" href="class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,5,163,32"/>
+<area shape="poly" title=" " alt="" coords="880,27,847,23,655,11,464,9,293,12,163,17,163,12,293,6,464,3,655,6,848,17,881,21"/>
+<area shape="rect" href="class_video_downloader.html#aaae46a812ff09863d007bb130099d69e" title=" " alt="" coords="441,40,624,83"/>
+<area shape="poly" title=" " alt="" coords="880,41,779,39,673,43,625,48,625,43,672,37,779,33,880,35"/>
+<area shape="rect" href="class_video_downloader.html#a572e32d243dff804b6763dd918f27152" title="处理进程错误信息" alt="" coords="672,52,848,95"/>
+<area shape="poly" title=" " alt="" coords="880,60,848,65,848,59,880,55"/>
+<area shape="rect" href="class_video_downloader.html#a736b63692316980c9eb38313240b27f0" title="处理下载完成信息" alt="" coords="672,119,848,161"/>
+<area shape="poly" title=" " alt="" coords="927,75,849,109,821,121,819,116,847,104,925,70"/>
+<area shape="rect" href="class_application.html#ab5c0d95752adadc0a631a5b660d2ce03" title="视频下载" alt="" coords="211,27,393,69"/>
+<area shape="poly" title=" " alt="" coords="425,58,393,56,393,51,426,52"/>
+<area shape="poly" title=" " alt="" coords="195,36,163,32,163,27,196,31"/>
+<area shape="poly" title=" " alt="" coords="657,71,625,69,625,64,657,65"/>
+<area shape="poly" title=" " alt="" coords="681,116,596,86,598,81,683,111"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab675bdc84b5d5ad1a3df7f62d34b62ea" name="ab675bdc84b5d5ad1a3df7f62d34b62ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab675bdc84b5d5ad1a3df7f62d34b62ea">&#9670;&#160;</a></span>downloadFinished</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VideoDownloader::downloadFinished </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>filePath</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_downloader_ab675bdc84b5d5ad1a3df7f62d34b62ea_icgraph.png" border="0" usemap="#aclass_video_downloader_ab675bdc84b5d5ad1a3df7f62d34b62ea_icgraph" alt=""/></div>
+<map name="aclass_video_downloader_ab675bdc84b5d5ad1a3df7f62d34b62ea_icgraph" id="aclass_video_downloader_ab675bdc84b5d5ad1a3df7f62d34b62ea_icgraph">
+<area shape="rect" title=" " alt="" coords="896,5,1079,48"/>
+<area shape="rect" href="class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,13,163,40"/>
+<area shape="poly" title=" " alt="" coords="880,26,848,25,529,22,211,25,163,26,163,21,211,20,529,17,848,20,880,21"/>
+<area shape="rect" href="class_video_downloader.html#a736b63692316980c9eb38313240b27f0" title="处理下载完成信息" alt="" coords="672,35,848,77"/>
+<area shape="poly" title=" " alt="" coords="880,43,848,47,848,42,880,38"/>
+<area shape="rect" href="class_video_downloader.html#aaae46a812ff09863d007bb130099d69e" title=" " alt="" coords="441,35,624,77"/>
+<area shape="poly" title=" " alt="" coords="657,59,625,59,625,53,657,53"/>
+<area shape="rect" href="class_application.html#ab5c0d95752adadc0a631a5b660d2ce03" title="视频下载" alt="" coords="211,35,393,77"/>
+<area shape="poly" title=" " alt="" coords="425,59,393,59,393,53,425,53"/>
+<area shape="poly" title=" " alt="" coords="195,44,163,40,163,35,196,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aaae46a812ff09863d007bb130099d69e" name="aaae46a812ff09863d007bb130099d69e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaae46a812ff09863d007bb130099d69e">&#9670;&#160;</a></span>downloadVideo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VideoDownloader::downloadVideo </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>videoUrl</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>在程序根目录下创建VideoDownload文件夹用于存放下载的文件</p>
+<p>将OutputWindow信号与VideoDownloader连接</p>
+<p>启动yt-dlp进行下载</p>
+
+<p class="definition">在文件 <a class="el" href="video__downloader_8cpp_source.html">video_downloader.cpp</a> 第 <a class="el" href="video__downloader_8cpp_source.html#l00005">5</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_downloader_aaae46a812ff09863d007bb130099d69e_cgraph.png" border="0" usemap="#aclass_video_downloader_aaae46a812ff09863d007bb130099d69e_cgraph" alt=""/></div>
+<map name="aclass_video_downloader_aaae46a812ff09863d007bb130099d69e_cgraph" id="aclass_video_downloader_aaae46a812ff09863d007bb130099d69e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,146,189,189"/>
+<area shape="rect" href="class_video_downloader.html#a0791055ae9a2d20ba69c697a7e332d0e" title=" " alt="" coords="505,146,688,189"/>
+<area shape="poly" title=" " alt="" coords="110,145,131,117,160,84,195,54,236,31,296,10,347,3,398,10,458,31,494,50,526,77,575,132,571,136,523,81,491,55,456,35,396,15,347,8,297,15,238,35,198,58,163,88,135,120,114,148"/>
+<area shape="rect" href="class_output_window.html#a7189e6cfabcc7e501e93b595d2fa7277" title=" " alt="" coords="237,45,457,72"/>
+<area shape="poly" title=" " alt="" coords="127,143,176,111,236,81,256,74,258,79,238,86,179,116,130,148"/>
+<area shape="rect" href="class_output_window.html#a83cab17588563b827d6074de7e06f47e" title=" " alt="" coords="250,96,444,122"/>
+<area shape="poly" title=" " alt="" coords="188,143,236,132,270,124,271,129,237,137,190,148"/>
+<area shape="rect" href="class_video_downloader.html#a572e32d243dff804b6763dd918f27152" title="处理进程错误信息" alt="" coords="259,146,435,189"/>
+<area shape="poly" title=" " alt="" coords="189,165,244,165,244,170,189,170"/>
+<area shape="rect" href="class_output_window.html#a05a37eb2852475e7a8d6e42790a0a814" title=" " alt="" coords="242,213,452,240"/>
+<area shape="poly" title=" " alt="" coords="190,187,237,198,271,206,270,212,236,204,188,192"/>
+<area shape="rect" href="class_video_downloader.html#a736b63692316980c9eb38313240b27f0" title="处理下载完成信息" alt="" coords="259,264,435,306"/>
+<area shape="poly" title=" " alt="" coords="130,187,180,219,238,249,252,255,250,260,236,254,177,223,128,192"/>
+<area shape="rect" href="class_output_window.html#a2467e7de57bb47ccd376eb9397f4f7d4" title="开始进程" alt="" coords="253,330,441,357"/>
+<area shape="poly" title=" " alt="" coords="114,188,164,252,198,287,238,316,249,322,247,327,235,321,195,291,160,256,110,191"/>
+<area shape="poly" title=" " alt="" coords="435,165,489,165,489,170,435,170"/>
+<area shape="poly" title=" " alt="" coords="427,261,456,249,506,223,551,196,553,200,508,228,458,254,429,266"/>
+<area shape="rect" href="class_video_downloader.html#ab675bdc84b5d5ad1a3df7f62d34b62ea" title=" " alt="" coords="505,264,688,306"/>
+<area shape="poly" title=" " alt="" coords="435,282,489,282,489,288,435,288"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_downloader_aaae46a812ff09863d007bb130099d69e_icgraph.png" border="0" usemap="#aclass_video_downloader_aaae46a812ff09863d007bb130099d69e_icgraph" alt=""/></div>
+<map name="aclass_video_downloader_aaae46a812ff09863d007bb130099d69e_icgraph" id="aclass_video_downloader_aaae46a812ff09863d007bb130099d69e_icgraph">
+<area shape="rect" title=" " alt="" coords="441,5,624,48"/>
+<area shape="rect" href="class_application.html#ab5c0d95752adadc0a631a5b660d2ce03" title="视频下载" alt="" coords="211,5,393,48"/>
+<area shape="poly" title=" " alt="" coords="425,29,393,29,393,24,425,24"/>
+<area shape="rect" href="class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,13,163,40"/>
+<area shape="poly" title=" " alt="" coords="195,29,163,29,163,24,195,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a572e32d243dff804b6763dd918f27152" name="a572e32d243dff804b6763dd918f27152"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a572e32d243dff804b6763dd918f27152">&#9670;&#160;</a></span>processError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VideoDownloader::processError </td>
+          <td>(</td>
+          <td class="paramtype">QProcess::ProcessError</td>          <td class="paramname"><span class="paramname"><em>error</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理进程错误信息 </p>
+<p>根据对应错误代码给出错误信息</p>
+<p>显示错误信息</p>
+
+<p class="definition">在文件 <a class="el" href="video__downloader_8cpp_source.html">video_downloader.cpp</a> 第 <a class="el" href="video__downloader_8cpp_source.html#l00050">50</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_downloader_a572e32d243dff804b6763dd918f27152_cgraph.png" border="0" usemap="#aclass_video_downloader_a572e32d243dff804b6763dd918f27152_cgraph" alt=""/></div>
+<map name="aclass_video_downloader_a572e32d243dff804b6763dd918f27152_cgraph" id="aclass_video_downloader_a572e32d243dff804b6763dd918f27152_cgraph">
+<area shape="rect" title="处理进程错误信息" alt="" coords="5,5,181,48"/>
+<area shape="rect" href="class_video_downloader.html#a0791055ae9a2d20ba69c697a7e332d0e" title=" " alt="" coords="229,5,412,48"/>
+<area shape="poly" title=" " alt="" coords="181,24,213,24,213,29,181,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_downloader_a572e32d243dff804b6763dd918f27152_icgraph.png" border="0" usemap="#aclass_video_downloader_a572e32d243dff804b6763dd918f27152_icgraph" alt=""/></div>
+<map name="aclass_video_downloader_a572e32d243dff804b6763dd918f27152_icgraph" id="aclass_video_downloader_a572e32d243dff804b6763dd918f27152_icgraph">
+<area shape="rect" title="处理进程错误信息" alt="" coords="672,5,848,48"/>
+<area shape="rect" href="class_video_downloader.html#aaae46a812ff09863d007bb130099d69e" title=" " alt="" coords="441,5,624,48"/>
+<area shape="poly" title=" " alt="" coords="657,29,625,29,625,24,657,24"/>
+<area shape="rect" href="class_application.html#ab5c0d95752adadc0a631a5b660d2ce03" title="视频下载" alt="" coords="211,5,393,48"/>
+<area shape="poly" title=" " alt="" coords="425,29,393,29,393,24,425,24"/>
+<area shape="rect" href="class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,13,163,40"/>
+<area shape="poly" title=" " alt="" coords="195,29,163,29,163,24,195,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a736b63692316980c9eb38313240b27f0" name="a736b63692316980c9eb38313240b27f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a736b63692316980c9eb38313240b27f0">&#9670;&#160;</a></span>processFinished()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VideoDownloader::processFinished </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>exitCode</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QProcess::ExitStatus</td>          <td class="paramname"><span class="paramname"><em>exitStatus</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>处理下载完成信息 </p>
+<p>下载错误退出，给出错误信息</p>
+
+<p class="definition">在文件 <a class="el" href="video__downloader_8cpp_source.html">video_downloader.cpp</a> 第 <a class="el" href="video__downloader_8cpp_source.html#l00035">35</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_downloader_a736b63692316980c9eb38313240b27f0_cgraph.png" border="0" usemap="#aclass_video_downloader_a736b63692316980c9eb38313240b27f0_cgraph" alt=""/></div>
+<map name="aclass_video_downloader_a736b63692316980c9eb38313240b27f0_cgraph" id="aclass_video_downloader_a736b63692316980c9eb38313240b27f0_cgraph">
+<area shape="rect" title="处理下载完成信息" alt="" coords="5,39,181,81"/>
+<area shape="rect" href="class_video_downloader.html#a0791055ae9a2d20ba69c697a7e332d0e" title=" " alt="" coords="229,5,412,48"/>
+<area shape="poly" title=" " alt="" coords="181,44,213,40,214,45,182,50"/>
+<area shape="rect" href="class_video_downloader.html#ab675bdc84b5d5ad1a3df7f62d34b62ea" title=" " alt="" coords="229,72,412,115"/>
+<area shape="poly" title=" " alt="" coords="182,70,214,75,213,80,181,76"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_video_downloader_a736b63692316980c9eb38313240b27f0_icgraph.png" border="0" usemap="#aclass_video_downloader_a736b63692316980c9eb38313240b27f0_icgraph" alt=""/></div>
+<map name="aclass_video_downloader_a736b63692316980c9eb38313240b27f0_icgraph" id="aclass_video_downloader_a736b63692316980c9eb38313240b27f0_icgraph">
+<area shape="rect" title="处理下载完成信息" alt="" coords="672,5,848,48"/>
+<area shape="rect" href="class_video_downloader.html#aaae46a812ff09863d007bb130099d69e" title=" " alt="" coords="441,5,624,48"/>
+<area shape="poly" title=" " alt="" coords="657,29,625,29,625,24,657,24"/>
+<area shape="rect" href="class_application.html#ab5c0d95752adadc0a631a5b660d2ce03" title="视频下载" alt="" coords="211,5,393,48"/>
+<area shape="poly" title=" " alt="" coords="425,29,393,29,393,24,425,24"/>
+<area shape="rect" href="class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,13,163,40"/>
+<area shape="poly" title=" " alt="" coords="195,29,163,29,163,24,195,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="ac670215bc529b625f8d2831f770a7fb6" name="ac670215bc529b625f8d2831f770a7fb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac670215bc529b625f8d2831f770a7fb6">&#9670;&#160;</a></span>downloadFolderPath</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString VideoDownloader::downloadFolderPath</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="video__downloader_8h_source.html">video_downloader.h</a> 第 <a class="el" href="video__downloader_8h_source.html#l00035">35</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a4e88ad2512267039aac887889b4113c1" name="a4e88ad2512267039aac887889b4113c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e88ad2512267039aac887889b4113c1">&#9670;&#160;</a></span>outputWindow</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_output_window.html">OutputWindow</a>* VideoDownloader::outputWindow</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="video__downloader_8h_source.html">video_downloader.h</a> 第 <a class="el" href="video__downloader_8h_source.html#l00037">37</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>F:/QtProject/AstraPlay/src/include/<a class="el" href="video__downloader_8h_source.html">video_downloader.h</a></li>
+<li>F:/QtProject/AstraPlay/src/func/<a class="el" href="video__downloader_8cpp_source.html">video_downloader.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

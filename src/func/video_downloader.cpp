@@ -3,7 +3,9 @@
 VideoDownloader::VideoDownloader(QObject *parent) : QObject(parent), downloadFolderPath(""), outputWindow(new OutputWindow()) {}
 
 void VideoDownloader::downloadVideo(const QString &videoUrl) {
-    // 在程序根目录下创建VideoDownload文件夹用于存放下载的文件
+    /*!
+     * @brief 在程序根目录下创建VideoDownload文件夹用于存放下载的文件
+     */
     downloadFolderPath = QCoreApplication::applicationDirPath() + "/VideoDownload";
     QDir().mkpath(downloadFolderPath);
 
@@ -14,19 +16,27 @@ void VideoDownloader::downloadVideo(const QString &videoUrl) {
     outputWindow->setAttribute(Qt::WA_DeleteOnClose); // 窗口关闭时释放资源
     outputWindow->show();
 
-    // 将OutputWindow信号与VideoDownloader连接
+    /*!
+     * @brief 将OutputWindow信号与VideoDownloader连接
+     */
     connect(outputWindow, &OutputWindow::errorOccurred, this, &VideoDownloader::processError);
     connect(outputWindow, &OutputWindow::processFinished, this, &VideoDownloader::processFinished);
     connect(outputWindow, &OutputWindow::errorMessageEmit, this, &VideoDownloader::downloadError);
 
-    // 启动yt-dlp进行下载
+    /*!
+     * @brief 启动yt-dlp进行下载
+     */
     outputWindow->startProcess("third/yt-dlp", arguments);
 }
 
-// 处理下载完成信息
+/*!
+ * @brief 处理下载完成信息
+ */
 void VideoDownloader::processFinished(int exitCode, QProcess::ExitStatus exitStatus) {
     if (exitStatus == QProcess::CrashExit || exitCode != 0) {
-        // 下载错误退出，给出错误信息
+        /*!
+         * @brief 下载错误退出，给出错误信息
+         */
         emit downloadError("下载失败！");
     } else {
         outputWindow->close();
@@ -34,11 +44,15 @@ void VideoDownloader::processFinished(int exitCode, QProcess::ExitStatus exitSta
     }
 }
 
-// 处理进程错误信息
+/*!
+ * @brief 处理进程错误信息
+ */
 void VideoDownloader::processError(QProcess::ProcessError error) {
     QString errorString;
 
-    // 根据对应错误代码给出错误信息
+    /*!
+     * @brief 根据对应错误代码给出错误信息
+     */
     switch (error) {
         case QProcess::FailedToStart:
             errorString = QObject::tr("进程启动失败。可能是调用的程序丢失，也可能是调用程序的权限不足。");
@@ -61,6 +75,8 @@ void VideoDownloader::processError(QProcess::ProcessError error) {
             break;
     }
 
-    // 显示错误信息
+    /*!
+     * @brief 显示错误信息
+     */
     emit downloadError(errorString);
 }

@@ -1,0 +1,7 @@
+<map id="Subtitle::setSubtitleDelay" name="Subtitle::setSubtitleDelay">
+<area shape="rect" id="Node000001" title="设置字幕同步" alt="" coords="415,13,583,40"/>
+<area shape="rect" id="Node000002" href="$class_application.html#a8d928d75e257249af49e9f969c8c91a9" title="字幕控制" alt="" coords="211,5,367,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="399,29,367,29,367,24,399,24"/>
+<area shape="rect" id="Node000003" href="$class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,13,163,40"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="195,29,163,29,163,24,195,24"/>
+</map>

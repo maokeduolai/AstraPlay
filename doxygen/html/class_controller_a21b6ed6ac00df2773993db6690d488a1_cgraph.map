@@ -1,0 +1,7 @@
+<map id="Controller::setSpeed" name="Controller::setSpeed">
+<area shape="rect" id="Node000001" title="设置播放速度" alt="" coords="5,31,145,57"/>
+<area shape="rect" id="Node000002" href="$class_controller.html#a2a8f008980f87cdb36c4111115d0e71f" title="获取MPV属性值函数" alt="" coords="193,5,344,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,32,177,28,178,33,146,37"/>
+<area shape="rect" id="Node000003" href="$class_controller.html#a1d55246197db45a58108b5b0c0f05960" title="MPV属性设置函数" alt="" coords="193,56,344,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="146,51,178,55,177,60,145,56"/>
+</map>

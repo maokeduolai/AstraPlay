@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AstraPlay: mpv_node结构体 参考</title>
+<link rel="icon" href="AstraPlay_Logo_Small.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="AstraPlay_Logo_Small.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">AstraPlay<span id="projectnumber">&#160;v1.0.2</span>
+   </div>
+   <div id="projectbrief">基于libmpv与Qt5框架的视频播放器</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="pages.html"><span>相关页面</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="structmpv__node-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">mpv_node结构体 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="client_8h_source.html">client.h</a>&gt;</code></p>
+<div class="dynheader">
+mpv_node 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structmpv__node__coll__graph.png" border="0" usemap="#ampv__node_coll__map" alt="Collaboration graph"/></div>
+<map name="ampv__node_coll__map" id="ampv__node_coll__map">
+<area shape="rect" title=" " alt="" coords="178,272,249,341"/>
+<area shape="rect" href="structmpv__node__list.html" title=" " alt="" coords="138,405,233,475"/>
+<area shape="poly" title=" " alt="" coords="180,330,162,347,148,366,145,378,147,390,142,391,140,378,143,364,158,343,176,326"/>
+<area shape="rect" title=" " alt="" coords="77,139,123,208"/>
+<area shape="poly" title=" " alt="" coords="112,207,121,227,133,246,165,276,162,280,129,250,116,230,107,209"/>
+<area shape="rect" title=" " alt="" coords="5,139,32,208"/>
+<area shape="poly" title=" " alt="" coords="34,192,57,219,86,246,124,269,163,286,161,291,121,273,82,250,53,223,30,195"/>
+<area shape="poly" title=" " alt="" coords="34,200,78,282,140,380,147,390,143,394,135,383,74,284,30,202"/>
+<area shape="rect" title=" " alt="" coords="147,139,199,208"/>
+<area shape="poly" title=" " alt="" coords="178,207,187,247,190,256,184,257,181,249,173,208"/>
+<area shape="rect" title=" " alt="" coords="224,139,275,208"/>
+<area shape="poly" title=" " alt="" coords="243,209,230,256,224,255,238,207"/>
+<area shape="poly" title=" " alt="" coords="190,405,200,357,205,358,195,406"/>
+<area shape="rect" title=" " alt="" coords="273,272,325,341"/>
+<area shape="poly" title=" " alt="" coords="275,340,238,383,228,394,224,391,234,380,271,337"/>
+<area shape="rect" href="structmpv__byte__array.html" title=" " alt="" coords="299,139,403,208"/>
+<area shape="poly" title=" " alt="" coords="332,209,299,250,264,274,261,269,296,246,328,206"/>
+<area shape="rect" title=" " alt="" coords="293,5,337,75"/>
+<area shape="poly" title=" " alt="" coords="319,74,326,114,328,122,323,124,320,115,313,75"/>
+<area shape="rect" title=" " alt="" coords="361,5,409,75"/>
+<area shape="poly" title=" " alt="" coords="379,75,366,123,361,122,374,74"/>
+<area shape="rect" title=" " alt="" coords="427,139,525,208"/>
+<area shape="poly" title=" " alt="" coords="428,207,344,250,306,262,265,274,263,269,304,257,342,246,426,202"/>
+<area shape="rect" title=" " alt="" coords="549,139,664,208"/>
+<area shape="poly" title=" " alt="" coords="550,206,538,210,470,234,401,251,364,257,333,259,303,264,265,275,264,269,302,258,333,254,363,252,399,245,469,229,536,206,548,201"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:a1d273e3c2e6ef1033132842668492262" id="r_a1d273e3c2e6ef1033132842668492262"><td class="memItemLeft" >union {&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8b087cb6bb5674ddaecaea8297488e1" id="r_ad8b087cb6bb5674ddaecaea8297488e1"><td class="memItemLeft" >&#160;&#160;&#160;char *&#160;&#160;&#160;<a class="el" href="#a7857042abb4a2ddb2911e54740899d80">string</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:ad8b087cb6bb5674ddaecaea8297488e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebb914ac9a796c343fe266ed98d0a8eb" id="r_aebb914ac9a796c343fe266ed98d0a8eb"><td class="memItemLeft" >&#160;&#160;&#160;int&#160;&#160;&#160;<a class="el" href="#af7343761c997ca7caa98db93f14c9d08">flag</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:aebb914ac9a796c343fe266ed98d0a8eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e3f55f0745192fa095970e28e997f7c" id="r_a0e3f55f0745192fa095970e28e997f7c"><td class="memItemLeft" >&#160;&#160;&#160;int64_t&#160;&#160;&#160;<a class="el" href="#aee7995d3b8a424ce9052639d5635fcd9">int64</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:a0e3f55f0745192fa095970e28e997f7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe49cad22e82e7c5737abb346ae0c53e" id="r_abe49cad22e82e7c5737abb346ae0c53e"><td class="memItemLeft" >&#160;&#160;&#160;double&#160;&#160;&#160;<a class="el" href="#abd02fbfd8d2181162254cd63fc680c7a">double_</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:abe49cad22e82e7c5737abb346ae0c53e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa77ce491f132ceda81aba1b0529524f1" id="r_aa77ce491f132ceda81aba1b0529524f1"><td class="memItemLeft" >&#160;&#160;&#160;struct <a class="el" href="structmpv__node__list.html">mpv_node_list</a> *&#160;&#160;&#160;<a class="el" href="#ae8e18a4fea5517d334032b63c5064da5">list</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:aa77ce491f132ceda81aba1b0529524f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0058d87b56a794180c4e0eec0aba561" id="r_ae0058d87b56a794180c4e0eec0aba561"><td class="memItemLeft" >&#160;&#160;&#160;struct <a class="el" href="structmpv__byte__array.html">mpv_byte_array</a> *&#160;&#160;&#160;<a class="el" href="#affcf06470e70b0cf60bd28cf01b3fd29">ba</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:ae0058d87b56a794180c4e0eec0aba561"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d273e3c2e6ef1033132842668492262" id="r_a1d273e3c2e6ef1033132842668492262"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d273e3c2e6ef1033132842668492262">u</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:a1d273e3c2e6ef1033132842668492262"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a846c0b500bc8863c30da4f3a4ed3555b" id="r_a846c0b500bc8863c30da4f3a4ed3555b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="client_8h.html#a8de0a5cfaeed2adfe0c344df68ba292f">mpv_format</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a846c0b500bc8863c30da4f3a4ed3555b">format</a></td></tr>
+<tr class="separator:a846c0b500bc8863c30da4f3a4ed3555b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>Generic data storage.</p>
+<p>If mpv writes this struct (e.g. via <a class="el" href="client_8h.html#aeca58b3b9eadb3cd70953d9cba238958">mpv_get_property()</a>), you must not change the data. In some cases (<a class="el" href="client_8h.html#aeca58b3b9eadb3cd70953d9cba238958">mpv_get_property()</a>), you have to free it with <a class="el" href="client_8h.html#a4dc4983d9482000f58cd14ee66cdf8ba">mpv_free_node_contents()</a>. If you fill this struct yourself, you're also responsible for freeing it, and you must not call <a class="el" href="client_8h.html#a4dc4983d9482000f58cd14ee66cdf8ba">mpv_free_node_contents()</a>. </p>
+
+<p class="definition">在文件 <a class="el" href="client_8h_source.html">client.h</a> 第 <a class="el" href="client_8h_source.html#l00764">764</a> 行定义.</p>
+</div><h2 class="groupheader">类成员变量说明</h2>
+<a id="affcf06470e70b0cf60bd28cf01b3fd29" name="affcf06470e70b0cf60bd28cf01b3fd29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affcf06470e70b0cf60bd28cf01b3fd29">&#9670;&#160;</a></span>ba</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structmpv__byte__array.html">mpv_byte_array</a>* mpv_node::ba</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>valid if format==MPV_FORMAT_BYTE_ARRAY </p>
+
+<p class="definition">在文件 <a class="el" href="client_8h_source.html">client.h</a> 第 <a class="el" href="client_8h_source.html#l00778">778</a> 行定义.</p>
+
+</div>
+</div>
+<a id="abd02fbfd8d2181162254cd63fc680c7a" name="abd02fbfd8d2181162254cd63fc680c7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd02fbfd8d2181162254cd63fc680c7a">&#9670;&#160;</a></span>double_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double mpv_node::double_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>valid if format==MPV_FORMAT_INT64 <br  />
+ </p>
+
+<p class="definition">在文件 <a class="el" href="client_8h_source.html">client.h</a> 第 <a class="el" href="client_8h_source.html#l00769">769</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af7343761c997ca7caa98db93f14c9d08" name="af7343761c997ca7caa98db93f14c9d08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7343761c997ca7caa98db93f14c9d08">&#9670;&#160;</a></span>flag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mpv_node::flag</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>valid if format==MPV_FORMAT_STRING </p>
+
+<p class="definition">在文件 <a class="el" href="client_8h_source.html">client.h</a> 第 <a class="el" href="client_8h_source.html#l00767">767</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a846c0b500bc8863c30da4f3a4ed3555b" name="a846c0b500bc8863c30da4f3a4ed3555b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a846c0b500bc8863c30da4f3a4ed3555b">&#9670;&#160;</a></span>format</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="client_8h.html#a8de0a5cfaeed2adfe0c344df68ba292f">mpv_format</a> mpv_node::format</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Type of the data stored in this struct. This value rules what members in the given union can be accessed. The following formats are currently defined to be allowed in <a class="el" href="structmpv__node.html">mpv_node</a>:</p>
+<p>MPV_FORMAT_STRING (u.string) MPV_FORMAT_FLAG (u.flag) MPV_FORMAT_INT64 (u.int64) MPV_FORMAT_DOUBLE (u.double_) MPV_FORMAT_NODE_ARRAY (u.list) MPV_FORMAT_NODE_MAP (u.list) MPV_FORMAT_BYTE_ARRAY (u.ba) MPV_FORMAT_NONE (no member)</p>
+<p>If you encounter a value you don't know, you must not make any assumptions about the contents of union u. </p>
+
+<p class="definition">在文件 <a class="el" href="client_8h_source.html">client.h</a> 第 <a class="el" href="client_8h_source.html#l00797">797</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aee7995d3b8a424ce9052639d5635fcd9" name="aee7995d3b8a424ce9052639d5635fcd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee7995d3b8a424ce9052639d5635fcd9">&#9670;&#160;</a></span>int64</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t mpv_node::int64</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>valid if format==MPV_FORMAT_FLAG <br  />
+ </p>
+
+<p class="definition">在文件 <a class="el" href="client_8h_source.html">client.h</a> 第 <a class="el" href="client_8h_source.html#l00768">768</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae8e18a4fea5517d334032b63c5064da5" name="ae8e18a4fea5517d334032b63c5064da5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8e18a4fea5517d334032b63c5064da5">&#9670;&#160;</a></span>list</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structmpv__node__list.html">mpv_node_list</a>* mpv_node::list</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>valid if format==MPV_FORMAT_DOUBLE valid if format==MPV_FORMAT_NODE_ARRAY or if format==MPV_FORMAT_NODE_MAP </p>
+
+<p class="definition">在文件 <a class="el" href="client_8h_source.html">client.h</a> 第 <a class="el" href="client_8h_source.html#l00774">774</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a7857042abb4a2ddb2911e54740899d80" name="a7857042abb4a2ddb2911e54740899d80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7857042abb4a2ddb2911e54740899d80">&#9670;&#160;</a></span>string</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* mpv_node::string</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="client_8h_source.html">client.h</a> 第 <a class="el" href="client_8h_source.html#l00766">766</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a1d273e3c2e6ef1033132842668492262" name="a1d273e3c2e6ef1033132842668492262"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d273e3c2e6ef1033132842668492262">&#9670;&#160;</a></span>[union]</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">union  { ... }  mpv_node::u</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li>F:/QtProject/AstraPlay/src/include/mpv/<a class="el" href="client_8h_source.html">client.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

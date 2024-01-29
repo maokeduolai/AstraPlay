@@ -1,0 +1,9 @@
+<map id="mpv_stream_cb_info" name="mpv_stream_cb_info">
+<area shape="rect" id="Node000001" title=" " alt="" coords="43,171,174,240"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,49,75"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="34,74,41,109,56,145,63,156,58,159,51,148,36,111,28,75"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="83,5,135,75"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="111,75,111,153,106,153,106,75"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="159,5,285,75"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="211,75,194,111,171,148,161,161,157,157,166,145,189,109,206,73"/>
+</map>

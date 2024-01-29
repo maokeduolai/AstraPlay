@@ -2,33 +2,45 @@
 
 Subtitle::Subtitle(mpv_handle *mpv) : mpv(mpv) {}
 
-// 加载字幕
+/*!
+ * @brief 加载字幕
+ */
 void Subtitle::loadSubtitle(const QString &filename) {
     const char *cmd[] = {"sub-add", filename.toUtf8().constData(), nullptr};
     mpv_command(mpv, cmd);
 }
 
-// 设置使用的字幕
+/*!
+ * @brief 设置使用的字幕
+ */
 void Subtitle::setSubtitleTrack(int track) {
     mpv::qt::set_property(mpv, "sid", track);
 }
 
-// 设置字幕同步
+/*!
+ * @brief 设置字幕同步
+ */
 void Subtitle::setSubtitleDelay(double delay) {
     QVariant QNowDelay = mpv::qt::get_property_variant(mpv, "sub-delay");
     const double nowDelay = QNowDelay.toDouble();
     mpv::qt::set_property(mpv, "sub-delay", nowDelay + delay);
 }
 
-// 设置字幕字体字号
+/*!
+ * @brief 设置字幕字体字号
+ */
 void Subtitle::setSubtitleFont(const QString &font, int size) {
     mpv::qt::set_property(mpv, "sub-font", font);
     mpv::qt::set_property(mpv, "sub-font-size", size);
 }
 
-// 获取当前字幕字体属性
+/*!
+ * @brief 获取当前字幕字体属性
+ */
 QFont Subtitle::getCurrentSubtitleFont() {
-    // 获取当前的字体字号
+    /*!
+     * @brief 获取当前的字体字号
+     */
     QVariant QCurrentFontName = mpv::qt::get_property_variant(mpv, "sub-font");
     QString currentFontName = QCurrentFontName.toString();
     QVariant QCurrentFontSize = mpv::qt::get_property_variant(mpv, "sub-font-size");
@@ -41,7 +53,9 @@ QFont Subtitle::getCurrentSubtitleFont() {
     return currentFont;
 }
 
-// 获取字幕列表
+/*!
+ * @brief 获取字幕列表
+ */
 QMap<QString, SubtitleInfo> Subtitle::getSubtitleList() {
     QMap<QString, SubtitleInfo> subtitleMap;
 
@@ -52,7 +66,9 @@ QMap<QString, SubtitleInfo> Subtitle::getSubtitleList() {
         for (int i = 0; i < result.u.list->num; i++) {
             mpv_node *node = &result.u.list->values[i];
             if (node->format == MPV_FORMAT_NODE_MAP) {
-                // 分类取出对应值
+                /*!
+                 * @brief 分类取出对应值
+                 */
                 QString type;
                 QString id;
                 QString lang;

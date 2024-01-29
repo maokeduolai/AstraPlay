@@ -1,0 +1,7 @@
+<map id="Controller::initializeSliderDuration" name="Controller::initializeSliderDuration">
+<area shape="rect" id="Node000001" title="初始化滑块的总时长" alt="" coords="5,23,170,65"/>
+<area shape="rect" id="Node000002" href="$class_controller.html#a2a8f008980f87cdb36c4111115d0e71f" title="获取MPV属性值函数" alt="" coords="218,5,369,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,31,202,27,202,33,171,36"/>
+<area shape="rect" id="Node000003" href="$class_application.html#a37b44bf33e642e5e26a200db2fc145ed" title="给Controller类提供slider用于对播放进度滑块进行初始化与更新操作" alt="" coords="221,56,366,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="171,52,206,56,206,61,170,57"/>
+</map>

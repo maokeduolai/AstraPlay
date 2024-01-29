@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AstraPlay: mpv_render_param结构体 参考</title>
+<link rel="icon" href="AstraPlay_Logo_Small.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="AstraPlay_Logo_Small.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">AstraPlay<span id="projectnumber">&#160;v1.0.2</span>
+   </div>
+   <div id="projectbrief">基于libmpv与Qt5框架的视频播放器</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="pages.html"><span>相关页面</span></a></li>
+      <li><a href="namespaces.html"><span>命名空间</span></a></li>
+      <li class="current"><a href="annotated.html"><span>类</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>类列表</span></a></li>
+      <li><a href="classes.html"><span>类索引</span></a></li>
+      <li><a href="inherits.html"><span>类继承关系</span></a></li>
+      <li><a href="functions.html"><span>类成员</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="structmpv__render__param-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">mpv_render_param结构体 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="render_8h_source.html">render.h</a>&gt;</code></p>
+<div class="dynheader">
+mpv_render_param 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="structmpv__render__param__coll__graph.png" border="0" usemap="#ampv__render__param_coll__map" alt="Collaboration graph"/></div>
+<map name="ampv__render__param_coll__map" id="ampv__render__param_coll__map">
+<area shape="rect" title=" " alt="" coords="110,139,231,208"/>
+<area shape="rect" title=" " alt="" coords="5,5,195,75"/>
+<area shape="poly" title=" " alt="" coords="120,73,147,122,142,125,116,76"/>
+<area shape="rect" title=" " alt="" coords="219,5,263,75"/>
+<area shape="poly" title=" " alt="" coords="226,76,199,125,194,122,221,73"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:a7f08364a81f8ef712fe3445baa0f1bca" id="r_a7f08364a81f8ef712fe3445baa0f1bca"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="render_8h.html#ac10cb1981663e694c377824212ef3ee0">mpv_render_param_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f08364a81f8ef712fe3445baa0f1bca">type</a></td></tr>
+<tr class="separator:a7f08364a81f8ef712fe3445baa0f1bca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a3baab5cfdedcb3f669f3fcfa74e7f0" id="r_a0a3baab5cfdedcb3f669f3fcfa74e7f0"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a3baab5cfdedcb3f669f3fcfa74e7f0">data</a></td></tr>
+<tr class="separator:a0a3baab5cfdedcb3f669f3fcfa74e7f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>Used to pass arbitrary parameters to some mpv_render_* functions. The meaning of the data parameter is determined by the type, and each MPV_RENDER_PARAM_* documents what type the value must point to.</p>
+<p>Each value documents the required data type as the pointer you cast to void* and set on <a class="el" href="#a0a3baab5cfdedcb3f669f3fcfa74e7f0">mpv_render_param.data</a>. For example, if MPV_RENDER_PARAM_FOO documents the type as Something* , then the code should look like this:</p>
+<p>Something foo = {...}; <a class="el" href="structmpv__render__param.html">mpv_render_param</a> param; param.type = MPV_RENDER_PARAM_FOO; param.data = &amp; foo;</p>
+<p>Normally, the data field points to exactly 1 object. If the type is char*, it points to a 0-terminated string.</p>
+<p>In all cases (unless documented otherwise) the pointers need to remain valid during the call only. Unless otherwise documented, the API functions will not write to the params array or any data pointed to it.</p>
+<p>As a convention, parameter arrays are always terminated by type==0. There is no specific order of the parameters required. The order of the 2 fields in this struct is guaranteed (even after ABI changes). </p>
+
+<p class="definition">在文件 <a class="el" href="render_8h_source.html">render.h</a> 第 <a class="el" href="render_8h_source.html#l00457">457</a> 行定义.</p>
+</div><h2 class="groupheader">类成员变量说明</h2>
+<a id="a0a3baab5cfdedcb3f669f3fcfa74e7f0" name="a0a3baab5cfdedcb3f669f3fcfa74e7f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a3baab5cfdedcb3f669f3fcfa74e7f0">&#9670;&#160;</a></span>data</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* mpv_render_param::data</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="render_8h_source.html">render.h</a> 第 <a class="el" href="render_8h_source.html#l00459">459</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a7f08364a81f8ef712fe3445baa0f1bca" name="a7f08364a81f8ef712fe3445baa0f1bca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f08364a81f8ef712fe3445baa0f1bca">&#9670;&#160;</a></span>type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="render_8h.html#ac10cb1981663e694c377824212ef3ee0">mpv_render_param_type</a> mpv_render_param::type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="render_8h_source.html">render.h</a> 第 <a class="el" href="render_8h_source.html#l00458">458</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li>F:/QtProject/AstraPlay/src/include/mpv/<a class="el" href="render_8h_source.html">render.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

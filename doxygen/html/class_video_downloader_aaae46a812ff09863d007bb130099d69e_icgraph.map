@@ -1,0 +1,7 @@
+<map id="VideoDownloader::downloadVideo" name="VideoDownloader::downloadVideo">
+<area shape="rect" id="Node000001" title=" " alt="" coords="441,5,624,48"/>
+<area shape="rect" id="Node000002" href="$class_application.html#ab5c0d95752adadc0a631a5b660d2ce03" title="视频下载" alt="" coords="211,5,393,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="425,29,393,29,393,24,425,24"/>
+<area shape="rect" id="Node000003" href="$class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,13,163,40"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="195,29,163,29,163,24,195,24"/>
+</map>

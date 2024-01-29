@@ -1,0 +1,9 @@
+<map id="Controller::updateSliderDuration" name="Controller::updateSliderDuration">
+<area shape="rect" id="Node000001" title="应对在线视频在开始播放时，可能并未完全加载，其总时长未知需要缓冲后更新的情况" alt="" coords="5,48,162,91"/>
+<area shape="rect" id="Node000002" href="$class_controller.html#a2a8f008980f87cdb36c4111115d0e71f" title="获取MPV属性值函数" alt="" coords="210,5,361,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,47,214,34,215,39,162,52"/>
+<area shape="rect" id="Node000003" href="$class_application.html#a37b44bf33e642e5e26a200db2fc145ed" title="给Controller类提供slider用于对播放进度滑块进行初始化与更新操作" alt="" coords="213,56,358,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="162,67,198,67,198,72,162,72"/>
+<area shape="rect" id="Node000004" href="$client_8h.html#aeca58b3b9eadb3cd70953d9cba238958" title=" " alt="" coords="224,107,347,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="162,86,215,100,214,105,161,92"/>
+</map>

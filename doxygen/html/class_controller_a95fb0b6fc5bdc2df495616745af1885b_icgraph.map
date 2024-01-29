@@ -1,0 +1,8 @@
+<map id="Controller::getMpvInstance" name="Controller::getMpvInstance">
+<area shape="rect" id="Node000001" title="返回mpv实例" alt="" coords="453,5,627,32"/>
+<area shape="rect" id="Node000002" href="$class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,5,163,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="437,18,405,17,211,17,163,18,163,13,211,12,405,12,437,13"/>
+<area shape="rect" id="Node000003" href="$class_application.html#aaa5bb4375192efe0ebee28ebb3f19804" title="视频截图窗口" alt="" coords="211,27,405,69"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="438,34,406,38,405,33,437,29"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="195,36,163,32,163,26,195,31"/>
+</map>

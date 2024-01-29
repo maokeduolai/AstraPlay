@@ -1,0 +1,7 @@
+<map id="Controller::zoomIn" name="Controller::zoomIn">
+<area shape="rect" id="Node000001" title="放大视频10%" alt="" coords="440,13,566,40"/>
+<area shape="rect" id="Node000002" href="$class_application.html#add3cc3935cb789e798762ef9b876b9ac" title="视频缩放控制" alt="" coords="211,5,392,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="424,29,393,29,393,24,424,24"/>
+<area shape="rect" id="Node000003" href="$class_application.html#aae53f3dcf432cfc5c17ebab6fd7d614c" title="创建主窗口" alt="" coords="5,13,163,40"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="195,29,163,29,163,24,195,24"/>
+</map>
